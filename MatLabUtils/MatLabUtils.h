@@ -3,5 +3,6 @@
 
 double length(double*);
 double dot(double*,double*,int);
+double norm(double*);
 
 #endif
