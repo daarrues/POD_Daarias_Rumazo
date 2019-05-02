@@ -7,6 +7,38 @@ typedef int bool;
 #define true 1
 #define false 0
 
+void normTest()
+{
+	double vectorA[] = {
+		4950990.33826460,
+		256563.116260381,
+		3999465.34658133
+		};
+	double vectorB[] = {
+		4935037.85913036,
+		472703.320202615,
+		3999475.70573182,
+		};
+	double vectorC[] = {
+		4909646.95198536,
+		687938.936915757,
+		3999494.94894739,
+		};
+	double esperadoA = 6.36976082916144930000e+06;
+	double esperadoB = 6.36976082916145030000e+06;
+	double esperadoC = 6.36976082916144840000e+06;
+	printf("Esperado A: %.20lf \n", esperadoA);
+	printf("Obtenido A: %.20lf \n", norm(vectorA));
+	printf("Esperado B: %.20lf \n", esperadoB);
+	printf("Obtenido B: %.20lf \n", norm(vectorB));
+	printf("Esperado C: %.20lf \n", esperadoC);
+	printf("Obtenido C: %.20lf \n", norm(vectorC));
+	assert(fabs(esperadoA - norm(vectorA)) < 10e-6);
+	assert(fabs(esperadoB - norm(vectorB)) < 10e-6);
+	assert(fabs(esperadoC - norm(vectorC)) < 10e-6);
+	printf("Test de 'norm' superado. \n");
+}
+
 void testDot1(bool verbose)
 {
 	double v1[] = {6.33886095165153710000e-01,
@@ -84,38 +116,6 @@ void testLength(bool verbose)
 
 }
 
-void normTest()
-{
-	double vectorA[] = {
-		4950990.33826460,
-		256563.116260381,
-		3999465.34658133
-		};
-	double vectorB[] = {
-		4935037.85913036,
-		472703.320202615,
-		3999475.70573182,
-		};
-	double vectorC[] = {
-		4909646.95198536,
-		687938.936915757,
-		3999494.94894739,
-		};
-	double esperadoA = 6.36976082916144930000e+06;
-	double esperadoB = 6.36976082916145030000e+06;
-	double esperadoC = 6.36976082916144840000e+06;
-	printf("Esperado A: %.20lf \n", esperadoA);
-	printf("Obtenido A: %.20lf \n", norm(vectorA));
-	printf("Esperado B: %.20lf \n", esperadoB);
-	printf("Obtenido B: %.20lf \n", norm(vectorB));
-	printf("Esperado C: %.20lf \n", esperadoC);
-	printf("Obtenido C: %.20lf \n", norm(vectorC));
-	assert(fabs(esperadoA - norm(vectorA)) < 10e-6);
-	assert(fabs(esperadoB - norm(vectorB)) < 10e-6);
-	assert(fabs(esperadoC - norm(vectorC)) < 10e-6);
-	printf("Test de 'norm' superado. \n");
-}
-
 int main(){
 
 	// Tests norm
@@ -131,7 +131,7 @@ int main(){
 	// Tests length
 	printf("Probando length!\n");
 	testLength(0);
-	printf("length finalizado!\n");	
+	printf("length finalizado!\n");
 
 	// Final
 	printf("Todos los test superados!\n");
