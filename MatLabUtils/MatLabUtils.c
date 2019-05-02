@@ -10,7 +10,7 @@ double norm(double* v)
 double dot(double *v1, double *v2, int dim)
 {
 	double res = 0;
-	for(int i = 0; i< dim; i++)
+	for(int i = 0; i < dim; i++)
 	{
 		res += v1[i]*v2[i];
 	}
@@ -20,4 +20,11 @@ double dot(double *v1, double *v2, int dim)
 double length(double *v)
 {
 	return size(v);
+}
+
+double[][] prodMatr(double[][] m1, double[][] m2)
+{
+	for(int j = 0; j < 3; j++){
+
+	}
 }

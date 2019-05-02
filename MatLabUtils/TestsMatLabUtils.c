@@ -20,13 +20,13 @@ void testDot1(bool verbose)
 	double expected = 2.98609046501646750000e+06;
 
 	double res = dot(v1,v2,3);
-	
+
 	if(verbose){
 		printf("Dot1:\n");
 		printf("Exp.:%.20lf\n",expected);
 		printf("Obt.:%.20lf\n",res);
 	}
-	
+
 	assert(fabs(res-expected)<10e-12);
 	printf("Dot1 superado!\n");
 }
@@ -44,13 +44,13 @@ void testDot2(bool verbose)
 	double expected = 3.19797214063458420000e+06;
 
 	double res = dot(v1,v2,3);
-	
+
 	if(verbose){
 		printf("Dot2:\n");
 		printf("Exp.:%.20lf\n",expected);
 		printf("Obt.:%.20lf\n",res);
 	}
-	
+
 	assert(fabs(res-expected)<10e-12);
 	printf("Dot2 superado!\n");
 }
@@ -68,20 +68,20 @@ void testDot3(bool verbose)
 	double expected = 1.29265491105025480000e+09;
 
 	double res = dot(v1,v2,3);
-	
+
 	if(verbose){
 		printf("Dot3:\n");
 		printf("Exp.:%.20lf\n",expected);
 		printf("Obt.:%.20lf\n",res);
 	}
-	
+
 	assert(fabs(res-expected)<10e-12);
 	printf("Dot3 superado!\n");
 }
 
-void testLength(bool 0)
+void testLength(bool verbose)
 {
-	
+
 }
 
 void normTest()
@@ -118,11 +118,8 @@ void normTest()
 
 int main(){
 
-	// Tests length
-	printf("Probando length!\n");
-	testLength(0);
-	printf("length finalizado!\n");
-
+	// Tests norm
+	normTest();
 
 	// Tests dot
 	printf("Probando dot!\n");
@@ -130,9 +127,11 @@ int main(){
 	testDot2(0);
 	testDot3(0);
 	printf("dot finalizado!\n");
-	
-	// Tests norm
-	normTest();
+
+	// Tests length
+	printf("Probando length!\n");
+	testLength(0);
+	printf("length finalizado!\n");	
 
 	// Final
 	printf("Todos los test superados!\n");

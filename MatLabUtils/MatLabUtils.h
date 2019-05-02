@@ -6,7 +6,7 @@ double dot(double*,double*,int);
 // cross (producto vectorial)
 double length(double*);
 // zeros 		(inicializar a 0)
-// * 		(producto de matrices)
+double[][] prodMatr(double[][],double[][]);
 // ‘ 		(traspuesta)
 // det 		(determinante)
 // roots		(raíces de polinomio)
