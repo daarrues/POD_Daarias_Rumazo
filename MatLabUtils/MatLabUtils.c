@@ -2,9 +2,9 @@
 #include <stdio.h>
 #define size(v)  (sizeof(v) / sizeof((v)[0]))
 
-double length(double *v)
+double norm(double* v)
 {
-	return size(v);
+	return sqrt(v[0]*v[0]+v[1]*v[1]+v[2]*v[2]);
 }
 
 double dot(double *v1, double *v2, int dim)
@@ -17,8 +17,7 @@ double dot(double *v1, double *v2, int dim)
 	return res;
 }
 
-double norm(double* v)
+double length(double *v)
 {
-	return sqrt(v[0]*v[0]+v[1]*v[1]+v[2]*v[2]);
+	return size(v);
 }
-
