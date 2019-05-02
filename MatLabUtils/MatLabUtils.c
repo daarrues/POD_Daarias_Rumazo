@@ -8,11 +8,10 @@ double norm(double* v)
 	return sqrt(v[0]*v[0]+v[1]*v[1]+v[2]*v[2]);
 }
 
-double dot(double *v1, double *v2)
+double dot(double v1[3], double v2[3])
 {
-	double dim = size(v1);
 	double res = 0;
-	for(int i = 0; i < dim; i++)
+	for(int i = 0; i < 3; i++)
 	{
 		res += v1[i]*v2[i];
 	}
@@ -24,9 +23,8 @@ double length(double *v)
 	return size(v);
 }
 
-double[][] prodMatr(double[][] m1, double[][] m2)
+void prodMatr(double m1[3][3], double m2[3][3], double mResult[3][3])
 {
-	double[][] mResult = new double[3][3];
 	for(int j = 0; j < 3; j++){
 		for(int i = 0; i < 3; i++){
 			mResult[i][j] = dot(m1[i],m2[j]);

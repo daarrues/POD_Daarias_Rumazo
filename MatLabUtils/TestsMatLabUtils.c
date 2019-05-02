@@ -27,7 +27,7 @@ void testNorm1(bool verbose)
 	printf("Norm1 superado!\n");
 }
 
-void testNorm2()
+void testNorm2(bool verbose)
 {
 	double vectorB[] = {
 		4935037.85913036,
@@ -38,7 +38,7 @@ void testNorm2()
 
 	if(verbose)
 	{
-		printf("Norm1:\n");
+		printf("Norm2:\n");
 		printf("Esperado B: %.20lf \n", esperadoB);
 		printf("Obtenido B: %.20lf \n", norm(vectorB));
 	}
@@ -47,7 +47,7 @@ void testNorm2()
 	printf("Norm2 superado!\n");
 }
 
-void testNorm3()
+void testNorm3(bool verbose)
 {
 	double vectorC[] = {
 		4909646.95198536,
@@ -58,7 +58,7 @@ void testNorm3()
 
 	if(verbose)
 	{
-		printf("Norm1:\n");
+		printf("Norm3:\n");
 		printf("Esperado C: %.20lf \n", esperadoC);
 		printf("Obtenido C: %.20lf \n", norm(vectorC));
 	}

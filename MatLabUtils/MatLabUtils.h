@@ -2,11 +2,11 @@
 #define MATLABUTILS_H
 
 double norm(double*);
-double dot(double*,double*,int);
+double dot(double[3], double[3]);
 // cross (producto vectorial)
 double length(double*);
 // zeros 		(inicializar a 0)
-double[][] prodMatr(double[][],double[][]);
+void prodMatr(double[3][3], double[3][3], double[3][3]);
 // ‘ 		(traspuesta)
 // det 		(determinante)
 // roots		(raíces de polinomio)
