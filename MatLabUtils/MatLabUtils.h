@@ -1,7 +1,7 @@
 #ifndef MATLABUTILS_H
 #define MATLABUTILS_H
 
-double norm(double*);
+double norm(double[3]);
 double dot(double[3], double[3]);
 // cross (producto vectorial)
 double length(double*);
