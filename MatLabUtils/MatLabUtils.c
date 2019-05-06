@@ -3,7 +3,7 @@
 #include <math.h>
 #define size(v)  (sizeof(v) / sizeof((v)[0]))
 
-double norm(double* v)
+double norm(double v[3])
 {
 	return sqrt(v[0]*v[0]+v[1]*v[1]+v[2]*v[2]);
 }
