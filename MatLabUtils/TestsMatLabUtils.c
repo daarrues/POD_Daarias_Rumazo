@@ -154,6 +154,129 @@ void testDot3(bool verbose)
 	printf("Dot3 superado!\n");
 }
 
+void testCross1(bool verbose)
+{
+	double v1[] = {
+		20435422.352153745,
+		1070699.4467181342,
+		1012905.4914337485
+	};
+
+	double v2[] = {
+		17.196469780754562,
+		-2657.5102761159114,
+		3738.386850808869
+	};
+
+	double vResult[3];
+
+	double esperado[] = {
+		6694495484.9988279,
+		-76378095813.343018,
+		-54325757148.297119
+	};
+
+	cross(v1, v2, vResult);
+
+	if(verbose)
+	{
+		printf("Cross1:\n");
+		printf("Esperado_x = %.20lf\n", esperado[0]);
+		printf("Obtenido_x = %.20lf\n", vResult[0]);
+		printf("Esperado_y = %.20lf\n", esperado[1]);
+		printf("Obtenido_y = %.20lf\n", vResult[1]);
+		printf("Esperado_z = %.20lf\n", esperado[2]);
+		printf("Obtenido_z = %.20lf\n", vResult[2]);
+	}
+
+	assert(fabs(vResult[0]-esperado[0])<10e-12);
+	assert(fabs(vResult[1]-esperado[1])<10e-12);
+	assert(fabs(vResult[2]-esperado[2])<10e-12);
+	printf("Cross1 superado!\n");
+}
+
+void testCross2(bool verbose)
+{
+	double v1[] = {
+		20456329.59102045000000000000,
+		1074191.36683772060000000000,
+		1009857.02167864280000000000
+	};
+
+	double v2[] = {
+		17.65947568968910300000,
+		-2661.67627260588730000000,
+		3743.57355524540890000000
+	};
+
+	double vResult[3];
+
+	double esperado[] = {
+		6709226867.49310400000000000000,
+		-76561940948.80389400000000000000,
+		-54467096753.35356900000000000000
+	};
+
+	cross(v1, v2, vResult);
+
+	if(verbose)
+	{
+		printf("Cross2:\n");
+		printf("Esperado_x = %.20lf\n", esperado[0]);
+		printf("Obtenido_x = %.20lf\n", vResult[0]);
+		printf("Esperado_y = %.20lf\n", esperado[1]);
+		printf("Obtenido_y = %.20lf\n", vResult[1]);
+		printf("Esperado_z = %.20lf\n", esperado[2]);
+		printf("Obtenido_z = %.20lf\n", vResult[2]);
+	}
+
+	assert(fabs(vResult[0]-esperado[0])<10e-12);
+	assert(fabs(vResult[1]-esperado[1])<10e-12);
+	assert(fabs(vResult[2]-esperado[2])<10e-12);
+	printf("Cross2 superado!\n");
+}
+
+void testCross3(bool verbose)
+{
+	double v1[] = {
+		20418280.37423648300000000000,
+		1067836.39923680880000000000,
+		1015404.95114512560000000000
+	};
+
+	double v2[] = {
+		16.87979502296278200000,
+		-2654.08002932726280000000,
+		3734.12004615458320000000
+	};
+
+	double vResult[3];
+
+	double esperado[] = {
+		6682395306.91799930000000000000,
+		-76227170226.00053400000000000000,
+		-54209775034.00301400000000000000
+	};
+
+	cross(v1, v2, vResult);
+
+	if(verbose)
+	{
+		printf("Cross3:\n");
+		printf("Esperado_x = %.20lf\n", esperado[0]);
+		printf("Obtenido_x = %.20lf\n", vResult[0]);
+		printf("Esperado_y = %.20lf\n", esperado[1]);
+		printf("Obtenido_y = %.20lf\n", vResult[1]);
+		printf("Esperado_z = %.20lf\n", esperado[2]);
+		printf("Obtenido_z = %.20lf\n", vResult[2]);
+	}
+
+	assert(fabs(vResult[0]-esperado[0])<10e-12);
+	assert(fabs(vResult[1]-esperado[1])<10e-12);
+	assert(fabs(vResult[2]-esperado[2])<10e-12);
+	printf("Cross3 superado!\n");
+}
+
 void testLength(bool verbose)
 {
 
@@ -174,6 +297,13 @@ int main(){
 	testDot2(0);
 	testDot3(0);
 	printf("dot finalizado!\n\n");
+
+	// Tests Cross
+	printf("Probando cross!\n");
+	testCross1(false);
+	testCross2(false);
+	testCross3(false);
+	printf("cross finalizado!\n\n");
 
 	// Tests length
 	printf("Probando length!\n");
