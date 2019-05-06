@@ -161,21 +161,21 @@ void testLength(bool verbose)
 
 int main(){
 
-	// Tests norm
+	// Test norm
 	printf("Probando norm!\n");
 	testNorm1(0);
 	testNorm2(0);
 	testNorm3(0);
 	printf("norm finalizado!\n\n");
 
-	// Tests dot
+	// Test dot
 	printf("Probando dot!\n");
 	testDot1(0);
 	testDot2(0);
 	testDot3(0);
 	printf("dot finalizado!\n\n");
 
-	// Tests length
+	// Test length
 	printf("Probando length!\n");
 	testLength(0);
 	printf("length finalizado!\n\n");
