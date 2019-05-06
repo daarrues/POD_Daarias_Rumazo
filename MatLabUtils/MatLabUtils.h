@@ -8,11 +8,11 @@ double length(double*);
 // zeros 		(inicializar a 0)
 void prodMatr(double[3][3], double[3][3], double[3][3]);
 // ‘ 		(traspuesta)
-// det 		(determinante)
+double det(double[3][3]);
 // roots		(raíces de polinomio)
-// unit		(normalizar un vector)
-// isreal		(pertenencia a los reales)
-// sign		(signo)
+void unit(double[3]);
+// isreal		(pertenencia a los reales) // <-- QUIZAS NO HAGA FALTA POR ROOTS?
+int sign(double);
 // fix
 
 #endif
