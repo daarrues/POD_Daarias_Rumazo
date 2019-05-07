@@ -6,64 +6,68 @@
 typedef int bool;
 #define true 1
 #define false 0
+#define POL_DEG 15
 
 void testNorm1(bool verbose)
 {
-	double vectorA[] = {
+	double v[] = {
 		4950990.33826460,
 		256563.116260381,
 		3999465.34658133
 		};
-	double esperadoA = 6.36976082916144930000e+06;
+	double esperado = 6.36976082916144930000e+06;
+	double obtenido = norm(v);
 
 	if(verbose)
 	{
 		printf("Norm1:\n");
-		printf("Esperado A: %.20lf \n", esperadoA);
-		printf("Obtenido A: %.20lf \n", norm(vectorA));
+		printf("Esperado: %.20lf \n", esperado);
+		printf("Obtenido: %.20lf \n", obtenido);
 	}
 
-	assert(fabs(esperadoA - norm(vectorA)) < 10e-6);
+	assert(fabs(esperado - obtenido) < 10e-6);
 	printf("Norm1 superado!\n");
 }
 
 void testNorm2(bool verbose)
 {
-	double vectorB[] = {
+	double v[] = {
 		4935037.85913036,
 		472703.320202615,
 		3999475.70573182,
 		};
-	double esperadoB = 6.36976082916145030000e+06;
+	double esperado = 6.36976082916145030000e+06;
+	double obtenido = norm(v);
 
 	if(verbose)
 	{
 		printf("Norm2:\n");
-		printf("Esperado B: %.20lf \n", esperadoB);
-		printf("Obtenido B: %.20lf \n", norm(vectorB));
+		printf("Esperado: %.20lf \n", esperado);
+		printf("Obtenido: %.20lf \n", obtenido);
 	}
 
-	assert(fabs(esperadoB - norm(vectorB)) < 10e-6);
+	assert(fabs(esperado - obtenido) < 10e-6);
 	printf("Norm2 superado!\n");
 }
 
 void testNorm3(bool verbose)
 {
-	double vectorC[] = {
+	double v[] = {
 		4909646.95198536,
 		687938.936915757,
 		3999494.94894739,
 		};
-	double esperadoC = 6.36976082916144840000e+06;
+	double esperado = 6.36976082916144840000e+06;
+	double obtenido = norm(v);
 
 	if(verbose)
 	{
 		printf("Norm3:\n");
-		printf("Esperado C: %.20lf \n", esperadoC);
-		printf("Obtenido C: %.20lf \n", norm(vectorC));
+		printf("Esperado: %.20lf \n", esperado);
+		printf("Obtenido: %.20lf \n", obtenido);
 	}
 
-	assert(fabs(esperadoC - norm(vectorC)) < 10e-6);
+	assert(fabs(esperado - obtenido) < 10e-6);
 	printf("Norm3 superado!\n");
 }
 
@@ -277,28 +281,214 @@ void testCross3(bool verbose)
 	printf("Cross3 superado!\n");
 }
 
-void testLength(bool verbose)
-{
+// Aquí va TestLength
 
+void testZeros(bool verbose)
+{
+	double v[3];
+	zeros(v);
+
+	if(verbose)
+	{
+		printf("Zeros:\n");
+		printf("v[0] = %.20lf\n", v[0]);
+		printf("v[1] = %.20lf\n", v[1]);
+		printf("v[2] = %.20lf\n", v[2]);
+	}
+
+	assert(fabs(v[0]) < 10e-12);
+	assert(fabs(v[1]) < 10e-12);
+	assert(fabs(v[2]) < 10e-12);
+	printf("Zeros superado!\n");
+}
+
+// Aquí va TestProdMatr
+
+void testTrans(bool verbose)
+{
+	double m[3][3];
+	double t[3][3];
+
+	m[0][0] = 0.307371022581072;
+	m[0][1] = 0.951589691503099;
+	m[0][2] = -0.000336901326720985;
+	m[1][0] = -0.951589111300356;
+	m[1][1] = 0.307371207205992;
+	m[1][2] = 0.00105082602288526;
+	m[2][0] = 0.00110350897844434;
+	m[2][1] = -2.40183511869764e-06;
+	m[2][2] = 0.999999391130897;
+
+	trans(m, t);
+
+	if(verbose)
+	{
+		printf("Trans:\n");
+		printf("m[0][0] = %.20lf ### t[0][0] = %.20lf\n", m[0][0], t[0][0]);
+		printf("m[0][1] = %.20lf ### t[1][0] = %.20lf\n", m[0][1], t[1][0]);
+		printf("m[0][2] = %.20lf ### t[2][0] = %.20lf\n", m[0][2], t[2][0]);
+		printf("m[1][0] = %.20lf ### t[0][1] = %.20lf\n", m[1][0], t[0][1]);
+		printf("m[1][1] = %.20lf ### t[1][1] = %.20lf\n", m[1][1], t[1][1]);
+		printf("m[1][2] = %.20lf ### t[2][1] = %.20lf\n", m[1][2], t[2][1]);
+		printf("m[2][0] = %.20lf ### t[0][2] = %.20lf\n", m[2][0], t[0][2]);
+		printf("m[2][1] = %.20lf ### t[1][2] = %.20lf\n", m[2][1], t[1][2]);
+		printf("m[2][2] = %.20lf ### t[2][2] = %.20lf\n", m[2][2], t[2][2]);
+	}
+
+	for(int i = 0; i < 3; i++)
+	{
+		for(int j = 0; j < 3; j++)
+		{
+			assert(fabs(m[i][j] - t[j][i]) < 10e-12);
+		}
+	}
+	printf("Trans superado!\n");
+}
+
+// Aquí va TestDet
+
+void testRoots(bool verbose)
+{
+	double p[POL_DEG + 1];
+	p[0] = 1.0;
+	p[1] = 0.0;
+	p[2] = -73120740632113.531;
+	p[3] = 0.0;
+	p[4] = 0.0;
+	p[5] = -1587936795677001700000000000000000000.0;
+	p[6] = 0.0;
+	p[7] = 0.0;
+	p[8] = -11985384853690914000000000000000000000000000000000000000000.0;
+	p[9] = 0.0;
+	p[10] = 0.0;
+	p[11] = 0.0;
+	p[12] = 0.0;
+	p[13] = 0.0;
+	p[14] = 0.0;
+	p[15] = 0.0;
+
+	int nRootsEsperado = 9;
+	double esperado[9];
+	esperado[0] = 0.0;
+	esperado[1] = 0.0;
+	esperado[2] = 0.0;
+	esperado[3] = 0.0;
+	esperado[4] = 0.0;
+	esperado[5] = 0.0;
+	esperado[6] = 0.0;
+	esperado[7] = 20488505.595838312;
+	esperado[8] = -16734286.967633706;
+
+	double r[POL_DEG];
+	int nRoots = roots(p, POL_DEG, r);
+
+	if(verbose)
+	{
+		printf("Roots:\n");
+		printf("N. raices esperado = %d\n", nRootsEsperado);
+		printf("N. raices obtenido = %d\n", nRoots);
+		printf("Raíz esperada 1 = %.20lf\n", esperado[0]);
+		printf("Raíz obtenida 1 = %.20lf\n", r[0]);
+		printf("Raíz esperada 2 = %.20lf\n", esperado[1]);
+		printf("Raíz obtenida 2 = %.20lf\n", r[1]);
+		printf("Raíz esperada 3 = %.20lf\n", esperado[2]);
+		printf("Raíz obtenida 3 = %.20lf\n", r[2]);
+		printf("Raíz esperada 4 = %.20lf\n", esperado[3]);
+		printf("Raíz obtenida 4 = %.20lf\n", r[3]);
+		printf("Raíz esperada 5 = %.20lf\n", esperado[4]);
+		printf("Raíz obtenida 5 = %.20lf\n", r[4]);
+		printf("Raíz esperada 6 = %.20lf\n", esperado[5]);
+		printf("Raíz obtenida 6 = %.20lf\n", r[5]);
+		printf("Raíz esperada 7 = %.20lf\n", esperado[6]);
+		printf("Raíz obtenida 7 = %.20lf\n", r[6]);
+		printf("Raíz esperada 8 = %.20lf\n", esperado[7]);
+		printf("Raíz obtenida 8 = %.20lf\n", r[7]);
+		printf("Raíz esperada 9 = %.20lf\n", esperado[8]);
+		printf("Raíz obtenida 9 = %.20lf\n", r[8]);
+	}
+
+	assert(nRoots == nRootsEsperado);
+	assert(fabs(r[0] - esperado[0]) < 10e-6);
+	assert(fabs(r[1] - esperado[1]) < 10e-6);
+	assert(fabs(r[2] - esperado[2]) < 10e-6);
+	assert(fabs(r[3] - esperado[3]) < 10e-6);
+	assert(fabs(r[4] - esperado[4]) < 10e-6);
+	assert(fabs(r[5] - esperado[5]) < 10e-6);
+	assert(fabs(r[6] - esperado[6]) < 10e-6);
+	assert(fabs(r[7] - esperado[7]) < 10e-6);
+	assert(fabs(r[8] - esperado[8]) < 10e-6);
+	printf("Roots superado!\n");
+}
+
+// Aquí va TestUnit
+
+// Aquí va TestSign
+
+void testFix1(bool verbose)
+{
+	double n = 20.45;
+	int esperado = 20;
+	int res = fix(n);
+
+	if(verbose)
+	{
+		printf("Fix1:\n");
+		printf("%.20lf ==> %d\n", n, res);
+	}
+
+	assert(res == esperado);
+	printf("Fix1 superado!\n");
+}
+
+void testFix2(bool verbose)
+{
+	double n = 19.99;
+	int esperado = 19;
+	int res = fix(n);
+
+	if(verbose)
+	{
+		printf("Fix2:\n");
+		printf("%.20lf ==> %d\n", n, res);
+	}
+
+	assert(res == esperado);
+	printf("Fix2 superado!\n");
+}
+
+void testFix3(bool verbose)
+{
+	double n = -6.12;
+	int esperado = -6;
+	int res = fix(n);
+
+	if(verbose)
+	{
+		printf("Fix3:\n");
+		printf("%.20lf ==> %d\n", n, res);
+	}
+
+	assert(res == esperado);
+	printf("Fix3 superado!\n");
 }
 
 int main(){
 
 	// Test norm
 	printf("Probando norm!\n");
-	testNorm1(0);
-	testNorm2(0);
-	testNorm3(0);
+	testNorm1(false);
+	testNorm2(false);
+	testNorm3(false);
 	printf("norm finalizado!\n\n");
 
 	// Test dot
 	printf("Probando dot!\n");
-	testDot1(0);
-	testDot2(0);
-	testDot3(0);
+	testDot1(false);
+	testDot2(false);
+	testDot3(false);
 	printf("dot finalizado!\n\n");
 
-	// Tests Cross
+	// Test cross
 	printf("Probando cross!\n");
 	testCross1(false);
 	testCross2(false);
@@ -306,11 +496,38 @@ int main(){
 	printf("cross finalizado!\n\n");
 
 	// Test length
-	printf("Probando length!\n");
-	testLength(0);
-	printf("length finalizado!\n\n");
+
+	// Test zeros
+	printf("Probando zeros!\n");
+	testZeros(false);
+	printf("zeros finalizado!\n\n");
+
+	// Test prodMatr
+
+	// Test trans
+	printf("Probando trans!\n");
+	testTrans(false);
+	printf("trans finalizado!\n\n");
+
+	// Test det
+
+	// Test roots
+	printf("Probando roots!\n");
+	testRoots(false);
+	printf("roots finalizado!\n\n");
+
+	// Test unit
+
+	// Test sign
+
+	// Test fix
+	printf("Probando fix!\n");
+	testFix1(false);
+	testFix2(false);
+	testFix3(false);
+	printf("fix finalizado!\n\n");
 
 	// Final
-	printf("Todos los test superados!\n");
+	printf("Todos los test superados!\n\n");
 	return 0;
 }
