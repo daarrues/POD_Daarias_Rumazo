@@ -1,7 +1,9 @@
 #include "MatLabUtils.h"
+#include "rpoly.h"
 #include <stdio.h>
 #include <math.h>
 #define size(v)  (sizeof(v) / sizeof((v)[0]))
+#define POL_DEG 15
 
 double norm(double v[3])
 {
@@ -25,15 +27,11 @@ double length(double *v)
 	return size(v);
 }
 
-void zeros(double m[][], int rows, int cols)
+void zeros(double v[3])
 {
-	for(int i = 0; i < rows; i++)
-	{
-		for(int j = 0; j < cols; j++)
-		{
-			m[i][j] = 0.0;
-		}
-	}
+	v[0] = 0.0;
+	v[1] = 0.0;
+	v[2] = 0.0;
 }
 
 void prodMatr(double m1[3][3], double m2[3][3], double mResult[3][3])
@@ -68,15 +66,46 @@ double det(double m[3][3])
 				 m[0][0] * m[1][2] * m[2][1];
 }
 
+int roots(double p[], int degree, double r[])
+{
+	double zerosR[POL_DEG];
+	double zerosI[POL_DEG];
+	int n = real_poly_roots(p, degree, zerosR, zerosI);
+	int nRoots = 0;
+	for(int i = 0; i < degree; i++)
+	{
+		if(fabs(zerosI[i]) < 10e-12)
+		{
+			r[nRoots] = zerosR[i];
+			nRoots++;
+		}
+	}
+	return nRoots;
+}
+
 void unit(double v[3])
 {
-	double norm = norm(v);
-	v[0] = v[0]/norm;
-	v[1] = v[1]/norm;
-	v[2] = v[2]/norm;
+	double n = norm(v);
+	v[0] = v[0]/n;
+	v[1] = v[1]/n;
+	v[2] = v[2]/n;
 }
 
 int sign(double n)
 {
 	return (n == 0) ? 0 : (n > 0) ? 1 : -1;
+}
+
+int fix(double n)
+{
+	int res;
+	if(n >= 0)
+	{
+		res = floor(n);
+	}
+	else
+	{
+		res = ceil(n);
+	}
+	return res;
 }
