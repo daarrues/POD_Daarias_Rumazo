@@ -1,3 +1,17 @@
+//------------------------------------------------------------------------------
+//                              MatLabUtils
+//------------------------------------------------------------------------------
+// POD: Preliminary Orbit Determination
+/**
+ * @file MatLabUtils.h
+ * @author Daniel Arias Ruiz-Esquide y Rubén Mazo Tomás
+ * @date Created: 2019/04/17
+ *
+ * Esta clase contiene las cabeceras para los
+ * métodos nativos de MatLab necesarios
+ * para este proyecto.
+ */
+//------------------------------------------------------------------------------
 #ifndef MATLABUTILS_H
 #define MATLABUTILS_H
 
@@ -13,4 +27,4 @@ void unit(double[3], double[3]);
 int sign(double);
 int fix(double);
 
-#endif
+#endif // MATLABUTILS_H

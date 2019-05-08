@@ -1,0 +1,81 @@
+\hypertarget{rpoly_8c}{}\section{rpoly.\+c File Reference}
+\label{rpoly_8c}\index{rpoly.c@{rpoly.c}}
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$float.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}rpoly.\+h\char`\"{}}\newline
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_r_poly___state}{R\+Poly\+\_\+\+State}}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{rpoly_8c_a03a7de2acac925b6339645bed232b0f9}{R\+P\+O\+L\+Y\+\_\+\+D\+E\+B\+UG}}~0
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} \{ \mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1ae9de385ef6fe9bf3360d1038396b884c}{false}}, 
+\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1a08f175a5505a10b9ed657defeb050e4b}{true}}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_r_poly___state}{R\+Poly\+\_\+\+State}} $\ast$ \mbox{\hyperlink{rpoly_8c_af1f98503f425d9d5edb6b810fb97d2c1}{real\+\_\+poly\+\_\+alloc}} (int deg)
+\item 
+void \mbox{\hyperlink{rpoly_8c_a532a23bdc8f92a332dccb59661be5db5}{real\+\_\+poly\+\_\+release}} (struct \mbox{\hyperlink{struct_r_poly___state}{R\+Poly\+\_\+\+State}} $\ast$s)
+\item 
+int \mbox{\hyperlink{rpoly_8c_af09c0354f5c263de0a96c44dc0624210}{real\+\_\+poly\+\_\+roots\+\_\+compute}} (const double $\ast$op, int degree, struct \mbox{\hyperlink{struct_r_poly___state}{R\+Poly\+\_\+\+State}} $\ast$state, double $\ast$zeror, double $\ast$zeroi)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{rpoly_8c_a03a7de2acac925b6339645bed232b0f9}\label{rpoly_8c_a03a7de2acac925b6339645bed232b0f9}} 
+\index{rpoly.c@{rpoly.c}!RPOLY\_DEBUG@{RPOLY\_DEBUG}}
+\index{RPOLY\_DEBUG@{RPOLY\_DEBUG}!rpoly.c@{rpoly.c}}
+\subsubsection{\texorpdfstring{RPOLY\_DEBUG}{RPOLY\_DEBUG}}
+{\footnotesize\ttfamily \#define R\+P\+O\+L\+Y\+\_\+\+D\+E\+B\+UG~0}
+
+
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}\label{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}} 
+\index{rpoly.c@{rpoly.c}!bool@{bool}}
+\index{bool@{bool}!rpoly.c@{rpoly.c}}
+\subsubsection{\texorpdfstring{bool}{bool}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{false@{false}!rpoly.c@{rpoly.c}}\index{rpoly.c@{rpoly.c}!false@{false}}}\mbox{\Hypertarget{rpoly_8c_af6a258d8f3ee5206d682d799316314b1ae9de385ef6fe9bf3360d1038396b884c}\label{rpoly_8c_af6a258d8f3ee5206d682d799316314b1ae9de385ef6fe9bf3360d1038396b884c}} 
+false&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{true@{true}!rpoly.c@{rpoly.c}}\index{rpoly.c@{rpoly.c}!true@{true}}}\mbox{\Hypertarget{rpoly_8c_af6a258d8f3ee5206d682d799316314b1a08f175a5505a10b9ed657defeb050e4b}\label{rpoly_8c_af6a258d8f3ee5206d682d799316314b1a08f175a5505a10b9ed657defeb050e4b}} 
+true&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{rpoly_8c_af1f98503f425d9d5edb6b810fb97d2c1}\label{rpoly_8c_af1f98503f425d9d5edb6b810fb97d2c1}} 
+\index{rpoly.c@{rpoly.c}!real\_poly\_alloc@{real\_poly\_alloc}}
+\index{real\_poly\_alloc@{real\_poly\_alloc}!rpoly.c@{rpoly.c}}
+\subsubsection{\texorpdfstring{real\_poly\_alloc()}{real\_poly\_alloc()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{struct_r_poly___state}{R\+Poly\+\_\+\+State}}$\ast$ real\+\_\+poly\+\_\+alloc (\begin{DoxyParamCaption}\item[{int}]{deg }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{rpoly_8c_a532a23bdc8f92a332dccb59661be5db5}\label{rpoly_8c_a532a23bdc8f92a332dccb59661be5db5}} 
+\index{rpoly.c@{rpoly.c}!real\_poly\_release@{real\_poly\_release}}
+\index{real\_poly\_release@{real\_poly\_release}!rpoly.c@{rpoly.c}}
+\subsubsection{\texorpdfstring{real\_poly\_release()}{real\_poly\_release()}}
+{\footnotesize\ttfamily void real\+\_\+poly\+\_\+release (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_r_poly___state}{R\+Poly\+\_\+\+State}} $\ast$}]{s }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{rpoly_8c_af09c0354f5c263de0a96c44dc0624210}\label{rpoly_8c_af09c0354f5c263de0a96c44dc0624210}} 
+\index{rpoly.c@{rpoly.c}!real\_poly\_roots\_compute@{real\_poly\_roots\_compute}}
+\index{real\_poly\_roots\_compute@{real\_poly\_roots\_compute}!rpoly.c@{rpoly.c}}
+\subsubsection{\texorpdfstring{real\_poly\_roots\_compute()}{real\_poly\_roots\_compute()}}
+{\footnotesize\ttfamily int real\+\_\+poly\+\_\+roots\+\_\+compute (\begin{DoxyParamCaption}\item[{const double $\ast$}]{op,  }\item[{int}]{degree,  }\item[{struct \mbox{\hyperlink{struct_r_poly___state}{R\+Poly\+\_\+\+State}} $\ast$}]{state,  }\item[{double $\ast$}]{zeror,  }\item[{double $\ast$}]{zeroi }\end{DoxyParamCaption})}
+

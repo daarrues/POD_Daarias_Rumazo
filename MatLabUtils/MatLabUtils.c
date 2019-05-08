@@ -2,7 +2,6 @@
 #include "rpoly.h"
 #include <stdio.h>
 #include <math.h>
-#define size(v)  (sizeof(v) / sizeof(v[0]))
 #define POL_DEG 15
 
 double norm(double v[3])
