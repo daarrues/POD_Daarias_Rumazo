@@ -281,11 +281,6 @@ void testCross3(bool verbose)
 	printf("Cross3 superado!\n");
 }
 
-void testLength(bool verbose)
-{
-
-}
-
 void testZeros(bool verbose)
 {
 	double v[3];
@@ -706,7 +701,7 @@ void testUnit1(bool verbose)
 		0.995813218529303,
 		0.0912403425083912,
 		-0.0055887119501299
-	}
+	};
 
 	double vR[3];
 
@@ -737,7 +732,7 @@ void testUnit2(bool verbose)
 		0.0712591311936418,
 		-0.812864500552877,
 		-0.578077365032094
-	}
+	};
 
 	double vR[3];
 
@@ -768,7 +763,7 @@ void testUnit3(bool verbose)
 		0.995838223643539,
 		0.0909906133483308,
 		-0.00519043475775007
-	}
+	};
 
 	double vR[3];
 
@@ -905,11 +900,6 @@ int main(){
 	testCross2(false);
 	testCross3(false);
 	printf("cross finalizado!\n\n");
-
-	// Test length
-	printf("Probando length!\n");
-	testLength(false);
-	printf("length finalizado!\n\n");
 
 	// Test zeros
 	printf("Probando zeros!\n");

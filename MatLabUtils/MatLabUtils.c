@@ -2,7 +2,7 @@
 #include "rpoly.h"
 #include <stdio.h>
 #include <math.h>
-#define size(v)  (sizeof(v) / sizeof((v)[0]))
+#define size(v)  (sizeof(v) / sizeof(v[0]))
 #define POL_DEG 15
 
 double norm(double v[3])
@@ -20,11 +20,6 @@ void cross(double v1[3], double v2[3], double vResult[3])
 	vResult[0] = v1[1]*v2[2] - v1[2]*v2[1];
 	vResult[1] = v1[2]*v2[0] - v1[0]*v2[2];
 	vResult[2] = v1[0]*v2[1] - v1[1]*v2[0];
-}
-
-double length(double *v)
-{
-	return size(v);
 }
 
 void zeros(double v[], int n)
