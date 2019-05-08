@@ -13,33 +13,27 @@
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{_mat_lab_utils_8c_aa8f510cac1369a9dc8acf5bd625717f2}\label{_mat_lab_utils_8c_aa8f510cac1369a9dc8acf5bd625717f2}} 
-double {\bfseries norm} (double v\mbox{[}3\mbox{]})
+double \mbox{\hyperlink{_mat_lab_utils_8c_aa8f510cac1369a9dc8acf5bd625717f2}{norm}} (double v\mbox{[}3\mbox{]})
 \item 
 double \mbox{\hyperlink{_mat_lab_utils_8c_afaf83e3d5595114fa5fbda1d6e116cd9}{dot}} (double v1\mbox{[}3\mbox{]}, double v2\mbox{[}3\mbox{]})
 \item 
-\mbox{\Hypertarget{_mat_lab_utils_8c_a35d1e4525d62023192b4c05dea1a258e}\label{_mat_lab_utils_8c_a35d1e4525d62023192b4c05dea1a258e}} 
-void {\bfseries cross} (double v1\mbox{[}3\mbox{]}, double v2\mbox{[}3\mbox{]}, double v\+Result\mbox{[}3\mbox{]})
+void \mbox{\hyperlink{_mat_lab_utils_8c_a35d1e4525d62023192b4c05dea1a258e}{cross}} (double v1\mbox{[}3\mbox{]}, double v2\mbox{[}3\mbox{]}, double v\+Result\mbox{[}3\mbox{]})
 \item 
-\mbox{\Hypertarget{_mat_lab_utils_8c_a25ff807ecc32c5f6ac637395ea6e7d50}\label{_mat_lab_utils_8c_a25ff807ecc32c5f6ac637395ea6e7d50}} 
-void {\bfseries zeros} (double v\mbox{[}$\,$\mbox{]}, int n)
+void \mbox{\hyperlink{_mat_lab_utils_8c_a25ff807ecc32c5f6ac637395ea6e7d50}{zeros}} (double v\mbox{[}$\,$\mbox{]}, int n)
 \item 
 void \mbox{\hyperlink{_mat_lab_utils_8c_a3705bc94ab6f26f7faa72f0b9102c371}{prod\+Matr}} (double m1\mbox{[}3\mbox{]}\mbox{[}3\mbox{]}, double m2\mbox{[}3\mbox{]}\mbox{[}3\mbox{]}, double m\+Result\mbox{[}3\mbox{]}\mbox{[}3\mbox{]})
 \item 
-\mbox{\Hypertarget{_mat_lab_utils_8c_a50a4bf459ee9dbd5aa7778781655004b}\label{_mat_lab_utils_8c_a50a4bf459ee9dbd5aa7778781655004b}} 
-void {\bfseries trans} (double m\mbox{[}3\mbox{]}\mbox{[}3\mbox{]}, double m\+Result\mbox{[}3\mbox{]}\mbox{[}3\mbox{]})
+void \mbox{\hyperlink{_mat_lab_utils_8c_a50a4bf459ee9dbd5aa7778781655004b}{trans}} (double m\mbox{[}3\mbox{]}\mbox{[}3\mbox{]}, double m\+Result\mbox{[}3\mbox{]}\mbox{[}3\mbox{]})
 \item 
 double \mbox{\hyperlink{_mat_lab_utils_8c_a8f8377a3390a80664e4e52dd2062edd7}{det}} (double m\mbox{[}3\mbox{]}\mbox{[}3\mbox{]})
 \item 
-\mbox{\Hypertarget{_mat_lab_utils_8c_a025cb5b6f84d97ebca763a767b3eb7b8}\label{_mat_lab_utils_8c_a025cb5b6f84d97ebca763a767b3eb7b8}} 
-int {\bfseries roots} (double p\mbox{[}$\,$\mbox{]}, int degree, double r\mbox{[}$\,$\mbox{]})
+int \mbox{\hyperlink{_mat_lab_utils_8c_a025cb5b6f84d97ebca763a767b3eb7b8}{roots}} (double p\mbox{[}$\,$\mbox{]}, int degree, double r\mbox{[}$\,$\mbox{]})
 \item 
 void \mbox{\hyperlink{_mat_lab_utils_8c_acce1f4dd9df041c2df146ad92ae8789d}{unit}} (double v\mbox{[}3\mbox{]}, double vR\mbox{[}3\mbox{]})
 \item 
 int \mbox{\hyperlink{_mat_lab_utils_8c_adc6d22ec5fc7584d4a9c4fb54b696725}{sign}} (double n)
 \item 
-\mbox{\Hypertarget{_mat_lab_utils_8c_a479f82dddc5860cfcda674ab01056a99}\label{_mat_lab_utils_8c_a479f82dddc5860cfcda674ab01056a99}} 
-int {\bfseries fix} (double n)
+int \mbox{\hyperlink{_mat_lab_utils_8c_a479f82dddc5860cfcda674ab01056a99}{fix}} (double n)
 \end{DoxyCompactItemize}
 
 
@@ -50,9 +44,26 @@ Daniel Arias Ruiz-\/\+Esquide y Rubén Mazo Tomás
 \begin{DoxyDate}{Date}
 Created\+: 2019/04/17
 \end{DoxyDate}
-Esta clase contiene las implementaciones para los métodos nativos de Mat\+Lab necesarios para este proyecto. 
+Este fichero contiene las implementaciones para las funciones de alto nivel de Mat\+Lab necesarias para este proyecto. 
 
 \subsection{Function Documentation}
+\mbox{\Hypertarget{_mat_lab_utils_8c_a35d1e4525d62023192b4c05dea1a258e}\label{_mat_lab_utils_8c_a35d1e4525d62023192b4c05dea1a258e}} 
+\index{MatLabUtils.c@{MatLabUtils.c}!cross@{cross}}
+\index{cross@{cross}!MatLabUtils.c@{MatLabUtils.c}}
+\subsubsection{\texorpdfstring{cross()}{cross()}}
+{\footnotesize\ttfamily void cross (\begin{DoxyParamCaption}\item[{double}]{v1\mbox{[}3\mbox{]},  }\item[{double}]{v2\mbox{[}3\mbox{]},  }\item[{double}]{v\+Result\mbox{[}3\mbox{]} }\end{DoxyParamCaption})}
+
+Calcula el producto vectorial de dos vectores de 3 componentes reales
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$v1$>$} & primer vector de entrada. \\
+\hline
+{\em $<$v2$>$} & segundo vector de entrada. \\
+\hline
+{\em $<$v\+Result$>$} & vector de salida para almacenar el producto escalar. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{_mat_lab_utils_8c_a8f8377a3390a80664e4e52dd2062edd7}\label{_mat_lab_utils_8c_a8f8377a3390a80664e4e52dd2062edd7}} 
 \index{MatLabUtils.c@{MatLabUtils.c}!det@{det}}
 \index{det@{det}!MatLabUtils.c@{MatLabUtils.c}}
@@ -87,6 +98,38 @@ Calcula el producto escalar de dos vectores de 3 componentes reales
 \begin{DoxyReturn}{Returns}
 Producto escalar de v1 y v2. 
 \end{DoxyReturn}
+\mbox{\Hypertarget{_mat_lab_utils_8c_a479f82dddc5860cfcda674ab01056a99}\label{_mat_lab_utils_8c_a479f82dddc5860cfcda674ab01056a99}} 
+\index{MatLabUtils.c@{MatLabUtils.c}!fix@{fix}}
+\index{fix@{fix}!MatLabUtils.c@{MatLabUtils.c}}
+\subsubsection{\texorpdfstring{fix()}{fix()}}
+{\footnotesize\ttfamily int fix (\begin{DoxyParamCaption}\item[{double}]{n }\end{DoxyParamCaption})}
+
+Redondea hacia el 0 (trunca) un número real. Devuelve el mayor entero por debajo para valores positivos (similar a floor), y el menor entero por encima para valores negativos (similar a ceil).
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$n$>$} & número real.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+n truncado a los enteros. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_mat_lab_utils_8c_aa8f510cac1369a9dc8acf5bd625717f2}\label{_mat_lab_utils_8c_aa8f510cac1369a9dc8acf5bd625717f2}} 
+\index{MatLabUtils.c@{MatLabUtils.c}!norm@{norm}}
+\index{norm@{norm}!MatLabUtils.c@{MatLabUtils.c}}
+\subsubsection{\texorpdfstring{norm()}{norm()}}
+{\footnotesize\ttfamily double norm (\begin{DoxyParamCaption}\item[{double}]{v\mbox{[}3\mbox{]} }\end{DoxyParamCaption})}
+
+Calcula la norma de un vector de 3 componentes reales.
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$v$>$} & vector de 3 componentes reales.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Norma del vector. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{_mat_lab_utils_8c_a3705bc94ab6f26f7faa72f0b9102c371}\label{_mat_lab_utils_8c_a3705bc94ab6f26f7faa72f0b9102c371}} 
 \index{MatLabUtils.c@{MatLabUtils.c}!prodMatr@{prodMatr}}
 \index{prodMatr@{prodMatr}!MatLabUtils.c@{MatLabUtils.c}}
@@ -99,14 +142,31 @@ Calcula el producto de dos matrices de dimensión 3x3 de componentes reales
 \begin{DoxyParams}{Parameters}
 {\em $<$m1$>$} & matriz 3x3 de componentes reales. \\
 \hline
-{\em $<$m2$>$} & matriz 3x3 de componentes reales.\\
+{\em $<$m2$>$} & matriz 3x3 de componentes reales. \\
+\hline
+{\em $<$m\+Result$>$} & matriz de salida para almacenar el producto de m1 por m2. \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{_mat_lab_utils_8c_a025cb5b6f84d97ebca763a767b3eb7b8}\label{_mat_lab_utils_8c_a025cb5b6f84d97ebca763a767b3eb7b8}} 
+\index{MatLabUtils.c@{MatLabUtils.c}!roots@{roots}}
+\index{roots@{roots}!MatLabUtils.c@{MatLabUtils.c}}
+\subsubsection{\texorpdfstring{roots()}{roots()}}
+{\footnotesize\ttfamily int roots (\begin{DoxyParamCaption}\item[{double}]{p\mbox{[}$\,$\mbox{]},  }\item[{int}]{degree,  }\item[{double}]{r\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
 
-\begin{DoxyRetVals}{Return values}
-{\em $<$m\+Result$>$} & Producto de m1 por m2. \\
+Encuentra las raíces reales de un polinomio con coeficientes reales.
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$p$>$} & polinomio con coeficientes reales. \\
 \hline
-\end{DoxyRetVals}
+{\em $<$degree$>$} & grado del polinomio. \\
+\hline
+{\em $<$r$>$} & vector de salida para almacenar las raíces reales de p.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Número de raíces reales de p incluyendo su multiplicidad. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{_mat_lab_utils_8c_adc6d22ec5fc7584d4a9c4fb54b696725}\label{_mat_lab_utils_8c_adc6d22ec5fc7584d4a9c4fb54b696725}} 
 \index{MatLabUtils.c@{MatLabUtils.c}!sign@{sign}}
 \index{sign@{sign}!MatLabUtils.c@{MatLabUtils.c}}
@@ -123,6 +183,21 @@ Calcula el signo de un número real
 \begin{DoxyReturn}{Returns}
 -\/1 si es negativo, 0 si es cero, 1 si es positivo. 
 \end{DoxyReturn}
+\mbox{\Hypertarget{_mat_lab_utils_8c_a50a4bf459ee9dbd5aa7778781655004b}\label{_mat_lab_utils_8c_a50a4bf459ee9dbd5aa7778781655004b}} 
+\index{MatLabUtils.c@{MatLabUtils.c}!trans@{trans}}
+\index{trans@{trans}!MatLabUtils.c@{MatLabUtils.c}}
+\subsubsection{\texorpdfstring{trans()}{trans()}}
+{\footnotesize\ttfamily void trans (\begin{DoxyParamCaption}\item[{double}]{m\mbox{[}3\mbox{]}\mbox{[}3\mbox{]},  }\item[{double}]{m\+Result\mbox{[}3\mbox{]}\mbox{[}3\mbox{]} }\end{DoxyParamCaption})}
+
+Calcula la matriz traspuesta de una matriz cuadrada de orden 3.
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$m$>$} & matriz de entrada. \\
+\hline
+{\em $<$t$>$} & matriz de salida para almacenar la traspuesta de m. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{_mat_lab_utils_8c_acce1f4dd9df041c2df146ad92ae8789d}\label{_mat_lab_utils_8c_acce1f4dd9df041c2df146ad92ae8789d}} 
 \index{MatLabUtils.c@{MatLabUtils.c}!unit@{unit}}
 \index{unit@{unit}!MatLabUtils.c@{MatLabUtils.c}}
@@ -133,11 +208,23 @@ Calcula el vector unitario a partir de uno de 3 componentes reales
 
 
 \begin{DoxyParams}{Parameters}
-{\em $<$v$>$} & vector de 3 componentes reales.\\
+{\em $<$v$>$} & vector de 3 componentes reales. \\
+\hline
+{\em $<$v\+R$>$} & vector de salida para almacenar el vector unitario respecto a v. \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{_mat_lab_utils_8c_a25ff807ecc32c5f6ac637395ea6e7d50}\label{_mat_lab_utils_8c_a25ff807ecc32c5f6ac637395ea6e7d50}} 
+\index{MatLabUtils.c@{MatLabUtils.c}!zeros@{zeros}}
+\index{zeros@{zeros}!MatLabUtils.c@{MatLabUtils.c}}
+\subsubsection{\texorpdfstring{zeros()}{zeros()}}
+{\footnotesize\ttfamily void zeros (\begin{DoxyParamCaption}\item[{double}]{v\mbox{[}$\,$\mbox{]},  }\item[{int}]{n }\end{DoxyParamCaption})}
 
-\begin{DoxyRetVals}{Return values}
-{\em $<$v\+R$>$} & Vector unitario respecto a v. \\
+Inicializa a 0 las componentes de un vector real.
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$v$>$} & vector a inicializar a 0. \\
 \hline
-\end{DoxyRetVals}
+{\em $<$n$>$} & número de componentes del vector. \\
+\hline
+\end{DoxyParams}

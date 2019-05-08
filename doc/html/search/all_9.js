@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['lzi',['lzi',['../struct_r_poly___state.html#a332ef2aff9ea857ed67b1d2dcb85a772',1,'RPoly_State']]],
-  ['lzr',['lzr',['../struct_r_poly___state.html#a53e6d47f579c98c46ab0340ea776fce8',1,'RPoly_State']]]
+  ['unit',['unit',['../_mat_lab_utils_8c.html#acce1f4dd9df041c2df146ad92ae8789d',1,'unit(double v[3], double vR[3]):&#160;MatLabUtils.c'],['../_mat_lab_utils_8h.html#a2554d448cdb143059c5728dd9eecc38b',1,'unit(double[3], double[3]):&#160;MatLabUtils.c']]]
 ];
