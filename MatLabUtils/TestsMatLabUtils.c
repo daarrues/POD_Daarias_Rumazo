@@ -384,6 +384,166 @@ void testProdMatr1(bool verbose)
 	printf("ProdMatr1 superado!\n");
 }
 
+void testProdMatr2(bool verbose)
+{
+	// Matriz 1
+	double m1[3][3] = {
+		{
+			0.999999997895568,
+			-5.95228911876096e-05,
+			-2.58048231218136e-05
+		},
+		{
+			5.95223155942333e-05,
+			0.999999997979772,
+			-2.23058450876347e-05
+		},
+		{
+			2.5806150778072e-05,
+			2.23043090778784e-05,
+			0.99999999941828
+		}
+	};
+
+	// Matriz 2
+	double m2[3][3] = {
+		{
+			0.999997373791705,
+			-0.00210195244551542,
+			-0.000913348569948463
+		},
+		{
+			0.00210195244550126,
+			0.999997790895058,
+			-9.59924398978515e-07
+		},
+		{
+			0.000913348569981061,
+			-9.59893382181152e-07,
+			0.999999582896647
+		}
+	};
+
+	// Matriz esperada
+	double mE[3][3] = {
+		{
+			0.999997223004194,
+			-0.00216147517601742,
+			-0.000939153323247443
+		},
+		{
+			0.00216145422751936,
+			0.999997663783168,
+			-2.33201248026592e-05
+		},
+		{
+			0.000939201535052504,
+			2.12901231219589e-05,
+			0.999999558723506
+		}
+	};
+
+	// Matriz resultado
+	double mR[3][3];
+
+	prodMatr(m1, m2, mR);
+
+	if(verbose) printf("ProdMatr2:\n");
+	for(int i = 0; i < 3; i++)
+	{
+		for(int j = 0; j < 3; j++)
+		{
+			if(verbose)
+			{
+				printf("Exp.:%.20lf\n", mE[i][j]);
+				printf("Obt.:%.20lf\n", mR[i][j]);
+			}
+			assert(fabs(mR[i][j]-mE[i][j])<10e-12);
+		}
+	}
+	printf("ProdMatr2 superado!\n");
+}
+
+void testProdMatr3(bool verbose)
+{
+				// Matriz 1
+				double m1[3][3] = {
+					{
+						0.999999997895152,
+						-5.95287721488282e-05,
+						-2.58073726784525e-05
+					},
+					{
+						5.95281964998585e-05,
+						0.999999997979423,
+						-2.23057957973194e-05
+					},
+					{
+						2.58087004629423e-05,
+						2.2304259484005e-05,
+						0.999999999418215
+					}
+				};
+
+				// Matriz 2
+				double m2[3][3] = {
+					{
+						0.99999737378108,
+						-0.0021019566973475,
+						-0.000913350417381566
+					},
+					{
+						0.00210195669733333,
+						0.99999779088612,
+						-9.59928282397388e-07
+					},
+					{
+						0.000913350417414164,
+						-9.59897265411807e-07,
+						0.99999958289496
+					}
+				};
+
+				// Matriz esperada
+				double mE[3][3] = {
+					{
+						0.999997222978162,
+						-0.00216148530879376,
+						-0.000939157720229817
+					},
+					{
+						0.00216146436024405,
+						0.999997663761267,
+						-2.33200848770364e-05
+					},
+					{
+						0.000939205932154037,
+						2.12900641757145e-05,
+						0.999999558719378
+					}
+				};
+
+				// Matriz resultado
+				double mR[3][3];
+
+				prodMatr(m1, m2, mR);
+
+				if(verbose) printf("ProdMatr3:\n");
+				for(int i = 0; i < 3; i++)
+				{
+					for(int j = 0; j < 3; j++)
+					{
+						if(verbose)
+						{
+							printf("Exp.:%.20lf\n", mE[i][j]);
+							printf("Obt.:%.20lf\n", mR[i][j]);
+						}
+						assert(fabs(mR[i][j]-mE[i][j])<10e-12);
+					}
+				}
+				printf("ProdMatr3 superado!\n");
+}
+
 void testTrans(bool verbose)
 {
 	double m[3][3];
@@ -425,7 +585,40 @@ void testTrans(bool verbose)
 	printf("Trans superado!\n");
 }
 
-// Aquí va TestDet
+void testDet(bool verbose)
+{
+	double m[3][3] = {
+		{
+			0.953375083066611,
+			0.976292565505083,
+			0.991769286600702
+		},
+		{
+			0.21677824571211,
+			0.163060061341653,
+			0.106138375728988
+		},
+		{
+			-0.209959860863242,
+			-0.142352530482458,
+			-0.0716123407880656
+		}
+	};
+
+	double expected = 2.075911e-05;
+
+	double res = det(m);
+
+	if(verbose)
+	{
+		printf("Det:\n");
+		printf("Exp.:%.20lf\n",expected);
+		printf("Obt.:%.20lf\n",res);
+	}
+
+	assert(fabs(res-expected)<10e-12);
+	printf("Det superado!\n");
+}
 
 void testRoots(bool verbose)
 {
@@ -500,7 +693,98 @@ void testRoots(bool verbose)
 	printf("Roots superado!\n");
 }
 
-// Aquí va TestUnit
+void testUnit1(bool verbose)
+{
+	double v[3] = {
+		20408482.6529284,
+		1869905.83442928,
+		-114536.67089787
+	};
+
+	double vE[3] = {
+		0.995813218529303,
+		0.0912403425083912,
+		-0.0055887119501299
+	}
+
+	double vR[3];
+
+	unit(v, vR);
+
+	if(verbose) printf("Unit1:\n");
+	for(int i = 0; i < 3; i++)
+	{
+			if(verbose)
+			{
+				printf("Exp.:%.20lf\n", vE[i]);
+				printf("Obt.:%.20lf\n", vR[i]);
+			}
+			assert(fabs(vR[i]-vE[i])<10e-12);
+	}
+	printf("Unit1 superado!\n");
+}
+
+void testUnit2(bool verbose)
+{
+	double v[3] = {
+		2003323683191.96,
+		-22852239115271.2,
+		-16251616553379
+	};
+
+	double vE[3] = {
+		0.0712591311936418,
+		-0.812864500552877,
+		-0.578077365032094
+	}
+
+	double vR[3];
+
+	unit(v, vR);
+
+	if(verbose) printf("Unit2:\n");
+	for(int i = 0; i < 3; i++)
+	{
+			if(verbose)
+			{
+				printf("Exp.:%.20lf\n", vE[i]);
+				printf("Obt.:%.20lf\n", vR[i]);
+			}
+			assert(fabs(vR[i]-vE[i])<10e-12);
+	}
+	printf("Unit2 superado!\n");
+}
+
+void testUnit3(bool verbose)
+{
+	double v[3] = {
+		20370508.3427397,
+		1861271.24297514,
+		-106173.66558631
+	};
+
+	double vE[3] = {
+		0.995838223643539,
+		0.0909906133483308,
+		-0.00519043475775007
+	}
+
+	double vR[3];
+
+	unit(v, vR);
+
+	if(verbose) printf("Unit3:\n");
+	for(int i = 0; i < 3; i++)
+	{
+			if(verbose)
+			{
+				printf("Exp.:%.20lf\n", vE[i]);
+				printf("Obt.:%.20lf\n", vR[i]);
+			}
+			assert(fabs(vR[i]-vE[i])<10e-12);
+	}
+	printf("Unit3 superado!\n");
+}
 
 // Aquí va TestSign
 
@@ -588,8 +872,8 @@ int main(){
 	// Test prodMatr
 	printf("Probando prodMatr!\n");
 	testProdMatr1(false);
-	//testProdMatr2(true);
-	//testProdMatr3(true);
+	testProdMatr2(false);
+	testProdMatr3(false);
 	printf("prodMatr finalizado!\n\n");
 
 	// Test trans
@@ -598,6 +882,9 @@ int main(){
 	printf("trans finalizado!\n\n");
 
 	// Test det
+	printf("Probando det!\n");
+	testDet(false);
+	printf("det finalizado!\n\n");
 
 	// Test roots
 	printf("Probando roots!\n");
@@ -605,6 +892,11 @@ int main(){
 	printf("roots finalizado!\n\n");
 
 	// Test unit
+	printf("Probando unit!\n");
+	testUnit1(false);
+	testUnit2(false);
+	testUnit3(false);
+	printf("unit finalizado!\n\n");
 
 	// Test sign
 
