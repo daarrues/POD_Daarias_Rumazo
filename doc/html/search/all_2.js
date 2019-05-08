@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['pod_5fdaarias_5frumazo',['POD_Daarias_Rumazo',['../md__r_e_a_d_m_e.html',1,'']]],
-  ['prodmatr',['prodMatr',['../_mat_lab_utils_8c.html#a3705bc94ab6f26f7faa72f0b9102c371',1,'prodMatr(double m1[3][3], double m2[3][3], double mResult[3][3]):&#160;MatLabUtils.c'],['../_mat_lab_utils_8h.html#ac623ce7acc9d908245d02e11e5cca4c9',1,'prodMatr(double[3][3], double[3][3], double[3][3]):&#160;MatLabUtils.c']]]
+  ['fix',['fix',['../_mat_lab_utils_8c.html#a479f82dddc5860cfcda674ab01056a99',1,'fix(double n):&#160;MatLabUtils.c'],['../_mat_lab_utils_8h.html#a7e8c28247a3f2737ebe4bab1c32f1bf0',1,'fix(double):&#160;MatLabUtils.c']]]
 ];

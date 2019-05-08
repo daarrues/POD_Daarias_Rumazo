@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['unit',['unit',['../_mat_lab_utils_8c.html#acce1f4dd9df041c2df146ad92ae8789d',1,'unit(double v[3], double vR[3]):&#160;MatLabUtils.c'],['../_mat_lab_utils_8h.html#a2554d448cdb143059c5728dd9eecc38b',1,'unit(double[3], double[3]):&#160;MatLabUtils.c']]]
+  ['prodmatr',['prodMatr',['../_mat_lab_utils_8c.html#a3705bc94ab6f26f7faa72f0b9102c371',1,'prodMatr(double m1[3][3], double m2[3][3], double mResult[3][3]):&#160;MatLabUtils.c'],['../_mat_lab_utils_8h.html#ac623ce7acc9d908245d02e11e5cca4c9',1,'prodMatr(double[3][3], double[3][3], double[3][3]):&#160;MatLabUtils.c']]]
 ];
