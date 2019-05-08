@@ -7,9 +7,9 @@
  * @author Daniel Arias Ruiz-Esquide y Rubén Mazo Tomás
  * @date Created: 2019/04/17
  *
- * Esta clase contiene los test unitarios
- * para los métodos nativos de MatLab
- * necesarios para este proyecto.
+ * Este fichero contiene los test unitarios
+ * para las funciones de alto nivel de MatLab
+ * necesarias para este proyecto.
  */
 //------------------------------------------------------------------------------
 #include "MatLabUtils.h"
@@ -26,6 +26,15 @@ typedef int bool;
 // public methods
 //---------------------------------
 
+//------------------------------------------------------------------------------
+//  void testNorm1(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 1 de la función norm
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
 void testNorm1(bool verbose)
 {
 	double v[] = {
@@ -47,6 +56,15 @@ void testNorm1(bool verbose)
 	printf("Norm1 superado!\n");
 }
 
+//------------------------------------------------------------------------------
+//  void testNorm2(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 2 de la función norm
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
 void testNorm2(bool verbose)
 {
 	double v[] = {
@@ -68,6 +86,15 @@ void testNorm2(bool verbose)
 	printf("Norm2 superado!\n");
 }
 
+//------------------------------------------------------------------------------
+//  void testNorm3(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 3 de la función norm
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
 void testNorm3(bool verbose)
 {
 	double v[] = {
@@ -94,7 +121,7 @@ void testNorm3(bool verbose)
 //  void testDot1(bool verbose)
 //------------------------------------------------------------------------------
 /**
- * Comprobación 1 del método dot
+ * Comprobación 1 de la función dot
  *
  * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
  */
@@ -132,7 +159,7 @@ void testDot1(bool verbose)
 //  void testDot2(bool verbose)
 //------------------------------------------------------------------------------
 /**
- * Comprobación 2 del método dot
+ * Comprobación 2 de la función dot
  *
  * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
  */
@@ -170,7 +197,7 @@ void testDot2(bool verbose)
 //  void testDot3(bool verbose)
 //------------------------------------------------------------------------------
 /**
- * Comprobación 3 del método dot
+ * Comprobación 3 de la función dot
  *
  * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
  */
@@ -204,6 +231,15 @@ void testDot3(bool verbose)
 	printf("Dot3 superado!\n");
 }
 
+//------------------------------------------------------------------------------
+//  void testCross1(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 1 de la función cross
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
 void testCross1(bool verbose)
 {
 	double v1[] = {
@@ -245,6 +281,15 @@ void testCross1(bool verbose)
 	printf("Cross1 superado!\n");
 }
 
+//------------------------------------------------------------------------------
+//  void testCross2(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 2 de la función cross
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
 void testCross2(bool verbose)
 {
 	double v1[] = {
@@ -286,6 +331,15 @@ void testCross2(bool verbose)
 	printf("Cross2 superado!\n");
 }
 
+//------------------------------------------------------------------------------
+//  void testCross3(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 3 de la función cross
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
 void testCross3(bool verbose)
 {
 	double v1[] = {
@@ -327,6 +381,15 @@ void testCross3(bool verbose)
 	printf("Cross3 superado!\n");
 }
 
+//------------------------------------------------------------------------------
+//  void testZeros(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación de la función zeros
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
 void testZeros(bool verbose)
 {
 	double v[3];
@@ -350,7 +413,7 @@ void testZeros(bool verbose)
 //  void testProdMatr1(bool verbose)
 //------------------------------------------------------------------------------
 /**
- * Comprobación 1 del método prodMatr
+ * Comprobación 1 de la función prodMatr
  *
  * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
  */
@@ -439,7 +502,7 @@ void testProdMatr1(bool verbose)
 //  void testProdMatr2(bool verbose)
 //------------------------------------------------------------------------------
 /**
- * Comprobación 2 del método prodMatr
+ * Comprobación 2 de la función prodMatr
  *
  * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
  */
@@ -528,7 +591,7 @@ void testProdMatr2(bool verbose)
 //  void testProdMatr3(bool verbose)
 //------------------------------------------------------------------------------
 /**
- * Comprobación 3 del método prodMatr
+ * Comprobación 3 de la función prodMatr
  *
  * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
  */
@@ -613,6 +676,15 @@ void testProdMatr3(bool verbose)
 				printf("ProdMatr3 superado!\n");
 }
 
+//------------------------------------------------------------------------------
+//  void testTrans(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación de la función trans
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
 void testTrans(bool verbose)
 {
 	double m[3][3];
@@ -658,7 +730,7 @@ void testTrans(bool verbose)
 //  void testDet(bool verbose)
 //------------------------------------------------------------------------------
 /**
- * Comprobación del método det
+ * Comprobación de la función det
  *
  * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
  */
@@ -698,6 +770,15 @@ void testDet(bool verbose)
 	printf("Det superado!\n");
 }
 
+//------------------------------------------------------------------------------
+//  void testRoots(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación de la función roots
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
 void testRoots(bool verbose)
 {
 	double p[POL_DEG + 1];
@@ -775,7 +856,7 @@ void testRoots(bool verbose)
 //  void testUnit1(bool verbose)
 //------------------------------------------------------------------------------
 /**
- * Comprobación 1 del método unit
+ * Comprobación 1 de la función unit
  *
  * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
  */
@@ -815,7 +896,7 @@ void testUnit1(bool verbose)
 //  void testUnit2(bool verbose)
 //------------------------------------------------------------------------------
 /**
- * Comprobación 2 del método unit
+ * Comprobación 2 de la función unit
  *
  * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
  */
@@ -855,7 +936,7 @@ void testUnit2(bool verbose)
 //  void testUnit3(bool verbose)
 //------------------------------------------------------------------------------
 /**
- * Comprobación 3 del método unit
+ * Comprobación 3 de la función unit
  *
  * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
  */
@@ -895,7 +976,7 @@ void testUnit3(bool verbose)
 //  void testSign1(bool verbose)
 //------------------------------------------------------------------------------
 /**
- * Comprobación 1 del método sign
+ * Comprobación 1 de la función sign
  *
  * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
  */
@@ -920,7 +1001,7 @@ void testSign1(bool verbose)
 //  void testSign2(bool verbose)
 //------------------------------------------------------------------------------
 /**
- * Comprobación 2 del método sign
+ * Comprobación 2 de la función sign
  *
  * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
  */
@@ -945,7 +1026,7 @@ void testSign2(bool verbose)
 //  void testSign3(bool verbose)
 //------------------------------------------------------------------------------
 /**
- * Comprobación 3 del método sign
+ * Comprobación 3 de la función sign
  *
  * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
  */
@@ -966,6 +1047,15 @@ void testSign3(bool verbose)
 	printf("Sign3 superado!\n");
 }
 
+//------------------------------------------------------------------------------
+//  void testFix1(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 1 de la función fix
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
 void testFix1(bool verbose)
 {
 	double n = 20.45;
@@ -982,6 +1072,15 @@ void testFix1(bool verbose)
 	printf("Fix1 superado!\n");
 }
 
+//------------------------------------------------------------------------------
+//  void testFix2(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 2 de la función fix
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
 void testFix2(bool verbose)
 {
 	double n = 19.99;
@@ -998,6 +1097,15 @@ void testFix2(bool verbose)
 	printf("Fix2 superado!\n");
 }
 
+//------------------------------------------------------------------------------
+//  void testFix3(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 3 de la función fix
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
 void testFix3(bool verbose)
 {
 	double n = -6.12;
@@ -1018,7 +1126,7 @@ void testFix3(bool verbose)
 //  int main()
 //------------------------------------------------------------------------------
 /**
- * Método principal, realiza todas las comprobaciones.
+ * Función principal, realiza todas las comprobaciones.
  */
 //------------------------------------------------------------------------------
 int main(){

@@ -7,9 +7,9 @@
  * @author Daniel Arias Ruiz-Esquide y Rubén Mazo Tomás
  * @date Created: 2019/04/17
  *
- * Esta clase contiene las implementaciones
- * para los métodos nativos de MatLab
- * necesarios para este proyecto.
+ * Este fichero contiene las implementaciones
+ * para las funciones de alto nivel de MatLab
+ * necesarias para este proyecto.
  */
 //------------------------------------------------------------------------------
 #include "MatLabUtils.h"
@@ -30,6 +30,7 @@
  * Calcula la norma de un vector de 3 componentes reales.
  *
  * @param <v> vector de 3 componentes reales.
+ *
  * @return Norma del vector.
  */
 //------------------------------------------------------------------------------
@@ -99,10 +100,9 @@ void zeros(double v[], int n)
  * Calcula el producto de dos matrices de dimensión 3x3
  * de componentes reales
  *
- * @param <m1> matriz 3x3 de componentes reales.
- * @param <m2> matriz 3x3 de componentes reales.
- *
- * @retval <mResult> Producto de m1 por m2.
+ * @param <m1>      matriz 3x3 de componentes reales.
+ * @param <m2>      matriz 3x3 de componentes reales.
+ * @param <mResult> matriz de salida para almacenar el producto de m1 por m2.
  */
 //------------------------------------------------------------------------------
 void prodMatr(double m1[3][3], double m2[3][3], double mResult[3][3])
@@ -171,6 +171,7 @@ double det(double m[3][3])
  * @param <p>      polinomio con coeficientes reales.
  * @param <degree> grado del polinomio.
  * @param <r>      vector de salida para almacenar las raíces reales de p.
+ *
  * @return Número de raíces reales de p incluyendo su multiplicidad.
  */
 //------------------------------------------------------------------------------
@@ -199,8 +200,7 @@ int roots(double p[], int degree, double r[])
  * uno de 3 componentes reales
  *
  * @param <v> vector de 3 componentes reales.
- *
- * @retval <vR> Vector unitario respecto a v.
+ * @param <vR> vector de salida para almacenar el vector unitario respecto a v.
  */
 //------------------------------------------------------------------------------
 void unit(double v[3], double vR[3])
@@ -236,6 +236,7 @@ int sign(double n)
  * y el menor entero por encima para valores negativos (similar a ceil).
  *
  * @param <n> número real.
+ *
  * @return n truncado a los enteros.
  */
 //------------------------------------------------------------------------------

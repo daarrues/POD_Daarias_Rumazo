@@ -7,8 +7,8 @@
  * @author Daniel Arias Ruiz-Esquide y Rubén Mazo Tomás
  * @date Created: 2019/04/17
  *
- * Esta clase contiene las cabeceras para los
- * métodos nativos de MatLab necesarios
+ * Este fichero contiene las cabeceras para las
+ * funciones de alto nivel de MatLab necesarias
  * para este proyecto.
  */
 //------------------------------------------------------------------------------
