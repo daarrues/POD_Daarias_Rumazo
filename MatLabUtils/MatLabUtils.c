@@ -87,12 +87,12 @@ int roots(double p[], int degree, double r[])
 	return nRoots;
 }
 
-void unit(double v[3])
+void unit(double v[3], double vR[3])
 {
 	double n = norm(v);
-	v[0] = v[0]/n;
-	v[1] = v[1]/n;
-	v[2] = v[2]/n;
+	vR[0] = v[0]/n;
+	vR[1] = v[1]/n;
+	vR[2] = v[2]/n;
 }
 
 int sign(double n)
