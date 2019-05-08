@@ -1,14 +1,45 @@
+//------------------------------------------------------------------------------
+//                              MatLabUtils
+//------------------------------------------------------------------------------
+// POD: Preliminary Orbit Determination
+/**
+ * @file MatLabUtils.c
+ * @author Daniel Arias Ruiz-Esquide y Rubén Mazo Tomás
+ * @date Created: 2019/04/17
+ *
+ * Esta clase contiene las implementaciones
+ * para los métodos nativos de MatLab
+ * necesarios para este proyecto.
+ */
+//------------------------------------------------------------------------------
 #include "MatLabUtils.h"
 #include "rpoly.h"
 #include <stdio.h>
 #include <math.h>
 #define POL_DEG 15
 
+//---------------------------------
+// public methods
+//---------------------------------
+
 double norm(double v[3])
 {
 	return sqrt(v[0]*v[0]+v[1]*v[1]+v[2]*v[2]);
 }
 
+//------------------------------------------------------------------------------
+//  double dot(double v1[3], double v2[3])
+//------------------------------------------------------------------------------
+/**
+ * Calcula el producto escalar de dos vectores de 3
+ * componentes reales
+ *
+ * @param <v1> vector de 3 componentes reales.
+ * @param <v2> vector de 3 componentes reales.
+ *
+ * @return Producto escalar de v1 y v2.
+ */
+//------------------------------------------------------------------------------
 double dot(double v1[3], double v2[3])
 {
 	return v1[0]*v2[0]+v1[1]*v2[1]+v1[2]*v2[2];
@@ -29,6 +60,19 @@ void zeros(double v[], int n)
 	}
 }
 
+//------------------------------------------------------------------------------
+//  double prodMatr(double m1[3][3], double m2[3][3], double mResult[3][3])
+//------------------------------------------------------------------------------
+/**
+ * Calcula el producto de dos matrices de dimensión 3x3
+ * de componentes reales
+ *
+ * @param <m1> matriz 3x3 de componentes reales.
+ * @param <m2> matriz 3x3 de componentes reales.
+ *
+ * @retval <mResult> Producto de m1 por m2.
+ */
+//------------------------------------------------------------------------------
 void prodMatr(double m1[3][3], double m2[3][3], double mResult[3][3])
 {
 	double m2T[3][3];
@@ -54,6 +98,18 @@ void trans(double m[3][3], double mResult[3][3])
 	}
 }
 
+//------------------------------------------------------------------------------
+//  double det(double m[3][3])
+//------------------------------------------------------------------------------
+/**
+ * Calcula el determinante de una matriz de dimensión 3x3
+ * de componentes reales
+ *
+ * @param <m> matriz 3x3 de componentes reales.
+ *
+ * @return Determinante de m.
+ */
+//------------------------------------------------------------------------------
 double det(double m[3][3])
 {
 	return m[0][0] * m[1][1] * m[2][2] +
@@ -81,6 +137,18 @@ int roots(double p[], int degree, double r[])
 	return nRoots;
 }
 
+//------------------------------------------------------------------------------
+//  void unit(double v[3], double vR[3])
+//------------------------------------------------------------------------------
+/**
+ * Calcula el vector unitario a partir de
+ * uno de 3 componentes reales
+ *
+ * @param <v> vector de 3 componentes reales.
+ *
+ * @retval <vR> Vector unitario respecto a v.
+ */
+//------------------------------------------------------------------------------
 void unit(double v[3], double vR[3])
 {
 	double n = norm(v);
@@ -89,6 +157,17 @@ void unit(double v[3], double vR[3])
 	vR[2] = v[2]/n;
 }
 
+//------------------------------------------------------------------------------
+//  int sign(double n)
+//------------------------------------------------------------------------------
+/**
+ * Calcula el signo de un número real
+ *
+ * @param <n> número real.
+ *
+ * @return -1 si es negativo, 0 si es cero, 1 si es positivo.
+ */
+//------------------------------------------------------------------------------
 int sign(double n)
 {
 	return (n == 0) ? 0 : (n > 0) ? 1 : -1;

@@ -1,3 +1,17 @@
+//------------------------------------------------------------------------------
+//                              TestMatLabUtils
+//------------------------------------------------------------------------------
+// POD: Preliminary Orbit Determination
+/**
+ * @file TestMatLabUtils.c
+ * @author Daniel Arias Ruiz-Esquide y Rubén Mazo Tomás
+ * @date Created: 2019/04/17
+ *
+ * Esta clase contiene los test unitarios
+ * para los métodos nativos de MatLab
+ * necesarios para este proyecto.
+ */
+//------------------------------------------------------------------------------
 #include "MatLabUtils.h"
 #include <assert.h>
 #include <stdio.h>
@@ -7,6 +21,10 @@ typedef int bool;
 #define true 1
 #define false 0
 #define POL_DEG 15
+
+//---------------------------------
+// public methods
+//---------------------------------
 
 void testNorm1(bool verbose)
 {
@@ -71,6 +89,16 @@ void testNorm3(bool verbose)
 	printf("Norm3 superado!\n");
 }
 
+
+//------------------------------------------------------------------------------
+//  void testDot1(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 1 del método dot
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
 void testDot1(bool verbose)
 {
 	double v1[] = {
@@ -100,6 +128,15 @@ void testDot1(bool verbose)
 	printf("Dot1 superado!\n");
 }
 
+//------------------------------------------------------------------------------
+//  void testDot2(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 2 del método dot
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
 void testDot2(bool verbose)
 {
 	double v1[] = {
@@ -129,6 +166,15 @@ void testDot2(bool verbose)
 	printf("Dot2 superado!\n");
 }
 
+//------------------------------------------------------------------------------
+//  void testDot3(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 3 del método dot
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
 void testDot3(bool verbose)
 {
 	double v1[] = {
@@ -300,6 +346,15 @@ void testZeros(bool verbose)
 	printf("Zeros superado!\n");
 }
 
+//------------------------------------------------------------------------------
+//  void testProdMatr1(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 1 del método prodMatr
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
 void testProdMatr1(bool verbose)
 {
 	// Matriz 1
@@ -380,6 +435,15 @@ void testProdMatr1(bool verbose)
 	printf("ProdMatr1 superado!\n");
 }
 
+//------------------------------------------------------------------------------
+//  void testProdMatr2(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 2 del método prodMatr
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
 void testProdMatr2(bool verbose)
 {
 	// Matriz 1
@@ -460,6 +524,15 @@ void testProdMatr2(bool verbose)
 	printf("ProdMatr2 superado!\n");
 }
 
+//------------------------------------------------------------------------------
+//  void testProdMatr3(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 3 del método prodMatr
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
 void testProdMatr3(bool verbose)
 {
 				// Matriz 1
@@ -581,6 +654,15 @@ void testTrans(bool verbose)
 	printf("Trans superado!\n");
 }
 
+//------------------------------------------------------------------------------
+//  void testDet(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación del método det
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
 void testDet(bool verbose)
 {
 	double m[3][3] = {
@@ -689,6 +771,15 @@ void testRoots(bool verbose)
 	printf("Roots superado!\n");
 }
 
+//------------------------------------------------------------------------------
+//  void testUnit1(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 1 del método unit
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
 void testUnit1(bool verbose)
 {
 	double v[3] = {
@@ -720,6 +811,15 @@ void testUnit1(bool verbose)
 	printf("Unit1 superado!\n");
 }
 
+//------------------------------------------------------------------------------
+//  void testUnit2(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 2 del método unit
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
 void testUnit2(bool verbose)
 {
 	double v[3] = {
@@ -751,6 +851,15 @@ void testUnit2(bool verbose)
 	printf("Unit2 superado!\n");
 }
 
+//------------------------------------------------------------------------------
+//  void testUnit3(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 3 del método unit
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
 void testUnit3(bool verbose)
 {
 	double v[3] = {
@@ -782,6 +891,15 @@ void testUnit3(bool verbose)
 	printf("Unit3 superado!\n");
 }
 
+//------------------------------------------------------------------------------
+//  void testSign1(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 1 del método sign
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
 void testSign1(bool verbose)
 {
 	double n = 34.2348293234;
@@ -798,6 +916,15 @@ void testSign1(bool verbose)
 	printf("Sign1 superado!\n");
 }
 
+//------------------------------------------------------------------------------
+//  void testSign2(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 2 del método sign
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
 void testSign2(bool verbose)
 {
 	double n = -12.0905823;
@@ -814,6 +941,15 @@ void testSign2(bool verbose)
 	printf("Sign2 superado!\n");
 }
 
+//------------------------------------------------------------------------------
+//  void testSign3(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 3 del método sign
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
 void testSign3(bool verbose)
 {
 	double n = 0.0;
@@ -878,6 +1014,13 @@ void testFix3(bool verbose)
 	printf("Fix3 superado!\n");
 }
 
+//------------------------------------------------------------------------------
+//  int main()
+//------------------------------------------------------------------------------
+/**
+ * Método principal, realiza todas las comprobaciones.
+ */
+//------------------------------------------------------------------------------
 int main(){
 
 	// Test norm

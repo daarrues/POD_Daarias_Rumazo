@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['end_5fc_5fdecls',['END_C_DECLS',['../cpp_8h.html#ac17320fed4b28122bc4977a087b131dd',1,'END_C_DECLS():&#160;cpp.h'],['../rpoly_8h.html#abf86e4fce488a77feb83343a8a925aff',1,'END_C_DECLS():&#160;rpoly.h']]]
+  ['sign',['sign',['../_mat_lab_utils_8c.html#adc6d22ec5fc7584d4a9c4fb54b696725',1,'sign(double n):&#160;MatLabUtils.c'],['../_mat_lab_utils_8h.html#a4e244affa27ebfe0338bcb33ac66868c',1,'sign(double):&#160;MatLabUtils.c']]]
 ];

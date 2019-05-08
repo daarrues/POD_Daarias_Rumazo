@@ -1,0 +1,278 @@
+\hypertarget{_test_mat_lab_utils_8c}{}\section{Mat\+Lab\+Utils/\+Test\+Mat\+Lab\+Utils.c File Reference}
+\label{_test_mat_lab_utils_8c}\index{MatLabUtils/TestMatLabUtils.c@{MatLabUtils/TestMatLabUtils.c}}
+{\ttfamily \#include \char`\"{}Mat\+Lab\+Utils.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_test_mat_lab_utils_8c_a41f9c5fb8b08eb5dc3edce4dcb37fee7}\label{_test_mat_lab_utils_8c_a41f9c5fb8b08eb5dc3edce4dcb37fee7}} 
+\#define {\bfseries true}~1
+\item 
+\mbox{\Hypertarget{_test_mat_lab_utils_8c_a65e9886d74aaee76545e83dd09011727}\label{_test_mat_lab_utils_8c_a65e9886d74aaee76545e83dd09011727}} 
+\#define {\bfseries false}~0
+\item 
+\mbox{\Hypertarget{_test_mat_lab_utils_8c_a0283d6b127f5f6c0fb5b24cfc6f0aea9}\label{_test_mat_lab_utils_8c_a0283d6b127f5f6c0fb5b24cfc6f0aea9}} 
+\#define {\bfseries P\+O\+L\+\_\+\+D\+EG}~15
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_test_mat_lab_utils_8c_a1062901a7428fdd9c7f180f5e01ea056}\label{_test_mat_lab_utils_8c_a1062901a7428fdd9c7f180f5e01ea056}} 
+typedef int {\bfseries bool}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_test_mat_lab_utils_8c_a082cad5c31f83ffb812011a878ca8170}\label{_test_mat_lab_utils_8c_a082cad5c31f83ffb812011a878ca8170}} 
+void {\bfseries test\+Norm1} (bool verbose)
+\item 
+\mbox{\Hypertarget{_test_mat_lab_utils_8c_a30169e9641ad4c9ba8db51c6ebdc33d8}\label{_test_mat_lab_utils_8c_a30169e9641ad4c9ba8db51c6ebdc33d8}} 
+void {\bfseries test\+Norm2} (bool verbose)
+\item 
+\mbox{\Hypertarget{_test_mat_lab_utils_8c_a86c74829f369c50602a7bd5c4d74021d}\label{_test_mat_lab_utils_8c_a86c74829f369c50602a7bd5c4d74021d}} 
+void {\bfseries test\+Norm3} (bool verbose)
+\item 
+void \mbox{\hyperlink{_test_mat_lab_utils_8c_a29be36c82eef2bf72bbdbf6e72923935}{test\+Dot1}} (bool verbose)
+\item 
+void \mbox{\hyperlink{_test_mat_lab_utils_8c_a2e3dfcb6ef9275d1b3fc682ddc6e664a}{test\+Dot2}} (bool verbose)
+\item 
+void \mbox{\hyperlink{_test_mat_lab_utils_8c_aaca9d645c14181d3adaff40ce81b9def}{test\+Dot3}} (bool verbose)
+\item 
+\mbox{\Hypertarget{_test_mat_lab_utils_8c_a479dae9e7f367bdacd4ffa5535e9fe63}\label{_test_mat_lab_utils_8c_a479dae9e7f367bdacd4ffa5535e9fe63}} 
+void {\bfseries test\+Cross1} (bool verbose)
+\item 
+\mbox{\Hypertarget{_test_mat_lab_utils_8c_af4c997c31bf734585bcb1bc924104433}\label{_test_mat_lab_utils_8c_af4c997c31bf734585bcb1bc924104433}} 
+void {\bfseries test\+Cross2} (bool verbose)
+\item 
+\mbox{\Hypertarget{_test_mat_lab_utils_8c_a1c6a9cd23ced04e00681d1ee94caee97}\label{_test_mat_lab_utils_8c_a1c6a9cd23ced04e00681d1ee94caee97}} 
+void {\bfseries test\+Cross3} (bool verbose)
+\item 
+\mbox{\Hypertarget{_test_mat_lab_utils_8c_affc0652a3b519e689de9966129314ae3}\label{_test_mat_lab_utils_8c_affc0652a3b519e689de9966129314ae3}} 
+void {\bfseries test\+Zeros} (bool verbose)
+\item 
+void \mbox{\hyperlink{_test_mat_lab_utils_8c_a0cb6d9fcf03cfb4c64166b74cbcfbe09}{test\+Prod\+Matr1}} (bool verbose)
+\item 
+void \mbox{\hyperlink{_test_mat_lab_utils_8c_adfdac72bb4d60167de51f9253498d65f}{test\+Prod\+Matr2}} (bool verbose)
+\item 
+void \mbox{\hyperlink{_test_mat_lab_utils_8c_a55ca99fd0f9b02865bd7cb1852e089b2}{test\+Prod\+Matr3}} (bool verbose)
+\item 
+\mbox{\Hypertarget{_test_mat_lab_utils_8c_a3854045794933accf86e4c2af521b8bf}\label{_test_mat_lab_utils_8c_a3854045794933accf86e4c2af521b8bf}} 
+void {\bfseries test\+Trans} (bool verbose)
+\item 
+void \mbox{\hyperlink{_test_mat_lab_utils_8c_a84ff15ec78ecd679ca8ecc4238325eb4}{test\+Det}} (bool verbose)
+\item 
+\mbox{\Hypertarget{_test_mat_lab_utils_8c_af783fa237741a0f44c5aa61c0bc4e1c0}\label{_test_mat_lab_utils_8c_af783fa237741a0f44c5aa61c0bc4e1c0}} 
+void {\bfseries test\+Roots} (bool verbose)
+\item 
+void \mbox{\hyperlink{_test_mat_lab_utils_8c_a02d20872d9a25ca4614a3343e7060c52}{test\+Unit1}} (bool verbose)
+\item 
+void \mbox{\hyperlink{_test_mat_lab_utils_8c_aea2fb8426a82e09304e55abce0b93796}{test\+Unit2}} (bool verbose)
+\item 
+void \mbox{\hyperlink{_test_mat_lab_utils_8c_a47df257382e6781403b2f6bef5fca12c}{test\+Unit3}} (bool verbose)
+\item 
+void \mbox{\hyperlink{_test_mat_lab_utils_8c_a3a0a9cbef43c33e7a3ad5b3a3405b75c}{test\+Sign1}} (bool verbose)
+\item 
+void \mbox{\hyperlink{_test_mat_lab_utils_8c_ae7258c522573dcdf9406fc645559c855}{test\+Sign2}} (bool verbose)
+\item 
+void \mbox{\hyperlink{_test_mat_lab_utils_8c_a7906b29d79225e79fb9061edf98d7d10}{test\+Sign3}} (bool verbose)
+\item 
+\mbox{\Hypertarget{_test_mat_lab_utils_8c_a2a3e3f2dc08cba6e054fb4b9e6dc0da4}\label{_test_mat_lab_utils_8c_a2a3e3f2dc08cba6e054fb4b9e6dc0da4}} 
+void {\bfseries test\+Fix1} (bool verbose)
+\item 
+\mbox{\Hypertarget{_test_mat_lab_utils_8c_affbfe5fb6dbb4da3739cc755f129a7b1}\label{_test_mat_lab_utils_8c_affbfe5fb6dbb4da3739cc755f129a7b1}} 
+void {\bfseries test\+Fix2} (bool verbose)
+\item 
+\mbox{\Hypertarget{_test_mat_lab_utils_8c_a4fcf6ff4642c2d7a9ff24e2dc3fa27b9}\label{_test_mat_lab_utils_8c_a4fcf6ff4642c2d7a9ff24e2dc3fa27b9}} 
+void {\bfseries test\+Fix3} (bool verbose)
+\item 
+int \mbox{\hyperlink{_test_mat_lab_utils_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Daniel Arias Ruiz-\/\+Esquide y Rubén Mazo Tomás 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Created\+: 2019/04/17
+\end{DoxyDate}
+Esta clase contiene los test unitarios para los métodos nativos de Mat\+Lab necesarios para este proyecto. 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{_test_mat_lab_utils_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{_test_mat_lab_utils_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{TestMatLabUtils.c@{TestMatLabUtils.c}!main@{main}}
+\index{main@{main}!TestMatLabUtils.c@{TestMatLabUtils.c}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Método principal, realiza todas las comprobaciones. \mbox{\Hypertarget{_test_mat_lab_utils_8c_a84ff15ec78ecd679ca8ecc4238325eb4}\label{_test_mat_lab_utils_8c_a84ff15ec78ecd679ca8ecc4238325eb4}} 
+\index{TestMatLabUtils.c@{TestMatLabUtils.c}!testDet@{testDet}}
+\index{testDet@{testDet}!TestMatLabUtils.c@{TestMatLabUtils.c}}
+\subsubsection{\texorpdfstring{testDet()}{testDet()}}
+{\footnotesize\ttfamily void test\+Det (\begin{DoxyParamCaption}\item[{bool}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación del método det
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_test_mat_lab_utils_8c_a29be36c82eef2bf72bbdbf6e72923935}\label{_test_mat_lab_utils_8c_a29be36c82eef2bf72bbdbf6e72923935}} 
+\index{TestMatLabUtils.c@{TestMatLabUtils.c}!testDot1@{testDot1}}
+\index{testDot1@{testDot1}!TestMatLabUtils.c@{TestMatLabUtils.c}}
+\subsubsection{\texorpdfstring{testDot1()}{testDot1()}}
+{\footnotesize\ttfamily void test\+Dot1 (\begin{DoxyParamCaption}\item[{bool}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 1 del método dot
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_test_mat_lab_utils_8c_a2e3dfcb6ef9275d1b3fc682ddc6e664a}\label{_test_mat_lab_utils_8c_a2e3dfcb6ef9275d1b3fc682ddc6e664a}} 
+\index{TestMatLabUtils.c@{TestMatLabUtils.c}!testDot2@{testDot2}}
+\index{testDot2@{testDot2}!TestMatLabUtils.c@{TestMatLabUtils.c}}
+\subsubsection{\texorpdfstring{testDot2()}{testDot2()}}
+{\footnotesize\ttfamily void test\+Dot2 (\begin{DoxyParamCaption}\item[{bool}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 2 del método dot
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_test_mat_lab_utils_8c_aaca9d645c14181d3adaff40ce81b9def}\label{_test_mat_lab_utils_8c_aaca9d645c14181d3adaff40ce81b9def}} 
+\index{TestMatLabUtils.c@{TestMatLabUtils.c}!testDot3@{testDot3}}
+\index{testDot3@{testDot3}!TestMatLabUtils.c@{TestMatLabUtils.c}}
+\subsubsection{\texorpdfstring{testDot3()}{testDot3()}}
+{\footnotesize\ttfamily void test\+Dot3 (\begin{DoxyParamCaption}\item[{bool}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 3 del método dot
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_test_mat_lab_utils_8c_a0cb6d9fcf03cfb4c64166b74cbcfbe09}\label{_test_mat_lab_utils_8c_a0cb6d9fcf03cfb4c64166b74cbcfbe09}} 
+\index{TestMatLabUtils.c@{TestMatLabUtils.c}!testProdMatr1@{testProdMatr1}}
+\index{testProdMatr1@{testProdMatr1}!TestMatLabUtils.c@{TestMatLabUtils.c}}
+\subsubsection{\texorpdfstring{testProdMatr1()}{testProdMatr1()}}
+{\footnotesize\ttfamily void test\+Prod\+Matr1 (\begin{DoxyParamCaption}\item[{bool}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 1 del método prod\+Matr
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_test_mat_lab_utils_8c_adfdac72bb4d60167de51f9253498d65f}\label{_test_mat_lab_utils_8c_adfdac72bb4d60167de51f9253498d65f}} 
+\index{TestMatLabUtils.c@{TestMatLabUtils.c}!testProdMatr2@{testProdMatr2}}
+\index{testProdMatr2@{testProdMatr2}!TestMatLabUtils.c@{TestMatLabUtils.c}}
+\subsubsection{\texorpdfstring{testProdMatr2()}{testProdMatr2()}}
+{\footnotesize\ttfamily void test\+Prod\+Matr2 (\begin{DoxyParamCaption}\item[{bool}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 2 del método prod\+Matr
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_test_mat_lab_utils_8c_a55ca99fd0f9b02865bd7cb1852e089b2}\label{_test_mat_lab_utils_8c_a55ca99fd0f9b02865bd7cb1852e089b2}} 
+\index{TestMatLabUtils.c@{TestMatLabUtils.c}!testProdMatr3@{testProdMatr3}}
+\index{testProdMatr3@{testProdMatr3}!TestMatLabUtils.c@{TestMatLabUtils.c}}
+\subsubsection{\texorpdfstring{testProdMatr3()}{testProdMatr3()}}
+{\footnotesize\ttfamily void test\+Prod\+Matr3 (\begin{DoxyParamCaption}\item[{bool}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 3 del método prod\+Matr
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_test_mat_lab_utils_8c_a3a0a9cbef43c33e7a3ad5b3a3405b75c}\label{_test_mat_lab_utils_8c_a3a0a9cbef43c33e7a3ad5b3a3405b75c}} 
+\index{TestMatLabUtils.c@{TestMatLabUtils.c}!testSign1@{testSign1}}
+\index{testSign1@{testSign1}!TestMatLabUtils.c@{TestMatLabUtils.c}}
+\subsubsection{\texorpdfstring{testSign1()}{testSign1()}}
+{\footnotesize\ttfamily void test\+Sign1 (\begin{DoxyParamCaption}\item[{bool}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 1 del método sign
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_test_mat_lab_utils_8c_ae7258c522573dcdf9406fc645559c855}\label{_test_mat_lab_utils_8c_ae7258c522573dcdf9406fc645559c855}} 
+\index{TestMatLabUtils.c@{TestMatLabUtils.c}!testSign2@{testSign2}}
+\index{testSign2@{testSign2}!TestMatLabUtils.c@{TestMatLabUtils.c}}
+\subsubsection{\texorpdfstring{testSign2()}{testSign2()}}
+{\footnotesize\ttfamily void test\+Sign2 (\begin{DoxyParamCaption}\item[{bool}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 2 del método sign
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_test_mat_lab_utils_8c_a7906b29d79225e79fb9061edf98d7d10}\label{_test_mat_lab_utils_8c_a7906b29d79225e79fb9061edf98d7d10}} 
+\index{TestMatLabUtils.c@{TestMatLabUtils.c}!testSign3@{testSign3}}
+\index{testSign3@{testSign3}!TestMatLabUtils.c@{TestMatLabUtils.c}}
+\subsubsection{\texorpdfstring{testSign3()}{testSign3()}}
+{\footnotesize\ttfamily void test\+Sign3 (\begin{DoxyParamCaption}\item[{bool}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 3 del método sign
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_test_mat_lab_utils_8c_a02d20872d9a25ca4614a3343e7060c52}\label{_test_mat_lab_utils_8c_a02d20872d9a25ca4614a3343e7060c52}} 
+\index{TestMatLabUtils.c@{TestMatLabUtils.c}!testUnit1@{testUnit1}}
+\index{testUnit1@{testUnit1}!TestMatLabUtils.c@{TestMatLabUtils.c}}
+\subsubsection{\texorpdfstring{testUnit1()}{testUnit1()}}
+{\footnotesize\ttfamily void test\+Unit1 (\begin{DoxyParamCaption}\item[{bool}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 1 del método unit
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_test_mat_lab_utils_8c_aea2fb8426a82e09304e55abce0b93796}\label{_test_mat_lab_utils_8c_aea2fb8426a82e09304e55abce0b93796}} 
+\index{TestMatLabUtils.c@{TestMatLabUtils.c}!testUnit2@{testUnit2}}
+\index{testUnit2@{testUnit2}!TestMatLabUtils.c@{TestMatLabUtils.c}}
+\subsubsection{\texorpdfstring{testUnit2()}{testUnit2()}}
+{\footnotesize\ttfamily void test\+Unit2 (\begin{DoxyParamCaption}\item[{bool}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 2 del método unit
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_test_mat_lab_utils_8c_a47df257382e6781403b2f6bef5fca12c}\label{_test_mat_lab_utils_8c_a47df257382e6781403b2f6bef5fca12c}} 
+\index{TestMatLabUtils.c@{TestMatLabUtils.c}!testUnit3@{testUnit3}}
+\index{testUnit3@{testUnit3}!TestMatLabUtils.c@{TestMatLabUtils.c}}
+\subsubsection{\texorpdfstring{testUnit3()}{testUnit3()}}
+{\footnotesize\ttfamily void test\+Unit3 (\begin{DoxyParamCaption}\item[{bool}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 3 del método unit
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
