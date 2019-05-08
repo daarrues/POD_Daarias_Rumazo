@@ -16,12 +16,23 @@
 #include "rpoly.h"
 #include <stdio.h>
 #include <math.h>
+
 #define POL_DEG 15
 
 //---------------------------------
 // public methods
 //---------------------------------
 
+//------------------------------------------------------------------------------
+//  double norm(double v[3])
+//------------------------------------------------------------------------------
+/**
+ * Calcula la norma de un vector de 3 componentes reales.
+ *
+ * @param <v> vector de 3 componentes reales.
+ * @return Norma del vector.
+ */
+//------------------------------------------------------------------------------
 double norm(double v[3])
 {
 	return sqrt(v[0]*v[0]+v[1]*v[1]+v[2]*v[2]);
@@ -45,6 +56,17 @@ double dot(double v1[3], double v2[3])
 	return v1[0]*v2[0]+v1[1]*v2[1]+v1[2]*v2[2];
 }
 
+//------------------------------------------------------------------------------
+//  void cross(double v1[3], double v2[3], double vResult[3])
+//------------------------------------------------------------------------------
+/**
+ * Calcula el producto vectorial de dos vectores de 3 componentes reales
+ *
+ * @param <v1>      primer vector de entrada.
+ * @param <v2>      segundo vector de entrada.
+ * @param <vResult> vector de salida para almacenar el producto escalar.
+ */
+//------------------------------------------------------------------------------
 void cross(double v1[3], double v2[3], double vResult[3])
 {
 	vResult[0] = v1[1]*v2[2] - v1[2]*v2[1];
@@ -52,6 +74,16 @@ void cross(double v1[3], double v2[3], double vResult[3])
 	vResult[2] = v1[0]*v2[1] - v1[1]*v2[0];
 }
 
+//------------------------------------------------------------------------------
+//  void zeros(double v[], int n)
+//------------------------------------------------------------------------------
+/**
+ * Inicializa a 0 las componentes de un vector real.
+ *
+ * @param <v> vector a inicializar a 0.
+ * @param <n> número de componentes del vector.
+ */
+//------------------------------------------------------------------------------
 void zeros(double v[], int n)
 {
 	for(int i = 0; i < n; i++)
@@ -87,6 +119,16 @@ void prodMatr(double m1[3][3], double m2[3][3], double mResult[3][3])
 	}
 }
 
+//------------------------------------------------------------------------------
+//  void trans(double m[3][3], double mResult[3][3])
+//------------------------------------------------------------------------------
+/**
+ * Calcula la matriz traspuesta de una matriz cuadrada de orden 3.
+ *
+ * @param <m> matriz de entrada.
+ * @param <t> matriz de salida para almacenar la traspuesta de m.
+ */
+//------------------------------------------------------------------------------
 void trans(double m[3][3], double mResult[3][3])
 {
 	for(int i = 0; i < 3; i++)
@@ -120,6 +162,18 @@ double det(double m[3][3])
 				 m[0][0] * m[1][2] * m[2][1];
 }
 
+//------------------------------------------------------------------------------
+//  int roots(double p[], int degree, double r[])
+//------------------------------------------------------------------------------
+/**
+ * Encuentra las raíces reales de un polinomio con coeficientes reales.
+ *
+ * @param <p>      polinomio con coeficientes reales.
+ * @param <degree> grado del polinomio.
+ * @param <r>      vector de salida para almacenar las raíces reales de p.
+ * @return Número de raíces reales de p incluyendo su multiplicidad.
+ */
+//------------------------------------------------------------------------------
 int roots(double p[], int degree, double r[])
 {
 	double zerosR[POL_DEG];
@@ -173,6 +227,18 @@ int sign(double n)
 	return (n == 0) ? 0 : (n > 0) ? 1 : -1;
 }
 
+//------------------------------------------------------------------------------
+//  int fix(double n)
+//------------------------------------------------------------------------------
+/**
+ * Redondea hacia el 0 (trunca) un número real.
+ * Devuelve el mayor entero por debajo para valores positivos (similar a floor),
+ * y el menor entero por encima para valores negativos (similar a ceil).
+ *
+ * @param <n> número real.
+ * @return n truncado a los enteros.
+ */
+//------------------------------------------------------------------------------
 int fix(double n)
 {
 	int res;
