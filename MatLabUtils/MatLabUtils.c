@@ -27,11 +27,12 @@ double length(double *v)
 	return size(v);
 }
 
-void zeros(double v[3])
+void zeros(double v[], int n)
 {
-	v[0] = 0.0;
-	v[1] = 0.0;
-	v[2] = 0.0;
+	for(int i = 0; i < n; i++)
+	{
+		v[i] = 0.0;
+	}
 }
 
 void prodMatr(double m1[3][3], double m2[3][3], double mResult[3][3])

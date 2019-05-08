@@ -6,6 +6,7 @@
 typedef int bool;
 #define true 1
 #define false 0
+#define POL_DEG 15
 
 void testNorm1(bool verbose)
 {
@@ -21,7 +22,7 @@ void testNorm1(bool verbose)
 	{
 		printf("Norm1:\n");
 		printf("Esperado: %.20lf \n", esperado);
-		printf("Obtenido: %.20lf \n", obtenido));
+		printf("Obtenido: %.20lf \n", obtenido);
 	}
 
 	assert(fabs(esperado - obtenido) < 10e-6);
@@ -62,7 +63,7 @@ void testNorm3(bool verbose)
 	if(verbose)
 	{
 		printf("Norm3:\n");
-		printf("Esperado: %.20lf \n", esperadoC);
+		printf("Esperado: %.20lf \n", esperado);
 		printf("Obtenido: %.20lf \n", obtenido);
 	}
 
@@ -288,7 +289,7 @@ void testLength(bool verbose)
 void testZeros(bool verbose)
 {
 	double v[3];
-	zeros(v);
+	zeros(v, 3);
 
 	if(verbose)
 	{
@@ -502,7 +503,53 @@ void testRoots(bool verbose)
 
 // Aquí va TestUnit
 
-// Aquí va TestSign
+void testSign1(bool verbose)
+{
+	double n = 34.2348293234;
+	int esperado = 1;
+	int res = sign(n);
+
+	if(verbose)
+	{
+		printf("Sign1:\n");
+		printf("%.20lf ==> %d\n", n, res);
+	}
+
+	assert(res == esperado);
+	printf("Sign1 superado!\n");
+}
+
+void testSign2(bool verbose)
+{
+	double n = -12.0905823;
+	int esperado = -1;
+	int res = sign(n);
+
+	if(verbose)
+	{
+		printf("Sign2:\n");
+		printf("%.20lf ==> %d\n", n, res);
+	}
+
+	assert(res == esperado);
+	printf("Sign2 superado!\n");
+}
+
+void testSign3(bool verbose)
+{
+	double n = 0.0;
+	int esperado = 0;
+	int res = sign(n);
+
+	if(verbose)
+	{
+		printf("Sign3:\n");
+		printf("%.20lf ==> %d\n", n, res);
+	}
+
+	assert(res == esperado);
+	printf("Sign3 superado!\n");
+}
 
 void testFix1(bool verbose)
 {
@@ -607,6 +654,11 @@ int main(){
 	// Test unit
 
 	// Test sign
+	printf("Probando sign!\n");
+	testSign1(false);
+	testSign2(false);
+	testSign3(false);
+	printf("sign finalizado!\n\n");
 
 	// Test fix
 	printf("Probando fix!\n");

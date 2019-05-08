@@ -5,7 +5,7 @@ double norm(double[3]);
 double dot(double[3], double[3]);
 void cross(double[3], double[3], double[3]);
 double length(double*);
-void zeros(double[3]);
+void zeros(double[], int);
 void prodMatr(double[3][3], double[3][3], double[3][3]);
 void trans(double[3][3], double[3][3]);
 double det(double[3][3]);
