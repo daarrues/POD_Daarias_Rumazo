@@ -36,11 +36,14 @@ void zeros(double v[3])
 
 void prodMatr(double m1[3][3], double m2[3][3], double mResult[3][3])
 {
+	double m2T[3][3];
+	trans(m2, m2T);
+
 	for(int j = 0; j < 3; j++)
 	{
 		for(int i = 0; i < 3; i++)
 		{
-			mResult[i][j] = dot(m1[i],m2[j]);
+			mResult[i][j] = dot(m1[i], m2T[j]);
 		}
 	}
 }
