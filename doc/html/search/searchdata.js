@@ -1,27 +1,21 @@
 var indexSectionsWithContent =
 {
   0: "cdfmnprstuz",
-  1: "r",
-  2: "mt",
-  3: "cdfmnprstuz",
-  4: "p"
+  1: "mt",
+  2: "cdfmnprstuz"
 };
 
 var indexSectionNames =
 {
   0: "all",
-  1: "classes",
-  2: "files",
-  3: "functions",
-  4: "pages"
+  1: "files",
+  2: "functions"
 };
 
 var indexSectionLabels =
 {
   0: "All",
-  1: "Data Structures",
-  2: "Files",
-  3: "Functions",
-  4: "Pages"
+  1: "Files",
+  2: "Functions"
 };
 
