@@ -14,7 +14,6 @@
 //------------------------------------------------------------------------------
 #include "MatLabUtils.h"
 #include "rpoly/rpoly.h"
-#include <stdio.h>
 #include <math.h>
 
 #define POL_DEG 15
