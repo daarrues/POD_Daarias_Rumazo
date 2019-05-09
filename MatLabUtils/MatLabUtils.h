@@ -15,6 +15,8 @@
 #ifndef MATLABUTILS_H
 #define MATLABUTILS_H
 
+const int POL_DEG;
+
 double norm(double[3]);
 double dot(double[3], double[3]);
 void cross(double[3], double[3], double[3]);
