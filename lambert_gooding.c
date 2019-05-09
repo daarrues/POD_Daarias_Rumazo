@@ -5,9 +5,10 @@
 /**
  * @file lambert_gooding.c
  * @author Daniel Arias Ruiz-Esquide y Rubén Mazo Tomás
- * @date Created: 2019/05/9
+ * @date Created: 2019/05/09
  *
- *
+ * Este fichero contiene las implementaciones para las
+ * funciones del fichero lambert_gooding.m (M. Mahooti)
  */
 //------------------------------------------------------------------------------
 
