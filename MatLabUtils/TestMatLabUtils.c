@@ -20,11 +20,6 @@
 typedef int bool;
 #define true 1
 #define false 0
-#define POL_DEG 15
-
-//---------------------------------
-// public methods
-//---------------------------------
 
 //------------------------------------------------------------------------------
 //  void testNorm1(bool verbose)

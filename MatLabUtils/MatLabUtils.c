@@ -13,15 +13,10 @@
  */
 //------------------------------------------------------------------------------
 #include "MatLabUtils.h"
-#include "rpoly.h"
-#include <stdio.h>
+#include "rpoly/rpoly.h"
 #include <math.h>
 
-#define POL_DEG 15
-
-//---------------------------------
-// public methods
-//---------------------------------
+const int POL_DEG = 15;
 
 //------------------------------------------------------------------------------
 //  double norm(double v[3])
