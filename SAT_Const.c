@@ -54,5 +54,3 @@ const double GM_Pluto   = 1020.864920706286e+9;           // [m^3/s^2]; DE200
 
 // Solar radiation pressure at 1 AU
 const double P_Sol = 4.560e-6; // [N/m^2] (~1367 W/m^2); IERS 96
-
-int main(){return 0;}
