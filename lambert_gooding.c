@@ -329,7 +329,6 @@ void tlamb(double m, double q, double qsqfm1, double x, int n, double *t,
 {
   double y, z, qx, a, b, aa, bb, g, f, fg1, term, fg1sq, twoi1, told, qz, qz2,
          u0i, u1i, u2i, u3i, tq, i, tqsum, ttmold, p, tterm, tqterm;
-
   // Gooding support routine
   double sw = 0.4;
   t = 0;
