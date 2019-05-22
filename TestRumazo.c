@@ -4,6 +4,7 @@
 #include "MeanObliquity.h"
 #include "NutAngles.h"
 #include "EqnEquinox.h"
+#include "Frac.h"
 
 typedef int bool;
 #define true 1
@@ -265,6 +266,84 @@ void testEqnEquinox3(bool verbose)
 }
 
 //------------------------------------------------------------------------------
+//  void testFrac1(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 1 de la función Frac
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
+void testFrac1(bool verbose)
+{
+	double n = 10.3456636914056;
+	double esperado = 0.3456636914056;
+	double obtenido = Frac(n);
+
+	if(verbose)
+	{
+		printf("Frac1:\n");
+		printf("Esperado: %.20lf \n", esperado);
+		printf("Obtenido: %.20lf \n", obtenido);
+	}
+
+	assert(fabs(esperado - obtenido) < 10e-12);
+	printf("Frac1 superado!\n");
+}
+
+//------------------------------------------------------------------------------
+//  void testFrac2(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 2 de la función Frac
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
+void testFrac2(bool verbose)
+{
+	double n = 7.17084861050766;
+	double esperado = 0.17084861050766;
+	double obtenido = Frac(n);
+
+	if(verbose)
+	{
+		printf("Frac2:\n");
+		printf("Esperado: %.20lf \n", esperado);
+		printf("Obtenido: %.20lf \n", obtenido);
+	}
+
+	assert(fabs(esperado - obtenido) < 10e-12);
+	printf("Frac2 superado!\n");
+}
+
+//------------------------------------------------------------------------------
+//  void testFrac3(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 3 de la función Frac
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
+void testFrac3(bool verbose)
+{
+	double n = 11.2920772238043;
+	double esperado = 0.2920772238043;
+	double obtenido = Frac(n);
+
+	if(verbose)
+	{
+		printf("Frac3:\n");
+		printf("Esperado: %.20lf \n", esperado);
+		printf("Obtenido: %.20lf \n", obtenido);
+	}
+
+	assert(fabs(esperado - obtenido) < 10e-12);
+	printf("Frac3 superado!\n");
+}
+
+//------------------------------------------------------------------------------
 //  int main()
 //------------------------------------------------------------------------------
 /**
@@ -273,26 +352,33 @@ void testEqnEquinox3(bool verbose)
 //------------------------------------------------------------------------------
 int main(){
 
-	// Test testMeanObliquity
+	// Test MeanObliquity
 	printf("Probando MeanObliquity!\n");
 	testMeanObliquity1(false);
 	testMeanObliquity2(false);
 	testMeanObliquity3(false);
 	printf("MeanObliquity finalizado!\n\n");
 
-	// Test testNutAngles
+	// Test NutAngles
 	printf("Probando NutAngles!\n");
 	testNutAngles1(false);
 	testNutAngles2(false);
 	testNutAngles3(false);
 	printf("NutAngles finalizado!\n\n");
 
-	// Test testEqnEquinox
+	// Test EqnEquinox
 	printf("Probando EqnEquinox!\n");
 	testEqnEquinox1(false);
 	testEqnEquinox2(false);
 	testEqnEquinox3(false);
 	printf("EqnEquinox finalizado!\n\n");
+
+	// Test Frac
+	printf("Probando Frac!\n");
+	testFrac1(false);
+	testFrac2(false);
+	testFrac3(false);
+	printf("Frac finalizado!\n\n");
 
 	// Final
 	printf("Todos los test superados!\n");
