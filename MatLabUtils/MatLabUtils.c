@@ -248,3 +248,27 @@ int fix(double n)
 	}
 	return res;
 }
+
+//------------------------------------------------------------------------------
+//  int all(double v[3])
+//------------------------------------------------------------------------------
+/**
+ * Comprueba si un vector es nulo y devuelve 1 en caso afirmativo, o 0 en caso
+ * contrario.
+ *
+ * @param <v> vector de tres componentes reales.
+ *
+ * @return 1 si v es nulo y 0 en caso contrario.
+ */
+//------------------------------------------------------------------------------
+int all(double v[3])
+{
+	if(fabs(v[0]) < 10e-12 && fabs(v[1]) < 10e-12 && fabs(v[2]) < 10e-12)
+	{
+		return 1;
+	}
+	else
+	{
+		return 0;
+	}
+}
