@@ -5,6 +5,7 @@
 #include "NutAngles.h"
 #include "EqnEquinox.h"
 #include "Frac.h"
+#include "gmst.h"
 
 typedef int bool;
 #define true 1
@@ -344,6 +345,84 @@ void testFrac3(bool verbose)
 }
 
 //------------------------------------------------------------------------------
+//  void testGmst1(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 1 de la función gmst
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
+void testGmst1(bool verbose)
+{
+	double n = 54977.6669066321;
+	double esperado = 2.17186902706532;
+	double obtenido = gmst(n);
+
+	if(verbose)
+	{
+		printf("gmst1:\n");
+		printf("Esperado: %.20lf \n", esperado);
+		printf("Obtenido: %.20lf \n", obtenido);
+	}
+
+	assert(fabs(esperado - obtenido) < 10e-8);
+	printf("gmst1 superado!\n");
+}
+
+//------------------------------------------------------------------------------
+//  void testGmst2(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 2 de la función gmst
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
+void testGmst2(bool verbose)
+{
+	double n = 55565.9044057253;
+	double esperado = 1.21707647675469;
+	double obtenido = gmst(n);
+
+	if(verbose)
+	{
+		printf("gmst2:\n");
+		printf("Esperado: %.20lf \n", esperado);
+		printf("Obtenido: %.20lf \n", obtenido);
+	}
+
+	assert(fabs(esperado - obtenido) < 10e-8);
+	printf("gmst2 superado!\n");
+}
+
+//------------------------------------------------------------------------------
+//  void testGmst3(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 3 de la función gmst
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
+void testGmst3(bool verbose)
+{
+	double n = 54332.4861092138;
+	double esperado = 2.50334500393596;
+	double obtenido = gmst(n);
+
+	if(verbose)
+	{
+		printf("gmst3:\n");
+		printf("Esperado: %.20lf \n", esperado);
+		printf("Obtenido: %.20lf \n", obtenido);
+	}
+
+	assert(fabs(esperado - obtenido) < 10e-8);
+	printf("gmst3 superado!\n");
+}
+
+//------------------------------------------------------------------------------
 //  int main()
 //------------------------------------------------------------------------------
 /**
@@ -379,6 +458,13 @@ int main(){
 	testFrac2(false);
 	testFrac3(false);
 	printf("Frac finalizado!\n\n");
+
+	// Test gmst
+	printf("Probando gmst!\n");
+	testGmst1(false);
+	testGmst2(false);
+	testGmst3(false);
+	printf("gmst finalizado!\n\n");
 
 	// Final
 	printf("Todos los test superados!\n");
