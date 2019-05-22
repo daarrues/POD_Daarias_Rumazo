@@ -28,5 +28,6 @@ int roots(double[], int, double[]);
 void unit(double[3], double[3]);
 int sign(double);
 int fix(double);
+int all(double[3]);
 
 #endif // MATLABUTILS_H

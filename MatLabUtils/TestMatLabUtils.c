@@ -1118,6 +1118,96 @@ void testFix3(bool verbose)
 }
 
 //------------------------------------------------------------------------------
+//  void testAll1(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 1 de la función all
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
+void testAll1(bool verbose)
+{
+	double v[] = {
+		4950990.33826460,
+		256563.116260381,
+		3999465.34658133
+		};
+	int esperado = 0;
+	int obtenido = all(v);
+
+	if(verbose)
+	{
+		printf("All1:\n");
+		printf("Esperado: %d \n", esperado);
+		printf("Obtenido: %d \n", obtenido);
+	}
+
+	assert(esperado == obtenido);
+	printf("All1 superado!\n");
+}
+
+//------------------------------------------------------------------------------
+//  void testAll2(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 2 de la función all
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
+void testAll2(bool verbose)
+{
+	double v[] = {
+		0.0,
+		0.000001,
+		0.0
+		};
+	int esperado = 0;
+	int obtenido = all(v);
+
+	if(verbose)
+	{
+		printf("All2:\n");
+		printf("Esperado: %d \n", esperado);
+		printf("Obtenido: %d \n", obtenido);
+	}
+
+	assert(esperado == obtenido);
+	printf("All2 superado!\n");
+}
+
+//------------------------------------------------------------------------------
+//  void testAll3(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 3 de la función all
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
+void testAll3(bool verbose)
+{
+	double v[] = {
+		0.0,
+		0.0,
+		0.0
+		};
+	int esperado = 1;
+	int obtenido = all(v);
+
+	if(verbose)
+	{
+		printf("All3:\n");
+		printf("Esperado: %d \n", esperado);
+		printf("Obtenido: %d \n", obtenido);
+	}
+
+	assert(esperado == obtenido);
+	printf("All3 superado!\n");
+}
+
+//------------------------------------------------------------------------------
 //  int main()
 //------------------------------------------------------------------------------
 /**
@@ -1194,6 +1284,13 @@ int main(){
 	testFix2(false);
 	testFix3(false);
 	printf("fix finalizado!\n\n");
+
+	// Test all
+	printf("Probando all!\n");
+	testAll1(false);
+	testAll2(false);
+	testAll3(false);
+	printf("all finalizado!\n\n");
 
 	// Final
 	printf("Todos los test superados!\n");
