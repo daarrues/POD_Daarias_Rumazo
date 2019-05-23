@@ -2,6 +2,9 @@
 #include <stdio.h>
 #include <math.h>
 #include "lambert_gooding.h"
+#include "R_x.h"
+#include "R_y.h"
+#include "R_z.h"
 
 typedef int bool;
 #define true 1

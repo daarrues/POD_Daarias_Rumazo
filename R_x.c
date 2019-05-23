@@ -11,6 +11,8 @@
  * funciones del fichero R_x.m (M. Mahooti)
  */
 //------------------------------------------------------------------------------
+#include "MatLabUtils/MatLabUtils.h"
+#include <math.h>
 
 //------------------------------------------------------------------------------
 //  void R_x(double angle, double rotmat[3][3])
