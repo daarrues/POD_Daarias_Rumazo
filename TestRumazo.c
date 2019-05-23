@@ -7,6 +7,7 @@
 #include "Frac.h"
 #include "gmst.h"
 #include "timediff.h"
+#include "IERS.h"
 
 typedef int bool;
 #define true 1
@@ -571,6 +572,174 @@ void testTimediff3(bool verbose)
 }
 
 //------------------------------------------------------------------------------
+//  void testIERS1(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 1 de la función IERS
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
+void testIERS1(bool verbose)
+{
+	//EOPDATA
+	int n1 = 20026;
+	double n2 = 54977.6669036457;
+	char c = 'l';
+	double esp1 = 0.258022690875596;
+	double esp2 = 34.0;
+	double esp3 = 7.5789200806793e-08;
+	double esp4 = 2.56777193042581e-06;
+	double esp5 = -2.91335538497448e-07;
+	double esp6 = -4.54223178651006e-08;
+	double obt1;
+	double obt2;
+	double obt3;
+	double obt4;
+	double obt5;
+	double obt6;
+
+	IERS(eopdata, n1, n2, c, &obt1, &obt2, &obt3, &obt4, &obt5, &obt6);
+
+	if(verbose)
+	{
+		printf("IERS1:\n");
+		printf("Esperado 1: %.20lf \n", esp1);
+		printf("Obtenido 1: %.20lf \n", obt1);
+		printf("Esperado 2: %.20lf \n", esp2);
+		printf("Obtenido 2: %.20lf \n", obt2);
+		printf("Esperado 3: %.20lf \n", esp3);
+		printf("Obtenido 3: %.20lf \n", obt3);
+		printf("Esperado 4: %.20lf \n", esp4);
+		printf("Obtenido 4: %.20lf \n", obt4);
+		printf("Esperado 5: %.20lf \n", esp5);
+		printf("Obtenido 5: %.20lf \n", obt5);
+		printf("Esperado 6: %.20lf \n", esp6);
+		printf("Obtenido 6: %.20lf \n", obt6);
+	}
+
+	assert(fabs(esp1 - obt1) < 10e-12);
+	assert(fabs(esp2 - obt2) < 10e-12);
+	assert(fabs(esp3 - obt3) < 10e-12);
+	assert(fabs(esp4 - obt4) < 10e-12);
+	assert(fabs(esp5 - obt5) < 10e-12);
+	assert(fabs(esp6 - obt6) < 10e-12);
+	printf("IERS1 superado!\n");
+}
+
+//------------------------------------------------------------------------------
+//  void testIERS2(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 2 de la función IERS
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
+void testIERS2(bool verbose)
+{
+	//EOPDATA
+	int n1 = 20026;
+	double n2 = 53989.198426771;
+	char c = 'l';
+	double esp1 = 0.161894409590604;
+	double esp2 = 33.0;
+	double esp3 = 3.41489253490265e-07;
+	double esp4 = 1.23201492955798e-06;
+	double esp5 = -3.25133150333998e-07;
+	double esp6 = -2.74651440721866e-08;
+	double obt1;
+	double obt2;
+	double obt3;
+	double obt4;
+	double obt5;
+	double obt6;
+
+	IERS(eopdata, n1, n2, c, &obt1, &obt2, &obt3, &obt4, &obt5, &obt6);
+
+	if(verbose)
+	{
+		printf("IERS2:\n");
+		printf("Esperado 1: %.20lf \n", esp1);
+		printf("Obtenido 1: %.20lf \n", obt1);
+		printf("Esperado 2: %.20lf \n", esp2);
+		printf("Obtenido 2: %.20lf \n", obt2);
+		printf("Esperado 3: %.20lf \n", esp3);
+		printf("Obtenido 3: %.20lf \n", obt3);
+		printf("Esperado 4: %.20lf \n", esp4);
+		printf("Obtenido 4: %.20lf \n", obt4);
+		printf("Esperado 5: %.20lf \n", esp5);
+		printf("Obtenido 5: %.20lf \n", obt5);
+		printf("Esperado 6: %.20lf \n", esp6);
+		printf("Obtenido 6: %.20lf \n", obt6);
+	}
+
+	assert(fabs(esp1 - obt1) < 10e-12);
+	assert(fabs(esp2 - obt2) < 10e-12);
+	assert(fabs(esp3 - obt3) < 10e-12);
+	assert(fabs(esp4 - obt4) < 10e-12);
+	assert(fabs(esp5 - obt5) < 10e-12);
+	assert(fabs(esp6 - obt6) < 10e-12);
+	printf("IERS2 superado!\n");
+}
+
+//------------------------------------------------------------------------------
+//  void testIERS3(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 3 de la función IERS
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
+void testIERS3(bool verbose)
+{
+	//EOPDATA
+	int n1 = 20026;
+	double n2 = 55565.9044073611;
+	char c = 'l';
+	double esp1 = -0.141329177689613;
+	double esp2 = 34.0;
+	double esp3 = 5.72229229392844e-07;
+	double esp4 = 9.71655423937364e-07;
+	double esp5 = -3.22818789921021e-07;
+	double esp6 = -3.03101990895201e-08;
+	double obt1;
+	double obt2;
+	double obt3;
+	double obt4;
+	double obt5;
+	double obt6;
+
+	IERS(eopdata, n1, n2, c, &obt1, &obt2, &obt3, &obt4, &obt5, &obt6);
+
+	if(verbose)
+	{
+		printf("IERS3:\n");
+		printf("Esperado 1: %.20lf \n", esp1);
+		printf("Obtenido 1: %.20lf \n", obt1);
+		printf("Esperado 2: %.20lf \n", esp2);
+		printf("Obtenido 2: %.20lf \n", obt2);
+		printf("Esperado 3: %.20lf \n", esp3);
+		printf("Obtenido 3: %.20lf \n", obt3);
+		printf("Esperado 4: %.20lf \n", esp4);
+		printf("Obtenido 4: %.20lf \n", obt4);
+		printf("Esperado 5: %.20lf \n", esp5);
+		printf("Obtenido 5: %.20lf \n", obt5);
+		printf("Esperado 6: %.20lf \n", esp6);
+		printf("Obtenido 6: %.20lf \n", obt6);
+	}
+
+	assert(fabs(esp1 - obt1) < 10e-12);
+	assert(fabs(esp2 - obt2) < 10e-12);
+	assert(fabs(esp3 - obt3) < 10e-12);
+	assert(fabs(esp4 - obt4) < 10e-12);
+	assert(fabs(esp5 - obt5) < 10e-12);
+	assert(fabs(esp6 - obt6) < 10e-12);
+	printf("IERS3 superado!\n");
+}
+
+//------------------------------------------------------------------------------
 //  int main()
 //------------------------------------------------------------------------------
 /**
@@ -620,6 +789,13 @@ int main(){
 	testTimediff2(false);
 	testTimediff3(false);
 	printf("timediff finalizado!\n\n");
+
+	// Test IERS
+	printf("Probando IERS!\n");
+	testIERS1(false);
+	testIERS2(false);
+	testIERS3(false);
+	printf("IERS finalizado!\n\n");
 
 	// Final
 	printf("Todos los test superados!\n");
