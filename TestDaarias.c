@@ -89,14 +89,13 @@ void testD8rt3(bool verbose)
 //  void testTlamb1(bool verbose)
 //------------------------------------------------------------------------------
 /**
- * Comprobación 1 de la función d8rt
+ * Comprobación 1 de la función tlamb
  *
  * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
  */
  //------------------------------------------------------------------------------
 void testTlamb1(bool verbose)
 {
-
 	double m = 0.0;
   double q = 0.8046115644662321;
   double qsqfm1 = 0.3526002303272028;
@@ -135,7 +134,7 @@ void testTlamb1(bool verbose)
 //  void testTlamb2(bool verbose)
 //------------------------------------------------------------------------------
 /**
- * Comprobación 2 de la función d8rt
+ * Comprobación 2 de la función tlamb
  *
  * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
  */
@@ -222,6 +221,447 @@ void testTlamb3(bool verbose)
 }
 
 //------------------------------------------------------------------------------
+//  void testR_x1(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 1 de la función R_x
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
+void testR_x1(bool verbose)
+{
+	double angle = -0.409093775692299;
+	double esperado[3][3] = {
+		{
+			1.0,
+			0.0,
+			0.0
+		},
+		{
+			0.0,
+			0.9174816756401871,
+			-0.3977780472379974
+		},
+		{
+			0.0,
+			0.3977780472379974,
+			0.9174816756401871
+		}
+	};
+	double obtenido[3][3];
+	R_x(angle, obtenido);
+
+	if(verbose) printf("R_x1:\n");
+	for(int i = 0; i < 3; i++)
+	{
+		for(int j = 0; j < 3; j++)
+		{
+			if(verbose)
+			{
+				printf("Esperado: %.20lf\n", esperado[i][j]);
+				printf("Obtenido: %.20lf\n", obtenido[i][j]);
+			}
+			assert(fabs(obtenido[i][j]-esperado[i][j])<10e-12);
+		}
+	}
+
+	printf("R_x1 superado!\n");
+}
+
+//------------------------------------------------------------------------------
+//  void testR_x2(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 2 de la función R_x
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
+void testR_x2(bool verbose)
+{
+	double angle = -0.4090670040227975;
+	double esperado[3][3] = {
+		{
+			1.0,
+			0.0,
+			0.0
+		},
+		{
+			0.0,
+			0.9174923244938117,
+			-0.3977534845792582
+		},
+		{
+			0.0,
+			0.3977534845792582,
+			0.9174923244938117
+		}
+	};
+	double obtenido[3][3];
+	R_x(angle, obtenido);
+
+	if(verbose) printf("R_x2:\n");
+	for(int i = 0; i < 3; i++)
+	{
+		for(int j = 0; j < 3; j++)
+		{
+			if(verbose)
+			{
+				printf("Esperado: %.20lf\n", esperado[i][j]);
+				printf("Obtenido: %.20lf\n", obtenido[i][j]);
+			}
+			assert(fabs(obtenido[i][j]-esperado[i][j])<10e-12);
+		}
+	}
+
+	printf("R_x2 superado!\n");
+}
+
+//------------------------------------------------------------------------------
+//  void testR_x3(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 3 de la función R_x
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
+void testR_x3(bool verbose)
+{
+	double angle = -0.4090670619660224;
+	double esperado[3][3] = {
+		{
+			1.0,
+			0.0,
+			0.0
+		},
+		{
+			0.0,
+			0.9174923014466905,
+			-0.3977535377417217
+		},
+		{
+			0.0,
+			0.3977535377417217,
+			0.9174923014466905
+		}
+	};
+	double obtenido[3][3];
+	R_x(angle, obtenido);
+
+	if(verbose) printf("R_x3:\n");
+	for(int i = 0; i < 3; i++)
+	{
+		for(int j = 0; j < 3; j++)
+		{
+			if(verbose)
+			{
+				printf("Esperado: %.20lf\n", esperado[i][j]);
+				printf("Obtenido: %.20lf\n", obtenido[i][j]);
+			}
+			assert(fabs(obtenido[i][j]-esperado[i][j])<10e-12);
+		}
+	}
+
+	printf("R_x3 superado!\n");
+}
+
+//------------------------------------------------------------------------------
+//  void testR_y1(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 1 de la función R_y
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
+void testR_y1(bool verbose)
+{
+	double angle = 0.0009133473539360685;
+	double esperado[3][3] = {
+		{
+			0.9999995828983346,
+			0.0,
+			-0.0009133472269498308
+		},
+		{
+			0.0,
+			1.0,
+			0.0
+		},
+		{
+			0.0009133472269498308,
+			0.0,
+			0.9999995828983346
+		}
+	};
+	double obtenido[3][3];
+	R_y(angle, obtenido);
+
+	if(verbose) printf("R_y1:\n");
+	for(int i = 0; i < 3; i++)
+	{
+		for(int j = 0; j < 3; j++)
+		{
+			if(verbose)
+			{
+				printf("Esperado: %.20lf\n", esperado[i][j]);
+				printf("Obtenido: %.20lf\n", obtenido[i][j]);
+			}
+			assert(fabs(obtenido[i][j]-esperado[i][j])<10e-12);
+		}
+	}
+
+	printf("R_y1 superado!\n");
+}
+
+//------------------------------------------------------------------------------
+//  void testR_y2(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 2 de la función R_y
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
+void testR_y2(bool verbose)
+{
+	double angle = 0.001069739807684866;
+	double esperado[3][3] = {
+		{
+			0.9999994278284265,
+			0.0,
+			-0.001069739603659955
+		},
+		{
+			0.0,
+			1.0,
+			0.0
+		},
+		{
+			0.001069739603659955,
+			0.0,
+			0.9999994278284265
+		}
+	};
+	double obtenido[3][3];
+	R_y(angle, obtenido);
+
+	if(verbose) printf("R_y2:\n");
+	for(int i = 0; i < 3; i++)
+	{
+		for(int j = 0; j < 3; j++)
+		{
+			if(verbose)
+			{
+				printf("Esperado: %.20lf\n", esperado[i][j]);
+				printf("Obtenido: %.20lf\n", obtenido[i][j]);
+			}
+			assert(fabs(obtenido[i][j]-esperado[i][j])<10e-12);
+		}
+	}
+
+	printf("R_y2 superado!\n");
+}
+
+//------------------------------------------------------------------------------
+//  void testR_y3(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 3 de la función R_y
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
+void testR_y3(bool verbose)
+{
+	double angle = 0.001069836164067632;
+	double esperado[3][3] = {
+		{
+			0.9999994277253456,
+			0.0,
+			-0.001069835959987584
+		},
+		{
+			0.0,
+			1.0,
+			0.0
+		},
+		{
+			0.001069835959987584,
+			0.0,
+			0.9999994277253456
+		}
+	};
+	double obtenido[3][3];
+	R_y(angle, obtenido);
+
+	if(verbose) printf("R_y3:\n");
+	for(int i = 0; i < 3; i++)
+	{
+		for(int j = 0; j < 3; j++)
+		{
+			if(verbose)
+			{
+				printf("Esperado: %.20lf\n", esperado[i][j]);
+				printf("Obtenido: %.20lf\n", obtenido[i][j]);
+			}
+			assert(fabs(obtenido[i][j]-esperado[i][j])<10e-12);
+		}
+	}
+
+	printf("R_y3 superado!\n");
+}
+
+//------------------------------------------------------------------------------
+//  void testR_z1(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 1 de la función R_z
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
+void testR_z1(bool verbose)
+{
+	double angle = -0.001050992069568202;
+	double esperado[3][3] = {
+		{
+			0.9999994477078857,
+			-0.001050991876083317,
+			0.0
+		},
+		{
+			0.001050991876083317,
+			0.9999994477078857,
+			0.0
+		},
+		{
+			0.0,
+			0.0,
+			1.0
+		}
+	};
+	double obtenido[3][3];
+	R_z(angle, obtenido);
+
+	if(verbose) printf("R_z1:\n");
+	for(int i = 0; i < 3; i++)
+	{
+		for(int j = 0; j < 3; j++)
+		{
+			if(verbose)
+			{
+				printf("Esperado: %.20lf\n", esperado[i][j]);
+				printf("Obtenido: %.20lf\n", obtenido[i][j]);
+			}
+			assert(fabs(obtenido[i][j]-esperado[i][j])<10e-12);
+		}
+	}
+
+	printf("R_z1 superado!\n");
+}
+
+//------------------------------------------------------------------------------
+//  void testR_z2(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 2 de la función R_z
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
+void testR_z2(bool verbose)
+{
+	double angle = -0.001230967163554325;
+	double esperado[3][3] = {
+		{
+			0.9999992423600168,
+			-0.001230966852677662,
+			0.0
+		},
+		{
+			0.001230966852677662,
+			0.9999992423600168,
+			0.0
+		},
+		{
+			0.0,
+			0.0,
+			1.0
+		}
+	};
+	double obtenido[3][3];
+	R_z(angle, obtenido);
+
+	if(verbose) printf("R_z2:\n");
+	for(int i = 0; i < 3; i++)
+	{
+		for(int j = 0; j < 3; j++)
+		{
+			if(verbose)
+			{
+				printf("Esperado: %.20lf\n", esperado[i][j]);
+				printf("Obtenido: %.20lf\n", obtenido[i][j]);
+			}
+			assert(fabs(obtenido[i][j]-esperado[i][j])<10e-12);
+		}
+	}
+
+	printf("R_z2 superado!\n");
+}
+
+//------------------------------------------------------------------------------
+//  void testR_z3(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 3 de la función R_z
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
+void testR_z3(bool verbose)
+{
+	double angle = -0.0012310780508968;
+	double esperado[3][3] = {
+		{
+			0.999999242223512,
+			-0.001231077739936117,
+			0.0
+		},
+		{
+			0.001231077739936117,
+			0.999999242223512,
+			0.0
+		},
+		{
+			0.0,
+			0.0,
+			1.0
+		}
+	};
+	double obtenido[3][3];
+	R_z(angle, obtenido);
+
+	if(verbose) printf("R_z3:\n");
+	for(int i = 0; i < 3; i++)
+	{
+		for(int j = 0; j < 3; j++)
+		{
+			if(verbose)
+			{
+				printf("Esperado: %.20lf\n", esperado[i][j]);
+				printf("Obtenido: %.20lf\n", obtenido[i][j]);
+			}
+			assert(fabs(obtenido[i][j]-esperado[i][j])<10e-12);
+		}
+	}
+
+	printf("R_z3 superado!\n");
+}
+
+//------------------------------------------------------------------------------
 //  int main()
 //------------------------------------------------------------------------------
 /**
@@ -239,10 +679,31 @@ int main(){
 
   // Test tlamb
 	printf("Probando tlamb!\n");
-	testTlamb1(false);
-	testTlamb2(false);
-	testTlamb3(false);
+	//testTlamb1(false);
+	//testTlamb2(false);
+	//testTlamb3(false);
 	printf("tlamb finalizado!\n\n");
+
+	// Test R_x
+	printf("Probando R_x!\n");
+	testR_x1(false);
+	testR_x2(false);
+	testR_x3(false);
+	printf("R_x finalizado!\n\n");
+
+	// Test R_y
+	printf("Probando R_y!\n");
+	testR_y1(false);
+	testR_y2(false);
+	testR_y3(false);
+	printf("R_y finalizado!\n\n");
+
+	// Test R_z
+	printf("Probando R_z!\n");
+	testR_z1(false);
+	testR_z2(false);
+	testR_z3(false);
+	printf("R_z finalizado!\n\n");
 
 	// Final
 	printf("Todos los test superados!\n");
