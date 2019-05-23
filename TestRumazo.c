@@ -6,6 +6,7 @@
 #include "EqnEquinox.h"
 #include "Frac.h"
 #include "gmst.h"
+#include "timediff.h"
 
 typedef int bool;
 #define true 1
@@ -423,6 +424,153 @@ void testGmst3(bool verbose)
 }
 
 //------------------------------------------------------------------------------
+//  void testTimediff1(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 1 de la función timediff
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
+void testTimediff1(bool verbose)
+{
+	double n1 = 0.258022690875596;
+	double n2 = 34.0;
+	double esp1 = -33.7419773091244;
+	double esp2 = -15.0;
+	double esp3 = -14.7419773091244;
+	double esp4 = 66.184;
+	double esp5 = 15.0;
+	double obt1;
+	double obt2;
+	double obt3;
+	double obt4;
+	double obt5;
+
+	timediff(n1, n2, &obt1, &obt2, &obt3, &obt4, &obt5);
+
+	if(verbose)
+	{
+		printf("timediff1:\n");
+		printf("Esperado 1: %.20lf \n", esp1);
+		printf("Obtenido 1: %.20lf \n", obt1);
+		printf("Esperado 2: %.20lf \n", esp2);
+		printf("Obtenido 2: %.20lf \n", obt2);
+		printf("Esperado 3: %.20lf \n", esp3);
+		printf("Obtenido 3: %.20lf \n", obt3);
+		printf("Esperado 4: %.20lf \n", esp4);
+		printf("Obtenido 4: %.20lf \n", obt4);
+		printf("Esperado 5: %.20lf \n", esp5);
+		printf("Obtenido 5: %.20lf \n", obt5);
+	}
+
+	assert(fabs(esp1 - obt1) < 10e-12);
+	assert(fabs(esp2 - obt2) < 10e-12);
+	assert(fabs(esp3 - obt3) < 10e-12);
+	assert(fabs(esp4 - obt4) < 10e-12);
+	assert(fabs(esp5 - obt5) < 10e-12);
+	printf("timediff1 superado!\n");
+}
+
+//------------------------------------------------------------------------------
+//  void testTimediff2(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 2 de la función timediff
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
+void testTimediff2(bool verbose)
+{
+	double n1 = -0.141248008109364;
+	double n2 = 34.0;
+	double esp1 = -34.1412480081094;
+	double esp2 = -15.0;
+	double esp3 = -15.1412480081094;
+	double esp4 = 66.184;
+	double esp5 = 15.0;
+	double obt1;
+	double obt2;
+	double obt3;
+	double obt4;
+	double obt5;
+
+	timediff(n1, n2, &obt1, &obt2, &obt3, &obt4, &obt5);
+
+	if(verbose)
+	{
+		printf("timediff2:\n");
+		printf("Esperado 1: %.20lf \n", esp1);
+		printf("Obtenido 1: %.20lf \n", obt1);
+		printf("Esperado 2: %.20lf \n", esp2);
+		printf("Obtenido 2: %.20lf \n", obt2);
+		printf("Esperado 3: %.20lf \n", esp3);
+		printf("Obtenido 3: %.20lf \n", obt3);
+		printf("Esperado 4: %.20lf \n", esp4);
+		printf("Obtenido 4: %.20lf \n", obt4);
+		printf("Esperado 5: %.20lf \n", esp5);
+		printf("Obtenido 5: %.20lf \n", obt5);
+	}
+
+	assert(fabs(esp1 - obt1) < 10e-12);
+	assert(fabs(esp2 - obt2) < 10e-12);
+	assert(fabs(esp3 - obt3) < 10e-12);
+	assert(fabs(esp4 - obt4) < 10e-12);
+	assert(fabs(esp5 - obt5) < 10e-12);
+	printf("timediff2 superado!\n");
+}
+
+//------------------------------------------------------------------------------
+//  void testTimediff3(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 3 de la función timediff
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
+void testTimediff3(bool verbose)
+{
+	double n1 = 0.161894409590604;
+	double n2 = 33.0;
+	double esp1 = -32.8381055904094;
+	double esp2 = -14.0;
+	double esp3 = -13.8381055904094;
+	double esp4 = 65.184;
+	double esp5 = 14.0;
+	double obt1;
+	double obt2;
+	double obt3;
+	double obt4;
+	double obt5;
+
+	timediff(n1, n2, &obt1, &obt2, &obt3, &obt4, &obt5);
+
+	if(verbose)
+	{
+		printf("timediff3:\n");
+		printf("Esperado 1: %.20lf \n", esp1);
+		printf("Obtenido 1: %.20lf \n", obt1);
+		printf("Esperado 2: %.20lf \n", esp2);
+		printf("Obtenido 2: %.20lf \n", obt2);
+		printf("Esperado 3: %.20lf \n", esp3);
+		printf("Obtenido 3: %.20lf \n", obt3);
+		printf("Esperado 4: %.20lf \n", esp4);
+		printf("Obtenido 4: %.20lf \n", obt4);
+		printf("Esperado 5: %.20lf \n", esp5);
+		printf("Obtenido 5: %.20lf \n", obt5);
+	}
+
+	assert(fabs(esp1 - obt1) < 10e-12);
+	assert(fabs(esp2 - obt2) < 10e-12);
+	assert(fabs(esp3 - obt3) < 10e-12);
+	assert(fabs(esp4 - obt4) < 10e-12);
+	assert(fabs(esp5 - obt5) < 10e-12);
+	printf("timediff3 superado!\n");
+}
+
+//------------------------------------------------------------------------------
 //  int main()
 //------------------------------------------------------------------------------
 /**
@@ -465,6 +613,13 @@ int main(){
 	testGmst2(false);
 	testGmst3(false);
 	printf("gmst finalizado!\n\n");
+
+	// Test timediff
+	printf("Probando timediff!\n");
+	testTimediff1(false);
+	testTimediff2(false);
+	testTimediff3(false);
+	printf("timediff finalizado!\n\n");
 
 	// Final
 	printf("Todos los test superados!\n");

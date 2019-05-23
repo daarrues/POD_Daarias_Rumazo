@@ -19,13 +19,13 @@
 /**
  * Time differences [s]
  *
- * @param <UT1_UTC> UT1_UTC time difference [s].
- * @param <TAI_UTC> TAI_UTC time difference [s].
- * @param <UT1_TAI> UT1_TAI time difference [s].
- * @param <UTC_GPS> UTC_GPS time difference [s].
- * @param <UT1_GPS> UT1_GPS time difference [s].
- * @param <TT_UTC> TT_UTC time difference [s].
- * @param <GPS_UTC> GPS_UTC time difference [s].
+ * @param <UT1_UTC> UT1-UTC time difference [s] (in).
+ * @param <TAI_UTC> TAI-UTC time difference [s] (in).
+ * @param <UT1_TAI> UT1-TAI time difference [s] (out).
+ * @param <UTC_GPS> UTC-GPS time difference [s] (out).
+ * @param <UT1_GPS> UT1-GPS time difference [s] (out).
+ * @param <TT_UTC> TT-UTC time difference [s] (out).
+ * @param <GPS_UTC> GPS-UTC time difference [s] (out).
  */
 //------------------------------------------------------------------------------
 void timediff(double UT1_UTC, double TAI_UTC, double *UT1_TAI, double *UTC_GPS,
