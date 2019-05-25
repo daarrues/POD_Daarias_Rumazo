@@ -11,6 +11,7 @@
 #include "timediff.h"
 #include "IERS.h"
 #include "gast.h"
+#include "GHAMatrix.h"
 
 typedef int bool;
 #define true 1
@@ -824,6 +825,165 @@ void testGast3(bool verbose)
 }
 
 //------------------------------------------------------------------------------
+//  void testGHAMatrix1(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 1 de la función GHAMatrix
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
+void testGHAMatrix1(bool verbose)
+{
+	double date = 54977.66690663211200000000;
+	double esperado[3][3] = {
+		{
+			-0.56557657052466759000,
+			0.82469578807797705000,
+			0.00000000000000000000
+		},
+		{
+			-0.82469578807797705000,
+			-0.56557657052466759000,
+			0.00000000000000000000
+		},
+		{
+			0.00000000000000000000,
+			0.00000000000000000000,
+			1.00000000000000000000
+		}
+	};
+
+	double obtenido[3][3];
+	GHAMatrix(date, obtenido);
+
+	if(verbose)
+	{
+		printf("GHAMatrix1:\n");
+	}
+	for(int i = 0; i < 3; i++)
+	{
+		for(int j = 0; j < 3; j++)
+		{
+			if(verbose)
+			{
+				printf("Esperado: %.20lf\n", esperado[i][j]);
+				printf("Obtenido: %.20lf\n", obtenido[i][j]);
+			}
+			assert(fabs(esperado[i][j] - obtenido[i][j]) < 10e-12);
+		}
+	}
+
+	printf("GHAMatrix1 superado!\n");
+}
+
+//------------------------------------------------------------------------------
+//  void testGHAMatrix2(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 2 de la función GHAMatrix
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
+void testGHAMatrix2(bool verbose)
+{
+	double date = 55565.90440572530500000000;
+	double esperado[3][3] = {
+		{
+			0.34631450688377857000,
+			0.93811846923607967000,
+			0.00000000000000000000
+		},
+		{
+			-0.93811846923607967000,
+			0.34631450688377857000,
+			0.00000000000000000000
+		},
+		{
+			0.00000000000000000000,
+			0.00000000000000000000,
+			1.00000000000000000000
+		}
+	};
+
+	double obtenido[3][3];
+	GHAMatrix(date, obtenido);
+
+	if(verbose)
+	{
+		printf("GHAMatrix2:\n");
+	}
+	for(int i = 0; i < 3; i++)
+	{
+		for(int j = 0; j < 3; j++)
+		{
+			if(verbose)
+			{
+				printf("Esperado: %.20lf\n", esperado[i][j]);
+				printf("Obtenido: %.20lf\n", obtenido[i][j]);
+			}
+			assert(fabs(esperado[i][j] - obtenido[i][j]) < 10e-12);
+		}
+	}
+
+	printf("GHAMatrix2 superado!\n");
+}
+
+//------------------------------------------------------------------------------
+//  void testGHAMatrix3(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 3 de la función GHAMatrix
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
+void testGHAMatrix3(bool verbose)
+{
+	double date = 54332.48610921379400000000;
+	double esperado[3][3] = {
+		{
+			-0.80316026638348281000,
+			0.59576302881499199000,
+			0.00000000000000000000
+		},
+		{
+			-0.59576302881499199000,
+			-0.80316026638348281000,
+			0.00000000000000000000
+		},
+		{
+			0.00000000000000000000,
+			0.00000000000000000000,
+			1.00000000000000000000
+		}
+	};
+
+	double obtenido[3][3];
+	GHAMatrix(date, obtenido);
+
+	if(verbose)
+	{
+		printf("GHAMatrix3:\n");
+	}
+	for(int i = 0; i < 3; i++)
+	{
+		for(int j = 0; j < 3; j++)
+		{
+			if(verbose)
+			{
+				printf("Esperado: %.20lf\n", esperado[i][j]);
+				printf("Obtenido: %.20lf\n", obtenido[i][j]);
+			}
+			assert(fabs(esperado[i][j] - obtenido[i][j]) < 10e-12);
+		}
+	}
+
+	printf("GHAMatrix3 superado!\n");
+}
+
+//------------------------------------------------------------------------------
 //  int main()
 //------------------------------------------------------------------------------
 /**
@@ -887,6 +1047,13 @@ int main(){
 	testGast2(false);
 	testGast3(false);
 	printf("gast finalizado!\n\n");
+
+	// Test GHAMatrix
+	printf("Probando GHAMatrix!\n");
+	testGHAMatrix1(false);
+	testGHAMatrix2(false);
+	testGHAMatrix3(false);
+	printf("GHAMatrix finalizado!\n\n");
 
 	// Final
 	printf("Todos los test superados!\n");
