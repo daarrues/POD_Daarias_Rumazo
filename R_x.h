@@ -5,7 +5,7 @@
 /**
  * @file R_x.h
  * @author Daniel Arias Ruiz-Esquide y Rubén Mazo Tomás
- * @date Created: 2019/05/09
+ * @date Created: 2019/05/23
  *
  * Este fichero contiene las cabeceras para las
  * funciones del fichero R_x.m (M. Mahooti)
