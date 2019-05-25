@@ -1,39 +1,31 @@
 //------------------------------------------------------------------------------
-//                                 EqnEquinox
+//                                 GHAMatrix
 //------------------------------------------------------------------------------
 // POD: Preliminary Orbit Determination
 /**
- * @file EqnEquinox.c
+ * @file GHAMatrix.c
  * @author Daniel Arias Ruiz-Esquide y Rubén Mazo Tomás
- * @date Created: 2019/05/16
+ * @date Created: 2019/05/25
  *
  * Este fichero contiene las implementaciones para las
- * funciones del fichero EqnEquinox.m (M. Mahooti)
+ * funciones del fichero GHAMatrix.m (M. Mahooti)
  */
 //------------------------------------------------------------------------------
-#include "NutAngles.h"
-#include "MeanObliquity.h"
-#include <math.h>
+#include "R_z.h"
+#include "gast.h"
 
 //------------------------------------------------------------------------------
-//  double EqnEquinox(double Mjd_TT)
+//  void GHAMatrix(double Mjd_UT1, double GHAmat[3][3])
 //------------------------------------------------------------------------------
 /**
- * Computation of the equation of the equinoxes.
+ * Transformation from true equator and equinox to Earth equator and Greenwich
+ * meridian system.
  *
- * @param <Mjd_TT> Modified Julian Date (Terrestrial Time).
- *
- * @return Equation of the equinoxes.
+ * @param <Mjd_UT1> Modified Julian Date UT1 (in).
+ * @param <GHAmat> Greenwich Hour Angle matrix (out).
  */
 //------------------------------------------------------------------------------
-double EqnEquinox(double Mjd_TT)
+void GHAMatrix(double Mjd_UT1, double GHAmat[3][3])
 {
-  double dpsi;
-  double deps;
-
-  // Nutation in longitude and obliquity
-  NutAngles(Mjd_TT, &dpsi, &deps);
-
-  // Equation of the equinoxes
-  return dpsi * cos(MeanObliquity(Mjd_TT));
+  R_z(gast(Mjd_UT1), GHAmat);
 }

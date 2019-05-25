@@ -1,19 +1,19 @@
 //------------------------------------------------------------------------------
-//                                   gast
+//                                 GHAMatrix
 //------------------------------------------------------------------------------
 // POD: Preliminary Orbit Determination
 /**
- * @file gast.h
+ * @file GHAMatrix.h
  * @author Daniel Arias Ruiz-Esquide y Rubén Mazo Tomás
  * @date Created: 2019/05/25
  *
  * Este fichero contiene las cabeceras para las
- * funciones del fichero gast.m (M. Mahooti)
+ * funciones del fichero GHAMatrix.m (M. Mahooti)
  */
 //------------------------------------------------------------------------------
-#ifndef GAST_H
-#define GAST_H
+#ifndef GHAMATRIX_H
+#define GHAMATRIX_H
 
-double gast(double);
+void GHAMatrix(double, double[3][3]);
 
-#endif // GAST_H
+#endif // GHAMATRIX_H
