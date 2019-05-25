@@ -14,6 +14,6 @@
 #ifndef GAST_H
 #define GAST_H
 
-double gstime(double);
+double gast(double);
 
 #endif // GAST_H

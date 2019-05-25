@@ -21,7 +21,7 @@
 #include <math.h>
 
 //------------------------------------------------------------------------------
-//  double gstime(double Mjd_UT1)
+//  double gast(double Mjd_UT1)
 //------------------------------------------------------------------------------
 /**
  * Greenwich Apparent Sidereal Time.
@@ -31,7 +31,7 @@
  * @return GAST in [rad].
  */
 //------------------------------------------------------------------------------
-double gstime(double Mjd_UT1)
+double gast(double Mjd_UT1)
 {
   double *eopdata[13];
   leerFichero(eopdata);

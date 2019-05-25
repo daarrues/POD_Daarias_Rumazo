@@ -3,7 +3,7 @@
 //------------------------------------------------------------------------------
 // POD: Preliminary Orbit Determination
 /**
- * @file EqnEquinox.h
+ * @file EqnEquinox.c
  * @author Daniel Arias Ruiz-Esquide y Rubén Mazo Tomás
  * @date Created: 2019/05/16
  *
