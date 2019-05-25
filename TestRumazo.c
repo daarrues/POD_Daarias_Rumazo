@@ -14,6 +14,7 @@
 #include "GHAMatrix.h"
 #include "PoleMatrix.h"
 #include "NutMatrix.h"
+#include "PrecMatrix.h"
 
 typedef int bool;
 #define true 1
@@ -1307,6 +1308,168 @@ void testNutMatrix3(bool verbose)
 }
 
 //------------------------------------------------------------------------------
+//  void testPrecMatrix1(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 1 de la función PrecMatrix
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
+void testPrecMatrix1(bool verbose)
+{
+	double date1 = 51544.50000000000000000000;
+	double date2 = 54977.66766966425300000000;
+	double esperado[3][3] = {
+		{
+			0.99999737380232945000,
+			-0.00210194819368334690,
+			-0.00091334672251535971
+		},
+		{
+			0.00210194819366918240,
+			0.99999779090399488000,
+			-0.00000095992051556750
+		},
+		{
+			0.00091334672254795744,
+			-0.00000095988949895835,
+			0.99999958289833457000
+		}
+	};
+
+	double obtenido[3][3];
+	PrecMatrix(date1, date2, obtenido);
+
+	if(verbose)
+	{
+		printf("PrecMatrix1:\n");
+	}
+	for(int i = 0; i < 3; i++)
+	{
+		for(int j = 0; j < 3; j++)
+		{
+			if(verbose)
+			{
+				printf("Esperado: %.20lf\n", esperado[i][j]);
+				printf("Obtenido: %.20lf\n", obtenido[i][j]);
+			}
+			assert(fabs(esperado[i][j] - obtenido[i][j]) < 10e-12);
+		}
+	}
+
+	printf("PrecMatrix1 superado!\n");
+}
+
+//------------------------------------------------------------------------------
+//  void testPrecMatrix2(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 2 de la función PrecMatrix
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
+void testPrecMatrix2(bool verbose)
+{
+	double date1 = 51544.50000000000000000000;
+	double date2 = 55565.90517337957900000000;
+	double esperado[3][3] = {
+		{
+			0.99999639673612872000,
+			-0.00246210631618178730,
+			-0.00106983514929104710
+		},
+		{
+			0.00246210631615512330,
+			0.99999696901078317000,
+			-0.00000131705123572390
+		},
+		{
+			0.00106983514935241200,
+			-0.00000131700138827348,
+			0.99999942772534556000
+		}
+	};
+
+	double obtenido[3][3];
+	PrecMatrix(date1, date2, obtenido);
+
+	if(verbose)
+	{
+		printf("PrecMatrix2:\n");
+	}
+	for(int i = 0; i < 3; i++)
+	{
+		for(int j = 0; j < 3; j++)
+		{
+			if(verbose)
+			{
+				printf("Esperado: %.20lf\n", esperado[i][j]);
+				printf("Obtenido: %.20lf\n", obtenido[i][j]);
+			}
+			assert(fabs(esperado[i][j] - obtenido[i][j]) < 10e-12);
+		}
+	}
+
+	printf("PrecMatrix2 superado!\n");
+}
+
+//------------------------------------------------------------------------------
+//  void testPrecMatrix3(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 3 de la función PrecMatrix
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
+void testPrecMatrix3(bool verbose)
+{
+	double date1 = 51544.50000000000000000000;
+	double date2 = 54332.48686555545300000000;
+	double esperado[3][3] = {
+		{
+			0.99999826812913417000,
+			-0.00170692926348680160,
+			-0.00074170831295002732
+		},
+		{
+			0.00170692926348064160,
+			0.99999854319498327000,
+			-0.00000063303066555599
+		},
+		{
+			0.00074170831296420381,
+			-0.00000063301405511264,
+			0.99999972493415101000
+		}
+	};
+
+	double obtenido[3][3];
+	PrecMatrix(date1, date2, obtenido);
+
+	if(verbose)
+	{
+		printf("PrecMatrix3:\n");
+	}
+	for(int i = 0; i < 3; i++)
+	{
+		for(int j = 0; j < 3; j++)
+		{
+			if(verbose)
+			{
+				printf("Esperado: %.20lf\n", esperado[i][j]);
+				printf("Obtenido: %.20lf\n", obtenido[i][j]);
+			}
+			assert(fabs(esperado[i][j] - obtenido[i][j]) < 10e-12);
+		}
+	}
+
+	printf("PrecMatrix3 superado!\n");
+}
+
+//------------------------------------------------------------------------------
 //  int main()
 //------------------------------------------------------------------------------
 /**
@@ -1391,6 +1554,13 @@ int main(){
 	testNutMatrix2(false);
 	testNutMatrix3(false);
 	printf("NutMatrix finalizado!\n\n");
+
+	// Test PrecMatrix
+	printf("Probando PrecMatrix!\n");
+	testPrecMatrix1(false);
+	testPrecMatrix2(false);
+	testPrecMatrix3(false);
+	printf("PrecMatrix finalizado!\n\n");
 
 	// Final
 	printf("Todos los test superados!\n");
