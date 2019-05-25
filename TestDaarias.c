@@ -682,9 +682,9 @@ int main(){
 
   // Test tlamb
 	printf("Probando tlamb!\n");
-	//testTlamb1(false);
-	//testTlamb2(false);
-	//testTlamb3(false);
+	testTlamb1(false);
+	testTlamb2(false);
+	testTlamb3(false);
 	printf("tlamb finalizado!\n\n");
 
 	// Test R_x
