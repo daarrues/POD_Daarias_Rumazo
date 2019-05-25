@@ -12,6 +12,7 @@
 #include "IERS.h"
 #include "gast.h"
 #include "GHAMatrix.h"
+#include "PoleMatrix.h"
 
 typedef int bool;
 #define true 1
@@ -984,6 +985,168 @@ void testGHAMatrix3(bool verbose)
 }
 
 //------------------------------------------------------------------------------
+//  void testPoleMatrix1(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 1 de la función PoleMatrix
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
+void testPoleMatrix1(bool verbose)
+{
+	double xp = 0.00000007578920080679;
+	double yp = 0.00000256777193042581;
+	double esperado[3][3] = {
+		{
+			0.99999999999999711000,
+			0.00000000000019460938,
+			0.00000007578920080654
+		},
+		{
+			0.00000000000000000000,
+			0.99999999999670330000,
+			-0.00000256777193042298
+		},
+		{
+			-0.00000007578920080679,
+			0.00000256777193042298,
+			0.99999999999670042000
+		}
+	};
+
+	double obtenido[3][3];
+	PoleMatrix(xp, yp, obtenido);
+
+	if(verbose)
+	{
+		printf("PoleMatrix1:\n");
+	}
+	for(int i = 0; i < 3; i++)
+	{
+		for(int j = 0; j < 3; j++)
+		{
+			if(verbose)
+			{
+				printf("Esperado: %.20lf\n", esperado[i][j]);
+				printf("Obtenido: %.20lf\n", obtenido[i][j]);
+			}
+			assert(fabs(esperado[i][j] - obtenido[i][j]) < 10e-12);
+		}
+	}
+
+	printf("PoleMatrix1 superado!\n");
+}
+
+//------------------------------------------------------------------------------
+//  void testPoleMatrix2(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 2 de la función PoleMatrix
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
+void testPoleMatrix2(bool verbose)
+{
+	double xp = 0.00000057222922939284;
+	double yp = 0.00000097165542393736;
+	double esperado[3][3] = {
+		{
+			0.99999999999983624000,
+			0.00000000000055600963,
+			0.00000057222922939254
+		},
+		{
+			0.00000000000000000000,
+			0.99999999999952793000,
+			-0.00000097165542393721
+		},
+		{
+			-0.00000057222922939281,
+			0.00000097165542393705,
+			0.99999999999936418000
+		}
+	};
+
+	double obtenido[3][3];
+	PoleMatrix(xp, yp, obtenido);
+
+	if(verbose)
+	{
+		printf("PoleMatrix2:\n");
+	}
+	for(int i = 0; i < 3; i++)
+	{
+		for(int j = 0; j < 3; j++)
+		{
+			if(verbose)
+			{
+				printf("Esperado: %.20lf\n", esperado[i][j]);
+				printf("Obtenido: %.20lf\n", obtenido[i][j]);
+			}
+			assert(fabs(esperado[i][j] - obtenido[i][j]) < 10e-12);
+		}
+	}
+
+	printf("PoleMatrix2 superado!\n");
+}
+
+//------------------------------------------------------------------------------
+//  void testPoleMatrix3(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 3 de la función PoleMatrix
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
+void testPoleMatrix3(bool verbose)
+{
+	double xp = 0.00000101984436330847;
+	double yp = 0.00000138460955806667;
+	double esperado[3][3] = {
+		{
+			0.99999999999947997000,
+			0.00000000000141208625,
+			0.00000101984436330732
+		},
+		{
+			0.00000000000000000000,
+			0.99999999999904143000,
+			-0.00000138460955806623
+		},
+		{
+			-0.00000101984436330829,
+			0.00000138460955806551,
+			0.99999999999852140000
+		}
+	};
+
+	double obtenido[3][3];
+	PoleMatrix(xp, yp, obtenido);
+
+	if(verbose)
+	{
+		printf("PoleMatrix3:\n");
+	}
+	for(int i = 0; i < 3; i++)
+	{
+		for(int j = 0; j < 3; j++)
+		{
+			if(verbose)
+			{
+				printf("Esperado: %.20lf\n", esperado[i][j]);
+				printf("Obtenido: %.20lf\n", obtenido[i][j]);
+			}
+			assert(fabs(esperado[i][j] - obtenido[i][j]) < 10e-12);
+		}
+	}
+
+	printf("PoleMatrix3 superado!\n");
+}
+
+//------------------------------------------------------------------------------
 //  int main()
 //------------------------------------------------------------------------------
 /**
@@ -1054,6 +1217,13 @@ int main(){
 	testGHAMatrix2(false);
 	testGHAMatrix3(false);
 	printf("GHAMatrix finalizado!\n\n");
+
+	// Test PoleMatrix
+	printf("Probando PoleMatrix!\n");
+	testPoleMatrix1(false);
+	testPoleMatrix2(false);
+	testPoleMatrix3(false);
+	printf("PoleMatrix finalizado!\n\n");
 
 	// Final
 	printf("Todos los test superados!\n");
