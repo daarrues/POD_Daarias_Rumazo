@@ -13,6 +13,7 @@
 #include "gast.h"
 #include "GHAMatrix.h"
 #include "PoleMatrix.h"
+#include "NutMatrix.h"
 
 typedef int bool;
 #define true 1
@@ -1147,6 +1148,165 @@ void testPoleMatrix3(bool verbose)
 }
 
 //------------------------------------------------------------------------------
+//  void testNutMatrix1(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 1 de la función NutMatrix
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
+void testNutMatrix1(bool verbose)
+{
+	double date = 54977.66766966425300000000;
+	double esperado[3][3] = {
+		{
+			0.99999999789598448000,
+			-0.00005951700510045734,
+			-0.00002580227134293989
+		},
+		{
+			0.00005951642956254065,
+			0.99999999798012063000,
+			-0.00002230590149845583
+		},
+		{
+			0.00002580359887127566,
+			0.00002230436579244361,
+			0.99999999941834472000
+		}
+	};
+
+	double obtenido[3][3];
+	NutMatrix(date, obtenido);
+
+	if(verbose)
+	{
+		printf("NutMatrix1:\n");
+	}
+	for(int i = 0; i < 3; i++)
+	{
+		for(int j = 0; j < 3; j++)
+		{
+			if(verbose)
+			{
+				printf("Esperado: %.20lf\n", esperado[i][j]);
+				printf("Obtenido: %.20lf\n", obtenido[i][j]);
+			}
+			assert(fabs(esperado[i][j] - obtenido[i][j]) < 10e-12);
+		}
+	}
+
+	printf("NutMatrix1 superado!\n");
+}
+
+//------------------------------------------------------------------------------
+//  void testNutMatrix2(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 2 de la función NutMatrix
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
+void testNutMatrix2(bool verbose)
+{
+	double date = 55565.90517337957900000000;
+	double esperado[3][3] = {
+		{
+			0.99999999617856128000,
+			-0.00008021040910016327,
+			-0.00003477308723849868
+		},
+		{
+			0.00008021043529446639,
+			0.99999999678286022000,
+			0.00000075189849470954
+		},
+		{
+			0.00003477302681654293,
+			-0.00000075468765634400,
+			0.99999999939513351000
+		}
+	};
+
+	double obtenido[3][3];
+	NutMatrix(date, obtenido);
+
+	if(verbose)
+	{
+		printf("NutMatrix2:\n");
+	}
+	for(int i = 0; i < 3; i++)
+	{
+		for(int j = 0; j < 3; j++)
+		{
+			if(verbose)
+			{
+				printf("Esperado: %.20lf\n", esperado[i][j]);
+				printf("Obtenido: %.20lf\n", obtenido[i][j]);
+			}
+			assert(fabs(esperado[i][j] - obtenido[i][j]) < 10e-12);
+		}
+	}
+
+	printf("NutMatrix2 superado!\n");
+}
+
+//------------------------------------------------------------------------------
+//  void testNutMatrix3(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 3 de la función NutMatrix
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
+void testNutMatrix3(bool verbose)
+{
+	double date = 54332.48686555545300000000;
+	double esperado[3][3] = {
+		{
+			0.99999999938022521000,
+			-0.00003230225198822882,
+			-0.00001400407540242579
+		},
+		{
+			0.00003230166622528275,
+			0.99999999860358380000,
+			-0.00004182624283308504
+		},
+		{
+			0.00001400542646470598,
+			0.00004182579045223188,
+			0.99999999902722569000
+		}
+	};
+
+	double obtenido[3][3];
+	NutMatrix(date, obtenido);
+
+	if(verbose)
+	{
+		printf("NutMatrix3:\n");
+	}
+	for(int i = 0; i < 3; i++)
+	{
+		for(int j = 0; j < 3; j++)
+		{
+			if(verbose)
+			{
+				printf("Esperado: %.20lf\n", esperado[i][j]);
+				printf("Obtenido: %.20lf\n", obtenido[i][j]);
+			}
+			assert(fabs(esperado[i][j] - obtenido[i][j]) < 10e-12);
+		}
+	}
+
+	printf("NutMatrix3 superado!\n");
+}
+
+//------------------------------------------------------------------------------
 //  int main()
 //------------------------------------------------------------------------------
 /**
@@ -1224,6 +1384,13 @@ int main(){
 	testPoleMatrix2(false);
 	testPoleMatrix3(false);
 	printf("PoleMatrix finalizado!\n\n");
+
+	// Test NutMatrix
+	printf("Probando NutMatrix!\n");
+	testNutMatrix1(false);
+	testNutMatrix2(false);
+	testNutMatrix3(false);
+	printf("NutMatrix finalizado!\n\n");
 
 	// Final
 	printf("Todos los test superados!\n");
