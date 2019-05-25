@@ -15,14 +15,14 @@
 #include <math.h>
 
 //------------------------------------------------------------------------------
-//  IERS(double **eop, double Mjd_UTC, char interp, double *UT1_UTC,
+//  IERS(double *eop[13], double Mjd_UTC, char interp, double *UT1_UTC,
 //  double *TAI_UTC, double *x_pole, double *y_pole, double *ddpsi, double *ddeps)
 //------------------------------------------------------------------------------
 /**
  * Management of IERS time and polar motion data.
  *
- * @param <eop> (in).
- * @param <nop> (in).
+ * @param <eop> File data (in).
+ * @param <nop> number of rows (in).
  * @param <Mjd_UTC> (in).
  * @param <interp> (in).
  * @param <UT1_UTC> (out).
@@ -33,7 +33,7 @@
  * @param <ddeps> (out).
  */
 //------------------------------------------------------------------------------
-void IERS(double **eop, int nop, double Mjd_UTC, char interp, double *UT1_UTC,
+void IERS(double *eop[13], int nop, double Mjd_UTC, char interp, double *UT1_UTC,
   double *TAI_UTC, double *x_pole, double *y_pole, double *ddpsi, double *ddeps)
 {
   if(interp == 'l')

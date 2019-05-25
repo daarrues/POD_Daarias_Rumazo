@@ -1,3 +1,5 @@
+#include "EOPDATA.h"
+
 #include <assert.h>
 #include <stdio.h>
 #include <math.h>
@@ -582,7 +584,8 @@ void testTimediff3(bool verbose)
 //------------------------------------------------------------------------------
 void testIERS1(bool verbose)
 {
-	//EOPDATA
+	double *eopdata[13];
+	leerFichero(eopdata);
 	int n1 = 20026;
 	double n2 = 54977.6669036457;
 	char c = 'l';
@@ -638,7 +641,8 @@ void testIERS1(bool verbose)
 //------------------------------------------------------------------------------
 void testIERS2(bool verbose)
 {
-	//EOPDATA
+	double *eopdata[13];
+	leerFichero(eopdata);
 	int n1 = 20026;
 	double n2 = 53989.198426771;
 	char c = 'l';
@@ -694,7 +698,8 @@ void testIERS2(bool verbose)
 //------------------------------------------------------------------------------
 void testIERS3(bool verbose)
 {
-	//EOPDATA
+	double *eopdata[13];
+	leerFichero(eopdata);
 	int n1 = 20026;
 	double n2 = 55565.9044073611;
 	char c = 'l';

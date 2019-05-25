@@ -14,7 +14,7 @@
 #ifndef IERS_H
 #define IERS_H
 
-void IERS(double**, int, double, char,
+void IERS(double*[13], int, double, char,
           double*, double*, double*, double*, double*, double*);
 
 #endif // IERS_H
