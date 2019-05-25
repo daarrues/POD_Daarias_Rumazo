@@ -10,6 +10,7 @@
 #include "gmst.h"
 #include "timediff.h"
 #include "IERS.h"
+#include "gast.h"
 
 typedef int bool;
 #define true 1
@@ -745,6 +746,84 @@ void testIERS3(bool verbose)
 }
 
 //------------------------------------------------------------------------------
+//  void testGstime1(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 1 de la función gstime
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
+void testGstime1(bool verbose)
+{
+	double n = 54977.6669066321;
+	double esperado = 2.17192854407046;
+	double obtenido = gstime(n);
+
+	if(verbose)
+	{
+		printf("gstime1:\n");
+		printf("Esperado: %.20lf \n", esperado);
+		printf("Obtenido: %.20lf \n", obtenido);
+	}
+
+	assert(fabs(esperado - obtenido) < 10e-8);
+	printf("gstime1 superado!\n");
+}
+
+//------------------------------------------------------------------------------
+//  void testGstime2(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 2 de la función gstime
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
+void testGstime2(bool verbose)
+{
+	double n = 55565.9044057253;
+	double esperado = 1.2171566871639;
+	double obtenido = gstime(n);
+
+	if(verbose)
+	{
+		printf("gstime2:\n");
+		printf("Esperado: %.20lf \n", esperado);
+		printf("Obtenido: %.20lf \n", obtenido);
+	}
+
+	assert(fabs(esperado - obtenido) < 10e-8);
+	printf("gstime2 superado!\n");
+}
+
+//------------------------------------------------------------------------------
+//  void testGstime3(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 3 de la función gstime
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
+void testGstime3(bool verbose)
+{
+	double n = 54332.4861092138;
+	double esperado = 2.50337730618796;
+	double obtenido = gstime(n);
+
+	if(verbose)
+	{
+		printf("gstime3:\n");
+		printf("Esperado: %.20lf \n", esperado);
+		printf("Obtenido: %.20lf \n", obtenido);
+	}
+
+	assert(fabs(esperado - obtenido) < 10e-8);
+	printf("gstime3 superado!\n");
+}
+
+//------------------------------------------------------------------------------
 //  int main()
 //------------------------------------------------------------------------------
 /**
@@ -801,6 +880,13 @@ int main(){
 	testIERS2(false);
 	testIERS3(false);
 	printf("IERS finalizado!\n\n");
+
+	// Test gstime
+	printf("Probando gstime!\n");
+	testGstime1(false);
+	testGstime2(false);
+	testGstime3(false);
+	printf("gstime finalizado!\n\n");
 
 	// Final
 	printf("Todos los test superados!\n");
