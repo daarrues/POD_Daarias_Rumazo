@@ -14,10 +14,11 @@
 #include "MatLabUtils/MatLabUtils.h"
 #include <math.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 //------------------------------------------------------------------------------
-//  void Mjday(double year, double month, double day, double hour, double min,
-//             double sec, double* Mjd)
+//  double Mjday(double year, double month, double day, double hour, double min,
+//             double sec)
 //------------------------------------------------------------------------------
 /**
  * Mjday: Modified Julian Date from calendar date and time
@@ -34,8 +35,8 @@
  * @return <Mjd> Modified Julian Date
  */
 //------------------------------------------------------------------------------
-void Mjday(double year, double month, double day, double hour, double min,
-            double sec, double* Mjd)
+double Mjday(double year, double month, double day, double hour, double min,
+            double sec)
 {
   double y = year;
   double m = month;
@@ -85,12 +86,12 @@ void Mjday(double year, double month, double day, double hour, double min,
   else
   {
     printf("\n\n  this is an invalid calendar date!!\n");
-    Mjd = NULL;
+    exit(1);
   }
 
   double jd = fix(365.25 * y + c) + fix(30.6001 * (m + 1));
   jd = jd + day + b + 1720994.5;
   jd = jd + (hour+min/60+sec/3600)/24;
-  *Mjd = jd - 2400000.5;
+  return jd - 2400000.5;
 }
 //------------------------------------------------------------------------------

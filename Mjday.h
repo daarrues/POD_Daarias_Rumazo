@@ -14,6 +14,6 @@
 #ifndef MJDAY_H
 #define MJDAY_H
 
-void Mjday(double, double, double, double, double, double, double*);
+double Mjday(double, double, double, double, double, double);
 
 #endif // MJDAY_H
