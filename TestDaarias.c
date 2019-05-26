@@ -1381,7 +1381,98 @@ void testAngl3(bool verbose)
 	printf("angl3 superado!\n");
 }
 
-// Test Mjday
+//------------------------------------------------------------------------------
+//  void testMjday1(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 1 de la función Mjday
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
+void testMjday1(bool verbose)
+{
+	double year = 2009.0;
+	double month = 5.0;
+	double day = 26.0;
+	double hour = 16.0;
+	double min = 0.0;
+	double sec = 20.475;
+	double esperado = 54977.66690364573;
+	double obtenido = Mjday(year, month, day, hour, min, sec);
+
+	if(verbose)
+	{
+		printf("Mjday1:\n");
+		printf("Esperado: %.20lf \n", esperado);
+		printf("Obtenido: %.20lf \n", obtenido);
+	}
+
+	assert(fabs(esperado - obtenido) < 10e-12);
+	printf("Mjday1 superado!\n");
+}
+
+//------------------------------------------------------------------------------
+//  void testMjday2(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 2 de la función Mjday
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
+void testMjday2(bool verbose)
+{
+	double year = 2011.0;
+	double month = 1.0;
+	double day = 4.0;
+	double hour = 13.0;
+	double min = 0.0;
+	double sec = 46.5;
+	double esperado = 55565.54220486106;
+	double obtenido = Mjday(year, month, day, hour, min, sec);
+
+	if(verbose)
+	{
+		printf("Mjday2:\n");
+		printf("Esperado: %.20lf \n", esperado);
+		printf("Obtenido: %.20lf \n", obtenido);
+	}
+
+	assert(fabs(esperado - obtenido) < 10e-12);
+	printf("Mjday2 superado!\n");
+}
+
+//------------------------------------------------------------------------------
+//  void testMjday3(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 3 de la función Mjday
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
+void testMjday3(bool verbose)
+{
+	double year = 2011.0;
+	double month = 1.0;
+	double day = 4.0;
+	double hour = 21.0;
+	double min = 42.0;
+	double sec = 20.796;
+	double esperado = 55565.90440736106;
+	double obtenido = Mjday(year, month, day, hour, min, sec);
+
+	if(verbose)
+	{
+		printf("Mjday3:\n");
+		printf("Esperado: %.20lf \n", esperado);
+		printf("Obtenido: %.20lf \n", obtenido);
+	}
+
+	assert(fabs(esperado - obtenido) < 10e-12);
+	printf("Mjday3 superado!\n");
+}
 
 //------------------------------------------------------------------------------
 //  void testNewtonnu1(bool verbose)
@@ -1557,6 +1648,11 @@ int main(){
 	printf("angl finalizado!\n\n");
 
 	// Test Mjday
+	printf("Probando Mjday!\n");
+	testMjday1(false);
+	testMjday2(false);
+	testMjday3(false);
+	printf("Mjday finalizado!\n\n");
 
 	// Test newtonnu
 	printf("Probando newtonnu!\n");
