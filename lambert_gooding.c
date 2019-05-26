@@ -331,7 +331,7 @@ void tlamb(double m, double q, double qsqfm1, double x, int n, double *t,
          u0i, u1i, u2i, u3i, tq, i, tqsum, ttmold, p, tterm, tqterm;
   // Gooding support routine
   double sw = 0.4;
-  *t = 0;
+  *t = 0.0;
 
   double lm1 = (n == -1);
   double l1 = (n >= 1);
@@ -460,7 +460,7 @@ void tlamb(double m, double q, double qsqfm1, double x, int n, double *t,
     }
     term = 4.0;
     tq = q*qsqfm1;
-    i = 0;
+    i = 0.0;
     if (q<0.5)
     {
       tqsum = 1.0 - q*qsq;
@@ -583,8 +583,8 @@ void xlamb(double m, double q, double qsqfm1, double tin, int *n, double *x,
 
   double thr2 = atan2(qsqfm1, 2.0*q)/M_PI;
 
-  *xpl = 0;
-  *x = 0;
+  *xpl = 0.0;
+  *x = 0.0;
 
   if (m == 0)
   {
@@ -686,7 +686,7 @@ void xlamb(double m, double q, double qsqfm1, double tin, int *n, double *x,
         else
         {
           *x = -tdiff/(tdiff + 4.0);
-          ij = 200;
+          ij = 200.0;
           w = *x + c0*sqrt(2.0*(1.0 - thr2));
           if (w <  0.0)
           {
@@ -736,7 +736,7 @@ void xlamb(double m, double q, double qsqfm1, double tin, int *n, double *x,
   else
   {
     *x = -tdiff/(tdiff + 4.0);
-    ij = 200;
+    ij = 200.0;
     w = *x + c0*sqrt(2.0*(1.0 - thr2));
     if (w < 0.0)
     {
