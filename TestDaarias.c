@@ -5,6 +5,10 @@
 #include "R_x.h"
 #include "R_y.h"
 #include "R_z.h"
+#include "angl.h"
+#include "Mjday.h"
+#include "Position.h"
+#include "newtonnu.h"
 
 typedef int bool;
 #define true 1
@@ -222,6 +226,12 @@ void testTlamb3(bool verbose)
   assert(fabs(esp_d3t - obt_d3t) < 10e-12);
 	printf("tlamb3 superado!\n");
 }
+
+// Test xlamb
+
+// Test vlamb
+
+// Test lambert_gooding
 
 //------------------------------------------------------------------------------
 //  void testR_x1(bool verbose)
@@ -665,6 +675,214 @@ void testR_z3(bool verbose)
 }
 
 //------------------------------------------------------------------------------
+//  void testAngl1(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 1 de la función angl
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+ //------------------------------------------------------------------------------
+void testAngl1(bool verbose)
+{
+	double v1[3] = {
+		20387627.07175297,
+		1865163.696333993,
+		-109943.6885558921
+		};
+	double v2[3] = {
+		20435422.35215281,
+		1070699.446717979,
+		1012905.491433884
+		};
+	double esperado = 0.06720882293144352;
+	double obtenido = angl(v1, v2);
+
+	if(verbose)
+	{
+		printf("angl1:\n");
+		printf("Esperado: %.20lf \n", esperado);
+		printf("Obtenido: %.20lf \n", obtenido);
+	}
+
+	assert(fabs(esperado - obtenido) < 10e-12);
+	printf("angl1 superado!\n");
+}
+
+//------------------------------------------------------------------------------
+//  void testAngl2(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 2 de la función angl
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+ //------------------------------------------------------------------------------
+void testAngl2(bool verbose)
+{
+	double v1[3] = {
+		20435422.35215281,
+		1070699.446717979,
+		1012905.491433884
+		};
+	double v2[3] = {
+		20398157.06662507,
+		271778.6158697309,
+		2131538.395420803
+		};
+	double esperado = 0.06708423348977346;
+	double obtenido = angl(v1, v2);
+
+	if(verbose)
+	{
+		printf("angl2:\n");
+		printf("Esperado: %.20lf \n", esperado);
+		printf("Obtenido: %.20lf \n", obtenido);
+	}
+
+	assert(fabs(esperado - obtenido) < 10e-12);
+	printf("angl2 superado!\n");
+}
+
+//------------------------------------------------------------------------------
+//  void testAngl3(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 3 de la función angl
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+ //------------------------------------------------------------------------------
+void testAngl3(bool verbose)
+{
+	double v1[3] = {
+		76378095813.3326,
+		6694495484.997974,
+		0.0
+		};
+	double v2[3] = {
+		0.08111985681453468,
+		0.01287140290519155,
+		-0.008099964956862108
+		};
+	double esperado = 0.1205731168766288;
+	double obtenido = angl(v1, v2);
+
+	if(verbose)
+	{
+		printf("angl3:\n");
+		printf("Esperado: %.20lf \n", esperado);
+		printf("Obtenido: %.20lf \n", obtenido);
+	}
+
+	assert(fabs(esperado - obtenido) < 10e-12);
+	printf("angl3 superado!\n");
+}
+
+// Test Mjday
+
+//------------------------------------------------------------------------------
+//  void testNewtonnu1(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 1 de la función newtonnu
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+ //------------------------------------------------------------------------------
+void testNewtonnu1(bool verbose)
+{
+	double ecc = 0.08253310617358817;
+	double nu = 0.1812003110535373;
+	double esp_e0 = 0.1668839377415842;
+	double esp_m = 0.153174331355188;
+
+	double obt_e0, obt_m;
+	newtonnu(ecc, nu, &obt_e0, &obt_m);
+
+	if(verbose)
+	{
+		printf("newtonnu1:\n");
+		printf("Esperado e0: %.20lf \n", esp_e0);
+		printf("Obtenido e0: %.20lf \n", obt_e0);
+		printf("Esperado m: %.20lf \n", esp_m);
+		printf("Obtenido m: %.20lf \n", obt_m);
+	}
+
+	assert(fabs(esp_e0 - obt_e0) < 10e-12);
+	assert(fabs(esp_m - obt_m) < 10e-12);
+	printf("newtonnu1 superado!\n");
+}
+
+//------------------------------------------------------------------------------
+//  void testNewtonnu2(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 2 de la función newtonnu
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+ //------------------------------------------------------------------------------
+void testNewtonnu2(bool verbose)
+{
+	double ecc = 0.08669431216172874;
+	double nu = 0.1713058522671266;
+	double esp_e0 = 0.157107124092798;
+	double esp_m = 0.1435427917466885;
+
+	double obt_e0, obt_m;
+	newtonnu(ecc, nu, &obt_e0, &obt_m);
+
+	if(verbose)
+	{
+		printf("newtonnu2:\n");
+		printf("Esperado e0: %.20lf \n", esp_e0);
+		printf("Obtenido e0: %.20lf \n", obt_e0);
+		printf("Esperado m: %.20lf \n", esp_m);
+		printf("Obtenido m: %.20lf \n", obt_m);
+	}
+
+	assert(fabs(esp_e0 - obt_e0) < 10e-12);
+	assert(fabs(esp_m - obt_m) < 10e-12);
+	printf("newtonnu2 superado!\n");
+}
+
+//------------------------------------------------------------------------------
+//  void testNewtonnu3(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 3 de la función newtonnu
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+ //------------------------------------------------------------------------------
+void testNewtonnu3(bool verbose)
+{
+	double ecc = 0.07912910777801811;
+	double nu = 0.1902672374573671;
+	double esp_e0 = 0.1758403692885834;
+	double esp_m = 0.1619978705540214;
+
+	double obt_e0, obt_m;
+	newtonnu(ecc, nu, &obt_e0, &obt_m);
+
+	if(verbose)
+	{
+		printf("newtonnu3:\n");
+		printf("Esperado e0: %.20lf \n", esp_e0);
+		printf("Obtenido e0: %.20lf \n", obt_e0);
+		printf("Esperado m: %.20lf \n", esp_m);
+		printf("Obtenido m: %.20lf \n", obt_m);
+	}
+
+	assert(fabs(esp_e0 - obt_e0) < 10e-12);
+	assert(fabs(esp_m - obt_m) < 10e-12);
+	printf("newtonnu1 superado!\n");
+}
+
+// Test Position
+
+//------------------------------------------------------------------------------
 //  int main()
 //------------------------------------------------------------------------------
 /**
@@ -687,6 +905,12 @@ int main(){
 	testTlamb3(false);
 	printf("tlamb finalizado!\n\n");
 
+	// Test xlamb
+
+	// Test vlamb
+
+	// Test lambert_gooding
+
 	// Test R_x
 	printf("Probando R_x!\n");
 	testR_x1(false);
@@ -707,6 +931,24 @@ int main(){
 	testR_z2(false);
 	testR_z3(false);
 	printf("R_z finalizado!\n\n");
+
+	// Test angl
+	printf("Probando angl!\n");
+	testAngl1(false);
+	testAngl2(false);
+	testAngl3(false);
+	printf("angl finalizado!\n\n");
+
+	// Test Mjday
+
+	// Test newtonnu
+	printf("Probando newtonnu!\n");
+	testNewtonnu1(false);
+	testNewtonnu2(false);
+	testNewtonnu3(false);
+	printf("newtonnu finalizado!\n\n");
+
+	// Test Position
 
 	// Final
 	printf("Todos los test superados!\n");
