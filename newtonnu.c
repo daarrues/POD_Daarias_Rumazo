@@ -51,7 +51,7 @@ void newtonnu(double ecc, double nu, double *e0, double *m)
     {
       sine = ( sqrt( 1.0 -ecc*ecc ) * sin(nu) ) / ( 1.0 +ecc*cos(nu) );
       cose = ( ecc + cos(nu) ) / ( 1.0  + ecc*cos(nu) );
-      e0 = atan2(sine, cose);
+      *e0 = atan2(sine, cose);
       *m = *e0 - ecc*sin(*e0);
     }
     else
@@ -59,7 +59,7 @@ void newtonnu(double ecc, double nu, double *e0, double *m)
       // -------------------- hyperbolic  --------------------
       if ( ecc > 1.0 + small  )
       {
-        if (ecc > 1.0 ) & (fabs(nu)+0.00001 < pi-acos(1.0 /ecc))
+        if ((ecc > 1.0 ) && (fabs(nu)+0.00001 < M_PI-acos(1.0 /ecc)))
         {
           sine = ( sqrt( ecc*ecc-1.0  ) * sin(nu) ) / ( 1.0  + ecc*cos(nu) );
           *e0 = asinh(sine);
@@ -69,7 +69,7 @@ void newtonnu(double ecc, double nu, double *e0, double *m)
       else
       {
         // ----------------- parabolic ---------------------
-        if ( fabs(nu) < 168.0*pi/180.0  )
+        if ( fabs(nu) < 168.0*M_PI/180.0  )
         {
           *e0 = tan(nu*0.5);
           *m = *e0 + ((*e0)*(*e0)*(*e0))/3.0;
@@ -80,11 +80,11 @@ void newtonnu(double ecc, double nu, double *e0, double *m)
 
   if ( ecc < 1.0  )
   {
-    *m = (*m) % (2.0*M_PI);
+    *m = fmod(*m,2.0*M_PI);
     if ( *m < 0.0  )
     {
       *m = *m + 2.0 *M_PI;
     }
-    *e0 = (*e0) % (2.0*M_PI);
+    *e0 = fmod(*e0,2.0*M_PI);
   }
 }

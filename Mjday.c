@@ -13,10 +13,11 @@
 //------------------------------------------------------------------------------
 #include "MatLabUtils/MatLabUtils.h"
 #include <math.h>
+#include <stdio.h>
 
 //------------------------------------------------------------------------------
-//  double Mjday(double year, double month, double day, double hour, double min,
-//               double sec)
+//  void Mjday(double year, double month, double day, double hour, double min,
+//             double sec, double* Mjd)
 //------------------------------------------------------------------------------
 /**
  * Mjday: Modified Julian Date from calendar date and time
@@ -33,13 +34,14 @@
  * @return <Mjd> Modified Julian Date
  */
 //------------------------------------------------------------------------------
-double Mjday(double year, double month, double day, double hour, double min,
-            double sec)
+void Mjday(double year, double month, double day, double hour, double min,
+            double sec, double* Mjd)
 {
   double y = year;
   double m = month;
+  double a;
   double b = 0.0;
-  double c = 0;
+  double c = 0.0;
 
   if (m <= 2)
   {
@@ -57,38 +59,38 @@ double Mjday(double year, double month, double day, double hour, double min,
   {
     // null
   }
-  elseif (year > 1582)
+  else if (year > 1582)
   {
     a = fix(y / 100);
     b = 2 - a + floor(a / 4);
   }
-  elseif (month < 10)
+  else if (month < 10)
   {
     // null
   }
-  elseif (month > 10)
+  else if (month > 10)
   {
     a = fix(y / 100);
     b = 2 - a + floor(a / 4);
   }
-  elseif (day <= 4)
+  else if (day <= 4)
   {
     // null
   }
-  elseif (day > 14)
+  else if (day > 14)
   {
     a = fix(y / 100);
     b = 2 - a + floor(a / 4);
   }
   else
   {
-    printf('\n\n  this is an invalid calendar date!!\n');
-    return null;
+    printf("\n\n  this is an invalid calendar date!!\n");
+    Mjd = NULL;
   }
 
   double jd = fix(365.25 * y + c) + fix(30.6001 * (m + 1));
   jd = jd + day + b + 1720994.5;
   jd = jd + (hour+min/60+sec/3600)/24;
-  return jd - 2400000.5;
+  *Mjd = jd - 2400000.5;
 }
 //------------------------------------------------------------------------------
