@@ -74,7 +74,7 @@ void testD8rt2(bool verbose)
  *
  * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
  */
- //------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
 void testD8rt3(bool verbose)
 {
 	double n = 0.006959569773385268;
@@ -100,7 +100,7 @@ void testD8rt3(bool verbose)
  *
  * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
  */
- //------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
 void testTlamb1(bool verbose)
 {
 	double m = 0.0;
@@ -145,7 +145,7 @@ void testTlamb1(bool verbose)
  *
  * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
  */
- //------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
 void testTlamb2(bool verbose)
 {
   double m = 0.0;
@@ -190,7 +190,7 @@ void testTlamb2(bool verbose)
  *
  * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
  */
- //------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
 void testTlamb3(bool verbose)
 {
   double m = 0.0;
@@ -227,11 +227,613 @@ void testTlamb3(bool verbose)
 	printf("tlamb3 superado!\n");
 }
 
-// Test xlamb
+//------------------------------------------------------------------------------
+//  void testXlamb1(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 1 de la función xlamb
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
+void testXlamb1(bool verbose)
+{
+  double m = 0.0;
+  double q = 0.8046115644662321;
+  double qsqfm1 = 0.3526002303272028;
+  double tin = 0.9134381609833159;
 
-// Test vlamb
+	double esp_n = 1.0;
+  double esp_x = 0.6256383152410641;
+  double esp_xpl = 0.0;
 
-// Test lambert_gooding
+  double obt_n, obt_x, obt_xpl;
+	xlamb(m, q, qsqfm1, tin, &obt_n, &obt_x, &obt_xpl);
+
+	if(verbose)
+	{
+		printf("xlamb1:\n");
+    printf("Esperado n: %.20lf \n", esp_n);
+		printf("Obtenido n: %.20lf \n", obt_n);
+    printf("Esperado x: %.20lf \n", esp_x);
+		printf("Obtenido x: %.20lf \n", obt_x);
+    printf("Esperado xpl: %.20lf \n", esp_xpl);
+		printf("Obtenido xpl: %.20lf \n", obt_xpl);
+	}
+
+	assert(fabs(esp_n - obt_n) < 10e-12);
+  assert(fabs(esp_x - obt_x) < 10e-12);
+  assert(fabs(esp_xpl - obt_xpl) < 10e-12);
+	printf("xlamb1 superado!\n");
+}
+
+//------------------------------------------------------------------------------
+//  void testXlamb2(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 2 de la función xlamb
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
+void testXlamb2(bool verbose)
+{
+  double m = 1.0;
+  double q = 0.99132778710087;
+  double qsqfm1 = 0.01726921852169195;
+  double tin = 0.0637845039365542;
+
+	double esp_n = 0.0;
+  double esp_x = 0.0;
+  double esp_xpl = 0.0;
+
+  double obt_n, obt_x, obt_xpl;
+	xlamb(m, q, qsqfm1, tin, &obt_n, &obt_x, &obt_xpl);
+
+	if(verbose)
+	{
+		printf("xlamb2:\n");
+    printf("Esperado n: %.20lf \n", esp_n);
+		printf("Obtenido n: %.20lf \n", obt_n);
+    printf("Esperado x: %.20lf \n", esp_x);
+		printf("Obtenido x: %.20lf \n", obt_x);
+    printf("Esperado xpl: %.20lf \n", esp_xpl);
+		printf("Obtenido xpl: %.20lf \n", obt_xpl);
+	}
+
+	assert(fabs(esp_n - obt_n) < 10e-12);
+  assert(fabs(esp_x - obt_x) < 10e-12);
+  assert(fabs(esp_xpl - obt_xpl) < 10e-12);
+	printf("xlamb2 superado!\n");
+}
+
+//------------------------------------------------------------------------------
+//  void testXlamb3(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 3 de la función xlamb
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
+void testXlamb3(bool verbose)
+{
+  double m = 0.0;
+  double q = 0.9669569195016101;
+  double qsqfm1 = 0.06499431582795664;
+  double tin = 0.1741579527629812;
+
+	double esp_n = 1.0;
+  double esp_x = 0.7236378712038933;
+  double esp_xpl = 0.0;
+
+  double obt_n, obt_x, obt_xpl;
+	xlamb(m, q, qsqfm1, tin, &obt_n, &obt_x, &obt_xpl);
+
+	if(verbose)
+	{
+		printf("xlamb3:\n");
+    printf("Esperado n: %.20lf \n", esp_n);
+		printf("Obtenido n: %.20lf \n", obt_n);
+    printf("Esperado x: %.20lf \n", esp_x);
+		printf("Obtenido x: %.20lf \n", obt_x);
+    printf("Esperado xpl: %.20lf \n", esp_xpl);
+		printf("Obtenido xpl: %.20lf \n", obt_xpl);
+	}
+
+	assert(fabs(esp_n - obt_n) < 10e-12);
+  assert(fabs(esp_x - obt_x) < 10e-12);
+  assert(fabs(esp_xpl - obt_xpl) < 10e-12);
+	printf("xlamb3 superado!\n");
+}
+
+//------------------------------------------------------------------------------
+//  void testVlamb1(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 1 de la función vlamb
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
+void testVlamb1(bool verbose)
+{
+  double gm = 398600441800000;
+  double r1 = 9163781.535461562;
+  double r2 = 9158926.303943245;
+  double th = 0.431406120912815;
+	double tdelt = 600.0000044703484;
+
+	double esp_n = 1.0;
+  double esp_vri[2] = {
+		-4.246341652783283,
+		0.0
+		};
+	double esp_vti[2] = {
+		6585.897930820493,
+		0.0
+		};
+	double esp_vrf[2] = {
+		-11.68727565166062,
+		0.0
+		};
+	double esp_vtf[2] = {
+		6589.38917620767,
+		0.0
+		};
+
+  double obt_n, obt_vri[2], obt_vti[2], obt_vrf[2], obt_vtf[2];
+	vlamb(gm, r1, r2, th, tdelt, &obt_n, obt_vri, obt_vti, obt_vrf, obt_vtf);
+
+	if(verbose){
+		printf("vlamb1:\n");
+
+		// N
+		printf("Esperado n: %.20lf \n", esp_n);
+		printf("Obtenido n: %.20lf \n", obt_n);
+	}
+	assert(fabs(esp_n - obt_n) < 10e-12);
+
+	// VRI
+	for(int i = 0; i < 2; i++)
+	{
+		if(verbose)
+		{
+			printf("Esperado: %.20lf\n", esp_vri[i]);
+			printf("Obtenido: %.20lf\n", obt_vri[i]);
+		}
+		assert(fabs(obt_vri[i]-esp_vri[i])<10e-12);
+	}
+
+	// VTI
+	for(int i = 0; i < 2; i++)
+	{
+		if(verbose)
+		{
+			printf("Esperado: %.20lf\n", esp_vti[i]);
+			printf("Obtenido: %.20lf\n", obt_vti[i]);
+		}
+		assert(fabs(obt_vti[i]-esp_vti[i])<10e-12);
+	}
+
+	// VRF
+	for(int i = 0; i < 2; i++)
+	{
+		if(verbose)
+		{
+			printf("Esperado: %.20lf\n", esp_vrf[i]);
+			printf("Obtenido: %.20lf\n", obt_vrf[i]);
+		}
+		assert(fabs(obt_vrf[i]-esp_vrf[i])<10e-12);
+	}
+
+	// VTF
+	for(int i = 0; i < 2; i++)
+	{
+		if(verbose)
+		{
+			printf("Esperado: %.20lf\n", esp_vtf[i]);
+			printf("Obtenido: %.20lf\n", obt_vtf[i]);
+		}
+		assert(fabs(obt_vtf[i]-esp_vtf[i])<10e-12);
+	}
+
+	printf("vlamb1 superado!\n");
+}
+
+//------------------------------------------------------------------------------
+//  void testVlamb2(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 2 de la función vlamb
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
+void testVlamb2(bool verbose)
+{
+  double gm = 398600441800000;
+  double r1 = 9163781.535461562;
+  double r2 = 9158926.303943245;
+  double th = 6.714591428092401;
+	double tdelt = 600.0000044703484;
+
+	double esp_n = 0.0;
+  double esp_vri[2] = {
+		0.0,
+		0.0
+		};
+	double esp_vti[2] = {
+		0.0,
+		0.0
+		};
+	double esp_vrf[2] = {
+		0.0,
+		0.0
+		};
+	double esp_vtf[2] = {
+		0.0,
+		0.0
+		};
+
+  double obt_n, obt_vri[2], obt_vti[2], obt_vrf[2], obt_vtf[2];
+	vlamb(gm, r1, r2, th, tdelt, &obt_n, obt_vri, obt_vti, obt_vrf, obt_vtf);
+
+	if(verbose)
+	{
+		printf("vlamb2:\n");
+
+		// N
+		printf("Esperado n: %.20lf \n", esp_n);
+		printf("Obtenido n: %.20lf \n", obt_n);
+	}
+	assert(fabs(esp_n - obt_n) < 10e-12);
+
+	// VRI
+	for(int i = 0; i < 2; i++)
+	{
+		if(verbose)
+		{
+			printf("Esperado: %.20lf\n", esp_vri[i]);
+			printf("Obtenido: %.20lf\n", obt_vri[i]);
+		}
+		assert(fabs(obt_vri[i]-esp_vri[i])<10e-12);
+	}
+
+	// VTI
+	for(int i = 0; i < 2; i++)
+	{
+		if(verbose)
+		{
+			printf("Esperado: %.20lf\n", esp_vti[i]);
+			printf("Obtenido: %.20lf\n", obt_vti[i]);
+		}
+		assert(fabs(obt_vti[i]-esp_vti[i])<10e-12);
+	}
+
+	// VRF
+	for(int i = 0; i < 2; i++)
+	{
+		if(verbose)
+		{
+			printf("Esperado: %.20lf\n", esp_vrf[i]);
+			printf("Obtenido: %.20lf\n", obt_vrf[i]);
+		}
+		assert(fabs(obt_vrf[i]-esp_vrf[i])<10e-12);
+	}
+
+	// VTF
+	for(int i = 0; i < 2; i++)
+	{
+		if(verbose)
+		{
+			printf("Esperado: %.20lf\n", esp_vtf[i]);
+			printf("Obtenido: %.20lf\n", obt_vtf[i]);
+		}
+		assert(fabs(obt_vtf[i]-esp_vtf[i])<10e-12);
+	}
+
+	printf("vlamb2 superado!\n");
+}
+
+//------------------------------------------------------------------------------
+//  void testVlamb3(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 3 de la función vlamb
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
+void testVlamb3(bool verbose)
+{
+  double gm = 398600441800000;
+  double r1 = 20473061.83367915451526641846;
+  double r2 = 20488505.59583704546093940735;
+  double th = 0.06720882293144518627;
+	double tdelt = 300.00002235174179077148;
+
+	double esp_n = 1.0;
+  double esp_vri[2] = {
+		39.82208832992758829050,
+		0.0
+		};
+	double esp_vti[2] = {
+		4589.76670044189813779667,
+		0.0
+		};
+	double esp_vrf[2] = {
+		63.09171280899065692438,
+		0.0
+		};
+	double esp_vtf[2] = {
+		4586.30704034369045984931,
+		0.0
+		};
+
+  double obt_n, obt_vri[2], obt_vti[2], obt_vrf[2], obt_vtf[2];
+	vlamb(gm, r1, r2, th, tdelt, &obt_n, obt_vri, obt_vti, obt_vrf, obt_vtf);
+
+	if(verbose)
+	{
+		printf("vlamb3:\n");
+
+		// N
+		printf("Esperado n: %.20lf \n", esp_n);
+		printf("Obtenido n: %.20lf \n", obt_n);
+	}
+	assert(fabs(esp_n - obt_n) < 10e-12);
+
+	// VRI
+	for(int i = 0; i < 2; i++)
+	{
+		if(verbose)
+		{
+			printf("Esperado: %.20lf\n", esp_vri[i]);
+			printf("Obtenido: %.20lf\n", obt_vri[i]);
+		}
+		assert(fabs(obt_vri[i]-esp_vri[i])<10e-12);
+	}
+
+	// VTI
+	for(int i = 0; i < 2; i++)
+	{
+		if(verbose)
+		{
+			printf("Esperado: %.20lf\n", esp_vti[i]);
+			printf("Obtenido: %.20lf\n", obt_vti[i]);
+		}
+		assert(fabs(obt_vti[i]-esp_vti[i])<10e-12);
+	}
+
+	// VRF
+	for(int i = 0; i < 2; i++)
+	{
+		if(verbose)
+		{
+			printf("Esperado: %.20lf\n", esp_vrf[i]);
+			printf("Obtenido: %.20lf\n", obt_vrf[i]);
+		}
+		assert(fabs(obt_vrf[i]-esp_vrf[i])<10e-12);
+	}
+
+	// VTF
+	for(int i = 0; i < 2; i++)
+	{
+		if(verbose)
+		{
+			printf("Esperado: %.20lf\n", esp_vtf[i]);
+			printf("Obtenido: %.20lf\n", obt_vtf[i]);
+		}
+		assert(fabs(obt_vtf[i]-esp_vtf[i])<10e-12);
+	}
+
+	printf("vlamb3 superado!\n");
+}
+
+//------------------------------------------------------------------------------
+//  void testLambert_gooding1(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 1 de la función lambert_gooding
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
+void testLambert_gooding1(bool verbose)
+{
+	double r1[3] = {
+		8794276.580984011,
+		404708.1949434897,
+		2543973.805637163
+		};
+	double r2[3] = {
+		8330586.996205064,
+		3762923.082128749,
+		572416.9963455135
+		};
+  double tof = 600.0000044703484;
+  double mu = 398600441800000;
+  double long_way = 0.0;
+  double multi_revs = 1.0;
+
+	double esp_v1[3] = {
+		591.4156797181868,
+		5838.863650451791,
+		-2988.63988326117
+		};
+	double esp_v2[3] = {
+		-2113.653770404029,
+		5180.392996064316,
+		-3480.83071307979
+		};
+
+
+  double obt_v1[3], obt_v2[3];
+	lambert_gooding(r1, r2, tof, mu, long_way, multi_revs, obt_v1, obt_v2);
+
+	if(verbose) printf("lambert_gooding1:\n");
+
+	// V1
+	for(int i = 0; i < 3; i++)
+	{
+		if(verbose)
+		{
+			printf("Esperado: %.20lf\n", esp_v1[i]);
+			printf("Obtenido: %.20lf\n", obt_v1[i]);
+		}
+		assert(fabs(obt_v1[i]-esp_v1[i])<10e-12);
+	}
+
+	// V2
+	for(int i = 0; i < 3; i++)
+	{
+		if(verbose)
+		{
+			printf("Esperado: %.20lf\n", esp_v2[i]);
+			printf("Obtenido: %.20lf\n", obt_v2[i]);
+		}
+		assert(fabs(obt_v2[i]-esp_v2[i])<10e-12);
+	}
+
+	printf("lambert_gooding1 superado!\n");
+}
+
+//------------------------------------------------------------------------------
+//  void testLambert_gooding2(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 2 de la función lambert_gooding
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
+void testLambert_gooding2(bool verbose)
+{
+	double r1[3] = {
+		1976694.85762782581150531769,
+		-37017163.92619637399911880493,
+		-17995197.21750879287719726562
+		};
+	double r2[3] = {
+		2464157.77993164770305156708,
+		-36524015.15769488364458084106,
+		-17826894.45484596118330955505
+		};
+  double tof = 299.99998211860656738281;
+  double mu = 398600441800000;
+  double long_way = 0.0;
+  double multi_revs = 1.0;
+
+	double esp_v1[3] = {
+		1493.24026997438159014564,
+		1473.89412066475870233262,
+		497.96118943721626237675
+		};
+	double esp_v2[3] = {
+		1489.02795936263919429621,
+		1543.60206023751629800245,
+		531.91650817821096097759
+		};
+
+
+  double obt_v1[3], obt_v2[3];
+	lambert_gooding(r1, r2, tof, mu, long_way, multi_revs, obt_v1, obt_v2);
+
+	if(verbose) printf("lambert_gooding2:\n");
+
+	// V1
+	for(int i = 0; i < 3; i++)
+	{
+		if(verbose)
+		{
+			printf("Esperado: %.20lf\n", esp_v1[i]);
+			printf("Obtenido: %.20lf\n", obt_v1[i]);
+		}
+		assert(fabs(obt_v1[i]-esp_v1[i])<10e-9); // 12 significativas (al menos)
+	}
+
+	// V2
+	for(int i = 0; i < 3; i++)
+	{
+		if(verbose)
+		{
+			printf("Esperado: %.20lf\n", esp_v2[i]);
+			printf("Obtenido: %.20lf\n", obt_v2[i]);
+		}
+		assert(fabs(obt_v2[i]-esp_v2[i])<10e-9); // 12 significativas (al menos)
+	}
+
+	printf("lambert_gooding2 superado!\n");
+}
+
+//------------------------------------------------------------------------------
+//  void testLambert_gooding3(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 3 de la función lambert_gooding
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
+void testLambert_gooding3(bool verbose)
+{
+	double r1[3] = {
+		20387627.07175297,
+		1865163.696333993,
+		-109943.6885558921
+		};
+	double r2[3] = {
+		20435422.35215281,
+		1070699.446717979,
+		1012905.491433884
+		};
+  double tof = 300.0000223517418;
+  double mu = 398600441800000;
+  double long_way = 0.0;
+  double multi_revs = 1.0;
+
+	double esp_v1[3] = {
+		301.4349823754282,
+		-2637.066656808077,
+		3744.67095512485
+		};
+	double esp_v2[3] = {
+		17.19646978067542,
+		-2657.510276115648,
+		3738.386850808526
+		};
+
+
+  double obt_v1[3], obt_v2[3];
+	lambert_gooding(r1, r2, tof, mu, long_way, multi_revs, obt_v1, obt_v2);
+
+	if(verbose) printf("lambert_gooding3:\n");
+
+	// V1
+	for(int i = 0; i < 3; i++)
+	{
+		if(verbose)
+		{
+			printf("Esperado: %.20lf\n", esp_v1[i]);
+			printf("Obtenido: %.20lf\n", obt_v1[i]);
+		}
+		assert(fabs(obt_v1[i]-esp_v1[i])<10e-9); // 12 significativas (al menos)
+	}
+
+	// V2
+	for(int i = 0; i < 3; i++)
+	{
+		if(verbose)
+		{
+			printf("Esperado: %.20lf\n", esp_v2[i]);
+			printf("Obtenido: %.20lf\n", obt_v2[i]);
+		}
+		assert(fabs(obt_v2[i]-esp_v2[i])<10e-10); // 12 significativas (al menos)
+	}
+
+	printf("lambert_gooding3 superado!\n");
+}
 
 //------------------------------------------------------------------------------
 //  void testR_x1(bool verbose)
@@ -682,7 +1284,7 @@ void testR_z3(bool verbose)
  *
  * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
  */
- //------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
 void testAngl1(bool verbose)
 {
 	double v1[3] = {
@@ -717,7 +1319,7 @@ void testAngl1(bool verbose)
  *
  * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
  */
- //------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
 void testAngl2(bool verbose)
 {
 	double v1[3] = {
@@ -752,7 +1354,7 @@ void testAngl2(bool verbose)
  *
  * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
  */
- //------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
 void testAngl3(bool verbose)
 {
 	double v1[3] = {
@@ -789,7 +1391,7 @@ void testAngl3(bool verbose)
  *
  * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
  */
- //------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
 void testNewtonnu1(bool verbose)
 {
 	double ecc = 0.08253310617358817;
@@ -822,7 +1424,7 @@ void testNewtonnu1(bool verbose)
  *
  * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
  */
- //------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
 void testNewtonnu2(bool verbose)
 {
 	double ecc = 0.08669431216172874;
@@ -855,7 +1457,7 @@ void testNewtonnu2(bool verbose)
  *
  * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
  */
- //------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
 void testNewtonnu3(bool verbose)
 {
 	double ecc = 0.07912910777801811;
@@ -906,10 +1508,25 @@ int main(){
 	printf("tlamb finalizado!\n\n");
 
 	// Test xlamb
+	printf("Probando xlamb!\n");
+	testXlamb1(false);
+	testXlamb2(false);
+	testXlamb3(false);
+	printf("xlamb finalizado!\n\n");
 
 	// Test vlamb
+	printf("Probando vlamb!\n");
+	testVlamb1(false);
+	testVlamb2(false);
+	testVlamb3(false);
+	printf("vlamb finalizado!\n\n");
 
 	// Test lambert_gooding
+	printf("Probando lambert_gooding!\n");
+	testLambert_gooding1(false);
+	testLambert_gooding2(false);
+	testLambert_gooding3(false);
+	printf("lambert_gooding finalizado!\n\n");
 
 	// Test R_x
 	printf("Probando R_x!\n");
