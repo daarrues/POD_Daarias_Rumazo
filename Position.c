@@ -28,7 +28,7 @@
  * @return <r> position vector
  */
 //------------------------------------------------------------------------------
-void Postion(double lon, double lat, double h, double r[])
+void Position(double lon, double lat, double h, double r[])
 {
   double R_equ = R_Earth;
   double f     = f_Earth;

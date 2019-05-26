@@ -14,6 +14,6 @@
 #ifndef POSITION_H
 #define POSITION_H
 
-void Postion(double, double, double, double[]);
+void Position(double, double, double, double[]);
 
 #endif // POSITION_H
