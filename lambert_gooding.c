@@ -15,6 +15,7 @@
 #include "lambert_gooding.h"
 #include <math.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 //------------------------------------------------------------------------------
 //  void lambert_gooding(double r1[], double r2[], double tof, double long_way,
@@ -61,7 +62,7 @@ void lambert_gooding(double r1[], double r2[], double tof, double mu,
   if ( r1mag == 0.0 || r2mag == 0.0 || mu <= 0.0 || tof <= 0.0 )
   {
       printf("Error in solve_lambert_gooding: invalid input\n");
-      return;
+      exit(1);
   }
 
   // initialize:
@@ -93,7 +94,7 @@ void lambert_gooding(double r1[], double r2[], double tof, double mu,
 
   int num_revs;
   double ta, rho[3], etai[3], etaf[3];
-  for (int i = 0; i < multi_revs; i++)
+  for (int i = 0; i <= multi_revs; i++)
   {
       num_revs = i; // number of complete revs for this case
 
@@ -118,12 +119,13 @@ void lambert_gooding(double r1[], double r2[], double tof, double mu,
       cross(rho, r2hat, etaf);
 
       // Gooding routine:
-      int n;
-      double vri[2], vti[2], vrf[2], vtf[2];
+      double n, vri[2], vti[2], vrf[2], vtf[2];
       vlamb(mu, r1mag, r2mag, ta, tof, &n, vri, vti, vrf, vtf);
-      double vt1[3][n], vt2[3][n];
 
-      switch (n) // number of solutions
+      int fixN = fix(n);
+      double vt1[3][fixN], vt2[3][fixN];
+
+      switch (fixN) // number of solutions
       {
         case 1:
           for(int j = 0; j < 3; j++)
@@ -143,7 +145,7 @@ void lambert_gooding(double r1[], double r2[], double tof, double mu,
           break;
       }
 
-      if (i == 0 && n == 1) // there can be only one solution
+      if (i == 0 && fixN == 1) // there can be only one solution
       {
         for(int j = 0; j < 3; j++)
         {
@@ -154,7 +156,7 @@ void lambert_gooding(double r1[], double r2[], double tof, double mu,
       }
       else  // This scenarios never occur in our examples but are implemented
       {
-          switch (n)
+          switch (fixN)
           {
               case 1:
                 for(int j = 0; j < 3; j++)
@@ -214,7 +216,8 @@ void lambert_gooding(double r1[], double r2[], double tof, double mu,
 
 //------------------------------------------------------------------------------
 //  void vlamb(double gm, double r1, double r2, double th, double tdelt,
-//             double n, double vri[], double vti[], double vrf[], double vtf[])
+//             double *n, double vri[], double vti[], double vrf[],
+//             double vtf[])
 //------------------------------------------------------------------------------
 /**
  * Gooding support routine
@@ -230,7 +233,7 @@ void lambert_gooding(double r1[], double r2[], double tof, double mu,
  * @return n, vri, vti, vrf and vtf
  */
 //------------------------------------------------------------------------------
-void vlamb(double gm, double r1, double r2, double th, double tdelt, int *n,
+void vlamb(double gm, double r1, double r2, double th, double tdelt, double *n,
            double vri[], double vti[], double vrf[], double vtf[])
 {
   // Gooding support routine
@@ -250,7 +253,7 @@ void vlamb(double gm, double r1, double r2, double th, double tdelt, int *n,
     thr2 = thr2 - 2*M_PI;
     m = m + 1;
   }
-  thr2 = thr2/2;
+  thr2 = thr2/2.0;
 
   // note: dr and r1r2 are computed in the calling routine
   double r1mag = fabs(r1);
@@ -279,12 +282,12 @@ void vlamb(double gm, double r1, double r2, double th, double tdelt, int *n,
     sig = 1.0;
   }
 
-  t = 4.0*gms*tdelt/pow(s,2);
+  t = 4.0*gms*tdelt/(pow(s,2));
 
   xlamb(m, q, qsqfm1, t, n, &x1, &x2);
 
   // proceed for single solution, or a pair
-  for (int i=0; i < *n; i++)
+  for (int i = 1; i <= *n; i++)
   {
     if (i == 1)
     {
@@ -300,10 +303,10 @@ void vlamb(double gm, double r1, double r2, double th, double tdelt, int *n,
     vt1 = vt2/r1;
     vr2 = -gms*(qzminx + qzplx*rho)/r2;
     vt2 = vt2/r2;
-    vri[i] = vr1;
-    vti[i] = vt1;
-    vrf[i] = vr2;
-    vtf[i] = vt2;
+    vri[i-1] = vr1;
+    vti[i-1] = vt1;
+    vrf[i-1] = vr2;
+    vtf[i-1] = vt2;
   }
 }
 //------------------------------------------------------------------------------
@@ -324,7 +327,7 @@ void vlamb(double gm, double r1, double r2, double th, double tdelt, int *n,
  * @return t, dt, d2t and d3t
  */
 //------------------------------------------------------------------------------
-void tlamb(double m, double q, double qsqfm1, double x, int n, double *t,
+void tlamb(double m, double q, double qsqfm1, double x, double n, double *t,
            double *dt, double *d2t, double *d3t)
 {
   double y, z, qx, a, b, aa, bb, g, f, fg1, term, fg1sq, twoi1, told, qz, qz2,
@@ -551,8 +554,8 @@ double d8rt (double x)
 //------------------------------------------------------------------------------
 
 //------------------------------------------------------------------------------
-//  void xlamb(double m, double q, double qsqfm1, double tin, int *n, double *x,
-//             double *xpl)
+//  void xlamb(double m, double q, double qsqfm1, double tin, double *n,
+//             double *x, double *xpl)
 //------------------------------------------------------------------------------
 /**
  * Gooding support routine
@@ -565,7 +568,7 @@ double d8rt (double x)
  * @return n, x and xpl
  */
 //------------------------------------------------------------------------------
-void xlamb(double m, double q, double qsqfm1, double tin, int *n, double *x,
+void xlamb(double m, double q, double qsqfm1, double tin, double *n, double *x,
            double *xpl)
 {
   // Gooding support routine
@@ -589,7 +592,7 @@ void xlamb(double m, double q, double qsqfm1, double tin, int *n, double *x,
   if (m == 0)
   {
     // single-rev starter from t (at x = 0) & bilinear (usually)
-    *n = 1;
+    *n = 1.0;
     tlamb(m, q, qsqfm1, 0, 0, &t0, &dt, &d2t, &d3t);
     tdiff = tin - t0;
     if (tdiff <= 0.0)
@@ -643,26 +646,26 @@ void xlamb(double m, double q, double qsqfm1, double tin, int *n, double *x,
     {
       // (break off & exit if tmin not located - should never happen)
       // now proceed from t(min) to full starter
-      *n = -1;
+      *n = -1.0;
       return;
     }
     tdiffm = tin - tmin;
     if (tdiffm < 0.0)
     {
-      *n = 0;
+      *n = 0.0;
       return;
       // (exit if no solution with this m)
     }
     else if (tdiffm == 0.0)
     {
       *x = xm;
-      *n = 1;
+      *n = 1.0;
       return;
       // (exit if unique solution already from x(tmin))
     }
     else
     {
-      *n = 3;
+      *n = 3.0;
       if (d2t == 0.0)
       {
         d2t = 6.0*m*M_PI;
@@ -674,7 +677,7 @@ void xlamb(double m, double q, double qsqfm1, double tin, int *n, double *x,
       d2t2 = d2t/2.0;
       if (*x >= 1.0)
       {
-        *n = 1;
+        *n = 1.0;
         // goto 3
         tlamb(m, q, qsqfm1, 0.0 , 0, &t0, &dt, &d2t, &d3t); // 3
         tdiff0 = t0 - tmin;
@@ -696,9 +699,9 @@ void xlamb(double m, double q, double qsqfm1, double tin, int *n, double *x,
           *x = (*x)*(1.0 + (1.0 + m + c42*(thr2 - 0.5))/(1.0 + c3*m)*(*x)*(c1*w - c2*(*x)*sqrt(w)));
           if (*x <= -1.0)
           {
-            *n = *n - 1;
+            *n = *n - 1.0;
             // (no finite solution with x < xm)
-            if (*n == 1)
+            if (*n == 1.0)
             {
               *x = *xpl;
             }
@@ -718,12 +721,12 @@ void xlamb(double m, double q, double qsqfm1, double tin, int *n, double *x,
       *x = *x + t*dt/(dt*dt + t*d2t/2.0);
     }
   }
-  if (*n != 3)
+  if (*n != 3.0)
   {
     return;
   }
   // (exit if only one solution, normally when m = 0)
-  *n = 2;
+  *n = 2.0;
   *xpl = *x;
   // (second multi-rev starter)
   tlamb(m, q, qsqfm1, 0.0 , 0, &t0, &dt, &d2t, &d3t); // 3
@@ -746,9 +749,9 @@ void xlamb(double m, double q, double qsqfm1, double tin, int *n, double *x,
     *x = (*x)*(1.0 + (1.0 + m + c42*(thr2 - 0.5))/(1.0 + c3*m)*(*x)*(c1*w - c2*(*x)*sqrt(w)));
     if (*x <= -1.0)
     {
-      *n = *n - 1;
+      *n = *n - 1.0;
       // (no finite solution with x < xm)
-      if (*n == 1)
+      if (*n == 1.0)
       {
         *x = *xpl;
       }

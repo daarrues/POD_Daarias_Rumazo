@@ -16,11 +16,11 @@
 
 void lambert_gooding(double[], double[], double, double, double, int, double[],
                      double[]);
-void vlamb(double, double, double, double, double, int*, double[], double[],
+void vlamb(double, double, double, double, double, double*, double[], double[],
            double[], double[]);
-void tlamb(double, double, double, double, int, double*, double*, double*,
+void tlamb(double, double, double, double, double, double*, double*, double*,
            double*);
 double d8rt(double);
-void xlamb(double, double, double, double, int*, double*, double*);
+void xlamb(double, double, double, double, double*, double*, double*);
 
 #endif // LAMBERT_GOODING_H
