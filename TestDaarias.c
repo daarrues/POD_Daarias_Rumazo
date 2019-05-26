@@ -1573,7 +1573,122 @@ void testNewtonnu3(bool verbose)
 	printf("newtonnu1 superado!\n");
 }
 
-// Test Position
+//------------------------------------------------------------------------------
+//  void testPosition1(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 1 de la función Position
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
+void testPosition1(bool verbose)
+{
+	double lon = -2.117969613665733;
+	double lat = 0.6830532777909771;
+	double h = 99.81638;
+
+	double esperado[3] = {
+		-2577383.639573138,
+		-4230610.246798722,
+		4004108.332058704
+		};
+
+	double obtenido[3];
+	Position(lon, lat, h, obtenido);
+
+	if(verbose) printf("Position1:\n");
+	for(int i = 0; i < 3; i++)
+	{
+		if(verbose)
+		{
+			printf("Esperado: %.20lf \n", esperado[i]);
+			printf("Obtenido: %.20lf \n", obtenido[i]);
+		}
+		assert(fabs(esperado[i] - obtenido[i]) < 10e-9);
+		// 12 significativas (al menos)
+	}
+
+	printf("Position1 superado!\n");
+}
+
+//------------------------------------------------------------------------------
+//  void testPosition2(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 2 de la función Position
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
+void testPosition2(bool verbose)
+{
+	double lon = -1.504723397302147;
+	double lat = 0.5335890402367144;
+	double h = 0.0;
+
+	double esperado[3] = {
+		362889.5147507534,
+		-5484262.361013475,
+		3225167.728477614
+		};
+
+	double obtenido[3];
+	Position(lon, lat, h, obtenido);
+
+	if(verbose) printf("Position2:\n");
+	for(int i = 0; i < 3; i++)
+	{
+		if(verbose)
+		{
+			printf("Esperado: %.20lf \n", esperado[i]);
+			printf("Obtenido: %.20lf \n", obtenido[i]);
+		}
+		assert(fabs(esperado[i] - obtenido[i]) < 10e-9);
+		// 12 significativas (al menos)
+	}
+
+	printf("Position2 superado!\n");
+}
+
+//------------------------------------------------------------------------------
+//  void testPosition3(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 3 de la función Position
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
+void testPosition3(bool verbose)
+{
+	double lon = -1.504723397302147;
+	double lat = 0.5335890402367144;
+	double h = 0.0;
+
+	double esperado[3] = {
+		362889.5147507534,
+		-5484262.361013475,
+		3225167.728477614
+		};
+
+	double obtenido[3];
+	Position(lon, lat, h, obtenido);
+
+	if(verbose) printf("Position3:\n");
+	for(int i = 0; i < 3; i++)
+	{
+		if(verbose)
+		{
+			printf("Esperado: %.20lf \n", esperado[i]);
+			printf("Obtenido: %.20lf \n", obtenido[i]);
+		}
+		assert(fabs(esperado[i] - obtenido[i]) < 10e-9);
+		// 12 significativas (al menos)
+	}
+
+	printf("Position3 superado!\n");
+}
 
 //------------------------------------------------------------------------------
 //  int main()
@@ -1662,6 +1777,11 @@ int main(){
 	printf("newtonnu finalizado!\n\n");
 
 	// Test Position
+	printf("Probando Position!\n");
+	testPosition1(false);
+	testPosition2(false);
+	testPosition3(false);
+	printf("Position finalizado!\n\n");
 
 	// Final
 	printf("Todos los test superados!\n");
