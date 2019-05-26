@@ -23,12 +23,12 @@
  * Mjday: Modified Julian Date from calendar date and time
  *
  * Inputs:
- * @parm <year>
- * @parm <month>
- * @parm <day>
- * @parm <hour>
- * @parm <min>
- * @parm <sec>
+ * @param <year>
+ * @param <month>
+ * @param <day>
+ * @param <hour>
+ * @param <min>
+ * @param <sec>
  *
  * Output:
  * @return <Mjd> Modified Julian Date

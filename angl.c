@@ -21,8 +21,8 @@
  * Calculates the angle between two vectors [-pi,pi]
  *
  * Inputs:
- * @parm <vec1> vector 1
- * @parm <vec2> vector 2
+ * @param <vec1> vector 1
+ * @param <vec2> vector 2
  *
  * Output:
  * @return <theta> angle between the two vectors [-pi,pi]

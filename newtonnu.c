@@ -23,8 +23,8 @@
  *   limited. the hyperbolic sine is used because it's not double valued.
  *
  * Inputs:
- * @parm <ecc> eccentricity
- * @parm <nu> true anomaly
+ * @param <ecc> eccentricity
+ * @param <nu> true anomaly
  *
  * Output:
  * @return <e0> eccentric anomaly
