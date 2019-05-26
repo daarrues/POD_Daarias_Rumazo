@@ -15,6 +15,7 @@
 #include "PoleMatrix.h"
 #include "NutMatrix.h"
 #include "PrecMatrix.h"
+#include "doubler.h"
 
 typedef int bool;
 #define true 1
@@ -1470,6 +1471,378 @@ void testPrecMatrix3(bool verbose)
 }
 
 //------------------------------------------------------------------------------
+//  void testDoubler1(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 1 de la función doubler
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
+void testDoubler1(bool verbose)
+{
+	double n1 = 5972180.93003293410000000000;
+	double n2 = 6395944.28126916850000000000;
+	double n3 = 6369760.82916144930000000000;
+	double n4 = 6369760.82916145030000000000;
+	double n5 = 12820055.36999999900000000000;
+	double n6 = 13457869.06999999800000000000;
+	double v1[3] = {
+		0.63388609516515371000,
+		-0.77334037977825631000,
+		0.01153582943251443100
+	};
+	double v2[3] = {
+		0.93553982556964899000,
+		-0.01648308182240541800,
+		-0.35283642497161005000
+	};
+	double v3[3] = {
+		0.59638436830343833000,
+		0.53607267396708524000,
+		-0.59745441120564824000
+	};
+	double v4[3] = {
+		4950990.33826459660000000000,
+		256563.11626038095000000000,
+		3999465.34658133240000000000
+	};
+	double v5[3] = {
+		4935037.85913035740000000000,
+		472703.32020261511000000000,
+		3999475.70573182080000000000
+	};
+	double v6[3] = {
+		4909646.95198535550000000000,
+		687938.93691575713000000000,
+		3999494.94894738870000000000
+	};
+	double n7 = -600.00000447034836000000;
+	double n8 = 600.00000447034836000000;
+	char c = 'y';
+
+	double esp1[3] = {
+		13430456.18911721200000000000,
+		323024.30962337909000000000,
+		795450.66022862401000000000
+	};
+	double esp2[3] = {
+		11608410.68523451300000000000,
+		6709264.07153013260000000000,
+		-2711287.81928542350000000000
+	};
+	double esp3 = 933.40653066845334000000;
+	double esp4 = -879.39690150175784000000;
+	double esp5 = 1282.41438773331400000000;
+	double esp6 = 12820055.36999999900000000000;
+	double esp7 = 13457869.07000000000000000000;
+	double esp8 = 12459660.56374719900000000000;
+	double esp9 = 0.61504410921129493000;
+
+	double obt1[3];
+	double obt2[3];
+	double obt3;
+	double obt4;
+	double obt5;
+	double obt6;
+	double obt7;
+	double obt8;
+	double obt9;
+
+	doubler(n1, n2, n3, n4, n5, n6, v1, v2, v3, v4, v5, v6, n7, n8, c,
+	        obt1, obt2, &obt3, &obt4, &obt5, &obt6, &obt7, &obt8, &obt9);
+
+	if(verbose)
+	{
+		printf("doubler1:\n");
+		for(int i = 0; i < 3; i++)
+		{
+			printf("Esperado 1: %.20lf\n", esp1[i]);
+			printf("Obtenido 1: %.20lf\n", obt1[i]);
+			printf("Esperado 2: %.20lf\n", esp2[i]);
+			printf("Obtenido 2: %.20lf\n", obt2[i]);
+		}
+		printf("Esperado 3: %.20lf\n", esp3);
+		printf("Obtenido 3: %.20lf\n", obt3);
+		printf("Esperado 4: %.20lf\n", esp4);
+		printf("Obtenido 4: %.20lf\n", obt4);
+		printf("Esperado 5: %.20lf\n", esp5);
+		printf("Obtenido 5: %.20lf\n", obt5);
+		printf("Esperado 6: %.20lf\n", esp6);
+		printf("Obtenido 6: %.20lf\n", obt6);
+		printf("Esperado 7: %.20lf\n", esp7);
+		printf("Obtenido 7: %.20lf\n", obt7);
+		printf("Esperado 8: %.20lf\n", esp8);
+		printf("Obtenido 8: %.20lf\n", obt8);
+		printf("Esperado 9: %.20lf\n", esp9);
+		printf("Obtenido 9: %.20lf\n", obt9);
+	}
+
+	for(int i = 0; i < 3; i++)
+	{
+		assert(fabs(esp1[i] - obt1[i]) < 10e-12);
+		assert(fabs(esp2[i] - obt2[i]) < 10e-12);
+	}
+	assert(fabs(esp3 - obt3) < 10e-12);
+	assert(fabs(esp4 - obt4) < 10e-12);
+	assert(fabs(esp5 - obt5) < 10e-12);
+	assert(fabs(esp6 - obt6) < 10e-12);
+	assert(fabs(esp7 - obt7) < 10e-12);
+	assert(fabs(esp8 - obt8) < 10e-12);
+	assert(fabs(esp9 - obt9) < 10e-12);
+
+	printf("doubler1 superado!\n");
+}
+
+//------------------------------------------------------------------------------
+//  void testDoubler2(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 2 de la función doubler
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
+void testDoubler2(bool verbose)
+{
+	double n1 = 241923.73294349061000000000;
+	double n2 = 279551.10713914316000000000;
+	double n3 = 6372639.11744252030000000000;
+	double n4 = 6372639.11744252030000000000;
+	double n5 = 12820055.36999999900000000000;
+	double n6 = 13457869.06999999800000000000;
+	double v1[3] = {
+		0.14885192935542918000,
+		-0.84068187639811209000,
+		-0.52066984339686484000
+	};
+	double v2[3] = {
+		0.16109991366119358000,
+		-0.83686977468665202000,
+		-0.52315943844517254000
+	};
+	double v3[3] = {
+		0.17362937864430097000,
+		-0.83279349077358411000,
+		-0.52564992209334738000
+	};
+	double v4[3] = {
+		-4625314.68025010640000000000,
+		-2963495.20415729330000000000,
+		3230277.01672134730000000000
+	};
+	double v5[3] = {
+		-4559382.00511500050000000000,
+		-3064041.00297889300000000000,
+		3230203.98499169110000000000
+	};
+	double v6[3] = {
+		-4491265.71743157510000000000,
+		-3163120.47843575570000000000,
+		3230128.54473049940000000000
+	};
+	double n7 = -300.00002235174179000000;
+	double n8 = 299.99998211860657000000;
+	char c = 'y';
+
+	double esp1[3] = {
+		-2672181.15108884220000000000,
+		-12867530.76039002100000000000,
+		-2898333.99239023960000000000
+	};
+	double esp2[3] = {
+		-2326788.44033551080000000000,
+		-13544788.61183202300000000000,
+		-3322664.08150580620000000000
+	};
+	double esp3 = -192.73379684658101000000;
+	double esp4 = 184.37708973184539000000;
+	double esp5 = 266.72312922745209000000;
+	double esp6 = 12820055.37000000100000000000;
+	double esp7 = 13457869.06999999800000000000;
+	double esp8 = 370142444.16366673000000000000;
+	double esp9 = 0.00869694889536829640;
+
+	double obt1[3];
+	double obt2[3];
+	double obt3;
+	double obt4;
+	double obt5;
+	double obt6;
+	double obt7;
+	double obt8;
+	double obt9;
+
+	doubler(n1, n2, n3, n4, n5, n6, v1, v2, v3, v4, v5, v6, n7, n8, c,
+	        obt1, obt2, &obt3, &obt4, &obt5, &obt6, &obt7, &obt8, &obt9);
+
+	if(verbose)
+	{
+		printf("doubler2:\n");
+		for(int i = 0; i < 3; i++)
+		{
+			printf("Esperado 1: %.20lf\n", esp1[i]);
+			printf("Obtenido 1: %.20lf\n", obt1[i]);
+			printf("Esperado 2: %.20lf\n", esp2[i]);
+			printf("Obtenido 2: %.20lf\n", obt2[i]);
+		}
+		printf("Esperado 3: %.20lf\n", esp3);
+		printf("Obtenido 3: %.20lf\n", obt3);
+		printf("Esperado 4: %.20lf\n", esp4);
+		printf("Obtenido 4: %.20lf\n", obt4);
+		printf("Esperado 5: %.20lf\n", esp5);
+		printf("Obtenido 5: %.20lf\n", obt5);
+		printf("Esperado 6: %.20lf\n", esp6);
+		printf("Obtenido 6: %.20lf\n", obt6);
+		printf("Esperado 7: %.20lf\n", esp7);
+		printf("Obtenido 7: %.20lf\n", obt7);
+		printf("Esperado 8: %.20lf\n", esp8);
+		printf("Obtenido 8: %.20lf\n", obt8);
+		printf("Esperado 9: %.20lf\n", esp9);
+		printf("Obtenido 9: %.20lf\n", obt9);
+	}
+
+	for(int i = 0; i < 3; i++)
+	{
+		assert(fabs(esp1[i] - obt1[i]) < 10e-12);
+		assert(fabs(esp2[i] - obt2[i]) < 10e-12);
+	}
+	assert(fabs(esp3 - obt3) < 10e-12);
+	assert(fabs(esp4 - obt4) < 10e-12);
+	assert(fabs(esp5 - obt5) < 10e-12);
+	assert(fabs(esp6 - obt6) < 10e-12);
+	assert(fabs(esp7 - obt7) < 10e-12);
+	assert(fabs(esp8 - obt8) < 10e-12);
+	assert(fabs(esp9 - obt9) < 10e-12);
+
+	printf("doubler2 superado!\n");
+}
+
+//------------------------------------------------------------------------------
+//  void testDoubler3(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 3 de la función doubler
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
+void testDoubler3(bool verbose)
+{
+	double n1 = 10215883.52101078600000000000;
+	double n2 = 12282028.53736285900000000000;
+	double n3 = 6371344.85231744870000000000;
+	double n4 = 6371344.85231744960000000000;
+	double n5 = 12820055.36999999900000000000;
+	double n6 = 13457869.06999999800000000000;
+	double v1[3] = {
+		0.95388721001727206000,
+		-0.00694753042371069540,
+		0.30008485864247841000
+	};
+	double v2[3] = {
+		0.45956638535656152000,
+		0.65860637495401231000,
+		0.59584929329507408000
+	};
+	double v3[3] = {
+		-0.68285277220415785000,
+		0.70016805580162622000,
+		0.20851087532324863000
+	};
+	double v4[3] = {
+		4092160.77507185750000000000,
+		2689587.44262100380000000000,
+		4076073.45451609280000000000
+	};
+	double v5[3] = {
+		3970615.77626515740000000000,
+		2865864.80883913630000000000,
+		4076158.05408520900000000000
+	};
+	double v6[3] = {
+		3561420.55410003290000000000,
+		3360490.91297653410000000000,
+		4076446.94406636290000000000
+	};
+	double n7 = -600.00000447034836000000;
+	double n8 = 1800.00001341104510000000;
+	char c = 'y';
+
+	double esp1[3] = {
+		7283791.29584485110000000000,
+		7613989.53698643110000000000,
+		8371844.93373465070000000000
+	};
+	double esp2[3] = {
+		-2886203.32121872530000000000,
+		9971608.94175766410000000000,
+		6045245.71405340920000000000
+	};
+	double esp3 = 794.18467835950469000000;
+	double esp4 = -509.21835069695499000000;
+	double esp5 = 943.41540798712674000000;
+	double esp6 = 12820055.36999999700000000000;
+	double esp7 = 13457869.06999999800000000000;
+	double esp8 = 10603469.17439548700000000000;
+	double esp9 = 1.09115287002394970000;
+
+	double obt1[3];
+	double obt2[3];
+	double obt3;
+	double obt4;
+	double obt5;
+	double obt6;
+	double obt7;
+	double obt8;
+	double obt9;
+
+	doubler(n1, n2, n3, n4, n5, n6, v1, v2, v3, v4, v5, v6, n7, n8, c,
+	        obt1, obt2, &obt3, &obt4, &obt5, &obt6, &obt7, &obt8, &obt9);
+
+	if(verbose)
+	{
+		printf("doubler3:\n");
+		for(int i = 0; i < 3; i++)
+		{
+			printf("Esperado 1: %.20lf\n", esp1[i]);
+			printf("Obtenido 1: %.20lf\n", obt1[i]);
+			printf("Esperado 2: %.20lf\n", esp2[i]);
+			printf("Obtenido 2: %.20lf\n", obt2[i]);
+		}
+		printf("Esperado 3: %.20lf\n", esp3);
+		printf("Obtenido 3: %.20lf\n", obt3);
+		printf("Esperado 4: %.20lf\n", esp4);
+		printf("Obtenido 4: %.20lf\n", obt4);
+		printf("Esperado 5: %.20lf\n", esp5);
+		printf("Obtenido 5: %.20lf\n", obt5);
+		printf("Esperado 6: %.20lf\n", esp6);
+		printf("Obtenido 6: %.20lf\n", obt6);
+		printf("Esperado 7: %.20lf\n", esp7);
+		printf("Obtenido 7: %.20lf\n", obt7);
+		printf("Esperado 8: %.20lf\n", esp8);
+		printf("Obtenido 8: %.20lf\n", obt8);
+		printf("Esperado 9: %.20lf\n", esp9);
+		printf("Obtenido 9: %.20lf\n", obt9);
+	}
+
+	for(int i = 0; i < 3; i++)
+	{
+		assert(fabs(esp1[i] - obt1[i]) < 10e-12);
+		assert(fabs(esp2[i] - obt2[i]) < 10e-12);
+	}
+	assert(fabs(esp3 - obt3) < 10e-12);
+	assert(fabs(esp4 - obt4) < 10e-12);
+	assert(fabs(esp5 - obt5) < 10e-12);
+	assert(fabs(esp6 - obt6) < 10e-12);
+	assert(fabs(esp7 - obt7) < 10e-12);
+	assert(fabs(esp8 - obt8) < 10e-12);
+	assert(fabs(esp9 - obt9) < 10e-12);
+
+	printf("doubler3 superado!\n");
+}
+
+//------------------------------------------------------------------------------
 //  int main()
 //------------------------------------------------------------------------------
 /**
@@ -1561,6 +1934,13 @@ int main(){
 	testPrecMatrix2(false);
 	testPrecMatrix3(false);
 	printf("PrecMatrix finalizado!\n\n");
+
+	// Test doubler
+	printf("Probando doubler!\n");
+	testDoubler1(true);
+	testDoubler2(true);
+	testDoubler3(true);
+	printf("doubler finalizado!\n\n");
 
 	// Final
 	printf("Todos los test superados!\n");
