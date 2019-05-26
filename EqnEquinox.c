@@ -37,3 +37,4 @@ double EqnEquinox(double Mjd_TT)
   // Equation of the equinoxes
   return dpsi * cos(MeanObliquity(Mjd_TT));
 }
+//------------------------------------------------------------------------------

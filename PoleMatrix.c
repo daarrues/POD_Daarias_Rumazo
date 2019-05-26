@@ -36,3 +36,4 @@ void PoleMatrix(double xp, double yp, double PoleMat[3][3])
   R_x(-yp, R_xResult);
   prodMatr(R_yResult, R_xResult, PoleMat);
 }
+//------------------------------------------------------------------------------

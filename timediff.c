@@ -40,3 +40,4 @@ void timediff(double UT1_UTC, double TAI_UTC, double *UT1_TAI, double *UTC_GPS,
   *TT_UTC  = TT_TAI - UTC_TAI;     //  TT-UTC time difference [s]
   *GPS_UTC = GPS_TAI - UTC_TAI;    // GPS-UTC time difference [s]
 }
+//------------------------------------------------------------------------------
