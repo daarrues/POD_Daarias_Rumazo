@@ -1580,16 +1580,16 @@ void testDoubler1(bool verbose)
 
 	for(int i = 0; i < 3; i++)
 	{
-		assert(fabs(esp1[i] - obt1[i]) < 10e-12);
-		assert(fabs(esp2[i] - obt2[i]) < 10e-12);
+		assert(fabs(esp1[i] - obt1[i]) < 10e-6);
+		assert(fabs(esp2[i] - obt2[i]) < 10e-6);
 	}
-	assert(fabs(esp3 - obt3) < 10e-12);
-	assert(fabs(esp4 - obt4) < 10e-12);
-	assert(fabs(esp5 - obt5) < 10e-12);
-	assert(fabs(esp6 - obt6) < 10e-12);
-	assert(fabs(esp7 - obt7) < 10e-12);
-	assert(fabs(esp8 - obt8) < 10e-12);
-	assert(fabs(esp9 - obt9) < 10e-12);
+	assert(fabs(esp3 - obt3) < 10e-6);
+	assert(fabs(esp4 - obt4) < 10e-6);
+	assert(fabs(esp5 - obt5) < 10e-6);
+	assert(fabs(esp6 - obt6) < 10e-6);
+	assert(fabs(esp7 - obt7) < 10e-6);
+	assert(fabs(esp8 - obt8) < 10e-6);
+	assert(fabs(esp9 - obt9) < 10e-6);
 
 	printf("doubler1 superado!\n");
 }
@@ -1605,63 +1605,63 @@ void testDoubler1(bool verbose)
 //------------------------------------------------------------------------------
 void testDoubler2(bool verbose)
 {
-	double n1 = 241923.73294349061000000000;
-	double n2 = 279551.10713914316000000000;
-	double n3 = 6372639.11744252030000000000;
+	double n1 = 7515275.95733092820000000000;
+	double n2 = 7515565.47400444190000000000;
+	double n3 = 6372639.11744251940000000000;
 	double n4 = 6372639.11744252030000000000;
 	double n5 = 12820055.36999999900000000000;
 	double n6 = 13457869.06999999800000000000;
 	double v1[3] = {
-		0.14885192935542918000,
-		-0.84068187639811209000,
-		-0.52066984339686484000
+		0.94986053669058212000,
+		0.29900279622503534000,
+		-0.09144555039743179600
 	};
 	double v2[3] = {
-		0.16109991366119358000,
-		-0.83686977468665202000,
-		-0.52315943844517254000
+		0.94309959610195582000,
+		0.31969674480435684000,
+		-0.09141741187446586500
 	};
 	double v3[3] = {
-		0.17362937864430097000,
-		-0.83279349077358411000,
-		-0.52564992209334738000
+		0.93588812100465057000,
+		0.34023783543213759000,
+		-0.09138730930954264100
 	};
 	double v4[3] = {
-		-4625314.68025010640000000000,
-		-2963495.20415729330000000000,
-		3230277.01672134730000000000
+		4991697.66717447340000000000,
+		-2304791.72214133110000000000,
+		3222020.92454910930000000000
 	};
 	double v5[3] = {
-		-4559382.00511500050000000000,
-		-3064041.00297889300000000000,
-		3230203.98499169110000000000
+		5040923.41475751530000000000,
+		-2195094.88576021140000000000,
+		3221983.68869511690000000000
 	};
 	double v6[3] = {
-		-4491265.71743157510000000000,
-		-3163120.47843575570000000000,
-		3230128.54473049940000000000
+		5087737.81584266200000000000,
+		-2084347.48894624690000000000,
+		3221947.97967418980000000000
 	};
-	double n7 = -300.00002235174179000000;
-	double n8 = 299.99998211860657000000;
+	double n7 = -299.99998211860657000000;
+	double n8 = 300.00002235174179000000;
 	char c = 'y';
 
 	double esp1[3] = {
-		-2672181.15108884220000000000,
-		-12867530.76039002100000000000,
-		-2898333.99239023960000000000
+		13224229.70471591500000000000,
+		578924.30950820725000000000,
+		2428751.79177130620000000000
 	};
 	double esp2[3] = {
-		-2326788.44033551080000000000,
-		-13544788.61183202300000000000,
-		-3322664.08150580620000000000
+		13948424.03334139100000000000,
+		1136914.36001161720000000000,
+		2356722.47474513020000000000
 	};
-	double esp3 = -192.73379684658101000000;
-	double esp4 = 184.37708973184539000000;
-	double esp5 = 266.72312922745209000000;
+	double esp3 = -254.05855596709932000000;
+	double esp4 = 248.34817672512381000000;
+	double esp5 = 355.27815404663016000000;
 	double esp6 = 12820055.37000000100000000000;
-	double esp7 = 13457869.06999999800000000000;
-	double esp8 = 370142444.16366673000000000000;
-	double esp9 = 0.00869694889536829640;
+	double esp7 = 13457869.07000000000000000000;
+	double esp8 = -1547696.59548539830000000000;
+	double esp9 = 0.05997878907998426000;
 
 	double obt1[3];
 	double obt2[3];
@@ -1704,16 +1704,16 @@ void testDoubler2(bool verbose)
 
 	for(int i = 0; i < 3; i++)
 	{
-		assert(fabs(esp1[i] - obt1[i]) < 10e-12);
-		assert(fabs(esp2[i] - obt2[i]) < 10e-12);
+		assert(fabs(esp1[i] - obt1[i]) < 10e-6);
+		assert(fabs(esp2[i] - obt2[i]) < 10e-6);
 	}
-	assert(fabs(esp3 - obt3) < 10e-12);
-	assert(fabs(esp4 - obt4) < 10e-12);
-	assert(fabs(esp5 - obt5) < 10e-12);
-	assert(fabs(esp6 - obt6) < 10e-12);
-	assert(fabs(esp7 - obt7) < 10e-12);
-	assert(fabs(esp8 - obt8) < 10e-12);
-	assert(fabs(esp9 - obt9) < 10e-12);
+	assert(fabs(esp3 - obt3) < 10e-6);
+	assert(fabs(esp4 - obt4) < 10e-6);
+	assert(fabs(esp5 - obt5) < 10e-6);
+	assert(fabs(esp6 - obt6) < 10e-6);
+	assert(fabs(esp7 - obt7) < 10e-6);
+	assert(fabs(esp8 - obt8) < 10e-6);
+	assert(fabs(esp9 - obt9) < 10e-6);
 
 	printf("doubler2 superado!\n");
 }
@@ -1828,16 +1828,16 @@ void testDoubler3(bool verbose)
 
 	for(int i = 0; i < 3; i++)
 	{
-		assert(fabs(esp1[i] - obt1[i]) < 10e-12);
-		assert(fabs(esp2[i] - obt2[i]) < 10e-12);
+		assert(fabs(esp1[i] - obt1[i]) < 10e-6);
+		assert(fabs(esp2[i] - obt2[i]) < 10e-6);
 	}
-	assert(fabs(esp3 - obt3) < 10e-12);
-	assert(fabs(esp4 - obt4) < 10e-12);
-	assert(fabs(esp5 - obt5) < 10e-12);
-	assert(fabs(esp6 - obt6) < 10e-12);
-	assert(fabs(esp7 - obt7) < 10e-12);
-	assert(fabs(esp8 - obt8) < 10e-12);
-	assert(fabs(esp9 - obt9) < 10e-12);
+	assert(fabs(esp3 - obt3) < 10e-6);
+	assert(fabs(esp4 - obt4) < 10e-6);
+	assert(fabs(esp5 - obt5) < 10e-6);
+	assert(fabs(esp6 - obt6) < 10e-6);
+	assert(fabs(esp7 - obt7) < 10e-6);
+	assert(fabs(esp8 - obt8) < 10e-6);
+	assert(fabs(esp9 - obt9) < 10e-6);
 
 	printf("doubler3 superado!\n");
 }
@@ -1937,9 +1937,9 @@ int main(){
 
 	// Test doubler
 	printf("Probando doubler!\n");
-	testDoubler1(true);
-	testDoubler2(true);
-	testDoubler3(true);
+	testDoubler1(false);
+	testDoubler2(false);
+	testDoubler3(false);
 	printf("doubler finalizado!\n\n");
 
 	// Final
