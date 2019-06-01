@@ -1,14 +1,18 @@
-#include <assert.h>
-#include <stdio.h>
-#include <math.h>
+#include "angl.h"
+#include "gibbs.h"
 #include "lambert_gooding.h"
+#include "Mjday.h"
+#include "newtonnu.h"
+#include "Position.h"
 #include "R_x.h"
 #include "R_y.h"
 #include "R_z.h"
-#include "angl.h"
-#include "Mjday.h"
-#include "Position.h"
-#include "newtonnu.h"
+
+#include <assert.h>
+#include <math.h>
+#include <stdio.h>
+#include <string.h>
+
 
 typedef int bool;
 #define true 1
@@ -1691,6 +1695,213 @@ void testPosition3(bool verbose)
 }
 
 //------------------------------------------------------------------------------
+//  void testGibbs1(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 1 de la función gibbs
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
+void testGibbs1(bool verbose)
+{
+	double r1[3] = {
+		20387627.07175297,
+		1865163.696333993,
+		-109943.6885558921
+		};
+	double r2[3] = {
+		20435422.35215281,
+		1070699.446717979,
+		1012905.491433884
+		};
+	double r3[3] = {
+		20398157.06662507,
+		271778.6158697309,
+		2131538.395420803
+		};
+
+	double esp_v2[3] = {
+		17.44484600828158,
+		-2659.686950246493,
+		3741.477704717453
+		};
+	double esp_theta = 0.06720882293144352;
+	double esp_theta1 = 0.06708423348977346;
+	double esp_copa = 1.737759242059767e-15err;
+	char esp_error[12] = "          ok";
+
+	double obt_v2[3], obt_theta, obt_theta1, obt_copa;
+	char obt_error[12];
+	gibbs(r1, r2, r3, obt_v2, &obt_theta, &obt_theta1, &obt_copa, obt_error);
+
+	if(verbose) printf("gibbs1:\n");
+	for(int i = 0; i < 3; i++)
+	{
+		if(verbose)
+		{
+			printf("Esperado: %.20lf \n", esp_v2[i]);
+			printf("Obtenido: %.20lf \n", obt_v2[i]);
+		}
+		assert(fabs(esp_v2[i] - obt_v2[i]) < 10e-12);
+	}
+	if(verbose){
+		printf("Esperado: %.20lf \n", esp_theta[i]);
+		printf("Obtenido: %.20lf \n", obt_theta[i]);
+		printf("Esperado: %.20lf \n", esp_theta1[i]);
+		printf("Obtenido: %.20lf \n", obt_theta1[i]);
+		printf("Esperado: %.20lf \n", esp_copa[i]);
+		printf("Obtenido: %.20lf \n", obt_copa[i]);
+		printf("Esperado: %s \n", esp_error);
+		printf("Obtenido: %s \n", obt_error);
+	}
+	assert(fabs(esp_theta[i] - obt_theta[i]) < 10e-12);
+	assert(fabs(esp_theta1[i] - obt_theta1[i]) < 10e-12);
+	assert(fabs(esp_copa[i] - obt_copa[i]) < 10e-12);
+	if(strcmp(esp_error, obt_error) != 0) assert(2 < 1);
+
+	printf("gibbs1 superado!\n");
+}
+
+//------------------------------------------------------------------------------
+//  void testGibbs2(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 2 de la función gibbs
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
+void testGibbs2(bool verbose)
+{
+	double r1[3] = {
+		20408482.65293036,
+		1869905.834429736,
+		-114536.6708983118
+		};
+	double r2[3] = {
+		20456329.59101998,
+		1074191.366837643,
+		1009857.021678711
+		};
+	double r3[3] = {
+		20418881.02782273,
+		273996.4780377855,
+		2130041.987544681
+		};
+
+	double esp_v2[3] = {
+		17.1865619482012,
+		-2657.52837347195,
+		3737.684787287446
+		};
+	double esp_theta = 0.06723676688978014;
+	double esp_theta1 = 0.06711481197035603;
+	double esp_copa = 1.992329912159363e-15;
+	char esp_error[12] = "          ok";
+
+	double obt_v2[3], obt_theta, obt_theta1, obt_copa;
+	char obt_error[12];
+	gibbs(r1, r2, r3, obt_v2, &obt_theta, &obt_theta1, &obt_copa, obt_error);
+
+	if(verbose) printf("gibbs2:\n");
+	for(int i = 0; i < 3; i++)
+	{
+		if(verbose)
+		{
+			printf("Esperado: %.20lf \n", esp_v2[i]);
+			printf("Obtenido: %.20lf \n", obt_v2[i]);
+		}
+		assert(fabs(esp_v2[i] - obt_v2[i]) < 10e-12);
+	}
+	if(verbose){
+		printf("Esperado: %.20lf \n", esp_theta[i]);
+		printf("Obtenido: %.20lf \n", obt_theta[i]);
+		printf("Esperado: %.20lf \n", esp_theta1[i]);
+		printf("Obtenido: %.20lf \n", obt_theta1[i]);
+		printf("Esperado: %.20lf \n", esp_copa[i]);
+		printf("Obtenido: %.20lf \n", obt_copa[i]);
+		printf("Esperado: %s \n", esp_error);
+		printf("Obtenido: %s \n", obt_error);
+	}
+	assert(fabs(esp_theta[i] - obt_theta[i]) < 10e-12);
+	assert(fabs(esp_theta1[i] - obt_theta1[i]) < 10e-12);
+	assert(fabs(esp_copa[i] - obt_copa[i]) < 10e-12);
+	if(strcmp(esp_error, obt_error) != 0) assert(2 < 1);
+
+	printf("gibbs2 superado!\n");
+}
+
+//------------------------------------------------------------------------------
+//  void testGibbs3(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 3 de la función gibbs
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
+void testGibbs3(bool verbose)
+{
+	double r1[3] = {
+		20370508.34273631,
+		1861271.242974382,
+		-106173.665585571
+		};
+	double r2[3] = {
+		20418280.37423369,
+		1067836.399236342,
+		1015404.951145533
+		};
+	double r3[3] = {
+		20381175.29424456,
+		269961.2398309496,
+		2132764.59236734
+		};
+
+	double esp_v2[3] = {
+		17.70552956104248,
+		-2661.30974048117,
+		3744.38790480311
+		};
+	double esp_theta = 0.06718562571898608;
+	double esp_theta1 = 0.06705901381744461;
+	double esp_copa = 1.634109514370152e-15;
+	char esp_error[12] = "          ok";
+
+	double obt_v2[3], obt_theta, obt_theta1, obt_copa;
+	char obt_error[12];
+	gibbs(r1, r2, r3, obt_v2, &obt_theta, &obt_theta1, &obt_copa, obt_error);
+
+	if(verbose) printf("gibbs3:\n");
+	for(int i = 0; i < 3; i++)
+	{
+		if(verbose)
+		{
+			printf("Esperado: %.20lf \n", esp_v2[i]);
+			printf("Obtenido: %.20lf \n", obt_v2[i]);
+		}
+		assert(fabs(esp_v2[i] - obt_v2[i]) < 10e-12);
+	}
+	if(verbose){
+		printf("Esperado: %.20lf \n", esp_theta[i]);
+		printf("Obtenido: %.20lf \n", obt_theta[i]);
+		printf("Esperado: %.20lf \n", esp_theta1[i]);
+		printf("Obtenido: %.20lf \n", obt_theta1[i]);
+		printf("Esperado: %.20lf \n", esp_copa[i]);
+		printf("Obtenido: %.20lf \n", obt_copa[i]);
+		printf("Esperado: %s \n", esp_error);
+		printf("Obtenido: %s \n", obt_error);
+	}
+	assert(fabs(esp_theta[i] - obt_theta[i]) < 10e-12);
+	assert(fabs(esp_theta1[i] - obt_theta1[i]) < 10e-12);
+	assert(fabs(esp_copa[i] - obt_copa[i]) < 10e-12);
+	if(strcmp(esp_error, obt_error) != 0) assert(2 < 1);
+
+	printf("gibbs3 superado!\n");
+}
+
+//------------------------------------------------------------------------------
 //  int main()
 //------------------------------------------------------------------------------
 /**
@@ -1781,6 +1992,13 @@ int main(){
 	testPosition1(false);
 	testPosition2(false);
 	testPosition3(false);
+	printf("Position finalizado!\n\n");
+
+	// Test gibbs
+	printf("Probando Position!\n");
+	testGibbs1(false);
+	testGibbs2(false);
+	testGibbs3(false);
 	printf("Position finalizado!\n\n");
 
 	// Final
