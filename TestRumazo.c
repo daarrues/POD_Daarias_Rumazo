@@ -16,6 +16,7 @@
 #include "NutMatrix.h"
 #include "PrecMatrix.h"
 #include "doubler.h"
+#include "rv2coe.h"
 
 typedef int bool;
 #define true 1
@@ -1843,6 +1844,279 @@ void testDoubler3(bool verbose)
 }
 
 //------------------------------------------------------------------------------
+//  void testRv2coe1(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 1 de la función rv2coe
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
+void testRv2coe1(bool verbose)
+{
+	double v1[3] = {
+		20435422.35215374500000000000,
+		1070699.44671813420000000000,
+		1012905.49143374850000000000
+	};
+	double v2[3] = {
+		17.19646978075456200000,
+		-2657.51027611591140000000,
+		3738.38685080886900000000
+	};
+
+	double esp1  = 22151801.03597825400000000000;
+	double esp2  = 22303727.64121050000000000000;
+	double esp3  = 0.08253310617383882700;
+	double esp4  = 2.18724254265762050000;
+	double esp5  = 0.08742599164324867100;
+	double esp6  = 6.16261219030337860000;
+	double esp7  = 0.18120031105310727000;
+	double esp8  = 0.15317433135474373000;
+	double esp9  = 999999.09999999998000000000;
+	double esp10 = 999999.09999999998000000000;
+	double esp11 = 999999.09999999998000000000;
+
+	double obt1;
+	double obt2;
+	double obt3;
+	double obt4;
+	double obt5;
+	double obt6;
+	double obt7;
+	double obt8;
+	double obt9;
+	double obt10;
+	double obt11;
+
+	rv2coe(v1, v2, &obt1, &obt2, &obt3, &obt4, &obt5, &obt6, &obt7, &obt8,
+		      &obt9, &obt10, &obt11);
+
+	if(verbose)
+	{
+		printf("rv2coe1:\n");
+		printf("Esperado 1:  %.20lf\n", esp1);
+		printf("Obtenido 1:  %.20lf\n", obt1);
+		printf("Esperado 2:  %.20lf\n", esp2);
+		printf("Obtenido 2:  %.20lf\n", obt2);
+		printf("Esperado 3:  %.20lf\n", esp3);
+		printf("Obtenido 3:  %.20lf\n", obt3);
+		printf("Esperado 4:  %.20lf\n", esp4);
+		printf("Obtenido 4:  %.20lf\n", obt4);
+		printf("Esperado 5:  %.20lf\n", esp5);
+		printf("Obtenido 5:  %.20lf\n", obt5);
+		printf("Esperado 6:  %.20lf\n", esp6);
+		printf("Obtenido 6:  %.20lf\n", obt6);
+		printf("Esperado 7:  %.20lf\n", esp7);
+		printf("Obtenido 7:  %.20lf\n", obt7);
+		printf("Esperado 8:  %.20lf\n", esp8);
+		printf("Obtenido 8:  %.20lf\n", obt8);
+		printf("Esperado 9:  %.20lf\n", esp9);
+		printf("Obtenido 9:  %.20lf\n", obt9);
+		printf("Esperado 10: %.20lf\n", esp10);
+		printf("Obtenido 10: %.20lf\n", obt10);
+		printf("Esperado 11: %.20lf\n", esp11);
+		printf("Obtenido 11: %.20lf\n", obt11);
+	}
+
+	assert(fabs(esp1 - obt1) < 10e-6);
+	assert(fabs(esp2 - obt2) < 10e-6);
+	assert(fabs(esp3 - obt3) < 10e-6);
+	assert(fabs(esp4 - obt4) < 10e-6);
+	assert(fabs(esp5 - obt5) < 10e-6);
+	assert(fabs(esp6 - obt6) < 10e-6);
+	assert(fabs(esp7 - obt7) < 10e-6);
+	assert(fabs(esp8 - obt8) < 10e-6);
+	assert(fabs(esp9 - obt9) < 10e-6);
+	assert(fabs(esp10 - obt10) < 10e-6);
+	assert(fabs(esp11 - obt11) < 10e-6);
+
+	printf("rv2coe1 superado!\n");
+}
+
+//------------------------------------------------------------------------------
+//  void testRv2coe2(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 2 de la función rv2coe
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
+void testRv2coe2(bool verbose)
+{
+	double v1[3] = {
+		20456329.59102045000000000000,
+		1074191.36683772060000000000,
+		1009857.02167864280000000000
+	};
+	double v2[3] = {
+		17.65947568968910300000,
+		-2661.67627260588730000000,
+		3743.57355524540890000000
+	};
+
+	double esp1  = 22261413.24800409000000000000;
+	double esp2  = 22429994.93127170600000000000;
+	double esp3  = 0.08669431216174891500;
+	double esp4  = 2.18733488568994480000;
+	double esp5  = 0.08740807153658009000;
+	double esp6  = 6.17226628945409580000;
+	double esp7  = 0.17130585226709599000;
+	double esp8  = 0.14354279174665671000;
+	double esp9  = 999999.09999999998000000000;
+	double esp10 = 999999.09999999998000000000;
+	double esp11 = 999999.09999999998000000000;
+
+	double obt1;
+	double obt2;
+	double obt3;
+	double obt4;
+	double obt5;
+	double obt6;
+	double obt7;
+	double obt8;
+	double obt9;
+	double obt10;
+	double obt11;
+
+	rv2coe(v1, v2, &obt1, &obt2, &obt3, &obt4, &obt5, &obt6, &obt7, &obt8,
+		      &obt9, &obt10, &obt11);
+
+	if(verbose)
+	{
+		printf("rv2coe2:\n");
+		printf("Esperado 1:  %.20lf\n", esp1);
+		printf("Obtenido 1:  %.20lf\n", obt1);
+		printf("Esperado 2:  %.20lf\n", esp2);
+		printf("Obtenido 2:  %.20lf\n", obt2);
+		printf("Esperado 3:  %.20lf\n", esp3);
+		printf("Obtenido 3:  %.20lf\n", obt3);
+		printf("Esperado 4:  %.20lf\n", esp4);
+		printf("Obtenido 4:  %.20lf\n", obt4);
+		printf("Esperado 5:  %.20lf\n", esp5);
+		printf("Obtenido 5:  %.20lf\n", obt5);
+		printf("Esperado 6:  %.20lf\n", esp6);
+		printf("Obtenido 6:  %.20lf\n", obt6);
+		printf("Esperado 7:  %.20lf\n", esp7);
+		printf("Obtenido 7:  %.20lf\n", obt7);
+		printf("Esperado 8:  %.20lf\n", esp8);
+		printf("Obtenido 8:  %.20lf\n", obt8);
+		printf("Esperado 9:  %.20lf\n", esp9);
+		printf("Obtenido 9:  %.20lf\n", obt9);
+		printf("Esperado 10: %.20lf\n", esp10);
+		printf("Obtenido 10: %.20lf\n", obt10);
+		printf("Esperado 11: %.20lf\n", esp11);
+		printf("Obtenido 11: %.20lf\n", obt11);
+	}
+
+	assert(fabs(esp1 - obt1) < 10e-6);
+	assert(fabs(esp2 - obt2) < 10e-6);
+	assert(fabs(esp3 - obt3) < 10e-6);
+	assert(fabs(esp4 - obt4) < 10e-6);
+	assert(fabs(esp5 - obt5) < 10e-6);
+	assert(fabs(esp6 - obt6) < 10e-6);
+	assert(fabs(esp7 - obt7) < 10e-6);
+	assert(fabs(esp8 - obt8) < 10e-6);
+	assert(fabs(esp9 - obt9) < 10e-6);
+	assert(fabs(esp10 - obt10) < 10e-6);
+	assert(fabs(esp11 - obt11) < 10e-6);
+
+	printf("rv2coe2 superado!\n");
+}
+
+//------------------------------------------------------------------------------
+//  void testRv2coe3(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 3 de la función rv2coe
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
+void testRv2coe3(bool verbose)
+{
+	double v1[3] = {
+		20418280.37423648300000000000,
+		1067836.39923680880000000000,
+		1015404.95114512560000000000
+	};
+	double v2[3] = {
+		16.87979502296278200000,
+		-2654.08002932726280000000,
+		3734.12004615458320000000
+	};
+
+	double esp1  = 22062031.73590861600000000000;
+	double esp2  = 22201041.68683477100000000000;
+	double esp3  = 0.07912910777856066400;
+	double esp4  = 2.18716682303263490000;
+	double esp5  = 0.08744068138692351300;
+	double esp6  = 6.15374268501359100000;
+	double esp7  = 0.19026723745652355000;
+	double esp8  = 0.16199787055311890000;
+	double esp9  = 999999.09999999998000000000;
+	double esp10 = 999999.09999999998000000000;
+	double esp11 = 999999.09999999998000000000;
+
+	double obt1;
+	double obt2;
+	double obt3;
+	double obt4;
+	double obt5;
+	double obt6;
+	double obt7;
+	double obt8;
+	double obt9;
+	double obt10;
+	double obt11;
+
+	rv2coe(v1, v2, &obt1, &obt2, &obt3, &obt4, &obt5, &obt6, &obt7, &obt8,
+		      &obt9, &obt10, &obt11);
+
+	if(verbose)
+	{
+		printf("rv2coe3:\n");
+		printf("Esperado 1:  %.20lf\n", esp1);
+		printf("Obtenido 1:  %.20lf\n", obt1);
+		printf("Esperado 2:  %.20lf\n", esp2);
+		printf("Obtenido 2:  %.20lf\n", obt2);
+		printf("Esperado 3:  %.20lf\n", esp3);
+		printf("Obtenido 3:  %.20lf\n", obt3);
+		printf("Esperado 4:  %.20lf\n", esp4);
+		printf("Obtenido 4:  %.20lf\n", obt4);
+		printf("Esperado 5:  %.20lf\n", esp5);
+		printf("Obtenido 5:  %.20lf\n", obt5);
+		printf("Esperado 6:  %.20lf\n", esp6);
+		printf("Obtenido 6:  %.20lf\n", obt6);
+		printf("Esperado 7:  %.20lf\n", esp7);
+		printf("Obtenido 7:  %.20lf\n", obt7);
+		printf("Esperado 8:  %.20lf\n", esp8);
+		printf("Obtenido 8:  %.20lf\n", obt8);
+		printf("Esperado 9:  %.20lf\n", esp9);
+		printf("Obtenido 9:  %.20lf\n", obt9);
+		printf("Esperado 10: %.20lf\n", esp10);
+		printf("Obtenido 10: %.20lf\n", obt10);
+		printf("Esperado 11: %.20lf\n", esp11);
+		printf("Obtenido 11: %.20lf\n", obt11);
+	}
+
+	assert(fabs(esp1 - obt1) < 10e-6);
+	assert(fabs(esp2 - obt2) < 10e-6);
+	assert(fabs(esp3 - obt3) < 10e-6);
+	assert(fabs(esp4 - obt4) < 10e-6);
+	assert(fabs(esp5 - obt5) < 10e-6);
+	assert(fabs(esp6 - obt6) < 10e-6);
+	assert(fabs(esp7 - obt7) < 10e-6);
+	assert(fabs(esp8 - obt8) < 10e-6);
+	assert(fabs(esp9 - obt9) < 10e-6);
+	assert(fabs(esp10 - obt10) < 10e-6);
+	assert(fabs(esp11 - obt11) < 10e-6);
+
+	printf("rv2coe3 superado!\n");
+}
+
+//------------------------------------------------------------------------------
 //  int main()
 //------------------------------------------------------------------------------
 /**
@@ -1941,6 +2215,13 @@ int main(){
 	testDoubler2(false);
 	testDoubler3(false);
 	printf("doubler finalizado!\n\n");
+
+	// Test rv2coe
+	printf("Probando rv2coe!\n");
+	testRv2coe1(false);
+	testRv2coe2(false);
+	testRv2coe3(false);
+	printf("rv2coe finalizado!\n\n");
 
 	// Final
 	printf("Todos los test superados!\n");
