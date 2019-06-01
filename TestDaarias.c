@@ -1,4 +1,5 @@
 #include "angl.h"
+#include "anglesg.h"
 #include "gibbs.h"
 #include "hgibbs.h"
 #include "lambert_gooding.h"
@@ -1966,7 +1967,6 @@ void testHgibbs1(bool verbose)
 			printf("Obtenido: %.20lf \n", obt_v2[i]);
 		}
 		assert(fabs(esp_v2[i] - obt_v2[i]) < 10e-12);
-		// 12 significativas (al menos)
 	}
 	if(verbose){
 		printf("Esperado: %.20lf \n", esp_theta);
@@ -2039,7 +2039,6 @@ void testHgibbs2(bool verbose)
 			printf("Obtenido: %.20lf \n", obt_v2[i]);
 		}
 		assert(fabs(esp_v2[i] - obt_v2[i]) < 10e-12);
-		// 12 significativas (al menos)
 	}
 	if(verbose){
 		printf("Esperado: %.20lf \n", esp_theta);
@@ -2112,7 +2111,6 @@ void testHgibbs3(bool verbose)
 			printf("Obtenido: %.20lf \n", obt_v2[i]);
 		}
 		assert(fabs(esp_v2[i] - obt_v2[i]) < 10e-12);
-		// 12 significativas (al menos)
 	}
 	if(verbose){
 		printf("Esperado: %.20lf \n", esp_theta);
@@ -2130,6 +2128,77 @@ void testHgibbs3(bool verbose)
 	if(strcmp(esp_error_angl, obt_error) != 0) assert(2 < 1);
 
 	printf("hgibbs3 superado!\n");
+}
+
+//------------------------------------------------------------------------------
+//  void testAnglesg(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación de la función Anglesg (solo hay un ejemplo que la usa)
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
+void testAnglesg(bool verbose)
+{
+	double Alpha1 = 0.2235784225097256;
+	double Alpha2 = 0.1654921196741023;
+	double Alpha3 = 0.1066134373580736;
+
+	double Delta1 = -0.2115339053417127;
+	double Delta2 = -0.1428377459832159;
+	double Delta3 = -0.07167369106239914;
+
+	double JD1 = 55565.90440736106;
+	double JD2 = 55565.90787958354;
+	double JD3 = 55565.91135180555;
+
+	double RS1[3] = {
+		5270137.350067007,
+		-1572248.25164427,
+		3219350.410842039
+		};
+	double RS2[3] = {
+		5303269.313360662,
+		-1456667.748237766,
+		3219314.054634872
+		};
+	double RS3[3] = {
+		5333865.069033056,
+		-1340390.167468833,
+		3219280.501208378
+		};
+
+	double esp_R2[3] = {
+		20486511.51189471,
+		1079232.341278226,
+		1005456.217080638
+		};
+	double esp_V2[3] = {
+		16.87979502268987,
+		-2654.080029326738,
+		3734.120046153917
+		};
+
+	double obt_R2[3], obt_V2[3];
+	anglesg(Alpha1, Alpha2, Alpha3, Delta1, Delta2, Delta3, JD1, JD2, JD3, RS1,
+					RS2, RS3, obt_R2, obt_V2);
+
+	if(verbose) printf("anglesg:\n");
+	for(int i = 0; i < 3; i++)
+	{
+		if(verbose)
+		{
+			printf("Esperado: %.20lf \n", esp_R2[i]);
+			printf("Obtenido: %.20lf \n", obt_R2[i]);
+			printf("Esperado: %.20lf \n", esp_V2[i]);
+			printf("Obtenido: %.20lf \n", obt_V2[i]);
+		}
+		assert(fabs(esp_R2[i] - obt_R2[i]) < 10e-12);
+		assert(fabs(esp_V2[i] - obt_V2[i]) < 10e-12);
+	}
+
+	printf("anglesg superado!\n");
 }
 
 //------------------------------------------------------------------------------
@@ -2234,10 +2303,15 @@ int main(){
 
 	// Test hgibbs
 	printf("Probando hgibbs!\n");
-	testHgibbs1(true);
-	testHgibbs2(true);
-	testHgibbs3(true);
+	testHgibbs1(false);
+	testHgibbs2(false);
+	testHgibbs3(false);
 	printf("hgibbs finalizado!\n\n");
+
+	// Test anglesg
+	printf("Probando anglesg!\n");
+	testAnglesg(true);
+	printf("anglesg finalizado!\n\n");
 
 	// Final
 	printf("Todos los test superados!\n");

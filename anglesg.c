@@ -11,9 +11,15 @@
  * funciones del fichero anglesg.m (M. Mahooti)
  */
 //------------------------------------------------------------------------------
+#include "angl.h"
 #include "anglesg.h"
+#include "gibbs.h"
+#include "hgibbs.h"
+#include "lambert_gooding.h"
+#include "rv2coe.h"
 #include "MatLabUtils/MatLabUtils.h"
 #include <math.h>
+#include <string.h>
 
 //------------------------------------------------------------------------------
 //  void anglesg(double Alpha1, double Alpha2, double Alpha3, double Delta1,
@@ -45,12 +51,12 @@
  */
 //------------------------------------------------------------------------------
 void anglesg(double Alpha1, double Alpha2, double Alpha3, double Delta1,
-             double Delta2, double Delta13, double JD1, double JD2, double JD3,
+             double Delta2, double Delta3, double JD1, double JD2, double JD3,
              double RS1[], double RS2[], double RS3[], double R2[], double V2[])
 {
   double Mu = 398600.4418e9;
   double Rad = 180/M_PI;
-  double R1[3], R2[3], R3[3];
+  double R1[3], R3[3];
   zeros(R1,3);
   zeros(R2,3);
   zeros(R3,3);
@@ -75,18 +81,18 @@ void anglesg(double Alpha1, double Alpha2, double Alpha3, double Delta1,
 
   //------------- Find L matrix and determinant -----------------
   //--------- Called LMatI since it is only used for determ -----
-  double LMatIi[3][3], RSMat[3][3];
-  for (i = 0; i < 3; i++)
+  double LMatI[3][3], RSMat[3][3];
+  for (int i = 0; i < 3; i++)
   {
-    LMatIi[i][0] = L1[i];
-    LMatIi[i][1] = L2[i];
-    LMatIi[i][2] = L3[i];
+    LMatI[i][0] = L1[i];
+    LMatI[i][1] = L2[i];
+    LMatI[i][2] = L3[i];
     RSMat[i][0] = RS1[i];
     RSMat[i][1] = RS2[i];
     RSMat[i][2] = RS3[i];
   }
 
-  double D = det(LMatIi);
+  double D = det(LMatI);
 
   //------------------ Now assign the inverse -------------------
   double LIR[3][3];
@@ -121,7 +127,7 @@ void anglesg(double Alpha1, double Alpha2, double Alpha3, double Delta1,
   double Poly[POL_DEG + 1], rootarr[POL_DEG];
   zeros(Poly, POL_DEG + 1);
   Poly[0] = 1.0;  // r2^8th variable!!!!!!!!!!!!!!
-  Poly[2] = -(D1*D1 + 2.0*D1*L2DotRS + magRS2^2);
+  Poly[2] = -(D1*D1 + 2.0*D1*L2DotRS + pow(magRS2,2));
   Poly[5] =  -2.0*Mu*(L2DotRS*D2 + D1*D2);
   Poly[8] =  -Mu*Mu*D2*D2;
 
@@ -149,18 +155,17 @@ void anglesg(double Alpha1, double Alpha2, double Alpha3, double Delta1,
   CMat[2] = -c3;
   for(int i = 0; i < 3; i++)
   {
-    dot(LIR[i], CMat, RhoMat[i]);
+    RhoMat[i] = dot(LIR[i], CMat);
   }
 
   // Rhoold1 = RhoMat[0]/c1;
-  Rhoold2 = -RhoMat[1];
+  double Rhoold2 = -RhoMat[1];
   // Rhoold3 = RhoMat[2]/c3;
 
   double ll, Rho2, theta, theta1, Theta, Theta1, copa, p, a, ecc, incl, omega,
-  argp, Nu, m, u, l, ArgPer, magR1, magR2, magR3, U, RDot, UDot, TauSqr, f1, f3,
+  argp, Nu, m, l, ArgPer, magR1, magR2, magR3, U, RDot, UDot, TauSqr, f1, f3,
   g1, g3;
   double v1[3], v2[3];
-  double R1t[3][3]
   char error[12];
   while ( (fabs(Rhoold2-Rho2)>1e-12) && (ll<=2) )
   {
@@ -189,9 +194,9 @@ void anglesg(double Alpha1, double Alpha2, double Alpha3, double Delta1,
     {
       //--- Now get an improved estimate of the f and g series --
       //       .or. can the analytic functions be found now??
-      U = Mu/(magR2^3);
+      U = Mu/pow(magR2,3);
       RDot = dot(R2,V2)/magR2;
-      UDot = (-3.0*Mu*RDot)/(magR2^4);
+      UDot = (-3.0*Mu*RDot)/pow(magR2,4);
 
       TauSqr= Tau1*Tau1;
       f1 =  1.0 - 0.5*U*TauSqr -(1.0/6.0)*UDot*TauSqr*Tau1
@@ -219,10 +224,10 @@ void anglesg(double Alpha1, double Alpha2, double Alpha3, double Delta1,
       magR1 = norm(R1);
       magR3 = norm(R3);
 
-      f1 = 1.0 - ( (magR1*(1.0 - cos(Theta))/p ) );
-      g1 = ( magR1*magR2*sin(-theta) ) / sqrt(p);  // -ANGLE because backwards!!
-      f3 = 1.0 - ( (magR3*(1.0 - cos(Theta1))/p ) );
-      g3 = ( magR3*magR2*sin(theta1) )/sqrt(p);
+      f1 = 1.0 - ((magR1*(1.0 - cos(Theta))/p));
+      g1 = (magR1*magR2*sin(-theta))/sqrt(p);  // -ANGLE because backwards!!
+      f3 = 1.0 - ((magR3*(1.0 - cos(Theta1))/p));
+      g3 = (magR3*magR2*sin(theta1))/sqrt(p);
     }
 
     c1 =  g3/(f1*g3 - f3*g1);
@@ -234,7 +239,7 @@ void anglesg(double Alpha1, double Alpha2, double Alpha3, double Delta1,
     CMat[2] = -c3;
     for(int i = 0; i < 3; i++)
     {
-      dot(LIR[i], CMat, RhoMat[i]);
+      RhoMat[i] = dot(LIR[i], CMat);
     }
 
     // Rhoold1 = RhoMat[0]/c1;
@@ -243,10 +248,11 @@ void anglesg(double Alpha1, double Alpha2, double Alpha3, double Delta1,
     //----------------- Check for convergence -----------------
   } // DO WHILE the ranges are still changing
   //---------------- Find all three vectors ri ------------------
-  for (i = 0; i < 3; i++)
+  for (int i = 0; i < 3; i++)
   {
     R1[i] = RhoMat[0]*L1[i]/c1 + RS1[i];
     R2[i] = -RhoMat[1]*L2[i] + RS2[i];
     R3[i] = RhoMat[2]*L3[i]/c3 + RS3[i];
   }
 }
+//------------------------------------------------------------------------------
