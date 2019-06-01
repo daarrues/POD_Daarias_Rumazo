@@ -3,7 +3,7 @@
 //------------------------------------------------------------------------------
 // POD: Preliminary Orbit Determination
 /**
- * @file gibbs.h
+ * @file gibbs.c
  * @author Daniel Arias Ruiz-Esquide y Rubén Mazo Tomás
  * @date Created: 2019/06/01
  *
@@ -11,12 +11,16 @@
  * funciones del fichero gibbs.m (M. Mahooti)
  */
 //------------------------------------------------------------------------------
+#include "angl.h"
 #include "gibbs.h"
 #include "MatLabUtils/MatLabUtils.h"
 #include "SAT_Const.h"
+#include <math.h>
+#include <string.h>
 
 //------------------------------------------------------------------------------
-//  void Postion(double lon, double lat, double h, double r[])
+//  void gibbs(double r1[], double r2[], double r3[], double v2[],
+//             double *theta, double *theta1, double *copa, char error[])
 //------------------------------------------------------------------------------
 /*
  *  gibbs: performs the gibbs method of orbit determination. this method
@@ -35,13 +39,13 @@
  */
 //------------------------------------------------------------------------------
 void gibbs(double r1[], double r2[], double r3[], double v2[], double *theta,
-  double *theta1, double *copa, char error[])
+           double *theta1, double *copa, char error[])
 {
   double small = 0.00000001;
   *theta = 0.0;
   *theta1 = 0.0;
   zeros(v2, 3);
-  error = "          ok";
+  strcpy(error, "          ok");
 
   double magr1 = norm(r1);
   double magr2 = norm(r2);
@@ -57,7 +61,7 @@ void gibbs(double r1[], double r2[], double r3[], double v2[], double *theta,
 
   if ( fabs(dot(r1n, pn)) > 0.017452406 )
   {
-    error = "not coplanar";
+    strcpy(error, "not coplanar");
   }
 
   double d[3], n[3], dn[3], nn[3];
@@ -77,12 +81,12 @@ void gibbs(double r1[], double r2[], double r3[], double v2[], double *theta,
   // -------------------------------------------------------------
   if ((fabs(magd) < small) || (fabs(magn) < small) || (dot(nn, dn) < small))
   {
-    error = "impossible  ";
+    strcpy(error, "impossible  ");
   }
   else
   {
-    *theta  = angl(r1,r2);
-    *theta1 = angl(r2,r3);
+    *theta  = angl(r1, r2);
+    *theta1 = angl(r2, r3);
 
     // ----------- perform gibbs method to find v2 -----------
     double r1mr2 = magr1 - magr2;

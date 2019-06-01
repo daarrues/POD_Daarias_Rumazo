@@ -15,6 +15,6 @@
 #define GIBBS_H
 
 void gibbs(double[], double[], double[], double [], double*, double*, double*,
-char[]);
+           char[]);
 
 #endif // GIBBS_H
