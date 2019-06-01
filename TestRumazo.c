@@ -17,6 +17,7 @@
 #include "PrecMatrix.h"
 #include "doubler.h"
 #include "rv2coe.h"
+#include "anglesdr.h"
 
 typedef int bool;
 #define true 1
@@ -2117,6 +2118,222 @@ void testRv2coe3(bool verbose)
 }
 
 //------------------------------------------------------------------------------
+//  void testAnglesdr1(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 1 de la función anglesdr
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
+void testAnglesdr1(bool verbose)
+{
+	double n1 = 5.39901096780380560000;
+	double n2 = 6.26556833768239050000;
+	double n3 = 0.73219105065882273000;
+	double n4 = 0.01153608530361440100;
+	double n5 = -0.36060076633188148000;
+	double n6 = -0.64032290531317571000;
+	double n7 = 54977.66690364573200000000;
+	double n8 = 54977.67384809022800000000;
+	double n9 = 54977.68079253472400000000;
+	double v1[3] = {
+		4950990.33826459660000000000,
+		256563.11626038095000000000,
+		3999465.34658133240000000000
+	};
+	double v2[3] = {
+		4935037.85913035740000000000,
+		472703.32020261511000000000,
+		3999475.70573182080000000000
+	};
+	double v3[3] = {
+		4909646.95198535550000000000,
+		687938.93691575713000000000,
+		3999494.94894738870000000000
+	};
+
+	double esp1[3] = {
+		8794276.58098402430000000000,
+		404708.19494348898000000000,
+		2543973.80563715800000000000
+	};
+	double esp2[3] = {
+		591.41568007900935000000,
+		5838.86365198693690000000,
+		-2988.63988398239600000000
+	};
+	double obt1[3];
+	double obt2[3];
+
+	anglesdr(n1, n2, n3, n4, n5, n6, n7, n8, n9, v1, v2, v3, obt1, obt2);
+
+	if(verbose)
+	{
+		printf("anglesdr1:\n");
+		for(int i = 0; i < 3; i++)
+		{
+			printf("Esperado 1: %.20lf\n", esp1[i]);
+			printf("Obtenido 1: %.20lf\n", obt1[i]);
+			printf("Esperado 2: %.20lf\n", esp2[i]);
+			printf("Obtenido 2: %.20lf\n", obt2[i]);
+		}
+	}
+
+	for(int i = 0; i < 3; i++)
+	{
+		assert(fabs(esp1[i] - obt1[i]) < 10e-6);
+		assert(fabs(esp2[i] - obt2[i]) < 10e-6);
+	}
+
+	printf("anglesdr1 superado!\n");
+}
+
+//------------------------------------------------------------------------------
+//  void testAnglesdr2(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 2 de la función anglesdr
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
+void testAnglesdr2(bool verbose)
+{
+	double n1 = -0.00728325896857233770;
+	double n2 = 0.96155773545973999000;
+	double n3 = 2.34367524346778970000;
+	double n4 = 0.30478161128801379000;
+	double n5 = 0.63832275799039018000;
+	double n6 = 0.21005212080676955000;
+	double n7 = 54332.48611111100800000000;
+	double n8 = 54332.49305555550400000000;
+	double n9 = 54332.51388888899200000000;
+	double v1[3] = {
+		4092160.77507185750000000000,
+		2689587.44262100380000000000,
+		4076073.45451609280000000000
+	};
+	double v2[3] = {
+		3970615.77626515740000000000,
+		2865864.80883913630000000000,
+		4076158.05408520900000000000
+	};
+	double v3[3] = {
+		3561420.55410003290000000000,
+		3360490.91297653410000000000,
+		4076446.94406636290000000000
+	};
+
+	double esp1[3] = {
+		5963705.93729748580000000000,
+		5722170.07341056880000000000,
+		6660292.58125058280000000000
+	};
+	double esp2[3] = {
+		-4364.50181634097230000000,
+		4605.63514954226320000000,
+		1515.70820265578370000000
+	};
+	double obt1[3];
+	double obt2[3];
+
+	anglesdr(n1, n2, n3, n4, n5, n6, n7, n8, n9, v1, v2, v3, obt1, obt2);
+
+	if(verbose)
+	{
+		printf("anglesdr2:\n");
+		for(int i = 0; i < 3; i++)
+		{
+			printf("Esperado 1: %.20lf\n", esp1[i]);
+			printf("Obtenido 1: %.20lf\n", obt1[i]);
+			printf("Esperado 2: %.20lf\n", esp2[i]);
+			printf("Obtenido 2: %.20lf\n", obt2[i]);
+		}
+	}
+
+	for(int i = 0; i < 3; i++)
+	{
+		assert(fabs(esp1[i] - obt1[i]) < 10e-6);
+		assert(fabs(esp2[i] - obt2[i]) < 10e-6);
+	}
+
+	printf("anglesdr2 superado!\n");
+}
+
+//------------------------------------------------------------------------------
+//  void testAnglesdr3(bool verbose)
+//------------------------------------------------------------------------------
+/**
+ * Comprobación 3 de la función anglesdr
+ *
+ * @param <verbose> booleano que indica si debe mostrar lo esperado y obtenido.
+ */
+//------------------------------------------------------------------------------
+void testAnglesdr3(bool verbose)
+{
+	double n1 = 0.34209326003714857000;
+	double n2 = 0.11891451792612966000;
+	double n3 = 6.18038890489562490000;
+	double n4 = -0.86011570867532550000;
+	double n5 = -0.38147486927914859000;
+	double n6 = 0.20785998726626467000;
+	double n7 = 55566.00251224543900000000;
+	double n8 = 55566.00598446745400000000;
+	double n9 = 55566.00945668993500000000;
+	double v1[3] = {
+		5206817.01196492000000000000,
+		1770557.48345571850000000000,
+		3219427.29733880520000000000
+	};
+	double v2[3] = {
+		5166841.63215360700000000000,
+		1883953.00117253810000000000,
+		3219471.68938877670000000000
+	};
+	double v3[3] = {
+		5124395.33166008540000000000,
+		1996446.95507225600000000000,
+		3219518.80901504120000000000
+	};
+
+	double esp1[3] = {
+		8261971.68927837160000000000,
+		2253753.62052550400000000000,
+		1969111.03974356340000000000
+	};
+	double esp2[3] = {
+		607.48821030654062000000,
+		-1754.41167132054310000000,
+		6584.84848503908420000000
+	};
+	double obt1[3];
+	double obt2[3];
+
+	anglesdr(n1, n2, n3, n4, n5, n6, n7, n8, n9, v1, v2, v3, obt1, obt2);
+
+	if(verbose)
+	{
+		printf("anglesdr3:\n");
+		for(int i = 0; i < 3; i++)
+		{
+			printf("Esperado 1: %.20lf\n", esp1[i]);
+			printf("Obtenido 1: %.20lf\n", obt1[i]);
+			printf("Esperado 2: %.20lf\n", esp2[i]);
+			printf("Obtenido 2: %.20lf\n", obt2[i]);
+		}
+	}
+
+	for(int i = 0; i < 3; i++)
+	{
+		assert(fabs(esp1[i] - obt1[i]) < 10e-6);
+		assert(fabs(esp2[i] - obt2[i]) < 10e-6);
+	}
+
+	printf("anglesdr3 superado!\n");
+}
+
+//------------------------------------------------------------------------------
 //  int main()
 //------------------------------------------------------------------------------
 /**
@@ -2222,6 +2439,13 @@ int main(){
 	testRv2coe2(false);
 	testRv2coe3(false);
 	printf("rv2coe finalizado!\n\n");
+
+	// Test anglesdr
+	printf("Probando anglesdr!\n");
+	testAnglesdr1(false);
+	testAnglesdr2(false);
+	testAnglesdr3(false);
+	printf("anglesdr finalizado!\n\n");
 
 	// Final
 	printf("Todos los test superados!\n");

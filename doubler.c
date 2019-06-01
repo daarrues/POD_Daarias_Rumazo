@@ -21,7 +21,7 @@
 //           double los1[3], double los2[3], double los3[3],
 //           double rsite1[3], double rsite2[3], double rsite3[3],
 //           double t1, double t3, char direct,
-//           double r2[], double r3[], double *f1, double *f2, double *q1,
+//           double r2[3], double r3[3], double *f1, double *f2, double *q1,
 //           double *magr1, double *magr2, double *a, double *deltae32)
 //------------------------------------------------------------------------------
 /**
