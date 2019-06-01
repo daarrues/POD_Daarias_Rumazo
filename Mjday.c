@@ -19,7 +19,7 @@
 
 //------------------------------------------------------------------------------
 //  double Mjday(double year, double month, double day, double hour, double min,
-//             double sec)
+//               double sec)
 //------------------------------------------------------------------------------
 /**
  * Mjday: Modified Julian Date from calendar date and time
