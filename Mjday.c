@@ -12,6 +12,7 @@
  */
 //------------------------------------------------------------------------------
 #include "MatLabUtils/MatLabUtils.h"
+#include "Mjday.h"
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>

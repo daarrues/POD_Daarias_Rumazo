@@ -11,6 +11,7 @@
  * funciones del fichero angl.m (M. Mahooti)
  */
 //------------------------------------------------------------------------------
+#include "angl.h"
 #include "MatLabUtils/MatLabUtils.h"
 #include <math.h>
 

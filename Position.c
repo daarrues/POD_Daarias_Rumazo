@@ -11,6 +11,7 @@
  * funciones del fichero Position.m (M. Mahooti)
  */
 //------------------------------------------------------------------------------
+#include "Position.h"
 #include "SAT_Const.h"
 #include <math.h>
 
