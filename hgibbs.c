@@ -42,7 +42,7 @@
  * @return <error> - flag indicating success
  */
 //------------------------------------------------------------------------------
-void gibbs(double r1[], double r2[], double r3[], double MJD1, double MJD2,
+void hgibbs(double r1[], double r2[], double r3[], double MJD1, double MJD2,
            double MJD3, double v2[], double *theta, double *theta1,
            double *copa, char error[])
 {
@@ -73,9 +73,9 @@ void gibbs(double r1[], double r2[], double r3[], double MJD1, double MJD2,
   *theta  = angl(r1, r2);
   *theta1 = angl(r2, r3);
 
-  if ((theta > tolangle) || (theta1 > tolangle))
+  if ((*theta > tolangle) || (*theta1 > tolangle))
   {
-    strcpy(error, "   angl > 1ø");
+    strcpy(error, "   angl > 1o");
   }
 
   double term1 = -dt32*(1/(dt21*dt31) + GM_Earth/(12*magr1*magr1*magr1));
