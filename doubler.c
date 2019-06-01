@@ -131,7 +131,7 @@ void doubler(double cc1, double cc2, double magrsite1, double magrsite2,
   double ecosv3 = p / magr3 - 1;
 
   double esinv2;
-  if(fabs(dv21 - M_PI) < 10e-12)
+  if(fabs(dv21 - M_PI) > 10e-6)
   {
     esinv2 = (-cosdv21*ecosv2 + ecosv1) / sindv21;
   }
@@ -148,7 +148,7 @@ void doubler(double cc1, double cc2, double magrsite1, double magrsite2,
   double c;
   double deltam32;
   double deltam12;
-  if(pow(e,2) < 1)
+  if(pow(e,2) < 1.0)
   {
     n = sqrt(mu / pow(*a,3));
     s = *magr2 / p * sqrt(1 - pow(e,2)) * esinv2;
