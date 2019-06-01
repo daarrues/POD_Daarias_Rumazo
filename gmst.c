@@ -11,6 +11,7 @@
  * funciones del fichero gmst.m (M. Mahooti)
  */
 //------------------------------------------------------------------------------
+#include "gmst.h"
 #include "SAT_Const.h"
 #include "Frac.h"
 #include <math.h>

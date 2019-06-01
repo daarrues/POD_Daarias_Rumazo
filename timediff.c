@@ -11,6 +11,7 @@
  * funciones del fichero timediff.m (M. Mahooti)
  */
 //------------------------------------------------------------------------------
+#include "timediff.h"
 
 //------------------------------------------------------------------------------
 //  void timediff(double UT1_UTC, double TAI_UTC, double *UT1_TAI,

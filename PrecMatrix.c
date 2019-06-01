@@ -11,6 +11,7 @@
  * funciones del fichero PrecMatrix.m (M. Mahooti)
  */
 //------------------------------------------------------------------------------
+#include "PrecMatrix.h"
 #include "R_y.h"
 #include "R_z.h"
 #include "SAT_Const.h"

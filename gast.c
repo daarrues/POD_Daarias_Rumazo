@@ -13,6 +13,7 @@
 //------------------------------------------------------------------------------
 #include "EOPDATA.h"
 
+#include "gast.h"
 #include "SAT_Const.h"
 #include "IERS.h"
 #include "timediff.h"

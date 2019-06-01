@@ -11,6 +11,7 @@
  * funciones del fichero NutAngles.m (M. Mahooti)
  */
 //------------------------------------------------------------------------------
+#include "NutAngles.h"
 #include "SAT_Const.h"
 #include <math.h>
 

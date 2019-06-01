@@ -11,6 +11,7 @@
  * funciones del fichero GHAMatrix.m (M. Mahooti)
  */
 //------------------------------------------------------------------------------
+#include "GHAMatrix.h"
 #include "R_z.h"
 #include "gast.h"
 

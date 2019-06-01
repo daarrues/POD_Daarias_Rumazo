@@ -1,5 +1,6 @@
 //FICHERO TEMPORAL HASTA REALIZAR LOS EXAMPLES
 //Rellena la variable eopdata con la información del fichero
+#include "EOPDATA.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>

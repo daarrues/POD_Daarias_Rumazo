@@ -11,6 +11,7 @@
  * funciones del fichero EqnEquinox.m (M. Mahooti)
  */
 //------------------------------------------------------------------------------
+#include "EqnEquinox.h"
 #include "NutAngles.h"
 #include "MeanObliquity.h"
 #include <math.h>

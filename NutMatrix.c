@@ -11,6 +11,7 @@
  * funciones del fichero NutMatrix.m (M. Mahooti)
  */
 //------------------------------------------------------------------------------
+#include "NutMatrix.h"
 #include "MeanObliquity.h"
 #include "NutAngles.h"
 #include "R_x.h"

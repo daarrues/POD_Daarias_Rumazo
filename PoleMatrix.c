@@ -11,6 +11,7 @@
  * funciones del fichero PoleMatrix.m (M. Mahooti)
  */
 //------------------------------------------------------------------------------
+#include "PoleMatrix.h"
 #include "R_x.h"
 #include "R_y.h"
 #include "MatLabUtils/MatLabUtils.h"

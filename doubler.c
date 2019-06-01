@@ -11,6 +11,7 @@
  * funciones del fichero doubler.m (M. Mahooti)
  */
 //------------------------------------------------------------------------------
+#include "doubler.h"
 #include "MatLabUtils/MatLabUtils.h"
 #include <math.h>
 
