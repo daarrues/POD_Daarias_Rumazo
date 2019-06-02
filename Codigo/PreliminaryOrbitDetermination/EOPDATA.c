@@ -1,10 +1,31 @@
-//FICHERO TEMPORAL HASTA REALIZAR LOS EXAMPLES
-//Rellena la variable eopdata con la información del fichero
+//------------------------------------------------------------------------------
+//                                    EOPDATA
+//------------------------------------------------------------------------------
+// POD: Preliminary Orbit Determination
+/**
+ * @file EOPDATA.c
+ * @author Daniel Arias Ruiz-Esquide y Rubén Mazo Tomás
+ * @date Created: 2019/05/26
+ *
+ * Este fichero contiene la implementación de una función auxiliar para leer
+ * la información del fichero "eop19620101.txt".
+ */
+//------------------------------------------------------------------------------
 #include "EOPDATA.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
 
+//------------------------------------------------------------------------------
+//  void leerFichero(double *eopdata[13])
+//------------------------------------------------------------------------------
+/**
+ * Construye una matriz con los datos del fichero.
+ * Uso: double *eopdata[13]; leerFichero(eopdata);
+ *
+ * @param <eopdata> matriz de salida.
+ */
+//------------------------------------------------------------------------------
 void leerFichero(double *eopdata[13])
 {
   int n = 20026;
@@ -25,7 +46,4 @@ void leerFichero(double *eopdata[13])
 	}
 	fclose(fich);
 }
-
-//USO:
-//double *eopdata[13];
-//leerFichero(eopdata);
+//------------------------------------------------------------------------------

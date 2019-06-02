@@ -1,17 +1,17 @@
 //------------------------------------------------------------------------------
-//                                 Example5
+//                                 Example2
 //------------------------------------------------------------------------------
 // POD: Preliminary Orbit Determination
 /**
- * @file example5.c
+ * @file example2.c
  * @author Daniel Arias Ruiz-Esquide y Rubén Mazo Tomás
  * @date Created: 2019/06/02
  *
- * Este fichero contiene la implementación de example5.m (M. Mahooti)
+ * Este fichero contiene la implementación de example2.m (M. Mahooti)
  */
 //------------------------------------------------------------------------------
 #include "../MatLabUtils/MatLabUtils.h"
-#include "anglesg.h"
+#include "anglesdr.h"
 #include "examples.h"
 #include "EOPDATA.h"
 #include "GHAMatrix.h"
@@ -26,10 +26,10 @@
 #include <stdio.h>
 
 //------------------------------------------------------------------------------
-//  void example5()
+//  void example2()
 //------------------------------------------------------------------------------
 /**
- *  Preliminary Orbit Determination using Gauss method
+ *  Preliminary Orbit Determination using Double-R-Iteration method
  *
  * @note References:
  *   O. Montenbruck, E. Gill, "Satellite Orbits - Models, Methods, and
@@ -41,7 +41,7 @@
  *   G. Seeber, "Satellite Geodesy", 2nd Edition, 2003.
  */
 //------------------------------------------------------------------------------
-void example5()
+void example2()
 {
   double *eopdata[13];
   leerFichero(eopdata);
@@ -49,7 +49,7 @@ void example5()
   double Y, M, D, h, m, s, rtasc, decl;
   double obs[3][3];
 
-  FILE *fich = fopen("PreliminaryOrbitDetermination/sat5.txt", "r");
+  FILE *fich = fopen("PreliminaryOrbitDetermination/sat2.txt", "r");
 
   int i = 0;
 	while(fscanf(fich, "%lf/%lf/%lf %lf:%lf:%lf %lf %lf\n",
@@ -64,9 +64,9 @@ void example5()
 	fclose(fich);
 
   // station
-  double lat = Rad*30.5724;    // (rad)
-  double lon = Rad*(-86.2143); // (rad)
-  double alt = 0.0;            // (m)
+  double lat = Rad*30.5724;     // (rad)
+  double lon = Rad*(-86.2143);  // (rad)
+  double alt = 0.0;             // (m)
 
   double Rs[3];
   Position(lon, lat, alt,Rs);
@@ -148,9 +148,9 @@ void example5()
   }
 
   double r2[3], v2[3];
-  anglesg(obs[0][1], obs[1][1], obs[2][1], obs[0][2], obs[1][2], obs[2][2],
+  anglesdr(obs[0][1], obs[1][1], obs[2][1], obs[0][2], obs[1][2], obs[2][2],
           Mjd1, Mjd2, Mjd3, rsite1, rsite2, rsite3, r2, v2);
-  printf("\nGauss method");
+  printf("\n\nDouble-R-Iteration method");
   printf("\nY_apr=\n\n%.20lf\n%.20lf\n%.20lf\n%.20lf\n%.20lf\n%.20lf\n",
           r2[0]*1e-3, r2[1]*1e-3, r2[2]*1e-3,
           v2[0]*1e-3, v2[1]*1e-3, v2[2]*1e-3);

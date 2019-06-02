@@ -38,15 +38,15 @@ int main()
       // Examples
       case 1:
         printf("Example 1:\n");
-        //example1();
+        example1();
         break;
       case 2:
         printf("Example 2:\n");
-        // example2();
+        example2();
         break;
       case 3:
         printf("Example 3:\n");
-        //example3();
+        example3();
         break;
       case 5:
         printf("Example 5:\n");
@@ -54,21 +54,22 @@ int main()
         break;
       case 6:
         printf("Example 6:\n");
-        //example6();
+        example6();
         break;
       case 7:
         printf("Example 7:\n");
-        //example7();
+        example7();
         break;
       case 9:
         test();
         break;
       case 0:
-        printf("Exiting\n");
+        printf("Exiting...\n");
         return 0;
       default:
         printf("ERROR: %d is not a valid option!\n", op);
         break;
     }
+    printf("\n");
   } while (1);
 }
