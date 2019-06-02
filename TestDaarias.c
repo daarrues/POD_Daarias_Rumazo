@@ -2141,7 +2141,9 @@ void testHgibbs3(bool verbose)
 //------------------------------------------------------------------------------
 void testAnglesg(bool verbose)
 {
-	/*double Alpha1 = 0.2235784225097256;
+	// Datos de la salida normal de MatLab
+	/*
+	double Alpha1 = 0.2235784225097256;
 	double Alpha2 = 0.1654921196741023;
 	double Alpha3 = 0.1066134373580736;
 
@@ -2178,8 +2180,10 @@ void testAnglesg(bool verbose)
 		16.87979502268987,
 		-2654.080029326738,
 		3734.120046153917
-		};*/
+		};
+	*/
 
+	// Datos con precision de 20 decimales por intentar mejorar
 	double Alpha1 = 0.22357842250972562170;
 	double Alpha2 = 0.16549211967410232260;
 	double Alpha3 = 0.10661343735807363164;
