@@ -1,0 +1,37 @@
+\hypertarget{_g_h_a_matrix_8c}{}\section{Codigo/\+Preliminary\+Orbit\+Determination/\+G\+H\+A\+Matrix.c File Reference}
+\label{_g_h_a_matrix_8c}\index{Codigo/PreliminaryOrbitDetermination/GHAMatrix.c@{Codigo/PreliminaryOrbitDetermination/GHAMatrix.c}}
+{\ttfamily \#include \char`\"{}gast.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}G\+H\+A\+Matrix.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}R\+\_\+z.\+h\char`\"{}}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_g_h_a_matrix_8c_af92937e23d7eef118f7f817134f6017f}{G\+H\+A\+Matrix}} (double Mjd\+\_\+\+U\+T1, double G\+H\+Amat\mbox{[}3\mbox{]}\mbox{[}3\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Daniel Arias Ruiz-\/\+Esquide y Rubén Mazo Tomás 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Created\+: 2019/05/25
+\end{DoxyDate}
+Este fichero contiene las implementaciones para las funciones del fichero G\+H\+A\+Matrix.\+m (M. Mahooti) 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{_g_h_a_matrix_8c_af92937e23d7eef118f7f817134f6017f}\label{_g_h_a_matrix_8c_af92937e23d7eef118f7f817134f6017f}} 
+\index{GHAMatrix.c@{GHAMatrix.c}!GHAMatrix@{GHAMatrix}}
+\index{GHAMatrix@{GHAMatrix}!GHAMatrix.c@{GHAMatrix.c}}
+\subsubsection{\texorpdfstring{GHAMatrix()}{GHAMatrix()}}
+{\footnotesize\ttfamily void G\+H\+A\+Matrix (\begin{DoxyParamCaption}\item[{double}]{Mjd\+\_\+\+U\+T1,  }\item[{double}]{G\+H\+Amat\mbox{[}3\mbox{]}\mbox{[}3\mbox{]} }\end{DoxyParamCaption})}
+
+Transformation from true equator and equinox to Earth equator and Greenwich meridian system.
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$\+Mjd\+\_\+\+U\+T1$>$} & Modified Julian Date U\+T1 (in). \\
+\hline
+{\em $<$\+G\+H\+Amat$>$} & Greenwich Hour Angle matrix (out). \\
+\hline
+\end{DoxyParams}

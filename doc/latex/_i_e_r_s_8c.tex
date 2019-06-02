@@ -1,0 +1,53 @@
+\hypertarget{_i_e_r_s_8c}{}\section{Codigo/\+Preliminary\+Orbit\+Determination/\+I\+E\+RS.c File Reference}
+\label{_i_e_r_s_8c}\index{Codigo/PreliminaryOrbitDetermination/IERS.c@{Codigo/PreliminaryOrbitDetermination/IERS.c}}
+{\ttfamily \#include \char`\"{}I\+E\+R\+S.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}S\+A\+T\+\_\+\+Const.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_i_e_r_s_8c_af3a0e43bd77b211107003a7c44072ca2}{I\+E\+RS}} (double $\ast$eop\mbox{[}13\mbox{]}, int nop, double Mjd\+\_\+\+U\+TC, char interp, double $\ast$U\+T1\+\_\+\+U\+TC, double $\ast$T\+A\+I\+\_\+\+U\+TC, double $\ast$x\+\_\+pole, double $\ast$y\+\_\+pole, double $\ast$ddpsi, double $\ast$ddeps)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Daniel Arias Ruiz-\/\+Esquide y Rubén Mazo Tomás 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Created\+: 2019/05/23
+\end{DoxyDate}
+Este fichero contiene las implementaciones para las funciones del fichero I\+E\+R\+S.\+m (M. Mahooti) 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{_i_e_r_s_8c_af3a0e43bd77b211107003a7c44072ca2}\label{_i_e_r_s_8c_af3a0e43bd77b211107003a7c44072ca2}} 
+\index{IERS.c@{IERS.c}!IERS@{IERS}}
+\index{IERS@{IERS}!IERS.c@{IERS.c}}
+\subsubsection{\texorpdfstring{IERS()}{IERS()}}
+{\footnotesize\ttfamily void I\+E\+RS (\begin{DoxyParamCaption}\item[{double $\ast$}]{eop\mbox{[}13\mbox{]},  }\item[{int}]{nop,  }\item[{double}]{Mjd\+\_\+\+U\+TC,  }\item[{char}]{interp,  }\item[{double $\ast$}]{U\+T1\+\_\+\+U\+TC,  }\item[{double $\ast$}]{T\+A\+I\+\_\+\+U\+TC,  }\item[{double $\ast$}]{x\+\_\+pole,  }\item[{double $\ast$}]{y\+\_\+pole,  }\item[{double $\ast$}]{ddpsi,  }\item[{double $\ast$}]{ddeps }\end{DoxyParamCaption})}
+
+Management of I\+E\+RS time and polar motion data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$eop$>$} & File data (in). \\
+\hline
+{\em $<$nop$>$} & number of rows (in). \\
+\hline
+{\em $<$\+Mjd\+\_\+\+U\+T\+C$>$} & (in). \\
+\hline
+{\em $<$interp$>$} & (in). \\
+\hline
+{\em $<$\+U\+T1\+\_\+\+U\+T\+C$>$} & (out). \\
+\hline
+{\em $<$\+T\+A\+I\+\_\+\+U\+T\+C$>$} & (out). \\
+\hline
+{\em $<$x\+\_\+pole$>$} & (out). \\
+\hline
+{\em $<$y\+\_\+pole$>$} & (out). \\
+\hline
+{\em $<$ddpsi$>$} & (out). \\
+\hline
+{\em $<$ddeps$>$} & (out). \\
+\hline
+\end{DoxyParams}

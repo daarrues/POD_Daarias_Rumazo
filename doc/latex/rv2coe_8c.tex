@@ -1,0 +1,64 @@
+\hypertarget{rv2coe_8c}{}\section{Codigo/\+Preliminary\+Orbit\+Determination/rv2coe.c File Reference}
+\label{rv2coe_8c}\index{Codigo/PreliminaryOrbitDetermination/rv2coe.c@{Codigo/PreliminaryOrbitDetermination/rv2coe.c}}
+{\ttfamily \#include \char`\"{}../\+Mat\+Lab\+Utils/\+Mat\+Lab\+Utils.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}angl.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}newtonnu.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}rv2coe.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{rv2coe_8c_aa422b0e8b6ed92052b3b8b8de227bfb8}{rv2coe}} (double r\mbox{[}3\mbox{]}, double v\mbox{[}3\mbox{]}, double $\ast$p, double $\ast$a, double $\ast$ecc, double $\ast$incl, double $\ast$omega, double $\ast$argp, double $\ast$nu, double $\ast$m, double $\ast$arglat, double $\ast$truelon, double $\ast$lonper)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Daniel Arias Ruiz-\/\+Esquide y Rubén Mazo Tomás 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Created\+: 2019/06/01
+\end{DoxyDate}
+Este fichero contiene las implementaciones para las funciones del fichero rv2coe.\+m (M. Mahooti) 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{rv2coe_8c_aa422b0e8b6ed92052b3b8b8de227bfb8}\label{rv2coe_8c_aa422b0e8b6ed92052b3b8b8de227bfb8}} 
+\index{rv2coe.c@{rv2coe.c}!rv2coe@{rv2coe}}
+\index{rv2coe@{rv2coe}!rv2coe.c@{rv2coe.c}}
+\subsubsection{\texorpdfstring{rv2coe()}{rv2coe()}}
+{\footnotesize\ttfamily void rv2coe (\begin{DoxyParamCaption}\item[{double}]{r\mbox{[}3\mbox{]},  }\item[{double}]{v\mbox{[}3\mbox{]},  }\item[{double $\ast$}]{p,  }\item[{double $\ast$}]{a,  }\item[{double $\ast$}]{ecc,  }\item[{double $\ast$}]{incl,  }\item[{double $\ast$}]{omega,  }\item[{double $\ast$}]{argp,  }\item[{double $\ast$}]{nu,  }\item[{double $\ast$}]{m,  }\item[{double $\ast$}]{arglat,  }\item[{double $\ast$}]{truelon,  }\item[{double $\ast$}]{lonper }\end{DoxyParamCaption})}
+
+Finds the classical orbital elements given the geocentric equatorial position and velocity vectors.
+
+Inputs\+: 
+\begin{DoxyParams}{Parameters}
+{\em $<$r$>$} & ijk position vector (m). \\
+\hline
+{\em $<$v$>$} & ijk velocity vector (m/s).\\
+\hline
+\end{DoxyParams}
+Outputs\+: 
+\begin{DoxyParams}{Parameters}
+{\em $<$p$>$} & semilatus rectum (m). \\
+\hline
+{\em $<$a$>$} & semimajor axis (m). \\
+\hline
+{\em $<$ecc$>$} & eccentricity. \\
+\hline
+{\em $<$incl$>$} & inclination (0.\+0 to pi rad). \\
+\hline
+{\em $<$omega$>$} & longitude of ascending node (0.\+0 to 2pi rad). \\
+\hline
+{\em $<$argp$>$} & argument of perigee (0.\+0 to 2pi rad). \\
+\hline
+{\em $<$nu$>$} & true anomaly (0.\+0 to 2pi rad). \\
+\hline
+{\em $<$m$>$} & mean anomaly (0.\+0 to 2pi rad). \\
+\hline
+{\em $<$arglat$>$} & argument of latitude (0.\+0 to 2pi rad). \\
+\hline
+{\em $<$truelon$>$} & true longitude (0.\+0 to 2pi rad). \\
+\hline
+{\em $<$lonper$>$} & longitude of periapsis (0.\+0 to 2pi rad). \\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,68 @@
+\hypertarget{anglesg_8c}{}\section{Codigo/\+Preliminary\+Orbit\+Determination/anglesg.c File Reference}
+\label{anglesg_8c}\index{Codigo/PreliminaryOrbitDetermination/anglesg.c@{Codigo/PreliminaryOrbitDetermination/anglesg.c}}
+{\ttfamily \#include \char`\"{}../\+Mat\+Lab\+Utils/\+Mat\+Lab\+Utils.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}angl.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}anglesg.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}gibbs.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hgibbs.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}lambert\+\_\+gooding.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}rv2coe.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{anglesg_8c_aeb972f497c681ff462197b075b3b37b9}{anglesg}} (double Alpha1, double Alpha2, double Alpha3, double Delta1, double Delta2, double Delta3, double J\+D1, double J\+D2, double J\+D3, double R\+S1\mbox{[}$\,$\mbox{]}, double R\+S2\mbox{[}$\,$\mbox{]}, double R\+S3\mbox{[}$\,$\mbox{]}, double R2\mbox{[}$\,$\mbox{]}, double V2\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Daniel Arias Ruiz-\/\+Esquide y Rubén Mazo Tomás 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Created\+: 2019/06/01
+\end{DoxyDate}
+Este fichero contiene las implementaciones para las funciones del fichero anglesg.\+m (M. Mahooti) 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{anglesg_8c_aeb972f497c681ff462197b075b3b37b9}\label{anglesg_8c_aeb972f497c681ff462197b075b3b37b9}} 
+\index{anglesg.c@{anglesg.c}!anglesg@{anglesg}}
+\index{anglesg@{anglesg}!anglesg.c@{anglesg.c}}
+\subsubsection{\texorpdfstring{anglesg()}{anglesg()}}
+{\footnotesize\ttfamily void anglesg (\begin{DoxyParamCaption}\item[{double}]{Alpha1,  }\item[{double}]{Alpha2,  }\item[{double}]{Alpha3,  }\item[{double}]{Delta1,  }\item[{double}]{Delta2,  }\item[{double}]{Delta3,  }\item[{double}]{J\+D1,  }\item[{double}]{J\+D2,  }\item[{double}]{J\+D3,  }\item[{double}]{R\+S1\mbox{[}$\,$\mbox{]},  }\item[{double}]{R\+S2\mbox{[}$\,$\mbox{]},  }\item[{double}]{R\+S3\mbox{[}$\,$\mbox{]},  }\item[{double}]{R2\mbox{[}$\,$\mbox{]},  }\item[{double}]{V2\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+anglesgauss\+: Solves the problem of orbit determination using three optical sightings.
+
+Inputs\+: 
+\begin{DoxyParams}{Parameters}
+{\em $<$\+Alpha1$>$} & -\/ right ascension \#1 (rad) \\
+\hline
+{\em $<$\+Alpha2$>$} & -\/ right ascension \#2 (rad) \\
+\hline
+{\em $<$\+Alpha3$>$} & -\/ right ascension \#3 (rad) \\
+\hline
+{\em $<$\+Delta1$>$} & -\/ declination \#1 (rad) \\
+\hline
+{\em $<$\+Delta2$>$} & -\/ declination \#2 (rad) \\
+\hline
+{\em $<$\+Delta3$>$} & -\/ declination \#3 (rad) \\
+\hline
+{\em $<$\+J\+D1$>$} & -\/ julian date of 1st sighting (days since 4713 bc) \\
+\hline
+{\em $<$\+J\+D2$>$} & -\/ julian date of 2nd sighting (days since 4713 bc) \\
+\hline
+{\em $<$\+J\+D3$>$} & -\/ julian date of 3rd sighting (days since 4713 bc) \\
+\hline
+{\em $<$\+R\+S1$>$} & -\/ ijk site1 position vector (m) \\
+\hline
+{\em $<$\+R\+S2$>$} & -\/ ijk site2 position vector (m) \\
+\hline
+{\em $<$\+R\+S3$>$} & -\/ ijk site3 position vector (m)\\
+\hline
+\end{DoxyParams}
+Outputs\+: \begin{DoxyReturn}{Returns}
+$<$\+R2$>$ -\/ ijk position vector at t2 (m) 
+
+$<$\+V2$>$ -\/ ijk velocity vector at t2 (m/s) 
+\end{DoxyReturn}

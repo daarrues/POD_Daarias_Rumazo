@@ -1,0 +1,61 @@
+\hypertarget{anglesdr_8h}{}\section{Codigo/\+Preliminary\+Orbit\+Determination/anglesdr.h File Reference}
+\label{anglesdr_8h}\index{Codigo/PreliminaryOrbitDetermination/anglesdr.h@{Codigo/PreliminaryOrbitDetermination/anglesdr.h}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{anglesdr_8h_a84cdf5b6c1e4da086013a19a6436f7f9}{anglesdr}} (double, double, double, double, double, double, double, double, double, double\mbox{[}3\mbox{]}, double\mbox{[}3\mbox{]}, double\mbox{[}3\mbox{]}, double\mbox{[}3\mbox{]}, double\mbox{[}3\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Daniel Arias Ruiz-\/\+Esquide y Rubén Mazo Tomás 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Created\+: 2019/06/01
+\end{DoxyDate}
+Este fichero contiene las cabeceras para las funciones del fichero anglesdr.\+m (M. Mahooti) 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{anglesdr_8h_a84cdf5b6c1e4da086013a19a6436f7f9}\label{anglesdr_8h_a84cdf5b6c1e4da086013a19a6436f7f9}} 
+\index{anglesdr.h@{anglesdr.h}!anglesdr@{anglesdr}}
+\index{anglesdr@{anglesdr}!anglesdr.h@{anglesdr.h}}
+\subsubsection{\texorpdfstring{anglesdr()}{anglesdr()}}
+{\footnotesize\ttfamily void anglesdr (\begin{DoxyParamCaption}\item[{double}]{rtasc1,  }\item[{double}]{rtasc2,  }\item[{double}]{rtasc3,  }\item[{double}]{decl1,  }\item[{double}]{decl2,  }\item[{double}]{decl3,  }\item[{double}]{Mjd1,  }\item[{double}]{Mjd2,  }\item[{double}]{Mjd3,  }\item[{double}]{rsite1\mbox{[}3\mbox{]},  }\item[{double}]{rsite2\mbox{[}3\mbox{]},  }\item[{double}]{rsite3\mbox{[}3\mbox{]},  }\item[{double}]{r2\mbox{[}3\mbox{]},  }\item[{double}]{v2\mbox{[}3\mbox{]} }\end{DoxyParamCaption})}
+
+solves the problem of orbit determination using three optical sightings.
+
+Inputs\+: 
+\begin{DoxyParams}{Parameters}
+{\em $<$rtasc1$>$} & right ascension at t1 (rad) \\
+\hline
+{\em $<$rtasc2$>$} & right ascension at t2 (rad) \\
+\hline
+{\em $<$rtasc3$>$} & right ascension at t3 (rad) \\
+\hline
+{\em $<$decl1$>$} & declination at t1 (rad) \\
+\hline
+{\em $<$decl2$>$} & declination at t2 (rad) \\
+\hline
+{\em $<$decl3$>$} & declination at t3 (rad) \\
+\hline
+{\em $<$\+Mjd1$>$} & Modified julian date of t1 \\
+\hline
+{\em $<$\+Mjd2$>$} & Modified julian date of t2 \\
+\hline
+{\em $<$\+Mjd3$>$} & Modified julian date of t3 \\
+\hline
+{\em $<$rsite1$>$} & ijk site1 position vector (m) \\
+\hline
+{\em $<$rsite2$>$} & ijk site2 position vector (m) \\
+\hline
+{\em $<$rsite3$>$} & ijk site3 position vector (m)\\
+\hline
+\end{DoxyParams}
+Output\+: 
+\begin{DoxyParams}{Parameters}
+{\em $<$r$>$} & ijk position vector at t2 (m) \\
+\hline
+{\em $<$v$>$} & ijk velocity vector at t2 (m/s) \\
+\hline
+\end{DoxyParams}

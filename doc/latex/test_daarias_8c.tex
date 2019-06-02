@@ -1,0 +1,736 @@
+\hypertarget{test_daarias_8c}{}\section{Codigo/\+Test/test\+Daarias.c File Reference}
+\label{test_daarias_8c}\index{Codigo/Test/testDaarias.c@{Codigo/Test/testDaarias.c}}
+{\ttfamily \#include \char`\"{}../\+Preliminary\+Orbit\+Determination/angl.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../\+Preliminary\+Orbit\+Determination/anglesg.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../\+Preliminary\+Orbit\+Determination/gibbs.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../\+Preliminary\+Orbit\+Determination/hgibbs.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../\+Preliminary\+Orbit\+Determination/lambert\+\_\+gooding.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../\+Preliminary\+Orbit\+Determination/\+Mjday.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../\+Preliminary\+Orbit\+Determination/newtonnu.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../\+Preliminary\+Orbit\+Determination/\+Position.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../\+Preliminary\+Orbit\+Determination/\+R\+\_\+x.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../\+Preliminary\+Orbit\+Determination/\+R\+\_\+y.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../\+Preliminary\+Orbit\+Determination/\+R\+\_\+z.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}test\+Daarias.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{test_daarias_8c_a41f9c5fb8b08eb5dc3edce4dcb37fee7}{true}}~1
+\item 
+\#define \mbox{\hyperlink{test_daarias_8c_a65e9886d74aaee76545e83dd09011727}{false}}~0
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef int \mbox{\hyperlink{test_daarias_8c_a1062901a7428fdd9c7f180f5e01ea056}{bool}}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{test_daarias_8c_ae66d4260f870eee417a21005ec80e091}{test\+D8rt1}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_daarias_8c_a3263f78014000765b5c2875b5047949f}{test\+D8rt2}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_daarias_8c_a09fab886e578318b7f10be76543ec70e}{test\+D8rt3}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_daarias_8c_a6e9ad0cd421a8d180ba07a85d08fe388}{test\+Tlamb1}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_daarias_8c_a112b57b288d770211bfe82477573496d}{test\+Tlamb2}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_daarias_8c_a7b9247aba8846f3920d64c6b84a4b0f6}{test\+Tlamb3}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_daarias_8c_af388984abd8c761fc732fd0268a18455}{test\+Xlamb1}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_daarias_8c_a1a6ef6fe4be0abbdc4d2eae923c0e800}{test\+Xlamb2}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_daarias_8c_ac82750487fb4283e997ea590bd8b9cde}{test\+Xlamb3}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_daarias_8c_af5817181a8b788916c83308778a5a7d4}{test\+Vlamb1}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_daarias_8c_a51b6f32bc6e8c4f68ecd55e846f587d6}{test\+Vlamb2}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_daarias_8c_afa5cbfc2bd2efb6b03b08072886c5bc1}{test\+Vlamb3}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_daarias_8c_a330c6aca34632b0e1c2432b54fd50ff9}{test\+Lambert\+\_\+gooding1}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_daarias_8c_a7ffaf17bc3423f02ced7bfaf1d2809fa}{test\+Lambert\+\_\+gooding2}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_daarias_8c_a4e33ac8ca08a9148dc88f53d585663c8}{test\+Lambert\+\_\+gooding3}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_daarias_8c_a1fba12b321e1df9ff9def05afd24882d}{test\+R\+\_\+x1}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_daarias_8c_a17452cf66ec1129ed3af95e120ffca0b}{test\+R\+\_\+x2}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_daarias_8c_a7b58c0208c7998cc030d9e2a05a2d990}{test\+R\+\_\+x3}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_daarias_8c_af78a12d9958843c48cfb706d4b4c653b}{test\+R\+\_\+y1}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_daarias_8c_a06780f64d6e2924f8438d37b02d0eabc}{test\+R\+\_\+y2}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_daarias_8c_a556b01394be1acd56742b70dd572b94a}{test\+R\+\_\+y3}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_daarias_8c_a6da0191ff5f7fcff012d7b0ee51ea229}{test\+R\+\_\+z1}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_daarias_8c_adade388a5b4b598540286ed497712367}{test\+R\+\_\+z2}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_daarias_8c_ad3cfd0999217da57952bea4bed35a2a0}{test\+R\+\_\+z3}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_daarias_8c_addf5d2c97a0091fd8017d60cf5ce76fb}{test\+Angl1}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_daarias_8c_a7a19d3b670750953218c51ba499dd084}{test\+Angl2}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_daarias_8c_aa12255987c02574201029240405150e4}{test\+Angl3}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_daarias_8c_aed02808ac73c97f603738e4e3949754c}{test\+Mjday1}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_daarias_8c_aaa232dca7762afcc866df4a489585c04}{test\+Mjday2}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_daarias_8c_a1b51e69f661b5fb3a7eb46939507bf7c}{test\+Mjday3}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_daarias_8c_a8c62edc7ea80bddffb35e95e9badeb07}{test\+Newtonnu1}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_daarias_8c_a56f4f32ae20371c0de173075d238feb0}{test\+Newtonnu2}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_daarias_8c_a75be8429b5e022a6ecb17532b412b9cc}{test\+Newtonnu3}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_daarias_8c_ac2abd184e9522e5ec60fb3f3493a2698}{test\+Position1}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_daarias_8c_a4cc6d4c0026d785a0e1f4f796b38d50c}{test\+Position2}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_daarias_8c_ae900821db0136146af5e2bae51b9d367}{test\+Position3}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_daarias_8c_a7a6488c295e2ce852214f1f7b7b38d5c}{test\+Gibbs1}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_daarias_8c_a8ebc502a06082e7fdbf9f436ea47f6a9}{test\+Gibbs2}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_daarias_8c_ad2cc44731be3b4a59a376ac033e33505}{test\+Gibbs3}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_daarias_8c_a0349c97102eec6d52c4a0e2fea2fe8a3}{test\+Hgibbs1}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_daarias_8c_aff96d945d1cf0ad6f06f94a03d604f5f}{test\+Hgibbs2}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_daarias_8c_a9f7e48e94c2399574fe143cf487e8f1f}{test\+Hgibbs3}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_daarias_8c_ad8e9e4c3cd1e6bcd75d084a8bce4a517}{test\+Anglesg}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+char \mbox{\hyperlink{test_daarias_8c_a9248601ceb705e7c1605c1ac67e44342}{esp\+\_\+error}} \mbox{[}12\mbox{]} = \char`\"{} ok\char`\"{}
+\item 
+char \mbox{\hyperlink{test_daarias_8c_a179e10d87e78fb33fa9c904f8db2a8e2}{esp\+\_\+error\+\_\+angl}} \mbox{[}12\mbox{]} = \char`\"{} angl $>$ 1o\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Daniel Arias Ruiz-\/\+Esquide 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Created\+: 2019/05/15
+\end{DoxyDate}
+Este fichero contiene los test unitarios para las funciones del proyecto implementadas por Daniel Arias Ruiz-\/\+Esquide. 
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{test_daarias_8c_a65e9886d74aaee76545e83dd09011727}\label{test_daarias_8c_a65e9886d74aaee76545e83dd09011727}} 
+\index{testDaarias.c@{testDaarias.c}!false@{false}}
+\index{false@{false}!testDaarias.c@{testDaarias.c}}
+\subsubsection{\texorpdfstring{false}{false}}
+{\footnotesize\ttfamily \#define false~0}
+
+\mbox{\Hypertarget{test_daarias_8c_a41f9c5fb8b08eb5dc3edce4dcb37fee7}\label{test_daarias_8c_a41f9c5fb8b08eb5dc3edce4dcb37fee7}} 
+\index{testDaarias.c@{testDaarias.c}!true@{true}}
+\index{true@{true}!testDaarias.c@{testDaarias.c}}
+\subsubsection{\texorpdfstring{true}{true}}
+{\footnotesize\ttfamily \#define true~1}
+
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{test_daarias_8c_a1062901a7428fdd9c7f180f5e01ea056}\label{test_daarias_8c_a1062901a7428fdd9c7f180f5e01ea056}} 
+\index{testDaarias.c@{testDaarias.c}!bool@{bool}}
+\index{bool@{bool}!testDaarias.c@{testDaarias.c}}
+\subsubsection{\texorpdfstring{bool}{bool}}
+{\footnotesize\ttfamily typedef int \mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{test_daarias_8c_addf5d2c97a0091fd8017d60cf5ce76fb}\label{test_daarias_8c_addf5d2c97a0091fd8017d60cf5ce76fb}} 
+\index{testDaarias.c@{testDaarias.c}!testAngl1@{testAngl1}}
+\index{testAngl1@{testAngl1}!testDaarias.c@{testDaarias.c}}
+\subsubsection{\texorpdfstring{testAngl1()}{testAngl1()}}
+{\footnotesize\ttfamily void test\+Angl1 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 1 de la función angl
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_daarias_8c_a7a19d3b670750953218c51ba499dd084}\label{test_daarias_8c_a7a19d3b670750953218c51ba499dd084}} 
+\index{testDaarias.c@{testDaarias.c}!testAngl2@{testAngl2}}
+\index{testAngl2@{testAngl2}!testDaarias.c@{testDaarias.c}}
+\subsubsection{\texorpdfstring{testAngl2()}{testAngl2()}}
+{\footnotesize\ttfamily void test\+Angl2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 2 de la función angl
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_daarias_8c_aa12255987c02574201029240405150e4}\label{test_daarias_8c_aa12255987c02574201029240405150e4}} 
+\index{testDaarias.c@{testDaarias.c}!testAngl3@{testAngl3}}
+\index{testAngl3@{testAngl3}!testDaarias.c@{testDaarias.c}}
+\subsubsection{\texorpdfstring{testAngl3()}{testAngl3()}}
+{\footnotesize\ttfamily void test\+Angl3 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 3 de la función angl
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_daarias_8c_ad8e9e4c3cd1e6bcd75d084a8bce4a517}\label{test_daarias_8c_ad8e9e4c3cd1e6bcd75d084a8bce4a517}} 
+\index{testDaarias.c@{testDaarias.c}!testAnglesg@{testAnglesg}}
+\index{testAnglesg@{testAnglesg}!testDaarias.c@{testDaarias.c}}
+\subsubsection{\texorpdfstring{testAnglesg()}{testAnglesg()}}
+{\footnotesize\ttfamily void test\+Anglesg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación de la función Anglesg (solo hay un ejemplo que la usa)
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_daarias_8c_ae66d4260f870eee417a21005ec80e091}\label{test_daarias_8c_ae66d4260f870eee417a21005ec80e091}} 
+\index{testDaarias.c@{testDaarias.c}!testD8rt1@{testD8rt1}}
+\index{testD8rt1@{testD8rt1}!testDaarias.c@{testDaarias.c}}
+\subsubsection{\texorpdfstring{testD8rt1()}{testD8rt1()}}
+{\footnotesize\ttfamily void test\+D8rt1 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 1 de la función d8rt
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_daarias_8c_a3263f78014000765b5c2875b5047949f}\label{test_daarias_8c_a3263f78014000765b5c2875b5047949f}} 
+\index{testDaarias.c@{testDaarias.c}!testD8rt2@{testD8rt2}}
+\index{testD8rt2@{testD8rt2}!testDaarias.c@{testDaarias.c}}
+\subsubsection{\texorpdfstring{testD8rt2()}{testD8rt2()}}
+{\footnotesize\ttfamily void test\+D8rt2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 2 de la función d8rt
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_daarias_8c_a09fab886e578318b7f10be76543ec70e}\label{test_daarias_8c_a09fab886e578318b7f10be76543ec70e}} 
+\index{testDaarias.c@{testDaarias.c}!testD8rt3@{testD8rt3}}
+\index{testD8rt3@{testD8rt3}!testDaarias.c@{testDaarias.c}}
+\subsubsection{\texorpdfstring{testD8rt3()}{testD8rt3()}}
+{\footnotesize\ttfamily void test\+D8rt3 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 3 de la función d8rt
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_daarias_8c_a7a6488c295e2ce852214f1f7b7b38d5c}\label{test_daarias_8c_a7a6488c295e2ce852214f1f7b7b38d5c}} 
+\index{testDaarias.c@{testDaarias.c}!testGibbs1@{testGibbs1}}
+\index{testGibbs1@{testGibbs1}!testDaarias.c@{testDaarias.c}}
+\subsubsection{\texorpdfstring{testGibbs1()}{testGibbs1()}}
+{\footnotesize\ttfamily void test\+Gibbs1 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{test_daarias_8c_a8ebc502a06082e7fdbf9f436ea47f6a9}\label{test_daarias_8c_a8ebc502a06082e7fdbf9f436ea47f6a9}} 
+\index{testDaarias.c@{testDaarias.c}!testGibbs2@{testGibbs2}}
+\index{testGibbs2@{testGibbs2}!testDaarias.c@{testDaarias.c}}
+\subsubsection{\texorpdfstring{testGibbs2()}{testGibbs2()}}
+{\footnotesize\ttfamily void test\+Gibbs2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 2 de la función gibbs
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_daarias_8c_ad2cc44731be3b4a59a376ac033e33505}\label{test_daarias_8c_ad2cc44731be3b4a59a376ac033e33505}} 
+\index{testDaarias.c@{testDaarias.c}!testGibbs3@{testGibbs3}}
+\index{testGibbs3@{testGibbs3}!testDaarias.c@{testDaarias.c}}
+\subsubsection{\texorpdfstring{testGibbs3()}{testGibbs3()}}
+{\footnotesize\ttfamily void test\+Gibbs3 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 3 de la función gibbs
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_daarias_8c_a0349c97102eec6d52c4a0e2fea2fe8a3}\label{test_daarias_8c_a0349c97102eec6d52c4a0e2fea2fe8a3}} 
+\index{testDaarias.c@{testDaarias.c}!testHgibbs1@{testHgibbs1}}
+\index{testHgibbs1@{testHgibbs1}!testDaarias.c@{testDaarias.c}}
+\subsubsection{\texorpdfstring{testHgibbs1()}{testHgibbs1()}}
+{\footnotesize\ttfamily void test\+Hgibbs1 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 1 de la función hgibbs
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_daarias_8c_aff96d945d1cf0ad6f06f94a03d604f5f}\label{test_daarias_8c_aff96d945d1cf0ad6f06f94a03d604f5f}} 
+\index{testDaarias.c@{testDaarias.c}!testHgibbs2@{testHgibbs2}}
+\index{testHgibbs2@{testHgibbs2}!testDaarias.c@{testDaarias.c}}
+\subsubsection{\texorpdfstring{testHgibbs2()}{testHgibbs2()}}
+{\footnotesize\ttfamily void test\+Hgibbs2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 2 de la función hgibbs
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_daarias_8c_a9f7e48e94c2399574fe143cf487e8f1f}\label{test_daarias_8c_a9f7e48e94c2399574fe143cf487e8f1f}} 
+\index{testDaarias.c@{testDaarias.c}!testHgibbs3@{testHgibbs3}}
+\index{testHgibbs3@{testHgibbs3}!testDaarias.c@{testDaarias.c}}
+\subsubsection{\texorpdfstring{testHgibbs3()}{testHgibbs3()}}
+{\footnotesize\ttfamily void test\+Hgibbs3 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 3 de la función hgibbs
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_daarias_8c_a330c6aca34632b0e1c2432b54fd50ff9}\label{test_daarias_8c_a330c6aca34632b0e1c2432b54fd50ff9}} 
+\index{testDaarias.c@{testDaarias.c}!testLambert\_gooding1@{testLambert\_gooding1}}
+\index{testLambert\_gooding1@{testLambert\_gooding1}!testDaarias.c@{testDaarias.c}}
+\subsubsection{\texorpdfstring{testLambert\_gooding1()}{testLambert\_gooding1()}}
+{\footnotesize\ttfamily void test\+Lambert\+\_\+gooding1 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 1 de la función lambert\+\_\+gooding
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_daarias_8c_a7ffaf17bc3423f02ced7bfaf1d2809fa}\label{test_daarias_8c_a7ffaf17bc3423f02ced7bfaf1d2809fa}} 
+\index{testDaarias.c@{testDaarias.c}!testLambert\_gooding2@{testLambert\_gooding2}}
+\index{testLambert\_gooding2@{testLambert\_gooding2}!testDaarias.c@{testDaarias.c}}
+\subsubsection{\texorpdfstring{testLambert\_gooding2()}{testLambert\_gooding2()}}
+{\footnotesize\ttfamily void test\+Lambert\+\_\+gooding2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 2 de la función lambert\+\_\+gooding
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_daarias_8c_a4e33ac8ca08a9148dc88f53d585663c8}\label{test_daarias_8c_a4e33ac8ca08a9148dc88f53d585663c8}} 
+\index{testDaarias.c@{testDaarias.c}!testLambert\_gooding3@{testLambert\_gooding3}}
+\index{testLambert\_gooding3@{testLambert\_gooding3}!testDaarias.c@{testDaarias.c}}
+\subsubsection{\texorpdfstring{testLambert\_gooding3()}{testLambert\_gooding3()}}
+{\footnotesize\ttfamily void test\+Lambert\+\_\+gooding3 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 3 de la función lambert\+\_\+gooding
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_daarias_8c_aed02808ac73c97f603738e4e3949754c}\label{test_daarias_8c_aed02808ac73c97f603738e4e3949754c}} 
+\index{testDaarias.c@{testDaarias.c}!testMjday1@{testMjday1}}
+\index{testMjday1@{testMjday1}!testDaarias.c@{testDaarias.c}}
+\subsubsection{\texorpdfstring{testMjday1()}{testMjday1()}}
+{\footnotesize\ttfamily void test\+Mjday1 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 1 de la función Mjday
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_daarias_8c_aaa232dca7762afcc866df4a489585c04}\label{test_daarias_8c_aaa232dca7762afcc866df4a489585c04}} 
+\index{testDaarias.c@{testDaarias.c}!testMjday2@{testMjday2}}
+\index{testMjday2@{testMjday2}!testDaarias.c@{testDaarias.c}}
+\subsubsection{\texorpdfstring{testMjday2()}{testMjday2()}}
+{\footnotesize\ttfamily void test\+Mjday2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 2 de la función Mjday
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_daarias_8c_a1b51e69f661b5fb3a7eb46939507bf7c}\label{test_daarias_8c_a1b51e69f661b5fb3a7eb46939507bf7c}} 
+\index{testDaarias.c@{testDaarias.c}!testMjday3@{testMjday3}}
+\index{testMjday3@{testMjday3}!testDaarias.c@{testDaarias.c}}
+\subsubsection{\texorpdfstring{testMjday3()}{testMjday3()}}
+{\footnotesize\ttfamily void test\+Mjday3 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 3 de la función Mjday
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_daarias_8c_a8c62edc7ea80bddffb35e95e9badeb07}\label{test_daarias_8c_a8c62edc7ea80bddffb35e95e9badeb07}} 
+\index{testDaarias.c@{testDaarias.c}!testNewtonnu1@{testNewtonnu1}}
+\index{testNewtonnu1@{testNewtonnu1}!testDaarias.c@{testDaarias.c}}
+\subsubsection{\texorpdfstring{testNewtonnu1()}{testNewtonnu1()}}
+{\footnotesize\ttfamily void test\+Newtonnu1 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 1 de la función newtonnu
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_daarias_8c_a56f4f32ae20371c0de173075d238feb0}\label{test_daarias_8c_a56f4f32ae20371c0de173075d238feb0}} 
+\index{testDaarias.c@{testDaarias.c}!testNewtonnu2@{testNewtonnu2}}
+\index{testNewtonnu2@{testNewtonnu2}!testDaarias.c@{testDaarias.c}}
+\subsubsection{\texorpdfstring{testNewtonnu2()}{testNewtonnu2()}}
+{\footnotesize\ttfamily void test\+Newtonnu2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 2 de la función newtonnu
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_daarias_8c_a75be8429b5e022a6ecb17532b412b9cc}\label{test_daarias_8c_a75be8429b5e022a6ecb17532b412b9cc}} 
+\index{testDaarias.c@{testDaarias.c}!testNewtonnu3@{testNewtonnu3}}
+\index{testNewtonnu3@{testNewtonnu3}!testDaarias.c@{testDaarias.c}}
+\subsubsection{\texorpdfstring{testNewtonnu3()}{testNewtonnu3()}}
+{\footnotesize\ttfamily void test\+Newtonnu3 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 3 de la función newtonnu
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_daarias_8c_ac2abd184e9522e5ec60fb3f3493a2698}\label{test_daarias_8c_ac2abd184e9522e5ec60fb3f3493a2698}} 
+\index{testDaarias.c@{testDaarias.c}!testPosition1@{testPosition1}}
+\index{testPosition1@{testPosition1}!testDaarias.c@{testDaarias.c}}
+\subsubsection{\texorpdfstring{testPosition1()}{testPosition1()}}
+{\footnotesize\ttfamily void test\+Position1 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 1 de la función Position
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_daarias_8c_a4cc6d4c0026d785a0e1f4f796b38d50c}\label{test_daarias_8c_a4cc6d4c0026d785a0e1f4f796b38d50c}} 
+\index{testDaarias.c@{testDaarias.c}!testPosition2@{testPosition2}}
+\index{testPosition2@{testPosition2}!testDaarias.c@{testDaarias.c}}
+\subsubsection{\texorpdfstring{testPosition2()}{testPosition2()}}
+{\footnotesize\ttfamily void test\+Position2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 2 de la función Position
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_daarias_8c_ae900821db0136146af5e2bae51b9d367}\label{test_daarias_8c_ae900821db0136146af5e2bae51b9d367}} 
+\index{testDaarias.c@{testDaarias.c}!testPosition3@{testPosition3}}
+\index{testPosition3@{testPosition3}!testDaarias.c@{testDaarias.c}}
+\subsubsection{\texorpdfstring{testPosition3()}{testPosition3()}}
+{\footnotesize\ttfamily void test\+Position3 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 3 de la función Position
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_daarias_8c_a1fba12b321e1df9ff9def05afd24882d}\label{test_daarias_8c_a1fba12b321e1df9ff9def05afd24882d}} 
+\index{testDaarias.c@{testDaarias.c}!testR\_x1@{testR\_x1}}
+\index{testR\_x1@{testR\_x1}!testDaarias.c@{testDaarias.c}}
+\subsubsection{\texorpdfstring{testR\_x1()}{testR\_x1()}}
+{\footnotesize\ttfamily void test\+R\+\_\+x1 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 1 de la función R\+\_\+x
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_daarias_8c_a17452cf66ec1129ed3af95e120ffca0b}\label{test_daarias_8c_a17452cf66ec1129ed3af95e120ffca0b}} 
+\index{testDaarias.c@{testDaarias.c}!testR\_x2@{testR\_x2}}
+\index{testR\_x2@{testR\_x2}!testDaarias.c@{testDaarias.c}}
+\subsubsection{\texorpdfstring{testR\_x2()}{testR\_x2()}}
+{\footnotesize\ttfamily void test\+R\+\_\+x2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 2 de la función R\+\_\+x
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_daarias_8c_a7b58c0208c7998cc030d9e2a05a2d990}\label{test_daarias_8c_a7b58c0208c7998cc030d9e2a05a2d990}} 
+\index{testDaarias.c@{testDaarias.c}!testR\_x3@{testR\_x3}}
+\index{testR\_x3@{testR\_x3}!testDaarias.c@{testDaarias.c}}
+\subsubsection{\texorpdfstring{testR\_x3()}{testR\_x3()}}
+{\footnotesize\ttfamily void test\+R\+\_\+x3 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 3 de la función R\+\_\+x
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_daarias_8c_af78a12d9958843c48cfb706d4b4c653b}\label{test_daarias_8c_af78a12d9958843c48cfb706d4b4c653b}} 
+\index{testDaarias.c@{testDaarias.c}!testR\_y1@{testR\_y1}}
+\index{testR\_y1@{testR\_y1}!testDaarias.c@{testDaarias.c}}
+\subsubsection{\texorpdfstring{testR\_y1()}{testR\_y1()}}
+{\footnotesize\ttfamily void test\+R\+\_\+y1 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 1 de la función R\+\_\+y
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_daarias_8c_a06780f64d6e2924f8438d37b02d0eabc}\label{test_daarias_8c_a06780f64d6e2924f8438d37b02d0eabc}} 
+\index{testDaarias.c@{testDaarias.c}!testR\_y2@{testR\_y2}}
+\index{testR\_y2@{testR\_y2}!testDaarias.c@{testDaarias.c}}
+\subsubsection{\texorpdfstring{testR\_y2()}{testR\_y2()}}
+{\footnotesize\ttfamily void test\+R\+\_\+y2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 2 de la función R\+\_\+y
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_daarias_8c_a556b01394be1acd56742b70dd572b94a}\label{test_daarias_8c_a556b01394be1acd56742b70dd572b94a}} 
+\index{testDaarias.c@{testDaarias.c}!testR\_y3@{testR\_y3}}
+\index{testR\_y3@{testR\_y3}!testDaarias.c@{testDaarias.c}}
+\subsubsection{\texorpdfstring{testR\_y3()}{testR\_y3()}}
+{\footnotesize\ttfamily void test\+R\+\_\+y3 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 3 de la función R\+\_\+y
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_daarias_8c_a6da0191ff5f7fcff012d7b0ee51ea229}\label{test_daarias_8c_a6da0191ff5f7fcff012d7b0ee51ea229}} 
+\index{testDaarias.c@{testDaarias.c}!testR\_z1@{testR\_z1}}
+\index{testR\_z1@{testR\_z1}!testDaarias.c@{testDaarias.c}}
+\subsubsection{\texorpdfstring{testR\_z1()}{testR\_z1()}}
+{\footnotesize\ttfamily void test\+R\+\_\+z1 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 1 de la función R\+\_\+z
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_daarias_8c_adade388a5b4b598540286ed497712367}\label{test_daarias_8c_adade388a5b4b598540286ed497712367}} 
+\index{testDaarias.c@{testDaarias.c}!testR\_z2@{testR\_z2}}
+\index{testR\_z2@{testR\_z2}!testDaarias.c@{testDaarias.c}}
+\subsubsection{\texorpdfstring{testR\_z2()}{testR\_z2()}}
+{\footnotesize\ttfamily void test\+R\+\_\+z2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 2 de la función R\+\_\+z
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_daarias_8c_ad3cfd0999217da57952bea4bed35a2a0}\label{test_daarias_8c_ad3cfd0999217da57952bea4bed35a2a0}} 
+\index{testDaarias.c@{testDaarias.c}!testR\_z3@{testR\_z3}}
+\index{testR\_z3@{testR\_z3}!testDaarias.c@{testDaarias.c}}
+\subsubsection{\texorpdfstring{testR\_z3()}{testR\_z3()}}
+{\footnotesize\ttfamily void test\+R\+\_\+z3 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 3 de la función R\+\_\+z
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_daarias_8c_a6e9ad0cd421a8d180ba07a85d08fe388}\label{test_daarias_8c_a6e9ad0cd421a8d180ba07a85d08fe388}} 
+\index{testDaarias.c@{testDaarias.c}!testTlamb1@{testTlamb1}}
+\index{testTlamb1@{testTlamb1}!testDaarias.c@{testDaarias.c}}
+\subsubsection{\texorpdfstring{testTlamb1()}{testTlamb1()}}
+{\footnotesize\ttfamily void test\+Tlamb1 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 1 de la función tlamb
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_daarias_8c_a112b57b288d770211bfe82477573496d}\label{test_daarias_8c_a112b57b288d770211bfe82477573496d}} 
+\index{testDaarias.c@{testDaarias.c}!testTlamb2@{testTlamb2}}
+\index{testTlamb2@{testTlamb2}!testDaarias.c@{testDaarias.c}}
+\subsubsection{\texorpdfstring{testTlamb2()}{testTlamb2()}}
+{\footnotesize\ttfamily void test\+Tlamb2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 2 de la función tlamb
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_daarias_8c_a7b9247aba8846f3920d64c6b84a4b0f6}\label{test_daarias_8c_a7b9247aba8846f3920d64c6b84a4b0f6}} 
+\index{testDaarias.c@{testDaarias.c}!testTlamb3@{testTlamb3}}
+\index{testTlamb3@{testTlamb3}!testDaarias.c@{testDaarias.c}}
+\subsubsection{\texorpdfstring{testTlamb3()}{testTlamb3()}}
+{\footnotesize\ttfamily void test\+Tlamb3 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 3 de la función tlamb
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_daarias_8c_af5817181a8b788916c83308778a5a7d4}\label{test_daarias_8c_af5817181a8b788916c83308778a5a7d4}} 
+\index{testDaarias.c@{testDaarias.c}!testVlamb1@{testVlamb1}}
+\index{testVlamb1@{testVlamb1}!testDaarias.c@{testDaarias.c}}
+\subsubsection{\texorpdfstring{testVlamb1()}{testVlamb1()}}
+{\footnotesize\ttfamily void test\+Vlamb1 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 1 de la función vlamb
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_daarias_8c_a51b6f32bc6e8c4f68ecd55e846f587d6}\label{test_daarias_8c_a51b6f32bc6e8c4f68ecd55e846f587d6}} 
+\index{testDaarias.c@{testDaarias.c}!testVlamb2@{testVlamb2}}
+\index{testVlamb2@{testVlamb2}!testDaarias.c@{testDaarias.c}}
+\subsubsection{\texorpdfstring{testVlamb2()}{testVlamb2()}}
+{\footnotesize\ttfamily void test\+Vlamb2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 2 de la función vlamb
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_daarias_8c_afa5cbfc2bd2efb6b03b08072886c5bc1}\label{test_daarias_8c_afa5cbfc2bd2efb6b03b08072886c5bc1}} 
+\index{testDaarias.c@{testDaarias.c}!testVlamb3@{testVlamb3}}
+\index{testVlamb3@{testVlamb3}!testDaarias.c@{testDaarias.c}}
+\subsubsection{\texorpdfstring{testVlamb3()}{testVlamb3()}}
+{\footnotesize\ttfamily void test\+Vlamb3 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 3 de la función vlamb
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_daarias_8c_af388984abd8c761fc732fd0268a18455}\label{test_daarias_8c_af388984abd8c761fc732fd0268a18455}} 
+\index{testDaarias.c@{testDaarias.c}!testXlamb1@{testXlamb1}}
+\index{testXlamb1@{testXlamb1}!testDaarias.c@{testDaarias.c}}
+\subsubsection{\texorpdfstring{testXlamb1()}{testXlamb1()}}
+{\footnotesize\ttfamily void test\+Xlamb1 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 1 de la función xlamb
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_daarias_8c_a1a6ef6fe4be0abbdc4d2eae923c0e800}\label{test_daarias_8c_a1a6ef6fe4be0abbdc4d2eae923c0e800}} 
+\index{testDaarias.c@{testDaarias.c}!testXlamb2@{testXlamb2}}
+\index{testXlamb2@{testXlamb2}!testDaarias.c@{testDaarias.c}}
+\subsubsection{\texorpdfstring{testXlamb2()}{testXlamb2()}}
+{\footnotesize\ttfamily void test\+Xlamb2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 2 de la función xlamb
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_daarias_8c_ac82750487fb4283e997ea590bd8b9cde}\label{test_daarias_8c_ac82750487fb4283e997ea590bd8b9cde}} 
+\index{testDaarias.c@{testDaarias.c}!testXlamb3@{testXlamb3}}
+\index{testXlamb3@{testXlamb3}!testDaarias.c@{testDaarias.c}}
+\subsubsection{\texorpdfstring{testXlamb3()}{testXlamb3()}}
+{\footnotesize\ttfamily void test\+Xlamb3 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 3 de la función xlamb
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{test_daarias_8c_a9248601ceb705e7c1605c1ac67e44342}\label{test_daarias_8c_a9248601ceb705e7c1605c1ac67e44342}} 
+\index{testDaarias.c@{testDaarias.c}!esp\_error@{esp\_error}}
+\index{esp\_error@{esp\_error}!testDaarias.c@{testDaarias.c}}
+\subsubsection{\texorpdfstring{esp\_error}{esp\_error}}
+{\footnotesize\ttfamily char esp\+\_\+error\mbox{[}12\mbox{]} = \char`\"{} ok\char`\"{}}
+
+Comprobación 1 de la función gibbs
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_daarias_8c_a179e10d87e78fb33fa9c904f8db2a8e2}\label{test_daarias_8c_a179e10d87e78fb33fa9c904f8db2a8e2}} 
+\index{testDaarias.c@{testDaarias.c}!esp\_error\_angl@{esp\_error\_angl}}
+\index{esp\_error\_angl@{esp\_error\_angl}!testDaarias.c@{testDaarias.c}}
+\subsubsection{\texorpdfstring{esp\_error\_angl}{esp\_error\_angl}}
+{\footnotesize\ttfamily char esp\+\_\+error\+\_\+angl\mbox{[}12\mbox{]} = \char`\"{} angl $>$ 1o\char`\"{}}
+

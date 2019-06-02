@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['pol_5fdeg',['POL_DEG',['../_mat_lab_utils_8c.html#a0283d6b127f5f6c0fb5b24cfc6f0aea9',1,'POL_DEG():&#160;MatLabUtils.c'],['../_tests_mat_lab_utils_8c.html#a0283d6b127f5f6c0fb5b24cfc6f0aea9',1,'POL_DEG():&#160;TestsMatLabUtils.c']]]
+  ['rpoly_5fdebug',['RPOLY_DEBUG',['../rpoly_8c.html#a03a7de2acac925b6339645bed232b0f9',1,'rpoly.c']]]
 ];

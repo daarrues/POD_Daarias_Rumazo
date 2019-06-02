@@ -1,0 +1,748 @@
+\hypertarget{test_rumazo_8c}{}\section{Codigo/\+Test/test\+Rumazo.c File Reference}
+\label{test_rumazo_8c}\index{Codigo/Test/testRumazo.c@{Codigo/Test/testRumazo.c}}
+{\ttfamily \#include \char`\"{}../\+Preliminary\+Orbit\+Determination/anglesdr.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../\+Preliminary\+Orbit\+Determination/doubler.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../\+Preliminary\+Orbit\+Determination/\+E\+O\+P\+D\+A\+T\+A.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../\+Preliminary\+Orbit\+Determination/\+Eqn\+Equinox.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../\+Preliminary\+Orbit\+Determination/\+Frac.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../\+Preliminary\+Orbit\+Determination/gast.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../\+Preliminary\+Orbit\+Determination/gmst.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../\+Preliminary\+Orbit\+Determination/\+G\+H\+A\+Matrix.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../\+Preliminary\+Orbit\+Determination/\+I\+E\+R\+S.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../\+Preliminary\+Orbit\+Determination/\+Mean\+Obliquity.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../\+Preliminary\+Orbit\+Determination/\+Nut\+Angles.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../\+Preliminary\+Orbit\+Determination/\+Nut\+Matrix.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../\+Preliminary\+Orbit\+Determination/\+Pole\+Matrix.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../\+Preliminary\+Orbit\+Determination/\+Prec\+Matrix.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../\+Preliminary\+Orbit\+Determination/rv2coe.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../\+Preliminary\+Orbit\+Determination/timediff.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}test\+Rumazo.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{test_rumazo_8c_a41f9c5fb8b08eb5dc3edce4dcb37fee7}{true}}~1
+\item 
+\#define \mbox{\hyperlink{test_rumazo_8c_a65e9886d74aaee76545e83dd09011727}{false}}~0
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef int \mbox{\hyperlink{test_rumazo_8c_a1062901a7428fdd9c7f180f5e01ea056}{bool}}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{test_rumazo_8c_a3652a617655c481d3499cd65c2e602aa}{test\+Mean\+Obliquity1}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_rumazo_8c_a1f53344682cb4a8b83e990b898b8ad75}{test\+Mean\+Obliquity2}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_rumazo_8c_a7e9a5fe55ff7a17a104de5fcc6088d63}{test\+Mean\+Obliquity3}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_rumazo_8c_af40779d261b512cab057fab1ebaa60e1}{test\+Nut\+Angles1}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_rumazo_8c_a212202e3b948b216ca24bf0b7a642b01}{test\+Nut\+Angles2}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_rumazo_8c_a895e983f1680a426b6cdef493ec8c45e}{test\+Nut\+Angles3}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_rumazo_8c_a5a82153f0cdbf60e35edaf6475f93e95}{test\+Eqn\+Equinox1}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_rumazo_8c_a709af767bae03c4f4b7ffa0434231430}{test\+Eqn\+Equinox2}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_rumazo_8c_a753a9f995caa75dabff0380afc49a807}{test\+Eqn\+Equinox3}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_rumazo_8c_a76bf61fd8bfa87ae3591bba53ed2a340}{test\+Frac1}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_rumazo_8c_a2982639441817c09cb1cebd9abbfefa2}{test\+Frac2}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_rumazo_8c_a0895f4c49c12f799c0296bc4261ebb6e}{test\+Frac3}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_rumazo_8c_ae4a69dc1c39c147a1bcac50d3212ef7a}{test\+Gmst1}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_rumazo_8c_ac0ac6a74822dcff4be20b6b3d4ec9aa9}{test\+Gmst2}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_rumazo_8c_ad1e8167aebff729c594f849955177a3b}{test\+Gmst3}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_rumazo_8c_a2d7608680ecfb711e220a0f59338e4ef}{test\+Timediff1}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_rumazo_8c_a2c91cf396b0c7690e122a9c4d177f496}{test\+Timediff2}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_rumazo_8c_a0a8990049b2e58676da82a8be33d155a}{test\+Timediff3}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_rumazo_8c_ae23487691654dff41f4d711c0d19ba95}{test\+I\+E\+R\+S1}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_rumazo_8c_aa9883f5732d33cb4c3eb3fb5e61ccb1e}{test\+I\+E\+R\+S2}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_rumazo_8c_ad5e163143f29f10f3052c54ebe5209e2}{test\+I\+E\+R\+S3}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_rumazo_8c_ad77e04be401f6e469fe72acec1a51846}{test\+Gast1}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_rumazo_8c_af9484072b256d02f47cd558f54f7df56}{test\+Gast2}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_rumazo_8c_ae0679b3dd033e068ccab5f21177d6fec}{test\+Gast3}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_rumazo_8c_aa4d0570dd3a2edc03d3e251f8eb1bdff}{test\+G\+H\+A\+Matrix1}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_rumazo_8c_a0770804f8cb137f694cdac83671b5448}{test\+G\+H\+A\+Matrix2}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_rumazo_8c_a7a073f2b7238630e26127ba68dce5b06}{test\+G\+H\+A\+Matrix3}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_rumazo_8c_aca1d7e4c440883f0dbdad1bd47a91195}{test\+Pole\+Matrix1}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_rumazo_8c_a1023310977dbb052653f8b0856b47993}{test\+Pole\+Matrix2}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_rumazo_8c_a1a14bf5d6780bfe1af953685ba4552cb}{test\+Pole\+Matrix3}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_rumazo_8c_a5a78fe64a18ce54c7f7e95cc5c5f36b2}{test\+Nut\+Matrix1}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_rumazo_8c_af52d7b2b9b5ce8b62138f2b20000971b}{test\+Nut\+Matrix2}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_rumazo_8c_a53adc810ffbdfb003ad3a8754baf9370}{test\+Nut\+Matrix3}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_rumazo_8c_afea40c8901c98144e6e8b23e9f99264c}{test\+Prec\+Matrix1}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_rumazo_8c_acdb8f1dc238839838fd89ed4caf3d2d8}{test\+Prec\+Matrix2}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_rumazo_8c_a2f09a2ecb16a70a9c43d1febe15d2bcf}{test\+Prec\+Matrix3}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_rumazo_8c_afb0fc9ff0de8ba1a11d7cb1ffc5fd378}{test\+Doubler1}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_rumazo_8c_a481c03904d1f6884b79790c45c39556d}{test\+Doubler2}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_rumazo_8c_aefca15005d64d9e654fa64def29f9dfd}{test\+Doubler3}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_rumazo_8c_aa53db7aa52271a3fdc1cb131651cb1d3}{test\+Rv2coe1}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_rumazo_8c_a359cd3dc2088704fb8e17536e4b1fe9e}{test\+Rv2coe2}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_rumazo_8c_a8e9ea0daea8f44ff140f5047656fb9c4}{test\+Rv2coe3}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_rumazo_8c_aa49e893073f7d8e587798ff6f368b64a}{test\+Anglesdr1}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_rumazo_8c_a171a7c7a750ebf5d7c9036ea3c542a9f}{test\+Anglesdr2}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\item 
+void \mbox{\hyperlink{test_rumazo_8c_a726a97b8a0ec4958928bbc49d074d046}{test\+Anglesdr3}} (\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}} verbose)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Rubén Mazo Tomás 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Created\+: 2019/05/15
+\end{DoxyDate}
+Este fichero contiene los test unitarios para las funciones del proyecto implementadas por Rubén Mazo Tomás. 
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{test_rumazo_8c_a65e9886d74aaee76545e83dd09011727}\label{test_rumazo_8c_a65e9886d74aaee76545e83dd09011727}} 
+\index{testRumazo.c@{testRumazo.c}!false@{false}}
+\index{false@{false}!testRumazo.c@{testRumazo.c}}
+\subsubsection{\texorpdfstring{false}{false}}
+{\footnotesize\ttfamily \#define false~0}
+
+\mbox{\Hypertarget{test_rumazo_8c_a41f9c5fb8b08eb5dc3edce4dcb37fee7}\label{test_rumazo_8c_a41f9c5fb8b08eb5dc3edce4dcb37fee7}} 
+\index{testRumazo.c@{testRumazo.c}!true@{true}}
+\index{true@{true}!testRumazo.c@{testRumazo.c}}
+\subsubsection{\texorpdfstring{true}{true}}
+{\footnotesize\ttfamily \#define true~1}
+
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{test_rumazo_8c_a1062901a7428fdd9c7f180f5e01ea056}\label{test_rumazo_8c_a1062901a7428fdd9c7f180f5e01ea056}} 
+\index{testRumazo.c@{testRumazo.c}!bool@{bool}}
+\index{bool@{bool}!testRumazo.c@{testRumazo.c}}
+\subsubsection{\texorpdfstring{bool}{bool}}
+{\footnotesize\ttfamily typedef int \mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{test_rumazo_8c_aa49e893073f7d8e587798ff6f368b64a}\label{test_rumazo_8c_aa49e893073f7d8e587798ff6f368b64a}} 
+\index{testRumazo.c@{testRumazo.c}!testAnglesdr1@{testAnglesdr1}}
+\index{testAnglesdr1@{testAnglesdr1}!testRumazo.c@{testRumazo.c}}
+\subsubsection{\texorpdfstring{testAnglesdr1()}{testAnglesdr1()}}
+{\footnotesize\ttfamily void test\+Anglesdr1 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 1 de la función anglesdr
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_rumazo_8c_a171a7c7a750ebf5d7c9036ea3c542a9f}\label{test_rumazo_8c_a171a7c7a750ebf5d7c9036ea3c542a9f}} 
+\index{testRumazo.c@{testRumazo.c}!testAnglesdr2@{testAnglesdr2}}
+\index{testAnglesdr2@{testAnglesdr2}!testRumazo.c@{testRumazo.c}}
+\subsubsection{\texorpdfstring{testAnglesdr2()}{testAnglesdr2()}}
+{\footnotesize\ttfamily void test\+Anglesdr2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 2 de la función anglesdr
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_rumazo_8c_a726a97b8a0ec4958928bbc49d074d046}\label{test_rumazo_8c_a726a97b8a0ec4958928bbc49d074d046}} 
+\index{testRumazo.c@{testRumazo.c}!testAnglesdr3@{testAnglesdr3}}
+\index{testAnglesdr3@{testAnglesdr3}!testRumazo.c@{testRumazo.c}}
+\subsubsection{\texorpdfstring{testAnglesdr3()}{testAnglesdr3()}}
+{\footnotesize\ttfamily void test\+Anglesdr3 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 3 de la función anglesdr
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_rumazo_8c_afb0fc9ff0de8ba1a11d7cb1ffc5fd378}\label{test_rumazo_8c_afb0fc9ff0de8ba1a11d7cb1ffc5fd378}} 
+\index{testRumazo.c@{testRumazo.c}!testDoubler1@{testDoubler1}}
+\index{testDoubler1@{testDoubler1}!testRumazo.c@{testRumazo.c}}
+\subsubsection{\texorpdfstring{testDoubler1()}{testDoubler1()}}
+{\footnotesize\ttfamily void test\+Doubler1 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 1 de la función doubler
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_rumazo_8c_a481c03904d1f6884b79790c45c39556d}\label{test_rumazo_8c_a481c03904d1f6884b79790c45c39556d}} 
+\index{testRumazo.c@{testRumazo.c}!testDoubler2@{testDoubler2}}
+\index{testDoubler2@{testDoubler2}!testRumazo.c@{testRumazo.c}}
+\subsubsection{\texorpdfstring{testDoubler2()}{testDoubler2()}}
+{\footnotesize\ttfamily void test\+Doubler2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 2 de la función doubler
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_rumazo_8c_aefca15005d64d9e654fa64def29f9dfd}\label{test_rumazo_8c_aefca15005d64d9e654fa64def29f9dfd}} 
+\index{testRumazo.c@{testRumazo.c}!testDoubler3@{testDoubler3}}
+\index{testDoubler3@{testDoubler3}!testRumazo.c@{testRumazo.c}}
+\subsubsection{\texorpdfstring{testDoubler3()}{testDoubler3()}}
+{\footnotesize\ttfamily void test\+Doubler3 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 3 de la función doubler
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_rumazo_8c_a5a82153f0cdbf60e35edaf6475f93e95}\label{test_rumazo_8c_a5a82153f0cdbf60e35edaf6475f93e95}} 
+\index{testRumazo.c@{testRumazo.c}!testEqnEquinox1@{testEqnEquinox1}}
+\index{testEqnEquinox1@{testEqnEquinox1}!testRumazo.c@{testRumazo.c}}
+\subsubsection{\texorpdfstring{testEqnEquinox1()}{testEqnEquinox1()}}
+{\footnotesize\ttfamily void test\+Eqn\+Equinox1 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 1 de la función Eqn\+Equinox
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_rumazo_8c_a709af767bae03c4f4b7ffa0434231430}\label{test_rumazo_8c_a709af767bae03c4f4b7ffa0434231430}} 
+\index{testRumazo.c@{testRumazo.c}!testEqnEquinox2@{testEqnEquinox2}}
+\index{testEqnEquinox2@{testEqnEquinox2}!testRumazo.c@{testRumazo.c}}
+\subsubsection{\texorpdfstring{testEqnEquinox2()}{testEqnEquinox2()}}
+{\footnotesize\ttfamily void test\+Eqn\+Equinox2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 2 de la función Eqn\+Equinox
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_rumazo_8c_a753a9f995caa75dabff0380afc49a807}\label{test_rumazo_8c_a753a9f995caa75dabff0380afc49a807}} 
+\index{testRumazo.c@{testRumazo.c}!testEqnEquinox3@{testEqnEquinox3}}
+\index{testEqnEquinox3@{testEqnEquinox3}!testRumazo.c@{testRumazo.c}}
+\subsubsection{\texorpdfstring{testEqnEquinox3()}{testEqnEquinox3()}}
+{\footnotesize\ttfamily void test\+Eqn\+Equinox3 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 3 de la función Eqn\+Equinox
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_rumazo_8c_a76bf61fd8bfa87ae3591bba53ed2a340}\label{test_rumazo_8c_a76bf61fd8bfa87ae3591bba53ed2a340}} 
+\index{testRumazo.c@{testRumazo.c}!testFrac1@{testFrac1}}
+\index{testFrac1@{testFrac1}!testRumazo.c@{testRumazo.c}}
+\subsubsection{\texorpdfstring{testFrac1()}{testFrac1()}}
+{\footnotesize\ttfamily void test\+Frac1 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 1 de la función Frac
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_rumazo_8c_a2982639441817c09cb1cebd9abbfefa2}\label{test_rumazo_8c_a2982639441817c09cb1cebd9abbfefa2}} 
+\index{testRumazo.c@{testRumazo.c}!testFrac2@{testFrac2}}
+\index{testFrac2@{testFrac2}!testRumazo.c@{testRumazo.c}}
+\subsubsection{\texorpdfstring{testFrac2()}{testFrac2()}}
+{\footnotesize\ttfamily void test\+Frac2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 2 de la función Frac
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_rumazo_8c_a0895f4c49c12f799c0296bc4261ebb6e}\label{test_rumazo_8c_a0895f4c49c12f799c0296bc4261ebb6e}} 
+\index{testRumazo.c@{testRumazo.c}!testFrac3@{testFrac3}}
+\index{testFrac3@{testFrac3}!testRumazo.c@{testRumazo.c}}
+\subsubsection{\texorpdfstring{testFrac3()}{testFrac3()}}
+{\footnotesize\ttfamily void test\+Frac3 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 3 de la función Frac
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_rumazo_8c_ad77e04be401f6e469fe72acec1a51846}\label{test_rumazo_8c_ad77e04be401f6e469fe72acec1a51846}} 
+\index{testRumazo.c@{testRumazo.c}!testGast1@{testGast1}}
+\index{testGast1@{testGast1}!testRumazo.c@{testRumazo.c}}
+\subsubsection{\texorpdfstring{testGast1()}{testGast1()}}
+{\footnotesize\ttfamily void test\+Gast1 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 1 de la función gast
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_rumazo_8c_af9484072b256d02f47cd558f54f7df56}\label{test_rumazo_8c_af9484072b256d02f47cd558f54f7df56}} 
+\index{testRumazo.c@{testRumazo.c}!testGast2@{testGast2}}
+\index{testGast2@{testGast2}!testRumazo.c@{testRumazo.c}}
+\subsubsection{\texorpdfstring{testGast2()}{testGast2()}}
+{\footnotesize\ttfamily void test\+Gast2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 2 de la función gast
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_rumazo_8c_ae0679b3dd033e068ccab5f21177d6fec}\label{test_rumazo_8c_ae0679b3dd033e068ccab5f21177d6fec}} 
+\index{testRumazo.c@{testRumazo.c}!testGast3@{testGast3}}
+\index{testGast3@{testGast3}!testRumazo.c@{testRumazo.c}}
+\subsubsection{\texorpdfstring{testGast3()}{testGast3()}}
+{\footnotesize\ttfamily void test\+Gast3 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 3 de la función gast
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_rumazo_8c_aa4d0570dd3a2edc03d3e251f8eb1bdff}\label{test_rumazo_8c_aa4d0570dd3a2edc03d3e251f8eb1bdff}} 
+\index{testRumazo.c@{testRumazo.c}!testGHAMatrix1@{testGHAMatrix1}}
+\index{testGHAMatrix1@{testGHAMatrix1}!testRumazo.c@{testRumazo.c}}
+\subsubsection{\texorpdfstring{testGHAMatrix1()}{testGHAMatrix1()}}
+{\footnotesize\ttfamily void test\+G\+H\+A\+Matrix1 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 1 de la función G\+H\+A\+Matrix
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_rumazo_8c_a0770804f8cb137f694cdac83671b5448}\label{test_rumazo_8c_a0770804f8cb137f694cdac83671b5448}} 
+\index{testRumazo.c@{testRumazo.c}!testGHAMatrix2@{testGHAMatrix2}}
+\index{testGHAMatrix2@{testGHAMatrix2}!testRumazo.c@{testRumazo.c}}
+\subsubsection{\texorpdfstring{testGHAMatrix2()}{testGHAMatrix2()}}
+{\footnotesize\ttfamily void test\+G\+H\+A\+Matrix2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 2 de la función G\+H\+A\+Matrix
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_rumazo_8c_a7a073f2b7238630e26127ba68dce5b06}\label{test_rumazo_8c_a7a073f2b7238630e26127ba68dce5b06}} 
+\index{testRumazo.c@{testRumazo.c}!testGHAMatrix3@{testGHAMatrix3}}
+\index{testGHAMatrix3@{testGHAMatrix3}!testRumazo.c@{testRumazo.c}}
+\subsubsection{\texorpdfstring{testGHAMatrix3()}{testGHAMatrix3()}}
+{\footnotesize\ttfamily void test\+G\+H\+A\+Matrix3 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 3 de la función G\+H\+A\+Matrix
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_rumazo_8c_ae4a69dc1c39c147a1bcac50d3212ef7a}\label{test_rumazo_8c_ae4a69dc1c39c147a1bcac50d3212ef7a}} 
+\index{testRumazo.c@{testRumazo.c}!testGmst1@{testGmst1}}
+\index{testGmst1@{testGmst1}!testRumazo.c@{testRumazo.c}}
+\subsubsection{\texorpdfstring{testGmst1()}{testGmst1()}}
+{\footnotesize\ttfamily void test\+Gmst1 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 1 de la función gmst
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_rumazo_8c_ac0ac6a74822dcff4be20b6b3d4ec9aa9}\label{test_rumazo_8c_ac0ac6a74822dcff4be20b6b3d4ec9aa9}} 
+\index{testRumazo.c@{testRumazo.c}!testGmst2@{testGmst2}}
+\index{testGmst2@{testGmst2}!testRumazo.c@{testRumazo.c}}
+\subsubsection{\texorpdfstring{testGmst2()}{testGmst2()}}
+{\footnotesize\ttfamily void test\+Gmst2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 2 de la función gmst
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_rumazo_8c_ad1e8167aebff729c594f849955177a3b}\label{test_rumazo_8c_ad1e8167aebff729c594f849955177a3b}} 
+\index{testRumazo.c@{testRumazo.c}!testGmst3@{testGmst3}}
+\index{testGmst3@{testGmst3}!testRumazo.c@{testRumazo.c}}
+\subsubsection{\texorpdfstring{testGmst3()}{testGmst3()}}
+{\footnotesize\ttfamily void test\+Gmst3 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 3 de la función gmst
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_rumazo_8c_ae23487691654dff41f4d711c0d19ba95}\label{test_rumazo_8c_ae23487691654dff41f4d711c0d19ba95}} 
+\index{testRumazo.c@{testRumazo.c}!testIERS1@{testIERS1}}
+\index{testIERS1@{testIERS1}!testRumazo.c@{testRumazo.c}}
+\subsubsection{\texorpdfstring{testIERS1()}{testIERS1()}}
+{\footnotesize\ttfamily void test\+I\+E\+R\+S1 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 1 de la función I\+E\+RS
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_rumazo_8c_aa9883f5732d33cb4c3eb3fb5e61ccb1e}\label{test_rumazo_8c_aa9883f5732d33cb4c3eb3fb5e61ccb1e}} 
+\index{testRumazo.c@{testRumazo.c}!testIERS2@{testIERS2}}
+\index{testIERS2@{testIERS2}!testRumazo.c@{testRumazo.c}}
+\subsubsection{\texorpdfstring{testIERS2()}{testIERS2()}}
+{\footnotesize\ttfamily void test\+I\+E\+R\+S2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 2 de la función I\+E\+RS
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_rumazo_8c_ad5e163143f29f10f3052c54ebe5209e2}\label{test_rumazo_8c_ad5e163143f29f10f3052c54ebe5209e2}} 
+\index{testRumazo.c@{testRumazo.c}!testIERS3@{testIERS3}}
+\index{testIERS3@{testIERS3}!testRumazo.c@{testRumazo.c}}
+\subsubsection{\texorpdfstring{testIERS3()}{testIERS3()}}
+{\footnotesize\ttfamily void test\+I\+E\+R\+S3 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 3 de la función I\+E\+RS
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_rumazo_8c_a3652a617655c481d3499cd65c2e602aa}\label{test_rumazo_8c_a3652a617655c481d3499cd65c2e602aa}} 
+\index{testRumazo.c@{testRumazo.c}!testMeanObliquity1@{testMeanObliquity1}}
+\index{testMeanObliquity1@{testMeanObliquity1}!testRumazo.c@{testRumazo.c}}
+\subsubsection{\texorpdfstring{testMeanObliquity1()}{testMeanObliquity1()}}
+{\footnotesize\ttfamily void test\+Mean\+Obliquity1 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 1 de la función Mean\+Obliquity
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_rumazo_8c_a1f53344682cb4a8b83e990b898b8ad75}\label{test_rumazo_8c_a1f53344682cb4a8b83e990b898b8ad75}} 
+\index{testRumazo.c@{testRumazo.c}!testMeanObliquity2@{testMeanObliquity2}}
+\index{testMeanObliquity2@{testMeanObliquity2}!testRumazo.c@{testRumazo.c}}
+\subsubsection{\texorpdfstring{testMeanObliquity2()}{testMeanObliquity2()}}
+{\footnotesize\ttfamily void test\+Mean\+Obliquity2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 2 de la función Mean\+Obliquity
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_rumazo_8c_a7e9a5fe55ff7a17a104de5fcc6088d63}\label{test_rumazo_8c_a7e9a5fe55ff7a17a104de5fcc6088d63}} 
+\index{testRumazo.c@{testRumazo.c}!testMeanObliquity3@{testMeanObliquity3}}
+\index{testMeanObliquity3@{testMeanObliquity3}!testRumazo.c@{testRumazo.c}}
+\subsubsection{\texorpdfstring{testMeanObliquity3()}{testMeanObliquity3()}}
+{\footnotesize\ttfamily void test\+Mean\+Obliquity3 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 3 de la función Mean\+Obliquity
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_rumazo_8c_af40779d261b512cab057fab1ebaa60e1}\label{test_rumazo_8c_af40779d261b512cab057fab1ebaa60e1}} 
+\index{testRumazo.c@{testRumazo.c}!testNutAngles1@{testNutAngles1}}
+\index{testNutAngles1@{testNutAngles1}!testRumazo.c@{testRumazo.c}}
+\subsubsection{\texorpdfstring{testNutAngles1()}{testNutAngles1()}}
+{\footnotesize\ttfamily void test\+Nut\+Angles1 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 1 de la función Nut\+Angles
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_rumazo_8c_a212202e3b948b216ca24bf0b7a642b01}\label{test_rumazo_8c_a212202e3b948b216ca24bf0b7a642b01}} 
+\index{testRumazo.c@{testRumazo.c}!testNutAngles2@{testNutAngles2}}
+\index{testNutAngles2@{testNutAngles2}!testRumazo.c@{testRumazo.c}}
+\subsubsection{\texorpdfstring{testNutAngles2()}{testNutAngles2()}}
+{\footnotesize\ttfamily void test\+Nut\+Angles2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 2 de la función Nut\+Angles
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_rumazo_8c_a895e983f1680a426b6cdef493ec8c45e}\label{test_rumazo_8c_a895e983f1680a426b6cdef493ec8c45e}} 
+\index{testRumazo.c@{testRumazo.c}!testNutAngles3@{testNutAngles3}}
+\index{testNutAngles3@{testNutAngles3}!testRumazo.c@{testRumazo.c}}
+\subsubsection{\texorpdfstring{testNutAngles3()}{testNutAngles3()}}
+{\footnotesize\ttfamily void test\+Nut\+Angles3 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 3 de la función Nut\+Angles
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_rumazo_8c_a5a78fe64a18ce54c7f7e95cc5c5f36b2}\label{test_rumazo_8c_a5a78fe64a18ce54c7f7e95cc5c5f36b2}} 
+\index{testRumazo.c@{testRumazo.c}!testNutMatrix1@{testNutMatrix1}}
+\index{testNutMatrix1@{testNutMatrix1}!testRumazo.c@{testRumazo.c}}
+\subsubsection{\texorpdfstring{testNutMatrix1()}{testNutMatrix1()}}
+{\footnotesize\ttfamily void test\+Nut\+Matrix1 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 1 de la función Nut\+Matrix
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_rumazo_8c_af52d7b2b9b5ce8b62138f2b20000971b}\label{test_rumazo_8c_af52d7b2b9b5ce8b62138f2b20000971b}} 
+\index{testRumazo.c@{testRumazo.c}!testNutMatrix2@{testNutMatrix2}}
+\index{testNutMatrix2@{testNutMatrix2}!testRumazo.c@{testRumazo.c}}
+\subsubsection{\texorpdfstring{testNutMatrix2()}{testNutMatrix2()}}
+{\footnotesize\ttfamily void test\+Nut\+Matrix2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 2 de la función Nut\+Matrix
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_rumazo_8c_a53adc810ffbdfb003ad3a8754baf9370}\label{test_rumazo_8c_a53adc810ffbdfb003ad3a8754baf9370}} 
+\index{testRumazo.c@{testRumazo.c}!testNutMatrix3@{testNutMatrix3}}
+\index{testNutMatrix3@{testNutMatrix3}!testRumazo.c@{testRumazo.c}}
+\subsubsection{\texorpdfstring{testNutMatrix3()}{testNutMatrix3()}}
+{\footnotesize\ttfamily void test\+Nut\+Matrix3 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 3 de la función Nut\+Matrix
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_rumazo_8c_aca1d7e4c440883f0dbdad1bd47a91195}\label{test_rumazo_8c_aca1d7e4c440883f0dbdad1bd47a91195}} 
+\index{testRumazo.c@{testRumazo.c}!testPoleMatrix1@{testPoleMatrix1}}
+\index{testPoleMatrix1@{testPoleMatrix1}!testRumazo.c@{testRumazo.c}}
+\subsubsection{\texorpdfstring{testPoleMatrix1()}{testPoleMatrix1()}}
+{\footnotesize\ttfamily void test\+Pole\+Matrix1 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 1 de la función Pole\+Matrix
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_rumazo_8c_a1023310977dbb052653f8b0856b47993}\label{test_rumazo_8c_a1023310977dbb052653f8b0856b47993}} 
+\index{testRumazo.c@{testRumazo.c}!testPoleMatrix2@{testPoleMatrix2}}
+\index{testPoleMatrix2@{testPoleMatrix2}!testRumazo.c@{testRumazo.c}}
+\subsubsection{\texorpdfstring{testPoleMatrix2()}{testPoleMatrix2()}}
+{\footnotesize\ttfamily void test\+Pole\+Matrix2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 2 de la función Pole\+Matrix
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_rumazo_8c_a1a14bf5d6780bfe1af953685ba4552cb}\label{test_rumazo_8c_a1a14bf5d6780bfe1af953685ba4552cb}} 
+\index{testRumazo.c@{testRumazo.c}!testPoleMatrix3@{testPoleMatrix3}}
+\index{testPoleMatrix3@{testPoleMatrix3}!testRumazo.c@{testRumazo.c}}
+\subsubsection{\texorpdfstring{testPoleMatrix3()}{testPoleMatrix3()}}
+{\footnotesize\ttfamily void test\+Pole\+Matrix3 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 3 de la función Pole\+Matrix
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_rumazo_8c_afea40c8901c98144e6e8b23e9f99264c}\label{test_rumazo_8c_afea40c8901c98144e6e8b23e9f99264c}} 
+\index{testRumazo.c@{testRumazo.c}!testPrecMatrix1@{testPrecMatrix1}}
+\index{testPrecMatrix1@{testPrecMatrix1}!testRumazo.c@{testRumazo.c}}
+\subsubsection{\texorpdfstring{testPrecMatrix1()}{testPrecMatrix1()}}
+{\footnotesize\ttfamily void test\+Prec\+Matrix1 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 1 de la función Prec\+Matrix
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_rumazo_8c_acdb8f1dc238839838fd89ed4caf3d2d8}\label{test_rumazo_8c_acdb8f1dc238839838fd89ed4caf3d2d8}} 
+\index{testRumazo.c@{testRumazo.c}!testPrecMatrix2@{testPrecMatrix2}}
+\index{testPrecMatrix2@{testPrecMatrix2}!testRumazo.c@{testRumazo.c}}
+\subsubsection{\texorpdfstring{testPrecMatrix2()}{testPrecMatrix2()}}
+{\footnotesize\ttfamily void test\+Prec\+Matrix2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 2 de la función Prec\+Matrix
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_rumazo_8c_a2f09a2ecb16a70a9c43d1febe15d2bcf}\label{test_rumazo_8c_a2f09a2ecb16a70a9c43d1febe15d2bcf}} 
+\index{testRumazo.c@{testRumazo.c}!testPrecMatrix3@{testPrecMatrix3}}
+\index{testPrecMatrix3@{testPrecMatrix3}!testRumazo.c@{testRumazo.c}}
+\subsubsection{\texorpdfstring{testPrecMatrix3()}{testPrecMatrix3()}}
+{\footnotesize\ttfamily void test\+Prec\+Matrix3 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 3 de la función Prec\+Matrix
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_rumazo_8c_aa53db7aa52271a3fdc1cb131651cb1d3}\label{test_rumazo_8c_aa53db7aa52271a3fdc1cb131651cb1d3}} 
+\index{testRumazo.c@{testRumazo.c}!testRv2coe1@{testRv2coe1}}
+\index{testRv2coe1@{testRv2coe1}!testRumazo.c@{testRumazo.c}}
+\subsubsection{\texorpdfstring{testRv2coe1()}{testRv2coe1()}}
+{\footnotesize\ttfamily void test\+Rv2coe1 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 1 de la función rv2coe
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_rumazo_8c_a359cd3dc2088704fb8e17536e4b1fe9e}\label{test_rumazo_8c_a359cd3dc2088704fb8e17536e4b1fe9e}} 
+\index{testRumazo.c@{testRumazo.c}!testRv2coe2@{testRv2coe2}}
+\index{testRv2coe2@{testRv2coe2}!testRumazo.c@{testRumazo.c}}
+\subsubsection{\texorpdfstring{testRv2coe2()}{testRv2coe2()}}
+{\footnotesize\ttfamily void test\+Rv2coe2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 2 de la función rv2coe
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_rumazo_8c_a8e9ea0daea8f44ff140f5047656fb9c4}\label{test_rumazo_8c_a8e9ea0daea8f44ff140f5047656fb9c4}} 
+\index{testRumazo.c@{testRumazo.c}!testRv2coe3@{testRv2coe3}}
+\index{testRv2coe3@{testRv2coe3}!testRumazo.c@{testRumazo.c}}
+\subsubsection{\texorpdfstring{testRv2coe3()}{testRv2coe3()}}
+{\footnotesize\ttfamily void test\+Rv2coe3 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 3 de la función rv2coe
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_rumazo_8c_a2d7608680ecfb711e220a0f59338e4ef}\label{test_rumazo_8c_a2d7608680ecfb711e220a0f59338e4ef}} 
+\index{testRumazo.c@{testRumazo.c}!testTimediff1@{testTimediff1}}
+\index{testTimediff1@{testTimediff1}!testRumazo.c@{testRumazo.c}}
+\subsubsection{\texorpdfstring{testTimediff1()}{testTimediff1()}}
+{\footnotesize\ttfamily void test\+Timediff1 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 1 de la función timediff
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_rumazo_8c_a2c91cf396b0c7690e122a9c4d177f496}\label{test_rumazo_8c_a2c91cf396b0c7690e122a9c4d177f496}} 
+\index{testRumazo.c@{testRumazo.c}!testTimediff2@{testTimediff2}}
+\index{testTimediff2@{testTimediff2}!testRumazo.c@{testRumazo.c}}
+\subsubsection{\texorpdfstring{testTimediff2()}{testTimediff2()}}
+{\footnotesize\ttfamily void test\+Timediff2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 2 de la función timediff
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_rumazo_8c_a0a8990049b2e58676da82a8be33d155a}\label{test_rumazo_8c_a0a8990049b2e58676da82a8be33d155a}} 
+\index{testRumazo.c@{testRumazo.c}!testTimediff3@{testTimediff3}}
+\index{testTimediff3@{testTimediff3}!testRumazo.c@{testRumazo.c}}
+\subsubsection{\texorpdfstring{testTimediff3()}{testTimediff3()}}
+{\footnotesize\ttfamily void test\+Timediff3 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{rpoly_8c_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{verbose }\end{DoxyParamCaption})}
+
+Comprobación 3 de la función timediff
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$verbose$>$} & booleano que indica si debe mostrar lo esperado y obtenido. \\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,50 @@
+\hypertarget{_i_e_r_s_8h}{}\section{Codigo/\+Preliminary\+Orbit\+Determination/\+I\+E\+RS.h File Reference}
+\label{_i_e_r_s_8h}\index{Codigo/PreliminaryOrbitDetermination/IERS.h@{Codigo/PreliminaryOrbitDetermination/IERS.h}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_i_e_r_s_8h_afc84552f9fa5ab4cbf12212b930fc158}{I\+E\+RS}} (double $\ast$\mbox{[}13\mbox{]}, int, double, char, double $\ast$, double $\ast$, double $\ast$, double $\ast$, double $\ast$, double $\ast$)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Daniel Arias Ruiz-\/\+Esquide y Rubén Mazo Tomás 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Created\+: 2019/05/23
+\end{DoxyDate}
+Este fichero contiene las cabeceras para las funciones del fichero I\+E\+R\+S.\+m (M. Mahooti) 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{_i_e_r_s_8h_afc84552f9fa5ab4cbf12212b930fc158}\label{_i_e_r_s_8h_afc84552f9fa5ab4cbf12212b930fc158}} 
+\index{IERS.h@{IERS.h}!IERS@{IERS}}
+\index{IERS@{IERS}!IERS.h@{IERS.h}}
+\subsubsection{\texorpdfstring{IERS()}{IERS()}}
+{\footnotesize\ttfamily void I\+E\+RS (\begin{DoxyParamCaption}\item[{double $\ast$}]{eop\mbox{[}13\mbox{]},  }\item[{int}]{nop,  }\item[{double}]{Mjd\+\_\+\+U\+TC,  }\item[{char}]{interp,  }\item[{double $\ast$}]{U\+T1\+\_\+\+U\+TC,  }\item[{double $\ast$}]{T\+A\+I\+\_\+\+U\+TC,  }\item[{double $\ast$}]{x\+\_\+pole,  }\item[{double $\ast$}]{y\+\_\+pole,  }\item[{double $\ast$}]{ddpsi,  }\item[{double $\ast$}]{ddeps }\end{DoxyParamCaption})}
+
+Management of I\+E\+RS time and polar motion data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$eop$>$} & File data (in). \\
+\hline
+{\em $<$nop$>$} & number of rows (in). \\
+\hline
+{\em $<$\+Mjd\+\_\+\+U\+T\+C$>$} & (in). \\
+\hline
+{\em $<$interp$>$} & (in). \\
+\hline
+{\em $<$\+U\+T1\+\_\+\+U\+T\+C$>$} & (out). \\
+\hline
+{\em $<$\+T\+A\+I\+\_\+\+U\+T\+C$>$} & (out). \\
+\hline
+{\em $<$x\+\_\+pole$>$} & (out). \\
+\hline
+{\em $<$y\+\_\+pole$>$} & (out). \\
+\hline
+{\em $<$ddpsi$>$} & (out). \\
+\hline
+{\em $<$ddeps$>$} & (out). \\
+\hline
+\end{DoxyParams}

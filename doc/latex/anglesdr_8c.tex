@@ -1,0 +1,67 @@
+\hypertarget{anglesdr_8c}{}\section{Codigo/\+Preliminary\+Orbit\+Determination/anglesdr.c File Reference}
+\label{anglesdr_8c}\index{Codigo/PreliminaryOrbitDetermination/anglesdr.c@{Codigo/PreliminaryOrbitDetermination/anglesdr.c}}
+{\ttfamily \#include \char`\"{}../\+Mat\+Lab\+Utils/\+Mat\+Lab\+Utils.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}anglesdr.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}doubler.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}lambert\+\_\+gooding.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}S\+A\+T\+\_\+\+Const.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{anglesdr_8c_ae6320e86d0bb2d4825146472c12fac78}{anglesdr}} (double rtasc1, double rtasc2, double rtasc3, double decl1, double decl2, double decl3, double Mjd1, double Mjd2, double Mjd3, double rsite1\mbox{[}3\mbox{]}, double rsite2\mbox{[}3\mbox{]}, double rsite3\mbox{[}3\mbox{]}, double r2\mbox{[}3\mbox{]}, double v2\mbox{[}3\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Daniel Arias Ruiz-\/\+Esquide y Rubén Mazo Tomás 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Created\+: 2019/06/01
+\end{DoxyDate}
+Este fichero contiene las implementaciones para las funciones del fichero anglesdr.\+m (M. Mahooti) 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{anglesdr_8c_ae6320e86d0bb2d4825146472c12fac78}\label{anglesdr_8c_ae6320e86d0bb2d4825146472c12fac78}} 
+\index{anglesdr.c@{anglesdr.c}!anglesdr@{anglesdr}}
+\index{anglesdr@{anglesdr}!anglesdr.c@{anglesdr.c}}
+\subsubsection{\texorpdfstring{anglesdr()}{anglesdr()}}
+{\footnotesize\ttfamily void anglesdr (\begin{DoxyParamCaption}\item[{double}]{rtasc1,  }\item[{double}]{rtasc2,  }\item[{double}]{rtasc3,  }\item[{double}]{decl1,  }\item[{double}]{decl2,  }\item[{double}]{decl3,  }\item[{double}]{Mjd1,  }\item[{double}]{Mjd2,  }\item[{double}]{Mjd3,  }\item[{double}]{rsite1\mbox{[}3\mbox{]},  }\item[{double}]{rsite2\mbox{[}3\mbox{]},  }\item[{double}]{rsite3\mbox{[}3\mbox{]},  }\item[{double}]{r2\mbox{[}3\mbox{]},  }\item[{double}]{v2\mbox{[}3\mbox{]} }\end{DoxyParamCaption})}
+
+solves the problem of orbit determination using three optical sightings.
+
+Inputs\+: 
+\begin{DoxyParams}{Parameters}
+{\em $<$rtasc1$>$} & right ascension at t1 (rad) \\
+\hline
+{\em $<$rtasc2$>$} & right ascension at t2 (rad) \\
+\hline
+{\em $<$rtasc3$>$} & right ascension at t3 (rad) \\
+\hline
+{\em $<$decl1$>$} & declination at t1 (rad) \\
+\hline
+{\em $<$decl2$>$} & declination at t2 (rad) \\
+\hline
+{\em $<$decl3$>$} & declination at t3 (rad) \\
+\hline
+{\em $<$\+Mjd1$>$} & Modified julian date of t1 \\
+\hline
+{\em $<$\+Mjd2$>$} & Modified julian date of t2 \\
+\hline
+{\em $<$\+Mjd3$>$} & Modified julian date of t3 \\
+\hline
+{\em $<$rsite1$>$} & ijk site1 position vector (m) \\
+\hline
+{\em $<$rsite2$>$} & ijk site2 position vector (m) \\
+\hline
+{\em $<$rsite3$>$} & ijk site3 position vector (m)\\
+\hline
+\end{DoxyParams}
+Output\+: 
+\begin{DoxyParams}{Parameters}
+{\em $<$r$>$} & ijk position vector at t2 (m) \\
+\hline
+{\em $<$v$>$} & ijk velocity vector at t2 (m/s) \\
+\hline
+\end{DoxyParams}

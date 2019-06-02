@@ -1,5 +1,5 @@
-\hypertarget{_mat_lab_utils_8h}{}\section{Mat\+Lab\+Utils/\+Mat\+Lab\+Utils.h File Reference}
-\label{_mat_lab_utils_8h}\index{MatLabUtils/MatLabUtils.h@{MatLabUtils/MatLabUtils.h}}
+\hypertarget{_mat_lab_utils_8h}{}\section{Codigo/\+Mat\+Lab\+Utils/\+Mat\+Lab\+Utils.h File Reference}
+\label{_mat_lab_utils_8h}\index{Codigo/MatLabUtils/MatLabUtils.h@{Codigo/MatLabUtils/MatLabUtils.h}}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -24,12 +24,13 @@ void \mbox{\hyperlink{_mat_lab_utils_8h_a2554d448cdb143059c5728dd9eecc38b}{unit}
 int \mbox{\hyperlink{_mat_lab_utils_8h_a4e244affa27ebfe0338bcb33ac66868c}{sign}} (double)
 \item 
 int \mbox{\hyperlink{_mat_lab_utils_8h_a7e8c28247a3f2737ebe4bab1c32f1bf0}{fix}} (double)
+\item 
+int \mbox{\hyperlink{_mat_lab_utils_8h_a2a5849dc97ff703084048b82f86fcca3}{all}} (double\mbox{[}3\mbox{]})
 \end{DoxyCompactItemize}
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{_mat_lab_utils_8h_a6d8a2fc049765b29a41c880fa6482adc}\label{_mat_lab_utils_8h_a6d8a2fc049765b29a41c880fa6482adc}} 
-const int {\bfseries P\+O\+L\+\_\+\+D\+EG}
+const int \mbox{\hyperlink{_mat_lab_utils_8h_a6d8a2fc049765b29a41c880fa6482adc}{P\+O\+L\+\_\+\+D\+EG}}
 \end{DoxyCompactItemize}
 
 
@@ -43,6 +44,22 @@ Created\+: 2019/04/17
 Este fichero contiene las cabeceras para las funciones de alto nivel de Mat\+Lab necesarias para este proyecto. 
 
 \subsection{Function Documentation}
+\mbox{\Hypertarget{_mat_lab_utils_8h_a2a5849dc97ff703084048b82f86fcca3}\label{_mat_lab_utils_8h_a2a5849dc97ff703084048b82f86fcca3}} 
+\index{MatLabUtils.h@{MatLabUtils.h}!all@{all}}
+\index{all@{all}!MatLabUtils.h@{MatLabUtils.h}}
+\subsubsection{\texorpdfstring{all()}{all()}}
+{\footnotesize\ttfamily int all (\begin{DoxyParamCaption}\item[{double}]{v\mbox{[}3\mbox{]} }\end{DoxyParamCaption})}
+
+Comprueba si un vector es nulo y devuelve 1 en caso afirmativo, o 0 en caso contrario.
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$v$>$} & vector de tres componentes reales.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 si v es nulo y 0 en caso contrario. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{_mat_lab_utils_8h_a72ccd1c778b8760d29939700a6b0162f}\label{_mat_lab_utils_8h_a72ccd1c778b8760d29939700a6b0162f}} 
 \index{MatLabUtils.h@{MatLabUtils.h}!cross@{cross}}
 \index{cross@{cross}!MatLabUtils.h@{MatLabUtils.h}}
@@ -224,3 +241,12 @@ Inicializa a 0 las componentes de un vector real.
 {\em $<$n$>$} & número de componentes del vector. \\
 \hline
 \end{DoxyParams}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{_mat_lab_utils_8h_a6d8a2fc049765b29a41c880fa6482adc}\label{_mat_lab_utils_8h_a6d8a2fc049765b29a41c880fa6482adc}} 
+\index{MatLabUtils.h@{MatLabUtils.h}!POL\_DEG@{POL\_DEG}}
+\index{POL\_DEG@{POL\_DEG}!MatLabUtils.h@{MatLabUtils.h}}
+\subsubsection{\texorpdfstring{POL\_DEG}{POL\_DEG}}
+{\footnotesize\ttfamily const int P\+O\+L\+\_\+\+D\+EG}
+

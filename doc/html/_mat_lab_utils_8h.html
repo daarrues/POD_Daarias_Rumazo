@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>POD_Daarias_Rumazo: MatLabUtils/MatLabUtils.h File Reference</title>
+<title>POD_Daarias_Rumazo: Codigo/MatLabUtils/MatLabUtils.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -20,9 +20,12 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="pod_daarias_rumazo_logo_mini.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">POD_Daarias_Rumazo
+   &#160;<span id="projectnumber">2.0</span>
    </div>
+   <div id="projectbrief">Migration from MATLAB to C</div>
   </td>
  </tr>
  </tbody>
@@ -61,7 +64,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_533dd0a95314fdcaca733c75779ea53f.html">MatLabUtils</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_1d217adaca25555da0c0f7561f9e1c64.html">Codigo</a></li><li class="navelem"><a class="el" href="dir_7b6b5199f634114ce5737e3686b893d0.html">MatLabUtils</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -99,11 +102,12 @@ Functions</h2></td></tr>
 <tr class="separator:a4e244affa27ebfe0338bcb33ac66868c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e8c28247a3f2737ebe4bab1c32f1bf0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_mat_lab_utils_8h.html#a7e8c28247a3f2737ebe4bab1c32f1bf0">fix</a> (double)</td></tr>
 <tr class="separator:a7e8c28247a3f2737ebe4bab1c32f1bf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a5849dc97ff703084048b82f86fcca3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_mat_lab_utils_8h.html#a2a5849dc97ff703084048b82f86fcca3">all</a> (double[3])</td></tr>
+<tr class="separator:a2a5849dc97ff703084048b82f86fcca3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a6d8a2fc049765b29a41c880fa6482adc"><td class="memItemLeft" align="right" valign="top"><a id="a6d8a2fc049765b29a41c880fa6482adc"></a>
-const int&#160;</td><td class="memItemRight" valign="bottom"><b>POL_DEG</b></td></tr>
+<tr class="memitem:a6d8a2fc049765b29a41c880fa6482adc"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_mat_lab_utils_8h.html#a6d8a2fc049765b29a41c880fa6482adc">POL_DEG</a></td></tr>
 <tr class="separator:a6d8a2fc049765b29a41c880fa6482adc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -111,6 +115,32 @@ const int&#160;</td><td class="memItemRight" valign="bottom"><b>POL_DEG</b></td>
 <dl class="section date"><dt>Date</dt><dd>Created: 2019/04/17</dd></dl>
 <p>Este fichero contiene las cabeceras para las funciones de alto nivel de MatLab necesarias para este proyecto. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
+<a id="a2a5849dc97ff703084048b82f86fcca3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a5849dc97ff703084048b82f86fcca3">&#9670;&nbsp;</a></span>all()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int all </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>v</em>[3]</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Comprueba si un vector es nulo y devuelve 1 en caso afirmativo, o 0 en caso contrario.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">&lt;v&gt;</td><td>vector de tres componentes reales.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1 si v es nulo y 0 en caso contrario. </dd></dl>
+
+</div>
+</div>
 <a id="a72ccd1c778b8760d29939700a6b0162f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a72ccd1c778b8760d29939700a6b0162f">&#9670;&nbsp;</a></span>cross()</h2>
 
@@ -487,6 +517,21 @@ const int&#160;</td><td class="memItemRight" valign="bottom"><b>POL_DEG</b></td>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a6d8a2fc049765b29a41c880fa6482adc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d8a2fc049765b29a41c880fa6482adc">&#9670;&nbsp;</a></span>POL_DEG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int POL_DEG</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>

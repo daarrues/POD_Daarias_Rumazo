@@ -1,0 +1,36 @@
+\hypertarget{_e_o_p_d_a_t_a_8c}{}\section{Codigo/\+Preliminary\+Orbit\+Determination/\+E\+O\+P\+D\+A\+TA.c File Reference}
+\label{_e_o_p_d_a_t_a_8c}\index{Codigo/PreliminaryOrbitDetermination/EOPDATA.c@{Codigo/PreliminaryOrbitDetermination/EOPDATA.c}}
+{\ttfamily \#include \char`\"{}E\+O\+P\+D\+A\+T\+A.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_e_o_p_d_a_t_a_8c_a36da4c8a05d4f57b1b96f2156f13d186}{leer\+Fichero}} (double $\ast$eopdata\mbox{[}13\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Daniel Arias Ruiz-\/\+Esquide y Rubén Mazo Tomás 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Created\+: 2019/05/26
+\end{DoxyDate}
+Este fichero contiene la implementación de una función auxiliar para leer la información del fichero \char`\"{}eop19620101.\+txt\char`\"{}. 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{_e_o_p_d_a_t_a_8c_a36da4c8a05d4f57b1b96f2156f13d186}\label{_e_o_p_d_a_t_a_8c_a36da4c8a05d4f57b1b96f2156f13d186}} 
+\index{EOPDATA.c@{EOPDATA.c}!leerFichero@{leerFichero}}
+\index{leerFichero@{leerFichero}!EOPDATA.c@{EOPDATA.c}}
+\subsubsection{\texorpdfstring{leerFichero()}{leerFichero()}}
+{\footnotesize\ttfamily void leer\+Fichero (\begin{DoxyParamCaption}\item[{double $\ast$}]{eopdata\mbox{[}13\mbox{]} }\end{DoxyParamCaption})}
+
+Construye una matriz con los datos del fichero. Uso\+: double $\ast$eopdata\mbox{[}13\mbox{]}; leer\+Fichero(eopdata);
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$eopdata$>$} & matriz de salida. \\
+\hline
+\end{DoxyParams}

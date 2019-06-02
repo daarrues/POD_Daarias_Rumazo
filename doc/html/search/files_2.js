@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['rpoly_2ec',['rpoly.c',['../rpoly_8c.html',1,'']]],
-  ['rpoly_2eh',['rpoly.h',['../rpoly_8h.html',1,'']]]
+  ['doubler_2ec',['doubler.c',['../doubler_8c.html',1,'']]],
+  ['doubler_2eh',['doubler.h',['../doubler_8h.html',1,'']]]
 ];

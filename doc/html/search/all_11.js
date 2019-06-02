@@ -1,5 +1,11 @@
 var searchData=
 [
-  ['u',['u',['../struct_r_poly___state.html#aed08c8478a62910aab06ba708a0e5b5f',1,'RPoly_State']]],
-  ['unit',['unit',['../_mat_lab_utils_8c.html#acce1f4dd9df041c2df146ad92ae8789d',1,'unit(double v[3], double vR[3]):&#160;MatLabUtils.c'],['../_mat_lab_utils_8h.html#a2554d448cdb143059c5728dd9eecc38b',1,'unit(double[3], double[3]):&#160;MatLabUtils.c']]]
+  ['sat_5fconst_2ec',['SAT_Const.c',['../_s_a_t___const_8c.html',1,'']]],
+  ['sat_5fconst_2eh',['SAT_Const.h',['../_s_a_t___const_8h.html',1,'']]],
+  ['si',['si',['../struct_r_poly___state.html#a592a15876164ef5c9e5e500124619412',1,'RPoly_State']]],
+  ['sign',['sign',['../_mat_lab_utils_8c.html#adc6d22ec5fc7584d4a9c4fb54b696725',1,'sign(double n):&#160;MatLabUtils.c'],['../_mat_lab_utils_8h.html#a4e244affa27ebfe0338bcb33ac66868c',1,'sign(double):&#160;MatLabUtils.c']]],
+  ['sr',['sr',['../struct_r_poly___state.html#a866899e74209205c48e6ffe4889887a3',1,'RPoly_State']]],
+  ['svk',['svk',['../struct_r_poly___state.html#aa59d711f886b181955bbb39849942cb9',1,'RPoly_State']]],
+  ['szi',['szi',['../struct_r_poly___state.html#a143eaac5a856111b4112b0d51094c76d',1,'RPoly_State']]],
+  ['szr',['szr',['../struct_r_poly___state.html#a3e54b6894f6a4694585055d4dd849c38',1,'RPoly_State']]]
 ];

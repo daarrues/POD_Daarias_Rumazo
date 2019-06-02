@@ -1,0 +1,41 @@
+\hypertarget{newtonnu_8c}{}\section{Codigo/\+Preliminary\+Orbit\+Determination/newtonnu.c File Reference}
+\label{newtonnu_8c}\index{Codigo/PreliminaryOrbitDetermination/newtonnu.c@{Codigo/PreliminaryOrbitDetermination/newtonnu.c}}
+{\ttfamily \#include \char`\"{}newtonnu.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{newtonnu_8c_ae84b483192d7227c66efe06b03b3d877}{newtonnu}} (double ecc, double nu, double $\ast$e0, double $\ast$m)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Daniel Arias Ruiz-\/\+Esquide y Rubén Mazo Tomás 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Created\+: 2019/05/25
+\end{DoxyDate}
+Este fichero contiene las implementaciones para las funciones del fichero newtonnu.\+m (M. Mahooti) 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{newtonnu_8c_ae84b483192d7227c66efe06b03b3d877}\label{newtonnu_8c_ae84b483192d7227c66efe06b03b3d877}} 
+\index{newtonnu.c@{newtonnu.c}!newtonnu@{newtonnu}}
+\index{newtonnu@{newtonnu}!newtonnu.c@{newtonnu.c}}
+\subsubsection{\texorpdfstring{newtonnu()}{newtonnu()}}
+{\footnotesize\ttfamily void newtonnu (\begin{DoxyParamCaption}\item[{double}]{ecc,  }\item[{double}]{nu,  }\item[{double $\ast$}]{e0,  }\item[{double $\ast$}]{m }\end{DoxyParamCaption})}
+
+newtonnu\+: Solves keplers equation when the true anomaly is known. the mean and eccentric, parabolic, or hyperbolic anomaly is also found. the parabolic limit at 168 is arbitrary. the hyperbolic anomaly is also limited. the hyperbolic sine is used because it\textquotesingle{}s not double valued.
+
+Inputs\+: 
+\begin{DoxyParams}{Parameters}
+{\em $<$ecc$>$} & eccentricity \\
+\hline
+{\em $<$nu$>$} & true anomaly\\
+\hline
+\end{DoxyParams}
+Output\+: \begin{DoxyReturn}{Returns}
+$<$e0$>$ eccentric anomaly 
+
+$<$m$>$ mean anomaly 
+\end{DoxyReturn}

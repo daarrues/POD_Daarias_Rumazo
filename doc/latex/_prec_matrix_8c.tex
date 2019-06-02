@@ -1,0 +1,41 @@
+\hypertarget{_prec_matrix_8c}{}\section{Codigo/\+Preliminary\+Orbit\+Determination/\+Prec\+Matrix.c File Reference}
+\label{_prec_matrix_8c}\index{Codigo/PreliminaryOrbitDetermination/PrecMatrix.c@{Codigo/PreliminaryOrbitDetermination/PrecMatrix.c}}
+{\ttfamily \#include \char`\"{}../\+Mat\+Lab\+Utils/\+Mat\+Lab\+Utils.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Prec\+Matrix.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}R\+\_\+y.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}R\+\_\+z.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}S\+A\+T\+\_\+\+Const.\+h\char`\"{}}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_prec_matrix_8c_a15c50e07d77c46d89a755122b7577929}{Prec\+Matrix}} (double Mjd\+\_\+1, double Mjd\+\_\+2, double Prec\+Mat\mbox{[}3\mbox{]}\mbox{[}3\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Daniel Arias Ruiz-\/\+Esquide y Rubén Mazo Tomás 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Created\+: 2019/05/25
+\end{DoxyDate}
+Este fichero contiene las implementaciones para las funciones del fichero Prec\+Matrix.\+m (M. Mahooti) 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{_prec_matrix_8c_a15c50e07d77c46d89a755122b7577929}\label{_prec_matrix_8c_a15c50e07d77c46d89a755122b7577929}} 
+\index{PrecMatrix.c@{PrecMatrix.c}!PrecMatrix@{PrecMatrix}}
+\index{PrecMatrix@{PrecMatrix}!PrecMatrix.c@{PrecMatrix.c}}
+\subsubsection{\texorpdfstring{PrecMatrix()}{PrecMatrix()}}
+{\footnotesize\ttfamily void Prec\+Matrix (\begin{DoxyParamCaption}\item[{double}]{Mjd\+\_\+1,  }\item[{double}]{Mjd\+\_\+2,  }\item[{double}]{Prec\+Mat\mbox{[}3\mbox{]}\mbox{[}3\mbox{]} }\end{DoxyParamCaption})}
+
+Precession transformation of equatorial coordinates.
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$\+Mjd\+\_\+1$>$} & Epoch given (Modified Julian Date TT) (in). \\
+\hline
+{\em $<$\+Mjd\+\_\+2$>$} & Epoch to precess to (Modified Julian Date TT) (in). \\
+\hline
+{\em $<$\+Prec\+Mat$>$} & Precession transformation matrix (out). \\
+\hline
+\end{DoxyParams}

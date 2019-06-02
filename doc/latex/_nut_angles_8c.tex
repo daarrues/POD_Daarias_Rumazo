@@ -1,0 +1,39 @@
+\hypertarget{_nut_angles_8c}{}\section{Codigo/\+Preliminary\+Orbit\+Determination/\+Nut\+Angles.c File Reference}
+\label{_nut_angles_8c}\index{Codigo/PreliminaryOrbitDetermination/NutAngles.c@{Codigo/PreliminaryOrbitDetermination/NutAngles.c}}
+{\ttfamily \#include \char`\"{}Nut\+Angles.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}S\+A\+T\+\_\+\+Const.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_nut_angles_8c_aab45b89ef172f9d821b8e0a96afd73e5}{Nut\+Angles}} (double Mjd\+\_\+\+TT, double $\ast$dpsi, double $\ast$deps)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Daniel Arias Ruiz-\/\+Esquide y Rubén Mazo Tomás 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Created\+: 2019/05/15
+\end{DoxyDate}
+Este fichero contiene las implementaciones para las funciones del fichero Nut\+Angles.\+m (M. Mahooti) 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{_nut_angles_8c_aab45b89ef172f9d821b8e0a96afd73e5}\label{_nut_angles_8c_aab45b89ef172f9d821b8e0a96afd73e5}} 
+\index{NutAngles.c@{NutAngles.c}!NutAngles@{NutAngles}}
+\index{NutAngles@{NutAngles}!NutAngles.c@{NutAngles.c}}
+\subsubsection{\texorpdfstring{NutAngles()}{NutAngles()}}
+{\footnotesize\ttfamily void Nut\+Angles (\begin{DoxyParamCaption}\item[{double}]{Mjd\+\_\+\+TT,  }\item[{double $\ast$}]{dpsi,  }\item[{double $\ast$}]{deps }\end{DoxyParamCaption})}
+
+Nutation in longitude and obliquity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$\+Mjd\+\_\+\+T\+T$>$} & Modified Julian Date (Terrestrial Time). \\
+\hline
+{\em $<$dpsi$>$} & Nutation Angles (1). \\
+\hline
+{\em $<$dpsi$>$} & Nutation Angles (2). \\
+\hline
+\end{DoxyParams}

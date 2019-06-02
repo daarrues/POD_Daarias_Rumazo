@@ -1,30 +1,6 @@
 var searchData=
 [
-  ['testcross1',['testCross1',['../_test_mat_lab_utils_8c.html#a479dae9e7f367bdacd4ffa5535e9fe63',1,'TestMatLabUtils.c']]],
-  ['testcross2',['testCross2',['../_test_mat_lab_utils_8c.html#af4c997c31bf734585bcb1bc924104433',1,'TestMatLabUtils.c']]],
-  ['testcross3',['testCross3',['../_test_mat_lab_utils_8c.html#a1c6a9cd23ced04e00681d1ee94caee97',1,'TestMatLabUtils.c']]],
-  ['testdet',['testDet',['../_test_mat_lab_utils_8c.html#a84ff15ec78ecd679ca8ecc4238325eb4',1,'TestMatLabUtils.c']]],
-  ['testdot1',['testDot1',['../_test_mat_lab_utils_8c.html#a29be36c82eef2bf72bbdbf6e72923935',1,'TestMatLabUtils.c']]],
-  ['testdot2',['testDot2',['../_test_mat_lab_utils_8c.html#a2e3dfcb6ef9275d1b3fc682ddc6e664a',1,'TestMatLabUtils.c']]],
-  ['testdot3',['testDot3',['../_test_mat_lab_utils_8c.html#aaca9d645c14181d3adaff40ce81b9def',1,'TestMatLabUtils.c']]],
-  ['testfix1',['testFix1',['../_test_mat_lab_utils_8c.html#a2a3e3f2dc08cba6e054fb4b9e6dc0da4',1,'TestMatLabUtils.c']]],
-  ['testfix2',['testFix2',['../_test_mat_lab_utils_8c.html#affbfe5fb6dbb4da3739cc755f129a7b1',1,'TestMatLabUtils.c']]],
-  ['testfix3',['testFix3',['../_test_mat_lab_utils_8c.html#a4fcf6ff4642c2d7a9ff24e2dc3fa27b9',1,'TestMatLabUtils.c']]],
-  ['testmatlabutils_2ec',['TestMatLabUtils.c',['../_test_mat_lab_utils_8c.html',1,'']]],
-  ['testnorm1',['testNorm1',['../_test_mat_lab_utils_8c.html#a082cad5c31f83ffb812011a878ca8170',1,'TestMatLabUtils.c']]],
-  ['testnorm2',['testNorm2',['../_test_mat_lab_utils_8c.html#a30169e9641ad4c9ba8db51c6ebdc33d8',1,'TestMatLabUtils.c']]],
-  ['testnorm3',['testNorm3',['../_test_mat_lab_utils_8c.html#a86c74829f369c50602a7bd5c4d74021d',1,'TestMatLabUtils.c']]],
-  ['testprodmatr1',['testProdMatr1',['../_test_mat_lab_utils_8c.html#a0cb6d9fcf03cfb4c64166b74cbcfbe09',1,'TestMatLabUtils.c']]],
-  ['testprodmatr2',['testProdMatr2',['../_test_mat_lab_utils_8c.html#adfdac72bb4d60167de51f9253498d65f',1,'TestMatLabUtils.c']]],
-  ['testprodmatr3',['testProdMatr3',['../_test_mat_lab_utils_8c.html#a55ca99fd0f9b02865bd7cb1852e089b2',1,'TestMatLabUtils.c']]],
-  ['testroots',['testRoots',['../_test_mat_lab_utils_8c.html#af783fa237741a0f44c5aa61c0bc4e1c0',1,'TestMatLabUtils.c']]],
-  ['testsign1',['testSign1',['../_test_mat_lab_utils_8c.html#a3a0a9cbef43c33e7a3ad5b3a3405b75c',1,'TestMatLabUtils.c']]],
-  ['testsign2',['testSign2',['../_test_mat_lab_utils_8c.html#ae7258c522573dcdf9406fc645559c855',1,'TestMatLabUtils.c']]],
-  ['testsign3',['testSign3',['../_test_mat_lab_utils_8c.html#a7906b29d79225e79fb9061edf98d7d10',1,'TestMatLabUtils.c']]],
-  ['testtrans',['testTrans',['../_test_mat_lab_utils_8c.html#a3854045794933accf86e4c2af521b8bf',1,'TestMatLabUtils.c']]],
-  ['testunit1',['testUnit1',['../_test_mat_lab_utils_8c.html#a02d20872d9a25ca4614a3343e7060c52',1,'TestMatLabUtils.c']]],
-  ['testunit2',['testUnit2',['../_test_mat_lab_utils_8c.html#aea2fb8426a82e09304e55abce0b93796',1,'TestMatLabUtils.c']]],
-  ['testunit3',['testUnit3',['../_test_mat_lab_utils_8c.html#a47df257382e6781403b2f6bef5fca12c',1,'TestMatLabUtils.c']]],
-  ['testzeros',['testZeros',['../_test_mat_lab_utils_8c.html#affc0652a3b519e689de9966129314ae3',1,'TestMatLabUtils.c']]],
-  ['trans',['trans',['../_mat_lab_utils_8c.html#a50a4bf459ee9dbd5aa7778781655004b',1,'trans(double m[3][3], double mResult[3][3]):&#160;MatLabUtils.c'],['../_mat_lab_utils_8h.html#a8b1624fe957344f7a892a9888cb3bfa5',1,'trans(double[3][3], double[3][3]):&#160;MatLabUtils.c']]]
+  ['iers',['IERS',['../_i_e_r_s_8c.html#af3a0e43bd77b211107003a7c44072ca2',1,'IERS(double *eop[13], int nop, double Mjd_UTC, char interp, double *UT1_UTC, double *TAI_UTC, double *x_pole, double *y_pole, double *ddpsi, double *ddeps):&#160;IERS.c'],['../_i_e_r_s_8h.html#afc84552f9fa5ab4cbf12212b930fc158',1,'IERS(double *[13], int, double, char, double *, double *, double *, double *, double *, double *):&#160;IERS.c']]],
+  ['iers_2ec',['IERS.c',['../_i_e_r_s_8c.html',1,'']]],
+  ['iers_2eh',['IERS.h',['../_i_e_r_s_8h.html',1,'']]]
 ];

@@ -1,4 +1,27 @@
 var searchData=
 [
-  ['roots',['roots',['../_mat_lab_utils_8c.html#a025cb5b6f84d97ebca763a767b3eb7b8',1,'roots(double p[], int degree, double r[]):&#160;MatLabUtils.c'],['../_mat_lab_utils_8h.html#acb45e82cfa4ec236377fbec81b6c2ceb',1,'roots(double[], int, double[]):&#160;MatLabUtils.c']]]
+  ['g',['g',['../struct_r_poly___state.html#ab30c765b9be1b7776c97c899a12a66bb',1,'RPoly_State']]],
+  ['gast',['gast',['../gast_8c.html#a4eb2d09c87615520077aec1005b8e0ad',1,'gast(double Mjd_UT1):&#160;gast.c'],['../gast_8h.html#af241de938c61560b149e04d9a492cd48',1,'gast(double):&#160;gast.c']]],
+  ['gast_2ec',['gast.c',['../gast_8c.html',1,'']]],
+  ['gast_2eh',['gast.h',['../gast_8h.html',1,'']]],
+  ['ghamatrix',['GHAMatrix',['../_g_h_a_matrix_8c.html#af92937e23d7eef118f7f817134f6017f',1,'GHAMatrix(double Mjd_UT1, double GHAmat[3][3]):&#160;GHAMatrix.c'],['../_g_h_a_matrix_8h.html#a0d2d2b1cc40b02c878df58b3d8fbd15b',1,'GHAMatrix(double, double[3][3]):&#160;GHAMatrix.c']]],
+  ['ghamatrix_2ec',['GHAMatrix.c',['../_g_h_a_matrix_8c.html',1,'']]],
+  ['ghamatrix_2eh',['GHAMatrix.h',['../_g_h_a_matrix_8h.html',1,'']]],
+  ['gibbs',['gibbs',['../gibbs_8c.html#ac147a613fd098e80c4a6e82c01b5eb75',1,'gibbs(double r1[], double r2[], double r3[], double v2[], double *theta, double *theta1, double *copa, char error[]):&#160;gibbs.c'],['../gibbs_8h.html#afb89cc4dad5c4030728ba2bb781a288f',1,'gibbs(double[], double[], double[], double [], double *, double *, double *, char[]):&#160;gibbs.c']]],
+  ['gibbs_2ec',['gibbs.c',['../gibbs_8c.html',1,'']]],
+  ['gibbs_2eh',['gibbs.h',['../gibbs_8h.html',1,'']]],
+  ['gm_5fearth',['GM_Earth',['../_s_a_t___const_8c.html#abc09c61bca70fa461c128540f69ba84f',1,'GM_Earth():&#160;SAT_Const.c'],['../_s_a_t___const_8h.html#abc09c61bca70fa461c128540f69ba84f',1,'GM_Earth():&#160;SAT_Const.h']]],
+  ['gm_5fjupiter',['GM_Jupiter',['../_s_a_t___const_8c.html#ac839b92389f8145d558f9d3fb89b78fb',1,'GM_Jupiter():&#160;SAT_Const.c'],['../_s_a_t___const_8h.html#ac839b92389f8145d558f9d3fb89b78fb',1,'GM_Jupiter():&#160;SAT_Const.h']]],
+  ['gm_5fmars',['GM_Mars',['../_s_a_t___const_8c.html#aee97408afa679008b1c7eb46ed00b356',1,'GM_Mars():&#160;SAT_Const.c'],['../_s_a_t___const_8h.html#aee97408afa679008b1c7eb46ed00b356',1,'GM_Mars():&#160;SAT_Const.h']]],
+  ['gm_5fmercury',['GM_Mercury',['../_s_a_t___const_8c.html#abe797c1aff445b42ecfba30efb288599',1,'GM_Mercury():&#160;SAT_Const.c'],['../_s_a_t___const_8h.html#abe797c1aff445b42ecfba30efb288599',1,'GM_Mercury():&#160;SAT_Const.h']]],
+  ['gm_5fmoon',['GM_Moon',['../_s_a_t___const_8c.html#ae416b8fc43ab136bcec459dbf47db2cc',1,'GM_Moon():&#160;SAT_Const.c'],['../_s_a_t___const_8h.html#ae416b8fc43ab136bcec459dbf47db2cc',1,'GM_Moon():&#160;SAT_Const.h']]],
+  ['gm_5fneptune',['GM_Neptune',['../_s_a_t___const_8c.html#af6e5d908a9276990b1b981ed331fe8c3',1,'GM_Neptune():&#160;SAT_Const.c'],['../_s_a_t___const_8h.html#af6e5d908a9276990b1b981ed331fe8c3',1,'GM_Neptune():&#160;SAT_Const.h']]],
+  ['gm_5fpluto',['GM_Pluto',['../_s_a_t___const_8c.html#a398a66090a1eb87b3d3b361fe97c426e',1,'GM_Pluto():&#160;SAT_Const.c'],['../_s_a_t___const_8h.html#a398a66090a1eb87b3d3b361fe97c426e',1,'GM_Pluto():&#160;SAT_Const.h']]],
+  ['gm_5fsaturn',['GM_Saturn',['../_s_a_t___const_8c.html#ae306bdee9e906638b6c5531abe0fdc4e',1,'GM_Saturn():&#160;SAT_Const.c'],['../_s_a_t___const_8h.html#ae306bdee9e906638b6c5531abe0fdc4e',1,'GM_Saturn():&#160;SAT_Const.h']]],
+  ['gm_5fsun',['GM_Sun',['../_s_a_t___const_8c.html#ac687247c9e61d4975833ee3bde7bd297',1,'GM_Sun():&#160;SAT_Const.c'],['../_s_a_t___const_8h.html#ac687247c9e61d4975833ee3bde7bd297',1,'GM_Sun():&#160;SAT_Const.h']]],
+  ['gm_5furanus',['GM_Uranus',['../_s_a_t___const_8c.html#aaf46cfc2565571334962d9b08b43d8c5',1,'GM_Uranus():&#160;SAT_Const.c'],['../_s_a_t___const_8h.html#aaf46cfc2565571334962d9b08b43d8c5',1,'GM_Uranus():&#160;SAT_Const.h']]],
+  ['gm_5fvenus',['GM_Venus',['../_s_a_t___const_8c.html#a3b441e13748ed45b42010ad2d4743dfc',1,'GM_Venus():&#160;SAT_Const.c'],['../_s_a_t___const_8h.html#a3b441e13748ed45b42010ad2d4743dfc',1,'GM_Venus():&#160;SAT_Const.h']]],
+  ['gmst',['gmst',['../gmst_8c.html#a22a9ee5ea799a7511f4b5b1939c9de76',1,'gmst(double Mjd_UT1):&#160;gmst.c'],['../gmst_8h.html#af4978c571c25f80014aa9131c1e087ac',1,'gmst(double):&#160;gmst.c']]],
+  ['gmst_2ec',['gmst.c',['../gmst_8c.html',1,'']]],
+  ['gmst_2eh',['gmst.h',['../gmst_8h.html',1,'']]]
 ];

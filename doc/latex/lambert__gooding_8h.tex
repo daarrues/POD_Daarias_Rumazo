@@ -1,0 +1,154 @@
+\hypertarget{lambert__gooding_8h}{}\section{Codigo/\+Preliminary\+Orbit\+Determination/lambert\+\_\+gooding.h File Reference}
+\label{lambert__gooding_8h}\index{Codigo/PreliminaryOrbitDetermination/lambert\_gooding.h@{Codigo/PreliminaryOrbitDetermination/lambert\_gooding.h}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{lambert__gooding_8h_a7304ee7cd0ec3b806145241e128d7c1d}{lambert\+\_\+gooding}} (double\mbox{[}$\,$\mbox{]}, double\mbox{[}$\,$\mbox{]}, double, double, double, int, double\mbox{[}$\,$\mbox{]}, double\mbox{[}$\,$\mbox{]})
+\item 
+void \mbox{\hyperlink{lambert__gooding_8h_afa0184436b81e24d228adcd0bb234a3e}{vlamb}} (double, double, double, double, double, double $\ast$, double\mbox{[}$\,$\mbox{]}, double\mbox{[}$\,$\mbox{]}, double\mbox{[}$\,$\mbox{]}, double\mbox{[}$\,$\mbox{]})
+\item 
+void \mbox{\hyperlink{lambert__gooding_8h_ae0ce4f4bb70c3bb352ad2ab0b0ab2ca3}{tlamb}} (double, double, double, double, double, double $\ast$, double $\ast$, double $\ast$, double $\ast$)
+\item 
+double \mbox{\hyperlink{lambert__gooding_8h_a64e003e31194bb4ce7cd1b5629622525}{d8rt}} (double)
+\item 
+void \mbox{\hyperlink{lambert__gooding_8h_a72f8d5a55a4f70ec8d669816f251e1df}{xlamb}} (double, double, double, double, double $\ast$, double $\ast$, double $\ast$)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Daniel Arias Ruiz-\/\+Esquide y Rubén Mazo Tomás 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Created\+: 2019/05/09
+\end{DoxyDate}
+Este fichero contiene las cabeceras para las funciones del fichero lambert\+\_\+gooding.\+m (M. Mahooti) 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{lambert__gooding_8h_a64e003e31194bb4ce7cd1b5629622525}\label{lambert__gooding_8h_a64e003e31194bb4ce7cd1b5629622525}} 
+\index{lambert\_gooding.h@{lambert\_gooding.h}!d8rt@{d8rt}}
+\index{d8rt@{d8rt}!lambert\_gooding.h@{lambert\_gooding.h}}
+\subsubsection{\texorpdfstring{d8rt()}{d8rt()}}
+{\footnotesize\ttfamily double d8rt (\begin{DoxyParamCaption}\item[{double}]{x }\end{DoxyParamCaption})}
+
+8th root function, used by xlamb
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$x$>$} & number to find the 8th root to\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the 8th root of x 
+\end{DoxyReturn}
+\mbox{\Hypertarget{lambert__gooding_8h_a7304ee7cd0ec3b806145241e128d7c1d}\label{lambert__gooding_8h_a7304ee7cd0ec3b806145241e128d7c1d}} 
+\index{lambert\_gooding.h@{lambert\_gooding.h}!lambert\_gooding@{lambert\_gooding}}
+\index{lambert\_gooding@{lambert\_gooding}!lambert\_gooding.h@{lambert\_gooding.h}}
+\subsubsection{\texorpdfstring{lambert\_gooding()}{lambert\_gooding()}}
+{\footnotesize\ttfamily void lambert\+\_\+gooding (\begin{DoxyParamCaption}\item[{double}]{r1\mbox{[}$\,$\mbox{]},  }\item[{double}]{r2\mbox{[}$\,$\mbox{]},  }\item[{double}]{tof,  }\item[{double}]{mu,  }\item[{double}]{long\+\_\+way,  }\item[{int}]{multi\+\_\+revs,  }\item[{double}]{v1\mbox{[}$\,$\mbox{]},  }\item[{double}]{v2\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+Lambert\textquotesingle{}s problem using Gooding\textquotesingle{}s method
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$r1$>$} & first cartesian position \mbox{[}km\mbox{]} \\
+\hline
+{\em $<$r2$>$} & second cartesian position \mbox{[}km\mbox{]} \\
+\hline
+{\em $<$tof$>$} & time of flight \mbox{[}sec\mbox{]} \\
+\hline
+{\em $<$mu$>$} & gravity parameter \mbox{[}km$^\wedge$3/s$^\wedge$2\mbox{]} \\
+\hline
+{\em $<$long\+\_\+way$>$} & when true, do \char`\"{}long way\char`\"{} ($>$pi) transfers \\
+\hline
+{\em $<$multi\+\_\+revs$>$} & maximum number of multi-\/rev solutions to compute \\
+\hline
+{\em $<$v1$>$} & return, vector containing 3d arrays with the cartesian components of the velocities at r1 \\
+\hline
+{\em $<$v2$>$} & return, vector containing 3d arrays with the cartesian components of the velocities at r2\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+v1 and v2
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+References\+:
+\begin{DoxyEnumerate}
+\item R. H, Gooding. \char`\"{}\mbox{[}\+A procedure for the solution of Lambert\textquotesingle{}s orbital
+    boundary-\/value problem\mbox{]}(http\+://adsabs.\+harvard.\+edu/abs/1990\+Ce\+M\+D\+A..\+48..\+145\+G)\char`\"{} Celestial Mechanics and Dynamical Astronomy, vol. 48, no. 2, 1990, p. 145-\/165.
+\item A. Klumpp, \char`\"{}\+Performance Comparision of Lambert and Kepler Algorithms\char`\"{}, J\+PL Interoffice Memorandum, 314.\+1-\/0426-\/A\+RK, Jan 2, 1991. \href{http://derastrodynamics.com/docs/lambert_papers_v1.zip}{\texttt{ Zip}} 
+\end{DoxyEnumerate}
+\end{DoxyNote}
+\mbox{\Hypertarget{lambert__gooding_8h_ae0ce4f4bb70c3bb352ad2ab0b0ab2ca3}\label{lambert__gooding_8h_ae0ce4f4bb70c3bb352ad2ab0b0ab2ca3}} 
+\index{lambert\_gooding.h@{lambert\_gooding.h}!tlamb@{tlamb}}
+\index{tlamb@{tlamb}!lambert\_gooding.h@{lambert\_gooding.h}}
+\subsubsection{\texorpdfstring{tlamb()}{tlamb()}}
+{\footnotesize\ttfamily void tlamb (\begin{DoxyParamCaption}\item[{double}]{m,  }\item[{double}]{q,  }\item[{double}]{qsqfm1,  }\item[{double}]{x,  }\item[{double}]{n,  }\item[{double $\ast$}]{t,  }\item[{double $\ast$}]{dt,  }\item[{double $\ast$}]{d2t,  }\item[{double $\ast$}]{d3t }\end{DoxyParamCaption})}
+
+Gooding support routine
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$m$>$} & \\
+\hline
+{\em $<$q$>$} & \\
+\hline
+{\em $<$qsqfm1$>$} & \\
+\hline
+{\em $<$x$>$} & \\
+\hline
+{\em $<$n$>$} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+t, dt, d2t and d3t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{lambert__gooding_8h_afa0184436b81e24d228adcd0bb234a3e}\label{lambert__gooding_8h_afa0184436b81e24d228adcd0bb234a3e}} 
+\index{lambert\_gooding.h@{lambert\_gooding.h}!vlamb@{vlamb}}
+\index{vlamb@{vlamb}!lambert\_gooding.h@{lambert\_gooding.h}}
+\subsubsection{\texorpdfstring{vlamb()}{vlamb()}}
+{\footnotesize\ttfamily void vlamb (\begin{DoxyParamCaption}\item[{double}]{gm,  }\item[{double}]{r1,  }\item[{double}]{r2,  }\item[{double}]{th,  }\item[{double}]{tdelt,  }\item[{double $\ast$}]{n,  }\item[{double}]{vri\mbox{[}$\,$\mbox{]},  }\item[{double}]{vti\mbox{[}$\,$\mbox{]},  }\item[{double}]{vrf\mbox{[}$\,$\mbox{]},  }\item[{double}]{vtf\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+Gooding support routine \begin{DoxyNote}{Note}
+this contains the modification from \mbox{[}2\mbox{]} 
+
+dr and r1r2 are computed in the calling routine
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em $<$gm$>$} & \\
+\hline
+{\em $<$r1$>$} & \\
+\hline
+{\em $<$r2$>$} & \\
+\hline
+{\em $<$th$>$} & \\
+\hline
+{\em $<$tdelt$>$} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+n, vri, vti, vrf and vtf 
+\end{DoxyReturn}
+\mbox{\Hypertarget{lambert__gooding_8h_a72f8d5a55a4f70ec8d669816f251e1df}\label{lambert__gooding_8h_a72f8d5a55a4f70ec8d669816f251e1df}} 
+\index{lambert\_gooding.h@{lambert\_gooding.h}!xlamb@{xlamb}}
+\index{xlamb@{xlamb}!lambert\_gooding.h@{lambert\_gooding.h}}
+\subsubsection{\texorpdfstring{xlamb()}{xlamb()}}
+{\footnotesize\ttfamily void xlamb (\begin{DoxyParamCaption}\item[{double}]{m,  }\item[{double}]{q,  }\item[{double}]{qsqfm1,  }\item[{double}]{tin,  }\item[{double $\ast$}]{n,  }\item[{double $\ast$}]{x,  }\item[{double $\ast$}]{xpl }\end{DoxyParamCaption})}
+
+Gooding support routine
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$m$>$} & \\
+\hline
+{\em $<$q$>$} & \\
+\hline
+{\em $<$qsqfm1$>$} & \\
+\hline
+{\em $<$tin$>$} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+n, x and xpl 
+\end{DoxyReturn}
