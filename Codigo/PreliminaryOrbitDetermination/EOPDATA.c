@@ -8,7 +8,7 @@
 void leerFichero(double *eopdata[13])
 {
   int n = 20026;
-	FILE *fich = fopen("eop19620101.txt", "r");
+	FILE *fich = fopen("PreliminaryOrbitDetermination/eop19620101.txt", "r");
 	assert(fich != NULL);
 	for (int i = 0; i < 13; i++)
 	{

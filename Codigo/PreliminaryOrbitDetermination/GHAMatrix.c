@@ -1,40 +1,33 @@
 //------------------------------------------------------------------------------
-//                                 PoleMatrix
+//                                 GHAMatrix
 //------------------------------------------------------------------------------
 // POD: Preliminary Orbit Determination
 /**
- * @file PoleMatrix.c
+ * @file GHAMatrix.c
  * @author Daniel Arias Ruiz-Esquide y Rubén Mazo Tomás
  * @date Created: 2019/05/25
  *
  * Este fichero contiene las implementaciones para las
- * funciones del fichero PoleMatrix.m (M. Mahooti)
+ * funciones del fichero GHAMatrix.m (M. Mahooti)
  */
 //------------------------------------------------------------------------------
-#include "PoleMatrix.h"
-#include "R_x.h"
-#include "R_y.h"
-#include "MatLabUtils/MatLabUtils.h"
+#include "gast.h"
+#include "GHAMatrix.h"
+#include "R_z.h"
 
 //------------------------------------------------------------------------------
-//  void PoleMatrix(double xp, double yp, double PoleMat[3][3])
+//  void GHAMatrix(double Mjd_UT1, double GHAmat[3][3])
 //------------------------------------------------------------------------------
 /**
- * Transformation from pseudo Earth-fixed to Earth-fixed coordinates for
- * a given date.
+ * Transformation from true equator and equinox to Earth equator and Greenwich
+ * meridian system.
  *
- * @param <xp> Pole coordinate (in).
- * @param <yp> Pole coordinate (in).
- * @param <PoleMat> Pole matrix (out).
+ * @param <Mjd_UT1> Modified Julian Date UT1 (in).
+ * @param <GHAmat> Greenwich Hour Angle matrix (out).
  */
 //------------------------------------------------------------------------------
-void PoleMatrix(double xp, double yp, double PoleMat[3][3])
+void GHAMatrix(double Mjd_UT1, double GHAmat[3][3])
 {
-  double R_yResult[3][3];
-  double R_xResult[3][3];
-
-  R_y(-xp, R_yResult);
-  R_x(-yp, R_xResult);
-  prodMatr(R_yResult, R_xResult, PoleMat);
+  R_z(gast(Mjd_UT1), GHAmat);
 }
 //------------------------------------------------------------------------------

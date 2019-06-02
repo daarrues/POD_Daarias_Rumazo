@@ -11,7 +11,7 @@
  * funciones del fichero Mjday.m (M. Mahooti)
  */
 //------------------------------------------------------------------------------
-#include "MatLabUtils/MatLabUtils.h"
+#include "../MatLabUtils/MatLabUtils.h"
 #include "Mjday.h"
 #include <math.h>
 #include <stdio.h>

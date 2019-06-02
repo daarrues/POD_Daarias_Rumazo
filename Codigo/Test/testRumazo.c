@@ -1,23 +1,25 @@
-#include "EOPDATA.h"
+#include "../PreliminaryOrbitDetermination/EOPDATA.h"
 
 #include <assert.h>
 #include <stdio.h>
 #include <math.h>
-#include "MeanObliquity.h"
-#include "NutAngles.h"
-#include "EqnEquinox.h"
-#include "Frac.h"
-#include "gmst.h"
-#include "timediff.h"
-#include "IERS.h"
-#include "gast.h"
-#include "GHAMatrix.h"
-#include "PoleMatrix.h"
-#include "NutMatrix.h"
-#include "PrecMatrix.h"
-#include "doubler.h"
-#include "rv2coe.h"
-#include "anglesdr.h"
+
+#include "../PreliminaryOrbitDetermination/MeanObliquity.h"
+#include "../PreliminaryOrbitDetermination/NutAngles.h"
+#include "../PreliminaryOrbitDetermination/EqnEquinox.h"
+#include "../PreliminaryOrbitDetermination/Frac.h"
+#include "../PreliminaryOrbitDetermination/gmst.h"
+#include "../PreliminaryOrbitDetermination/timediff.h"
+#include "../PreliminaryOrbitDetermination/IERS.h"
+#include "../PreliminaryOrbitDetermination/gast.h"
+#include "../PreliminaryOrbitDetermination/GHAMatrix.h"
+#include "../PreliminaryOrbitDetermination/PoleMatrix.h"
+#include "../PreliminaryOrbitDetermination/NutMatrix.h"
+#include "../PreliminaryOrbitDetermination/PrecMatrix.h"
+#include "../PreliminaryOrbitDetermination/doubler.h"
+#include "../PreliminaryOrbitDetermination/rv2coe.h"
+#include "../PreliminaryOrbitDetermination/anglesdr.h"
+#include "testRumazo.h"
 
 typedef int bool;
 #define true 1
@@ -2331,123 +2333,4 @@ void testAnglesdr3(bool verbose)
 	}
 
 	printf("anglesdr3 superado!\n");
-}
-
-//------------------------------------------------------------------------------
-//  int main()
-//------------------------------------------------------------------------------
-/**
- * Función principal, realiza todas las comprobaciones.
- */
-//------------------------------------------------------------------------------
-int main(){
-
-	// Test MeanObliquity
-	printf("Probando MeanObliquity!\n");
-	testMeanObliquity1(false);
-	testMeanObliquity2(false);
-	testMeanObliquity3(false);
-	printf("MeanObliquity finalizado!\n\n");
-
-	// Test NutAngles
-	printf("Probando NutAngles!\n");
-	testNutAngles1(false);
-	testNutAngles2(false);
-	testNutAngles3(false);
-	printf("NutAngles finalizado!\n\n");
-
-	// Test EqnEquinox
-	printf("Probando EqnEquinox!\n");
-	testEqnEquinox1(false);
-	testEqnEquinox2(false);
-	testEqnEquinox3(false);
-	printf("EqnEquinox finalizado!\n\n");
-
-	// Test Frac
-	printf("Probando Frac!\n");
-	testFrac1(false);
-	testFrac2(false);
-	testFrac3(false);
-	printf("Frac finalizado!\n\n");
-
-	// Test gmst
-	printf("Probando gmst!\n");
-	testGmst1(false);
-	testGmst2(false);
-	testGmst3(false);
-	printf("gmst finalizado!\n\n");
-
-	// Test timediff
-	printf("Probando timediff!\n");
-	testTimediff1(false);
-	testTimediff2(false);
-	testTimediff3(false);
-	printf("timediff finalizado!\n\n");
-
-	// Test IERS
-	printf("Probando IERS!\n");
-	testIERS1(false);
-	testIERS2(false);
-	testIERS3(false);
-	printf("IERS finalizado!\n\n");
-
-	// Test gast
-	printf("Probando gast!\n");
-	testGast1(false);
-	testGast2(false);
-	testGast3(false);
-	printf("gast finalizado!\n\n");
-
-	// Test GHAMatrix
-	printf("Probando GHAMatrix!\n");
-	testGHAMatrix1(false);
-	testGHAMatrix2(false);
-	testGHAMatrix3(false);
-	printf("GHAMatrix finalizado!\n\n");
-
-	// Test PoleMatrix
-	printf("Probando PoleMatrix!\n");
-	testPoleMatrix1(false);
-	testPoleMatrix2(false);
-	testPoleMatrix3(false);
-	printf("PoleMatrix finalizado!\n\n");
-
-	// Test NutMatrix
-	printf("Probando NutMatrix!\n");
-	testNutMatrix1(false);
-	testNutMatrix2(false);
-	testNutMatrix3(false);
-	printf("NutMatrix finalizado!\n\n");
-
-	// Test PrecMatrix
-	printf("Probando PrecMatrix!\n");
-	testPrecMatrix1(false);
-	testPrecMatrix2(false);
-	testPrecMatrix3(false);
-	printf("PrecMatrix finalizado!\n\n");
-
-	// Test doubler
-	printf("Probando doubler!\n");
-	testDoubler1(false);
-	testDoubler2(false);
-	testDoubler3(false);
-	printf("doubler finalizado!\n\n");
-
-	// Test rv2coe
-	printf("Probando rv2coe!\n");
-	testRv2coe1(false);
-	testRv2coe2(false);
-	testRv2coe3(false);
-	printf("rv2coe finalizado!\n\n");
-
-	// Test anglesdr
-	printf("Probando anglesdr!\n");
-	testAnglesdr1(false);
-	testAnglesdr2(false);
-	testAnglesdr3(false);
-	printf("anglesdr finalizado!\n\n");
-
-	// Final
-	printf("Todos los test superados!\n");
-	return 0;
 }

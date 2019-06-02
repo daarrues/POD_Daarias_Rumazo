@@ -11,9 +11,9 @@
  * funciones del fichero gibbs.m (M. Mahooti)
  */
 //------------------------------------------------------------------------------
+#include "../MatLabUtils/MatLabUtils.h"
 #include "angl.h"
 #include "gibbs.h"
-#include "MatLabUtils/MatLabUtils.h"
 #include "SAT_Const.h"
 #include <math.h>
 #include <string.h>

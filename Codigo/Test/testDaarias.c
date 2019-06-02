@@ -1,20 +1,20 @@
-#include "angl.h"
-#include "anglesg.h"
-#include "gibbs.h"
-#include "hgibbs.h"
-#include "lambert_gooding.h"
-#include "Mjday.h"
-#include "newtonnu.h"
-#include "Position.h"
-#include "R_x.h"
-#include "R_y.h"
-#include "R_z.h"
+#include "../PreliminaryOrbitDetermination/angl.h"
+#include "../PreliminaryOrbitDetermination/anglesg.h"
+#include "../PreliminaryOrbitDetermination/gibbs.h"
+#include "../PreliminaryOrbitDetermination/hgibbs.h"
+#include "../PreliminaryOrbitDetermination/lambert_gooding.h"
+#include "../PreliminaryOrbitDetermination/Mjday.h"
+#include "../PreliminaryOrbitDetermination/newtonnu.h"
+#include "../PreliminaryOrbitDetermination/Position.h"
+#include "../PreliminaryOrbitDetermination/R_x.h"
+#include "../PreliminaryOrbitDetermination/R_y.h"
+#include "../PreliminaryOrbitDetermination/R_z.h"
+#include "testDaarias.h"
 
 #include <assert.h>
 #include <math.h>
 #include <stdio.h>
 #include <string.h>
-
 
 typedef int bool;
 #define true 1
@@ -1576,7 +1576,7 @@ void testNewtonnu3(bool verbose)
 
 	assert(fabs(esp_e0 - obt_e0) < 10e-12);
 	assert(fabs(esp_m - obt_m) < 10e-12);
-	printf("newtonnu1 superado!\n");
+	printf("newtonnu3 superado!\n");
 }
 
 //------------------------------------------------------------------------------
@@ -2245,121 +2245,4 @@ void testAnglesg(bool verbose)
 	}
 
 	printf("anglesg superado!\n");
-}
-
-//------------------------------------------------------------------------------
-//  int main()
-//------------------------------------------------------------------------------
-/**
- * Función principal, realiza todas las comprobaciones.
- */
-//------------------------------------------------------------------------------
-int main(){
-
-	// Test d8rt
-	printf("Probando d8rt!\n");
-	testD8rt1(false);
-	testD8rt2(false);
-	testD8rt3(false);
-	printf("d8rt finalizado!\n\n");
-
-  // Test tlamb
-	printf("Probando tlamb!\n");
-	testTlamb1(false);
-	testTlamb2(false);
-	testTlamb3(false);
-	printf("tlamb finalizado!\n\n");
-
-	// Test xlamb
-	printf("Probando xlamb!\n");
-	testXlamb1(false);
-	testXlamb2(false);
-	testXlamb3(false);
-	printf("xlamb finalizado!\n\n");
-
-	// Test vlamb
-	printf("Probando vlamb!\n");
-	testVlamb1(false);
-	testVlamb2(false);
-	testVlamb3(false);
-	printf("vlamb finalizado!\n\n");
-
-	// Test lambert_gooding
-	printf("Probando lambert_gooding!\n");
-	testLambert_gooding1(false);
-	testLambert_gooding2(false);
-	testLambert_gooding3(false);
-	printf("lambert_gooding finalizado!\n\n");
-
-	// Test R_x
-	printf("Probando R_x!\n");
-	testR_x1(false);
-	testR_x2(false);
-	testR_x3(false);
-	printf("R_x finalizado!\n\n");
-
-	// Test R_y
-	printf("Probando R_y!\n");
-	testR_y1(false);
-	testR_y2(false);
-	testR_y3(false);
-	printf("R_y finalizado!\n\n");
-
-	// Test R_z
-	printf("Probando R_z!\n");
-	testR_z1(false);
-	testR_z2(false);
-	testR_z3(false);
-	printf("R_z finalizado!\n\n");
-
-	// Test angl
-	printf("Probando angl!\n");
-	testAngl1(false);
-	testAngl2(false);
-	testAngl3(false);
-	printf("angl finalizado!\n\n");
-
-	// Test Mjday
-	printf("Probando Mjday!\n");
-	testMjday1(false);
-	testMjday2(false);
-	testMjday3(false);
-	printf("Mjday finalizado!\n\n");
-
-	// Test newtonnu
-	printf("Probando newtonnu!\n");
-	testNewtonnu1(false);
-	testNewtonnu2(false);
-	testNewtonnu3(false);
-	printf("newtonnu finalizado!\n\n");
-
-	// Test Position
-	printf("Probando Position!\n");
-	testPosition1(false);
-	testPosition2(false);
-	testPosition3(false);
-	printf("Position finalizado!\n\n");
-
-	// Test gibbs
-	printf("Probando gibbs!\n");
-	testGibbs1(false);
-	testGibbs2(false);
-	testGibbs3(false);
-	printf("gibbs finalizado!\n\n");
-
-	// Test hgibbs
-	printf("Probando hgibbs!\n");
-	testHgibbs1(false);
-	testHgibbs2(false);
-	testHgibbs3(false);
-	printf("hgibbs finalizado!\n\n");
-
-	// Test anglesg
-	printf("Probando anglesg!\n");
-	testAnglesg(true);
-	printf("anglesg finalizado!\n\n");
-
-	// Final
-	printf("Todos los test superados!\n");
-	return 0;
 }

@@ -12,7 +12,8 @@
  * necesarias para este proyecto.
  */
 //------------------------------------------------------------------------------
-#include "MatLabUtils.h"
+#include "../MatLabUtils/MatLabUtils.h"
+#include "testMatLabUtils.h"
 #include <assert.h>
 #include <stdio.h>
 #include <math.h>
@@ -1205,94 +1206,4 @@ void testAll3(bool verbose)
 
 	assert(esperado == obtenido);
 	printf("All3 superado!\n");
-}
-
-//------------------------------------------------------------------------------
-//  int main()
-//------------------------------------------------------------------------------
-/**
- * Función principal, realiza todas las comprobaciones.
- */
-//------------------------------------------------------------------------------
-int main(){
-
-	// Test norm
-	printf("Probando norm!\n");
-	testNorm1(false);
-	testNorm2(false);
-	testNorm3(false);
-	printf("norm finalizado!\n\n");
-
-	// Test dot
-	printf("Probando dot!\n");
-	testDot1(false);
-	testDot2(false);
-	testDot3(false);
-	printf("dot finalizado!\n\n");
-
-	// Test Cross
-	printf("Probando cross!\n");
-	testCross1(false);
-	testCross2(false);
-	testCross3(false);
-	printf("cross finalizado!\n\n");
-
-	// Test zeros
-	printf("Probando zeros!\n");
-	testZeros(false);
-	printf("zeros finalizado!\n\n");
-
-	// Test prodMatr
-	printf("Probando prodMatr!\n");
-	testProdMatr1(false);
-	testProdMatr2(false);
-	testProdMatr3(false);
-	printf("prodMatr finalizado!\n\n");
-
-	// Test trans
-	printf("Probando trans!\n");
-	testTrans(false);
-	printf("trans finalizado!\n\n");
-
-	// Test det
-	printf("Probando det!\n");
-	testDet(false);
-	printf("det finalizado!\n\n");
-
-	// Test roots
-	printf("Probando roots!\n");
-	testRoots(false);
-	printf("roots finalizado!\n\n");
-
-	// Test unit
-	printf("Probando unit!\n");
-	testUnit1(false);
-	testUnit2(false);
-	testUnit3(false);
-	printf("unit finalizado!\n\n");
-
-	// Test sign
-	printf("Probando sign!\n");
-	testSign1(false);
-	testSign2(false);
-	testSign3(false);
-	printf("sign finalizado!\n\n");
-
-	// Test fix
-	printf("Probando fix!\n");
-	testFix1(false);
-	testFix2(false);
-	testFix3(false);
-	printf("fix finalizado!\n\n");
-
-	// Test all
-	printf("Probando all!\n");
-	testAll1(false);
-	testAll2(false);
-	testAll3(false);
-	printf("all finalizado!\n\n");
-
-	// Final
-	printf("Todos los test superados!\n");
-	return 0;
 }

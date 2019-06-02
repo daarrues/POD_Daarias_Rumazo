@@ -11,7 +11,7 @@
  * funciones del fichero lambert_gooding.m (M. Mahooti)
  */
 //------------------------------------------------------------------------------
-#include "MatLabUtils/MatLabUtils.h"
+#include "../MatLabUtils/MatLabUtils.h"
 #include "lambert_gooding.h"
 #include <math.h>
 #include <stdio.h>

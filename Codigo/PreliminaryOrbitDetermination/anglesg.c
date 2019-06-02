@@ -11,16 +11,15 @@
  * funciones del fichero anglesg.m (M. Mahooti)
  */
 //------------------------------------------------------------------------------
+#include "../MatLabUtils/MatLabUtils.h"
 #include "angl.h"
 #include "anglesg.h"
 #include "gibbs.h"
 #include "hgibbs.h"
 #include "lambert_gooding.h"
 #include "rv2coe.h"
-#include "MatLabUtils/MatLabUtils.h"
 #include <math.h>
 #include <string.h>
-#include <stdio.h>
 
 //------------------------------------------------------------------------------
 //  void anglesg(double Alpha1, double Alpha2, double Alpha3, double Delta1,

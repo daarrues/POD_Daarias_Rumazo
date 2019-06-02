@@ -8,12 +8,15 @@
  * @date Created: 2019/06/02
  *
  * Este fichero contiene la función principal con el menú para ejecutar los
- * ejemplos de M. Mahooti.
+ * ejemplos de M. Mahooti y los test de integración.
  */
 //------------------------------------------------------------------------------
-#include "examples.h"
+#include "PreliminaryOrbitDetermination/examples.h"
+#include "Test/test.h"
+#include <stdio.h>
 
 int main()
 {
+  test();
   return 0;
 }

@@ -12,13 +12,12 @@
  */
 //------------------------------------------------------------------------------
 #include "EOPDATA.h"
-
+#include "EqnEquinox.h"
 #include "gast.h"
-#include "SAT_Const.h"
+#include "gmst.h"
 #include "IERS.h"
 #include "timediff.h"
-#include "gmst.h"
-#include "EqnEquinox.h"
+#include "SAT_Const.h"
 #include <math.h>
 
 //------------------------------------------------------------------------------
