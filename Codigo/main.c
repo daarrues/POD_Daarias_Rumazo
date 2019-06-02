@@ -18,7 +18,7 @@
 int main()
 {
   test();
-  print("Example 5:\n");
+  printf("Example 5:\n");
   example5();
   return 0;
 }

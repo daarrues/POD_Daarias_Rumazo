@@ -16,6 +16,7 @@
 #include "GHAMatrix.h"
 #include "IERS.h"
 #include "../MatLabUtils/MatLabUtils.h"
+#include "Mjday.h"
 #include "NutMatrix.h"
 #include "PoleMatrix.h"
 #include "Position.h"
@@ -146,11 +147,11 @@ void example5()
     rsite3[i] = dot(Et[i], Rs);
   }
 
-  double r2[3], v[2];
+  double r2[3], v2[3];
   anglesg(obs[0][1], obs[1][1], obs[2][1], obs[0][2], obs[1][2], obs[2][2],
           Mjd1, Mjd2, Mjd3, rsite1, rsite2, rsite3, r2, v2);
   print("\nGauss method");
-  printf("\nY_apr\=\n\n%.20lf\n%.20lf\n%.20lf\n%.20lf\n%.20lf\n%.20lf",
+  printf("\nY_apr=\n\n%.20lf\n%.20lf\n%.20lf\n%.20lf\n%.20lf\n%.20lf",
           r2[0]*1e-3, r2[1]*1e-3, r2[2]*1e-3,
           v2[0]*1e-3, v2[1]*1e-3, v2[2]*1e-3);
 }
