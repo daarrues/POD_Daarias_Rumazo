@@ -319,6 +319,6 @@ void test()
 	printf("anglesg finalizado!\n\n");
 
   // Final
-	printf("TODOS LOS TEST SUPERADOS\n\n");
+	printf("TODOS LOS TEST SUPERADOS\n");
 }
 //------------------------------------------------------------------------------

@@ -41,7 +41,7 @@ int main()
     printf("\n9.  Test\n");
     printf("\n0.  Exit\n");
     printf("------------\n");
-    printf("Opcion: ");
+    printf("Option: ");
     scanf("%d", &op);
     printf("------------\n");
     switch(op)
