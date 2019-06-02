@@ -17,8 +17,58 @@
 
 int main()
 {
-  test();
-  printf("Example 5:\n");
-  example5();
-  return 0;
+  int op = 0;
+  do
+  {
+    printf("---[MENU]---\n");
+    printf("1. Example 1\n");
+    printf("2. Example 2\n");
+    printf("3. Example 3\n");
+    printf("5. Example 5\n");
+    printf("6. Example 6\n");
+    printf("7. Example 7\n");
+    printf("\n9.  Test\n");
+    printf("\n0.  Exit\n");
+    printf("------------\n");
+    printf("Opcion: ");
+    scanf("%d", &op);
+    printf("------------\n");
+    switch(op)
+    {
+      // Examples
+      case 1:
+        printf("Example 1:\n");
+        //example1();
+        break;
+      case 2:
+        printf("Example 2:\n");
+        // example2();
+        break;
+      case 3:
+        printf("Example 3:\n");
+        //example3();
+        break;
+      case 5:
+        printf("Example 5:\n");
+        example5();
+        break;
+      case 6:
+        printf("Example 6:\n");
+        //example6();
+        break;
+      case 7:
+        printf("Example 7:\n");
+        //example7();
+        break;
+      case 9:
+        test();
+        break;
+      case 0:
+        printf("Exiting\n");
+        return 0;
+      default:
+        printf("ERROR: %d is not a valid option!\n", op);
+        break;
+    }
+  } while (1);
 }
