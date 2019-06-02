@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>POD_Daarias_Rumazo: Codigo/PreliminaryOrbitDetermination/hgibbs.h File Reference</title>
+<title>POD_Darrias_Rumazo: Codigo/PreliminaryOrbitDetermination/hgibbs.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="pod_daarias_rumazo_logo_mini.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">POD_Daarias_Rumazo
+   <div id="projectname">POD_Darrias_Rumazo
    &#160;<span id="projectnumber">2.0</span>
    </div>
    <div id="projectbrief">Migration from MATLAB to C</div>
@@ -97,67 +97,67 @@ Functions</h2></td></tr>
           <td class="memname">void hgibbs </td>
           <td>(</td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname">[], </td>
+          <td class="paramname"><em>r1</em>[], </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname">[], </td>
+          <td class="paramname"><em>r2</em>[], </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname">[], </td>
+          <td class="paramname"><em>r3</em>[], </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>MJD1</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>MJD2</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>MJD3</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname">[], </td>
+          <td class="paramname"><em>v2</em>[], </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double *&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>theta</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double *&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>theta1</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double *&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>copa</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">char&#160;</td>
-          <td class="paramname">[]&#160;</td>
+          <td class="paramname"><em>error</em>[]&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -166,6 +166,23 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>hgibbs: implements the herrick-gibbs approximation for orbit determination, and finds the middle velocity vector for the 3 given position vectors.</p>
+<p>Inputs: </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">&lt;r1&gt;</td><td>- ijk position vector #1 (m) </td></tr>
+    <tr><td class="paramname">&lt;r2&gt;</td><td>- ijk position vector #2 (m) </td></tr>
+    <tr><td class="paramname">&lt;r3&gt;</td><td>- ijk position vector #3 (m) </td></tr>
+    <tr><td class="paramname">&lt;MJD1&gt;</td><td>- julian date of 1st sighting (days since 4713 bc) </td></tr>
+    <tr><td class="paramname">&lt;MJD2&gt;</td><td>- julian date of 2nd sighting (days since 4713 bc) </td></tr>
+    <tr><td class="paramname">&lt;MJD3&gt;</td><td>- julian date of 3rd sighting (days since 4713 bc)</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Outputs: </p><dl class="section return"><dt>Returns</dt><dd>&lt;v2&gt; - ijk velocity vector for r2 (m/s) </dd>
+<dd>
+&lt;theta&gt;- angl between vectors (rad) </dd>
+<dd>
+&lt;error&gt; - flag indicating success </dd></dl>
 
 </div>
 </div>

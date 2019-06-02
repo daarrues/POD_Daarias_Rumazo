@@ -21,5 +21,29 @@ Este fichero contiene las cabeceras para las funciones del fichero hgibbs.\+m (M
 \index{hgibbs.h@{hgibbs.h}!hgibbs@{hgibbs}}
 \index{hgibbs@{hgibbs}!hgibbs.h@{hgibbs.h}}
 \subsubsection{\texorpdfstring{hgibbs()}{hgibbs()}}
-{\footnotesize\ttfamily void hgibbs (\begin{DoxyParamCaption}\item[{double}]{\mbox{[}$\,$\mbox{]},  }\item[{double}]{\mbox{[}$\,$\mbox{]},  }\item[{double}]{\mbox{[}$\,$\mbox{]},  }\item[{double}]{,  }\item[{double}]{,  }\item[{double}]{,  }\item[{double}]{\mbox{[}$\,$\mbox{]},  }\item[{double $\ast$}]{,  }\item[{double $\ast$}]{,  }\item[{double $\ast$}]{,  }\item[{char}]{\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void hgibbs (\begin{DoxyParamCaption}\item[{double}]{r1\mbox{[}$\,$\mbox{]},  }\item[{double}]{r2\mbox{[}$\,$\mbox{]},  }\item[{double}]{r3\mbox{[}$\,$\mbox{]},  }\item[{double}]{M\+J\+D1,  }\item[{double}]{M\+J\+D2,  }\item[{double}]{M\+J\+D3,  }\item[{double}]{v2\mbox{[}$\,$\mbox{]},  }\item[{double $\ast$}]{theta,  }\item[{double $\ast$}]{theta1,  }\item[{double $\ast$}]{copa,  }\item[{char}]{error\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
 
+hgibbs\+: implements the herrick-\/gibbs approximation for orbit determination, and finds the middle velocity vector for the 3 given position vectors.
+
+Inputs\+: 
+\begin{DoxyParams}{Parameters}
+{\em $<$r1$>$} & -\/ ijk position vector \#1 (m) \\
+\hline
+{\em $<$r2$>$} & -\/ ijk position vector \#2 (m) \\
+\hline
+{\em $<$r3$>$} & -\/ ijk position vector \#3 (m) \\
+\hline
+{\em $<$\+M\+J\+D1$>$} & -\/ julian date of 1st sighting (days since 4713 bc) \\
+\hline
+{\em $<$\+M\+J\+D2$>$} & -\/ julian date of 2nd sighting (days since 4713 bc) \\
+\hline
+{\em $<$\+M\+J\+D3$>$} & -\/ julian date of 3rd sighting (days since 4713 bc)\\
+\hline
+\end{DoxyParams}
+Outputs\+: \begin{DoxyReturn}{Returns}
+$<$v2$>$ -\/ ijk velocity vector for r2 (m/s) 
+
+$<$theta$>$-\/ angl between vectors (rad) 
+
+$<$error$>$ -\/ flag indicating success 
+\end{DoxyReturn}

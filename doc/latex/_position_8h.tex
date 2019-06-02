@@ -21,5 +21,19 @@ Este fichero contiene las cabeceras para las funciones del fichero Position.\+m 
 \index{Position.h@{Position.h}!Position@{Position}}
 \index{Position@{Position}!Position.h@{Position.h}}
 \subsubsection{\texorpdfstring{Position()}{Position()}}
-{\footnotesize\ttfamily void Position (\begin{DoxyParamCaption}\item[{double}]{,  }\item[{double}]{,  }\item[{double}]{,  }\item[{double}]{\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Position (\begin{DoxyParamCaption}\item[{double}]{lon,  }\item[{double}]{lat,  }\item[{double}]{h,  }\item[{double}]{r\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
 
+Position\+: Position vector (r \mbox{[}m\mbox{]}) from geodetic coordinates (Longitude \mbox{[}rad\mbox{]}, latitude \mbox{[}rad\mbox{]}, altitude \mbox{[}m\mbox{]})
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$lon$>$} & longitude \\
+\hline
+{\em $<$lat$>$} & latitude \\
+\hline
+{\em $<$h$>$} & altitude\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+$<$r$>$ position vector 
+\end{DoxyReturn}
