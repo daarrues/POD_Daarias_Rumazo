@@ -1,3 +1,17 @@
+//------------------------------------------------------------------------------
+//                              TestDaarias
+//------------------------------------------------------------------------------
+// POD: Preliminary Orbit Determination
+/**
+ * @file testDaarias.c
+ * @author Daniel Arias Ruiz-Esquide
+ * @date Created: 2019/05/15
+ *
+ * Este fichero contiene los test unitarios
+ * para las funciones del proyecto implementadas
+ * por Daniel Arias Ruiz-Esquide.
+ */
+//------------------------------------------------------------------------------
 #include "../PreliminaryOrbitDetermination/angl.h"
 #include "../PreliminaryOrbitDetermination/anglesg.h"
 #include "../PreliminaryOrbitDetermination/gibbs.h"

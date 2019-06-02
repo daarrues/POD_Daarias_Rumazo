@@ -1,3 +1,17 @@
+//------------------------------------------------------------------------------
+//                              TestRumazo
+//------------------------------------------------------------------------------
+// POD: Preliminary Orbit Determination
+/**
+ * @file testRumazo.c
+ * @author Rubén Mazo Tomás
+ * @date Created: 2019/05/15
+ *
+ * Este fichero contiene los test unitarios
+ * para las funciones del proyecto implementadas
+ * por Rubén Mazo Tomás.
+ */
+//------------------------------------------------------------------------------
 #include "../PreliminaryOrbitDetermination/EOPDATA.h"
 
 #include <assert.h>

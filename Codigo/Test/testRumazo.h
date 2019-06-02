@@ -1,3 +1,17 @@
+//------------------------------------------------------------------------------
+//                              TestRumazo
+//------------------------------------------------------------------------------
+// POD: Preliminary Orbit Determination
+/**
+ * @file testRumazo.h
+ * @author Rubén Mazo Tomás
+ * @date Created: 2019/05/15
+ *
+ * Este fichero contiene las cabeceras de los
+ * test unitarios para las funciones del proyecto
+ * implementadas por Rubén Mazo Tomás.
+ */
+//------------------------------------------------------------------------------
 #ifndef TEST_RUMAZO_H
 #define TEST_RUMAZO_H
 

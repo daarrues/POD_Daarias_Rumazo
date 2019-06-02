@@ -15,6 +15,17 @@
 #include "Test/test.h"
 #include <stdio.h>
 
+//------------------------------------------------------------------------------
+//  int main()
+//------------------------------------------------------------------------------
+/**
+ * Función principal, puede ejecutar los ejemplos o test.
+ * Pregunta por la opción a ejecutar:
+ * 1, 2, 3, 5, 6 y 7: ejemplo correspondiente.
+ * 9: test (todos).
+ * 0: salir.
+ */
+//------------------------------------------------------------------------------
 int main()
 {
   int op = 0;
