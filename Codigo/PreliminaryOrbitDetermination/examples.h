@@ -13,11 +13,11 @@
 #ifndef EXAMPLES_H
 #define EXAMPLES_H
 
-void ejemplo1();
-void ejemplo2();
-void ejemplo3();
-void ejemplo5();
-void ejemplo6();
-void ejemplo7();
+void example1();
+void example2();
+void example3();
+void example5();
+void example6();
+void example7();
 
 #endif // EXAMPLES_H
