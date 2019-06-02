@@ -150,7 +150,7 @@ void example6()
   double r2[3], v2[3];
   anglesdr(obs[0][1], obs[1][1], obs[2][1], obs[0][2], obs[1][2], obs[2][2],
           Mjd1, Mjd2, Mjd3, rsite1, rsite2, rsite3, r2, v2);
-  printf("\n\nDouble-R-Iteration method");
+  printf("\nDouble-R-Iteration method");
   printf("\nY_apr=\n\n%.20lf\n%.20lf\n%.20lf\n%.20lf\n%.20lf\n%.20lf\n",
           r2[0]*1e-3, r2[1]*1e-3, r2[2]*1e-3,
           v2[0]*1e-3, v2[1]*1e-3, v2[2]*1e-3);
