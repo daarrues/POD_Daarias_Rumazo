@@ -1,3 +1,17 @@
+//------------------------------------------------------------------------------
+//                              TestMatLabUtils
+//------------------------------------------------------------------------------
+// POD: Preliminary Orbit Determination
+/**
+ * @file TestMatLabUtils.h
+ * @author Daniel Arias Ruiz-Esquide y Rubén Mazo Tomás
+ * @date Created: 2019/04/17
+ *
+ * Este fichero contiene las cabeceras de los
+ * test unitarios para las funciones de alto
+ * nivel de MatLab necesarias para este proyecto.
+ */
+//------------------------------------------------------------------------------
 #ifndef TEST_MATLABUTILS_H
 #define TEST_MATLABUTILS_H
 

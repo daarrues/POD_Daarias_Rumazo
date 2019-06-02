@@ -1,3 +1,16 @@
+//------------------------------------------------------------------------------
+//                              Test
+//------------------------------------------------------------------------------
+// POD: Preliminary Orbit Determination
+/**
+ * @file test.h
+ * @author Daniel Arias Ruiz-Esquide y Rubén Mazo Tomás
+ * @date Created: 2019/06/02
+ *
+ * Este fichero contiene la implementación para la función
+ * que realiza todos los test.
+ */
+//------------------------------------------------------------------------------
 #include "test.h"
 #include "testMatLabUtils.h"
 #include "testDaarias.h"
@@ -8,6 +21,13 @@ typedef int bool;
 #define true 1
 #define false 0
 
+//------------------------------------------------------------------------------
+//  void test()
+//------------------------------------------------------------------------------
+/**
+ *  Función que pasa todos los test unitarios
+ */
+//------------------------------------------------------------------------------
 void test()
 {
   printf("TEST MATLABUTILS\n\n");
@@ -301,3 +321,4 @@ void test()
   // Final
 	printf("TODOS LOS TEST SUPERADOS\n\n");
 }
+//------------------------------------------------------------------------------
