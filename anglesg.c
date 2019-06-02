@@ -20,6 +20,7 @@
 #include "MatLabUtils/MatLabUtils.h"
 #include <math.h>
 #include <string.h>
+#include <stdio.h>
 
 //------------------------------------------------------------------------------
 //  void anglesg(double Alpha1, double Alpha2, double Alpha3, double Delta1,
@@ -162,7 +163,7 @@ void anglesg(double Alpha1, double Alpha2, double Alpha3, double Delta1,
   double Rhoold2 = -RhoMat[1];
   // Rhoold3 = RhoMat[2]/c3;
 
-  double ll, Rho2, theta, theta1, Theta, Theta1, copa, p, a, ecc, incl, omega,
+  double ll = 0, Rho2, theta, theta1, Theta, Theta1, copa, p, a, ecc, incl, omega,
   argp, Nu, m, l, ArgPer, magR1, magR2, magR3, U, RDot, UDot, TauSqr, f1, f3,
   g1, g3;
   double v1[3], v2[3];
@@ -181,7 +182,7 @@ void anglesg(double Alpha1, double Alpha2, double Alpha3, double Delta1,
 
     gibbs(R1, R2, R3, v2, &theta, &theta1, &copa, error);
 
-    if (!strcmp(error,"          ok") && (copa < 1/Rad))
+    if (!strcmp(error,"ok") && (copa < 1/Rad))
     {
       //--- HGibbs to get middle vector ----
       hgibbs(R1, R2, R3, JD1, JD2, JD3, v2, &theta, &theta1, &copa, error);

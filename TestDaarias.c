@@ -2141,7 +2141,7 @@ void testHgibbs3(bool verbose)
 //------------------------------------------------------------------------------
 void testAnglesg(bool verbose)
 {
-	double Alpha1 = 0.2235784225097256;
+	/*double Alpha1 = 0.2235784225097256;
 	double Alpha2 = 0.1654921196741023;
 	double Alpha3 = 0.1066134373580736;
 
@@ -2178,6 +2178,45 @@ void testAnglesg(bool verbose)
 		16.87979502268987,
 		-2654.080029326738,
 		3734.120046153917
+		};*/
+
+	double Alpha1 = 0.22357842250972562170;
+	double Alpha2 = 0.16549211967410232260;
+	double Alpha3 = 0.10661343735807363164;
+
+	double Delta1 = -0.21153390534171273574;
+	double Delta2 = -0.14283774598321591354;
+	double Delta3 = -0.07167369106239913912;
+
+	double JD1 = 55565.90440736105665564537;
+	double JD2 = 55565.90787958353757858276;
+	double JD3 = 55565.91135180555284023285;
+
+	double RS1[3] = {
+		5270137.35006700735539197922,
+		-1572248.25164427026174962521,
+		3219350.41084203915670514107
+		};
+	double RS2[3] = {
+		5303269.31336066219955682755,
+		-1456667.74823776632547378540,
+		3219314.05463487235829234123
+		};
+	double RS3[3] = {
+		5333865.06903305556625127792,
+		-1340390.16746883257292211056,
+		3219280.50120837800204753876
+		};
+
+	double esp_R2[3] = {
+		20486511.51189471408724784851,
+		1079232.34127822611480951309,
+		1005456.21708063781261444092
+		};
+	double esp_V2[3] = {
+		16.87979502268986919944,
+		-2654.08002932673798568430,
+		3734.12004615391697370796
 		};
 
 	double obt_R2[3], obt_V2[3];
@@ -2185,6 +2224,7 @@ void testAnglesg(bool verbose)
 					RS2, RS3, obt_R2, obt_V2);
 
 	if(verbose) printf("anglesg:\n");
+	double prec;
 	for(int i = 0; i < 3; i++)
 	{
 		if(verbose)
@@ -2194,8 +2234,10 @@ void testAnglesg(bool verbose)
 			printf("Esperado: %.20lf \n", esp_V2[i]);
 			printf("Obtenido: %.20lf \n", obt_V2[i]);
 		}
-		assert(fabs(esp_R2[i] - obt_R2[i]) < 10e-12);
-		assert(fabs(esp_V2[i] - obt_V2[i]) < 10e-12);
+		assert(fabs(esp_R2[i] - obt_R2[i]) < 10e-4);
+		assert(fabs(esp_V2[i] - obt_V2[i]) < 10e-9);
+		// 11 significativas (al menos, en R2)
+		// 12 significativas (en V2)
 	}
 
 	printf("anglesg superado!\n");
