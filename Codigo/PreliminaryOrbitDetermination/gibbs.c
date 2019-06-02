@@ -22,7 +22,7 @@
 //  void gibbs(double r1[], double r2[], double r3[], double v2[],
 //             double *theta, double *theta1, double *copa, char error[])
 //------------------------------------------------------------------------------
-/*
+/**
  *  gibbs: performs the gibbs method of orbit determination. this method
  *         determines the velocity at the middle point of the 3 given
  *         position vectors.
@@ -34,7 +34,7 @@
  *
  * Outputs:
  * @return <v2> - ijk velocity vector for r2 (m/s)
- * @return <theta>- angl between vectors (rad)
+ * @return <theta> - angl between vectors (rad)
  * @return <error> - flag indicating success
  */
 //------------------------------------------------------------------------------

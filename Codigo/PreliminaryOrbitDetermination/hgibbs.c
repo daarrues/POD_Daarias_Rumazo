@@ -23,7 +23,7 @@
 //             double MJD3, double v2[], double *theta, double *theta1,
 //             double *copa, char error[])
 //------------------------------------------------------------------------------
-/*
+/**
  *  hgibbs: implements the herrick-gibbs approximation for orbit
  *          determination, and finds the middle velocity vector for the 3
  *          given position vectors.

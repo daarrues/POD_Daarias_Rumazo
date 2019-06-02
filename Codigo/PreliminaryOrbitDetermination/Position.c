@@ -18,7 +18,7 @@
 //------------------------------------------------------------------------------
 //  void Postion(double lon, double lat, double h, double r[])
 //------------------------------------------------------------------------------
-/*
+/**
  * Position: Position vector (r [m]) from geodetic coordinates
  *           (Longitude [rad], latitude [rad], altitude [m])
  *
